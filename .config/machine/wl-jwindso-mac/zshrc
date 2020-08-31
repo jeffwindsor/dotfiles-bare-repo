@@ -1,0 +1,270 @@
+#!/usr/bin/env zsh
+
+
+# zsh plugins
+source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/etc/profile.d/autojump.sh
+source $HOME/.fzf.zsh
+
+alias vc='nvim $HOME/.config/machine/wl-jwindso-mac/zshrc'
+alias ve='nvim $HOME/.config/machine/wl-jwindso-mac/zshenv'
+alias d='dirs -v | head -10'
+alias tree='exa --tree'
+alias l='exa -1Fa --group-directories-first'
+alias ll='exa --long --all --group-directories-first'
+alias lt='exa --tree --level=2'
+alias grep='rg'
+alias f='vifm'
+alias cat='bat -p'
+
+alias cellar="cd /usr/local/Cellar && l"
+alias caskroom="cd /usr/local/Caskroom && l"
+alias bundle_name="osascript -e 'id of app"
+alias bl="brew list && brew cask list && mas list"
+alias bi="brew info"
+alias bc="brew cask"
+alias bl="brew leaves | xargs brew deps --installed --for-each | sed \"s/^.*:/$(tput setaf 4)&$(tput sgr0)/\""
+alias bup="package-upgrade"
+alias bs="brew search"
+brews() {
+    local result=$(brew search --formulae | fzf -m --preview="brew info {}" --preview-window=:hidden --bind=space:toggle-preview)
+    [ ! -z "$result" ] && brew install "$result"
+}
+
+casks() {
+    local result=$(brew search --casks | fzf -m --preview="brew cask info {}" --preview-window=:hidden --bind=space:toggle-preview)
+    [ ! -z "$result" ] && brew cask install "$result"
+}
+
+alias mi="mas install"
+alias mf="mas info"
+alias ml="mas list"
+alias mr="mas uninstall"
+alias ms="mas search"
+alias mup="mas upgrade"
+alias sha1="shasum -a 1 "
+alias sha256="shasum -a 256 "
+alias sha512="shasum -a 512 "
+
+green="$(tput setaf 2)"
+reset="$(tput sgr0)"
+
+say(){
+    echo "${green}${1}${reset}"
+}
+package-list(){
+    say "Current Languages"
+    echo "Clojure: $(clj -Sdescribe | grep :version)"
+    java -version
+    kotlin -version
+    git --version
+    go version
+    stack ghc -- --version
+    echo "Idris : $(idris --version)"
+    echo "Node  : $(node --version)"
+    echo "Npm   : $(npm --version)"
+    python --version
+    ruby --version
+    scala --version
+
+    say "Current Brews"
+    brew list
+
+    say "Current Brew: Casks"
+    brew cask list
+
+    say "Current Brew: Mas"
+    mas list
+}
+
+package-upgrade(){
+    say "to long did not read pages"
+    tldr --update
+
+    say "Haskell Stack"
+    stack update && stack upgrade --force-download
+
+    say "Brews"
+    brew upgrade
+
+    say "Casks"
+    brew cask upgrade
+
+    say "Masses"
+    mas upgrade
+
+    say "Cleanup"
+    brew cleanup
+
+    say "doom emacs"
+    $HOME/.emacs.d/bin/doom upgrade
+}
+
+packout(){
+    brew outdated
+    brew cask outdated
+}
+
+
+############################################################################################
+# SQLPLUS
+############################################################################################
+alias shopcart='sqlplus -L jwindsor@shopcart'
+alias t1='sqlplus -L cj@tcjoweb1'
+
+############################################################################################
+# AWS
+############################################################################################
+aws-assume-provisioner() {
+    aws-assume-account-duration-role 3599 'cjorganization/CJProvisionerAccessRole' $1 $2
+}
+aws-assume-dev() {
+    aws-assume-account-duration-role 43199 'cjorganization/CJDeveloperAccessRole' $1 $2
+}
+aws-assume-account-duration-role() {
+    local user='597974043991:mfa/jwindsor@cj.com'
+    local duration=$1
+    local region='us-west-1'
+    local role=$2
+    local account=$3
+    local token=$4
+
+    #end session
+    eval $(env | sed -En 's/^(AWS_[^=]*)=.*$/unset \1/p');
+
+    #add new session
+    if [[ -z $token ]]; then
+        read -r token"MFA Token? "
+    fi
+
+    eval "$(aws sts assume-role \
+        --role-arn "arn:aws:iam::${account}:role/${role}" \
+        --role-session-name "jmw$$" \
+        --serial-number "arn:aws:iam::${user}" \
+        --token-code "$token" \
+        --duration-seconds $duration \
+        --region $region \
+        --query \
+        'Credentials |
+            join (`\n`,
+            values({
+                AccessKeyId: join(``, [`export AWS_ACCESS_KEY_ID=`,AccessKeyId]),
+                SecretAccessKey:join(``, [`export AWS_SECRET_ACCESS_KEY=`,SecretAccessKey]),
+                SessionToken:join(``, [`export AWS_SESSION_TOKEN=`,SessionToken])
+            }))' \
+        --output text)"
+}
+alias aws-empire='aws-assume-dev $EMPIRE_DEV_ACCT'
+alias aws-empire-pro='aws-assume-provisioner $EMPIRE_PROD_ACCT'
+alias aws-cjdev='aws-assume-dev $CJDEV_DEV_ACCT'
+alias aws-cjdev-pro='aws-assume-provisioner $CJDEV_PROD_ACCT'
+alias aws-comm-pro='aws-assume-provisioner $COMM_DETAIL_PRD_ACCT'
+aoc () {
+    open "$(aws-get-url-inline)"
+    # open -a "Brave Browser" $($HOME/.local/functions/aws-get-url.py);
+}
+aws-get-url-inline () {
+	python3 <<EOF
+import http.client
+import json
+import urllib.parse
+result = json.dumps({
+  "sessionId": "$AWS_ACCESS_KEY_ID",
+  "sessionKey": "$AWS_SECRET_ACCESS_KEY",
+  "sessionToken": "$AWS_SESSION_TOKEN"
+})
+path = '/federation?Action=getSigninToken&Session=' + urllib.parse.quote_plus(result, safe="")
+conn = http.client.HTTPSConnection("signin.aws.amazon.com")
+conn.request("GET", path)
+rq = conn.getresponse()
+if rq.status != 200:
+  raise Exception('request failed because %s', rq.reason)
+data = json.load(rq)
+signin_token = data['SigninToken']
+# print('https://signin.aws.amazon.com/federation?Action=login&Destination=https%3A%2F%2Fconsole.aws.amazon.com/console/home?region=us-west-1&SigninToken='+signin_token)
+print('https://signin.aws.amazon.com/federation?Action=login&Destination=https%3A%2F%2Fconsole.aws.amazon.com&SigninToken='+signin_token)
+EOF
+}
+function aes () { eval $(env | sed -En 's/^(AWS_[^=]*)=.*$/unset \1/p'); }
+alias acd="aws-cloudfront-describe"
+function aws-cloudfront-describe () { aws cloudformation describe-stacks --stack-name "$@"; }
+alias acd="aws-cloudfront-describe-status"
+function aws-cloudfront-describe-status () { aws-cloudfront-describe $@ | grep StackStatus; }
+
+
+############################################################################################
+# Patching
+############################################################################################
+function patch-update(){ ssh -t ${1} "sudo /usr/sbin/cnvr-patch update"; }
+function patch-query() { ssh -t ${1} "sudo /usr/sbin/cnvr-patch query"; }
+
+############################################################################################
+# ITP
+############################################################################################
+function invoke-adjustments-processor(){
+    local token=$1
+
+    aws-assume-provisioner $EMPIRE_PROD_ACCT $token
+    aws lambda invoke --function-name adjustment-processor adjustment-processor.txt
+    cat adjustment-processor.txt
+    aes
+}
+function adjustments-list(){
+    local token=$1
+    aws-assume-dev $EMPIRE_DEV_ACCT $token
+    echo "ITP Source Browser Adjustments"
+    aws s3 ls "s3://datalake-s3-buckets-datalake-659qwgl37b60/browserAdjustments/" | grep ".json" | sort
+    aes
+}
+############################################################################################
+# Mavin
+############################################################################################
+# export MAVEN_OPTS="-Xmx4086m -XX:ReservedCodeCacheSize=256m"
+# export MAVEN_OPTS="-Xmx10G -XX:ReservedCodeCacheSize=256m -Xss8G -XX:+UseG1GC -XX:+UseStringDeduplication"
+
+alias qb='mvn clean install -T 1C -Ddelta.skip=true -Dcleanup.skip=true -Dqunit.numThreads=8 -DskipTests -Dtablespaces.skip=true -Dgulp.task=min'
+alias qqb='mvn install -T 1C -Ddelta.skip=true -Dcleanup.skip=true -Dqunit.numThreads=8 -DskipTests -Dtablespaces.skip=true -Dgulp.task=min'
+alias mc='k && mvn clean'
+alias mci='k && mvn clean install'
+alias mnt='mvn -Dmaven.test.skip=true install'
+
+############################################################################################
+# From On-Boarding
+############################################################################################
+alias dbstart="nohup VBoxHeadless --startvm 'Oracle11g32' &> /dev/null &"
+alias dbstop="VBoxManage controlvm Oracle11g32 poweroff"
+
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && source "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+# NVM =============================================
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+#function git-migrate(){
+#    if [ ! -d "./${2}" ]
+#    then
+#        git clone "git@gitlab.cj.com:${1}/${2}.git"
+#        pushd ${2}
+#        git branch -r | rg -v '\->' | while read remote
+#        do
+#            git branch --track "${remote#origin/}" "$remote"
+#        done
+#        git fetch --all
+#        git pull --all
+#        git push --set-upstream "git@gitlab.cj.dev:${1}/${2}.git" master
+#        git remote set-url origin "git@gitlab.cj.dev:${1}/${2}.git"
+#        git push --all
+#        git push --tags
+#        popd
+#    fi
+#    open "http://gitlab.cj.com/${1}/${2}/commits/master"
+#    open "https://gitlab.cj.dev/${1}/${2}/"
+#    open "http://gitlab.cj.com/${1}/${2}/edit"
+#    open "https://gitlab.cj.dev/${1}/${2}/edit#js-shared-permissions"
+#}
+# aws
+
+source $HOME/.config/machine/zshrc

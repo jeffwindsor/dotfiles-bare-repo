@@ -1,0 +1,156 @@
+#!/usr/bin/env zsh
+
+####################################################################
+# ZSH Config
+####################################################################
+# General Options
+export CLICOLOR=1
+setopt LOCAL_OPTIONS EXTENDED_GLOB
+
+# Completions
+setopt AUTO_MENU ALWAYS_TO_END AUTO_LIST NO_MENU_COMPLETE COMPLETE_IN_WORD NOMATCH
+unsetopt FLOW_CONTROL
+zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+
+## Directories
+setopt AUTO_CD AUTO_PUSHD PUSHD_IGNORE_DUPS
+
+## History
+export HISTFILE=${XDG_CACHE_HOME}/zsh/zsh_history   # put history to cache, seperating it from the other ZDOT files
+HISTSIZE=50000
+SAVEHIST=10000
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt inc_append_history
+setopt share_history
+
+## Jobs
+setopt NOTIFY
+
+## Prompting
+setopt PROMPT_SUBST
+
+## Script and Functions
+setopt MULTIOS CDABLE_VARS
+unsetopt correctall BEEP
+
+# prompt
+eval "$(starship init zsh)"
+
+# load and comp init
+autoload -Uz compinit
+
+###############################################################################
+# ALIASES
+###############################################################################
+
+alias k='clear'
+alias kk='clear && reset'
+alias ls='ls --color=auto'
+
+# aliases and functions
+alias saf='search-alias-functions'
+search-alias-functions(){
+    echo '\e[1;34mNames\e[0m'
+    print -l ${(ok)functions} | grep $1;
+    echo '\e[1;34mAliases\e[0m'
+    alias | grep $1;
+}
+
+# curls
+alias weather='curl wttr.in'
+alias news='curl getnews.tech'
+alias cheatsheet='curl cheat.sh'
+alias rates='curl rate.sx'
+
+# file system
+alias .....='cd ../../../../'
+alias ....='cd ../../../'
+alias ...='cd ../../'
+alias ..='cd ..'
+alias grep='rg'
+alias ll='ls -la'
+
+# git
+export GIT_LOG_PRETTY_FORMAT='%C(green)%h%C(auto)%d%C(reset) - %s | %C(cyan)%an %C(dim)%cr%C(reset)'
+alias ga='git add'
+alias gaa='git add --all'
+alias gb='git branch -r'
+alias gc='git clone'
+alias gco='git checkout'
+alias gd='git diff --ignore-space-at-eol -b -w --ignore-blank-lines'
+alias gcm='git-commit'
+alias gh='git-log-graph'
+alias gl='git log'
+alias gph='git push'
+alias gpl='git pull'
+alias gr='git remote -v'
+alias gs='git status -sb --ignore-submodules'
+alias gsync='git checkout master && git pull --rebase && git checkout - && git rebase master'
+git-commit(){
+    git commit -m ${1:-'Refactor'};
+    }
+git-log-graph(){
+    git log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10};
+    }
+
+# dotfiles
+dot () {
+    git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"
+    }
+alias da='dot add'
+alias daa='dot add -u'
+alias dcm='dot commit -m'
+alias dh='dot-log-graph'
+alias ddiff='dot diff --ignore-space-at-eol -b -w --ignore-blank-lines'
+alias dl='dot ls-files'
+alias dph='dot push'
+alias dpl='dot pull'
+alias ds='dot status -sb --ignore-submodules'
+dot-log-graph() {
+    dot log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10};
+    }
+
+# vscodium
+alias c='code .'
+
+# docker
+alias dkl='docker ps -a'
+alias dkr='docker run --rm'
+alias dkrh='docker run --rm -d -p 8081:80'
+alias dkrt='docker run --rm -it'
+
+# stack
+alias sb='stack build'
+alias sc='stack clean'
+alias stt='stack ide targets'
+alias sg='ghcid --command "stack repl" --test ":main"'
+alias sr='stack repl'
+alias st='stack test'
+alias sn='stack-new'
+stack-new(){
+    stack new $1 && cd $1 && stack setup && stack build;
+    }
+alias sup='stack upgrade --force-download'
+alias sinit='stack init'
+
+# neo-vim
+alias vim='nvim'
+alias v='nvim'
+alias vc='nvim $HOME/.config/machine/popos/zshrc'
+alias vce='nvim $HOME/.config/machine/popos/zshenv'
+alias vcs='nvim $HOME/.config/machine/popos/setup.sh'
+
+# youtube-dl
+alias y='youtube-dl'
+alias ya='youtube-dl --extract-audio --audio-format m4a --audio-quality 0'

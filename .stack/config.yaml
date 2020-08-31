@@ -1,0 +1,7 @@
+# stack defaults to `/Users/<you>/.local/bin` while mac needs `/usr/local/bin` to universal
+local-bin-path: /usr/local/bin
+allow-newer: true
+templates:
+    params:
+        author-name: Jeff Windsor
+

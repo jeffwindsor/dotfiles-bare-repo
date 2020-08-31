@@ -1,0 +1,78 @@
+{
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
+    },
+    "better-comments.highlightPlainText": true,
+    "breadcrumbs.enabled": true,
+    "debug.console.fontFamily": "'JetBrains Mono','Cascadia Code', monospace",
+    "terminal.integrated.fontFamily": "'JetBrains Mono','Cascadia Code', monospace",
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+    "editor.detectIndentation": false,
+    "editor.fontFamily": "'JetBrains Mono', 'Cascadia Code', monospace",
+    "editor.fontLigatures": true,
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": false,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "selection",
+    "editor.rulers": [ 90 ],
+    "editor.tabSize": 4,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": true,
+    "files.associations": {
+        "*.gitconfig": "properties",
+        "*.toml": "properties",
+        "*.config": "shellscript",
+        "*.el": "lisp",
+        ".shinc": "shellscript"
+    },
+    "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.hovers.enabled": false,
+    "liveshare.account": "jwindsor@cj.com",
+    "liveshare.anonymousGuestApproval": "reject",
+    "liveshare.featureSet": "stable",
+    "liveshare.guestApprovalRequired": true,
+    "workbench.activityBar.visible": true,
+    "workbench.colorCustomizations": {},
+    "workbench.editor.tabCloseButton": "left",
+    "workbench.panel.defaultLocation": "right",
+    "workbench.sideBar.location": "left",
+    "vim.debug.silent": true,
+    "vim.leader": "<space>",
+    "vim.handleKeys":{
+        "<D-c>": false
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+          "before": ["B"],
+          "after":["^"]
+        },
+        {
+            "before": ["E"],
+            "after":["$"]
+        }
+      ],
+    "workbench.startupEditor": "none",
+    "markdown.preview.fontSize": 12,
+    "workbench.fontAliasing": "auto",
+    "update.mode": "manual",
+    "workbench.colorTheme": "One Dark Pro",
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "vim.easymotionMarkerFontFamily": "monospace",
+    "debug.allowBreakpointsEverywhere": true,
+    "editor.lineNumbers": "relative",
+    "window.zoomLevel": 1,
+    "window.titleBarStyle": "custom",
+    "aws.telemetry": true,
+    "aws.profile": "profile:default",
+    "terminal.integrated.rendererType": "dom"
+}

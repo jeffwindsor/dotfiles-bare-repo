@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+###############################################################################
+# ALIASES
+###############################################################################
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias reg-refresh='regolith-look refresh'
+alias reg-settings='xrdb -query'
+
+source $HOME/.config/machine/zshrc
+
