@@ -62,7 +62,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open 'https://outlook.office365.com/mail/inbox/id/AAQkADllY2ZmYWU1LTk4OTktNGFkZC1hNTY4LWE3OGMxZmU1MTllOQAQAAc2SStbfkhPqjWQloOKOtg%3D' 'https://mail.google.com/mail/u/0/#inbox' 'https://app.slack.com/client/T02921102/unreads' 'https://jira.cnvrmedia.net/secure/RapidBoard.jspa?rapidView=1232' 'https://jira.cnvrmedia.net/secure/RapidBoard.jspa?rapidView=2042' 'https://venturaunified.instructure.com/accounts/1/external_tools/107?launch_type=global_navigation'"
+                                        "shell_command": "open 'https://www.parentsquare.com/schools/3126/feeds' 'https://venturaunified.instructure.com/login/canvas' 'https://outlook.office365.com' 'https://mail.google.com/mail/u/0/#inbox' 'https://app.slack.com/client/T02921102/unreads' 'https://jira.cnvrmedia.net/secure/RapidBoard.jspa?rapidView=1232' 'https://jira.cnvrmedia.net/secure/RapidBoard.jspa?rapidView=2042'"
                                     }
                                 ],
                                 "type": "basic"
