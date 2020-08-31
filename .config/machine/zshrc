@@ -55,6 +55,7 @@ alias kk='clear && reset'
 alias hlsf='stack test haskell-language-server:test:func-test'
 alias hlst='stack test haskell-language-server:test:tasty'
 
+
 find-git-dirs () {
     find $1 -type d \( -exec test -d "{}/.git" -a "{}" != "." \; -print -prune -o -name .git -prune \)
 }
@@ -71,6 +72,7 @@ alias srcv='exec-git-dirs vscodium $SRC'
 alias srci='exec-git-dirs idea $SRC'
 alias dots='exec-files nvim $XDG_CONFIG_HOME'
 alias locs='exec-files nvim $HOME/.local'
+
 
 # aliases and functions
 alias saf='search-alias-functions'
@@ -105,6 +107,7 @@ alias ...='cd ../../'
 alias ..='cd ..'
 
 # git
+git-echo() { git pull origin master; git push echo master }
 export GIT_LOG_PRETTY_FORMAT='%C(green)%h%C(auto)%d%C(reset) - %s | %C(cyan)%an %C(dim)%cr%C(reset)'
 alias ga='git add'
 alias gaa='git add --all'

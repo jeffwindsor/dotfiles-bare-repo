@@ -70,7 +70,7 @@
     "vim.easymotionMarkerFontFamily": "monospace",
     "debug.allowBreakpointsEverywhere": true,
     "editor.lineNumbers": "relative",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 3,
     "window.titleBarStyle": "custom",
     "aws.telemetry": true,
     "aws.profile": "profile:default",
