@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./jmw/base.nix
-      ./jmw/kde.nix
+      ./jmw/xmonad.nix
     ];
   system.stateVersion = "20.03";
 }

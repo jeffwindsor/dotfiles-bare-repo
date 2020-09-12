@@ -32,8 +32,6 @@
     ripgrep                         # A utility that combines the usability of The Silver Searcher with the raw speed of grep
     spotify	                      # Play music from the Spotify music service
     unzip                           # An extraction utility for archives compressed in .zip format
-    vifm                            # Terminal File Browser
-    vivaldi                         # A Browser for our Friends, powerful and personal
 
   ];
 
