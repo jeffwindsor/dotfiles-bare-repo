@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-
 # zsh plugins
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -90,7 +89,7 @@ package-upgrade(){
     brew upgrade
 
     say "Casks"
-    brew cask upgrade
+    brew upgrade --cask
 
     say "Masses"
     mas upgrade

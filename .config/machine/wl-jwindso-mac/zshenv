@@ -45,21 +45,19 @@ export AD_SYSTEMS_DEV_ACCT='157941295081'
 export CJDBA_PROD_ACCT='095602282417'
 
 export MAVEN_OPTS="-Xmx8G -Xss3m -XX:ReservedCodeCacheSize=256m"
-
 export PROJECTS_DIR="$HOME/.local/cjdev"
 export SOFTWARE_HOME="$PROJECTS_DIR"
-export JAVA_HOME="$SOFTWARE_HOME/java/1.8.0-osx"
-export TNS_ADMIN="$SOFTWARE_HOME/sqlplus/"
-export DYLD_LIBRARY_PATH="$SOFTWARE_HOME/sqlplus/darwin"
-export CLASSPATH="$SOFTWARE_HOME/bin:$CLASSPATH"
+#export JAVA_HOME="$SOFTWARE_HOME/java/1.8.0-osx"
+#export TNS_ADMIN="$SOFTWARE_HOME/sqlplus/"
+#export DYLD_LIBRARY_PATH="$SOFTWARE_HOME/sqlplus/darwin"
+#export CLASSPATH="$SOFTWARE_HOME/bin:$CLASSPATH"
 export DEVDB_HOST=devdb.db.cj.com
 export DEVDB_USERNAME=spud
 export DEVDB_PORT=1521
 export DEVDB_SID=devdb
 
-export PATH="$PATH:$JAVA_HOME/bin"
-export PATH="$PATH:$SOFTWARE_HOME/resin"
-export PATH="$PATH:$SOFTWARE_HOME/bin"
+#export PATH="$PATH:$JAVA_HOME/bin"
+#export PATH="$PATH:$SOFTWARE_HOME/resin"
+#export PATH="$PATH:$SOFTWARE_HOME/bin"
 
-[ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
-
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
