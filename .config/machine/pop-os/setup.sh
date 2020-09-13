@@ -2,6 +2,8 @@
 set -e
 cd "$(dirname "${0}")"
 
+alias i='sudo apt -y install'
+
 ../setup-git-clones.sh
 
 # Jetbrains Mono Font
@@ -12,21 +14,21 @@ cd ~/Downloads
     && cd -
 
 # pimp my shell
-sudo apt -y install alacritty
-sudo apt -y install zsh zsh-autosuggestions zsh-syntax-highlighting
+i alacritty
+i zsh zsh-autosuggestions zsh-syntax-highlighting
 chsh -s "$(which zsh)"
 
 # nemo as default file manager
-sudo apt -y install nemo
+i nemo
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
 
 # clojure
-sudo apt -y install clojure leiningen
+i clojure leiningen
 
 # haskell
-sudo apt -y install haskell-stack \
+i haskell-stack \
   && ../setup-stack-utils.sh
 
 # rust
@@ -34,26 +36,26 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # js / nodejs
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - \
-    && sudo apt -y install nodejs
+    && i nodejs
 
 # go
-sudo apt -y install golang
+i golang
 
 # nvim
-sudo apt -y install neovim 
+i neovim 
 ../setup-neovim-plug.sh
 
 # emacs - doom edition
-sudo apt -y install emacs
+i emacs
 rm -rf $HOME/.emacs.d
 git clone --depth 1 https://github.com/hlissner/doom-emacs $HOME/.emacs.d \
 $HOME/.emacs.d/bin/doom install
 
 # utils
-sudo apt -y install ripgrep fzf git tldr wget jq autojump
+i ripgrep fzf git tldr wget jq autojump
 
 # gestures
-sudo apt -y install wmctrl python3-setuptools xdotool python3-gi libinput-tools python-gobject
+i wmctrl python3-setuptools xdotool python3-gi libinput-tools python-gobject
 git clone https://github.com/bulletmark/libinput-gestures.git
 cd libinput-gestures
 sudo make install
@@ -63,7 +65,7 @@ libinput-gestures-setup autostart
 libinput-gestures-setup start
 
 # entertainment
-sudo apt -y install spotify-client vlc
+i spotify-client vlc
 
 # starship prompt
 curl -fsSL https://starship.rs/install.sh | bash
@@ -104,3 +106,10 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/terminal ['<Super>Retu
 
 # Browser
 dconf write /org/gnome/settings-daemon/plugins/media-keys/www ['<Shift><Super>Return']
+
+###########################################################################
+# XMONAD
+###########################################################################
+# i xmonad libghc-xmonad-contrib-dev xmobar nitrogen compton
+# add links for xmonad and xmobar config
+

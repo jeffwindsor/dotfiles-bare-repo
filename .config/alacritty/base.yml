@@ -1,0 +1,7 @@
+window:
+  decorations: none
+
+font:
+  normal:
+    family: 'JetBrains Mono'
+  size: 14.0

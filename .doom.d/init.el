@@ -39,8 +39,8 @@
        ophints           ; highlight the region an operation acts on
        (popup
         +all
-        +defaults)   ; tame sudden yet inevitable temporary windows
-       pretty-code       ; ligatures or substitute text with pretty symbols
+        +defaults)       ; tame sudden yet inevitable temporary windows
+       ligatures         ; ligatures or substitute text with pretty symbols
        tabs              ; an tab bar for Emacs
        ;; treemacs          ; a project drawer, like neotree but cooler
        ;;unicode           ; extended unicode support for various languages
@@ -67,7 +67,8 @@
 
        :emacs
        (dired
-        +icons)             ; making dired pretty [functional]
+        +icons
+        +ranger)             ; making dired pretty [functional]
        electric          ; smarter, keyword-based electric-indent
        ;;ibuffer         ; interactive buffer management
        undo              ; persistent, smarter undo for your inevitable mistakes
@@ -84,6 +85,9 @@
        spell             ; tasing you for misspelling mispelling
        ;;grammar           ; tasing grammar mistake every you make
 
+       :os
+       macos             ; MacOS-specific commands
+
        :tools
        ;;ansible
        ;;debugger          ; FIXME stepping through code, to help you add bugs
@@ -97,7 +101,6 @@
         +devdocs
         +docsets)          ; navigate your code and its documentation
        ;;lsp
-       macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds

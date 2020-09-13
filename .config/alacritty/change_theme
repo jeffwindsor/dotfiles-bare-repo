@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+cat base.yml > alacritty.yml
+cat $1.yml >> alacritty.yml
+
+
