@@ -116,17 +116,17 @@ alias t1='sqlplus -L cj@tcjoweb1'
 ############################################################################################
 # AWS
 ############################################################################################
-aws-assume-provisioner() {
-    aws-assume-account-duration-role 3599 'cjorganization/CJProvisionerAccessRole' $1 $2
+aws-pro() {
+    aws-assume-role 'cjorganization/CJProvisionerAccessRole' 3599 $1 $2
 }
-aws-assume-dev() {
-    aws-assume-account-duration-role 43199 'cjorganization/CJDeveloperAccessRole' $1 $2
+aws-dev() {
+    aws-assume-role 'cjorganization/CJDeveloperAccessRole' 43199 $1 $2
 }
-aws-assume-account-duration-role() {
+aws-assume-role() {
     local user='597974043991:mfa/jwindsor@cj.com'
-    local duration=$1
     local region='us-west-1'
-    local role=$2
+    local role=$1
+    local duration=$2
     local account=$3
     local token=$4
 
@@ -155,11 +155,6 @@ aws-assume-account-duration-role() {
             }))' \
         --output text)"
 }
-alias aws-empire='aws-assume-dev $EMPIRE_DEV_ACCT'
-alias aws-empire-pro='aws-assume-provisioner $EMPIRE_PROD_ACCT'
-alias aws-cjdev='aws-assume-dev $CJDEV_DEV_ACCT'
-alias aws-cjdev-pro='aws-assume-provisioner $CJDEV_PROD_ACCT'
-alias aws-comm-pro='aws-assume-provisioner $COMM_DETAIL_PRD_ACCT'
 aoc () {
     open "$(aws-get-url-inline)"
     # open -a "Brave Browser" $($HOME/.local/functions/aws-get-url.py);
@@ -205,14 +200,14 @@ function patch-query() { ssh -t ${1} "sudo /usr/sbin/cnvr-patch query"; }
 function invoke-adjustments-processor(){
     local token=$1
 
-    aws-assume-provisioner $EMPIRE_PROD_ACCT $token
+    aws-pro $EMPIRE_PROD_ACCT $token
     aws lambda invoke --function-name adjustment-processor adjustment-processor.txt
     cat adjustment-processor.txt
     aes
 }
 function adjustments-list(){
     local token=$1
-    aws-assume-dev $EMPIRE_DEV_ACCT $token
+    aws-dev $EMPIRE_DEV_ACCT $token
     echo "ITP Source Browser Adjustments"
     aws s3 ls "s3://datalake-s3-buckets-datalake-659qwgl37b60/browserAdjustments/" | grep ".json" | sort
     aes

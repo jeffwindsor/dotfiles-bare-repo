@@ -45,16 +45,15 @@ autoload -Uz compinit
 ###############################################################################
 eval "$(starship init zsh)"
 
+alacritty_change_theme() {
+    cat $HOME/.config/alacritty/base.yml > $HOME/.config/alacritty/alacritty.yml
+    cat $HOME/.config/alacritty/$1.yml  >> $HOME/.config/alacritty/alacritty.yml
+}
 ###############################################################################
 # ALIASES
 ###############################################################################
 alias k='clear'
 alias kk='clear && reset'
-
-# CODE 
-alias hlsf='stack test haskell-language-server:test:func-test'
-alias hlst='stack test haskell-language-server:test:tasty'
-
 
 find-git-dirs () {
     find $1 -type d \( -exec test -d "{}/.git" -a "{}" != "." \; -print -prune -o -name .git -prune \)
@@ -64,13 +63,14 @@ exec-git-dirs () {
     [ ! -z "$result" ] && $1 $result
 }
 exec-files () {
-    local result=`fd . "$2" -t f -d 2 -H --ignore-file $XDG_CONFIG_HOME/.fdignore | cut -d '/' -f5- | fzf --reverse --height 40%`
+    local result=`fd . "$2" -t f -H --ignore-file $XDG_CONFIG_HOME/.fdignore | cut -d '/' -f5- | fzf --reverse --height 40%`
     [ ! -z "$result" ] && $1 "$2/$result"
 }
 alias src='exec-git-dirs cd $SRC'
 alias srcv='exec-git-dirs vscodium $SRC'
 alias srci='exec-git-dirs idea $SRC'
 alias dots='exec-files nvim $XDG_CONFIG_HOME'
+alias machine='exec-files nvim $XDG_CONFIG_HOME/machine'
 alias locs='exec-files nvim $HOME/.local'
 
 
