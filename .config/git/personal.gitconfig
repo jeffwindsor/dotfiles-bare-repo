@@ -1,10 +1,8 @@
 [user]
     name = Jeff Windsor
     email = jeff.windsor@gmail.com
-
 [core]
     excludesFile = ~/.gitignore
-
 [alias]
     a  = add
     aa = add --all
@@ -13,6 +11,7 @@
     ph = push
     pl = pull --rebase
     s  = status -sb --ignore-submodules
-
 [pull]
 	ff = only
+[init]
+    defaultBranch = main

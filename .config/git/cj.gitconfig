@@ -1,13 +1,10 @@
 [user]
 	name = Windsor, Jeffrey
 	email = jwindsor@cj.com
-
 [credential]
     helper = osxkeychain
-
 [core]
     excludesFile = ~/.gitignore
-
 [alias]
     a  = add
     aa = add --all
@@ -16,6 +13,7 @@
     ph = push
     pl = pull --rebase
     s  = status -sb --ignore-submodules
-
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
