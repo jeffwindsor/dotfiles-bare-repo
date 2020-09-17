@@ -107,6 +107,7 @@ alias ...='cd ../../'
 alias ..='cd ..'
 
 # git
+alias git-to-main='git branch -m master main && git push -u origin main'
 git-echo() { git pull origin master; git push echo master }
 export GIT_LOG_PRETTY_FORMAT='%C(green)%h%C(auto)%d%C(reset) - %s | %C(cyan)%an %C(dim)%cr%C(reset)'
 alias ga='git add'
