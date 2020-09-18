@@ -8,18 +8,7 @@ export CLICOLOR=1
 setopt LOCAL_OPTIONS EXTENDED_GLOB
 setopt AUTO_MENU ALWAYS_TO_END AUTO_LIST NO_MENU_COMPLETE COMPLETE_IN_WORD NOMATCH
 unsetopt FLOW_CONTROL
-zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
-zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
-zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
-zstyle ':completion:*' special-dirs true
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
 setopt AUTO_CD AUTO_PUSHD PUSHD_IGNORE_DUPS
-HISTSIZE=50000
-SAVEHIST=10000
 setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
@@ -31,14 +20,19 @@ setopt PROMPT_SUBST
 setopt MULTIOS CDABLE_VARS
 unsetopt correctall BEEP
 
-# load and comp init
-autoload -Uz compinit
-# speed improvement to only dump file once a day, not every load <https://carlosbecker.com/posts/speeding-up-zsh>
-#if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
-# compinit
-#else
-# compinit -C
-#fi
+HISTSIZE=50000
+SAVEHIST=10000
+
+# auto/tab completion 
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)    #include hidden files
+
+# vim keys
+bindkey -v
+export KEYTIMEOUT=1
 
 ###############################################################################
 # PROMPT
