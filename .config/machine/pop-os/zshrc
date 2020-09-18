@@ -8,5 +8,9 @@ alias ll='ls -la'
 alias reg-refresh='regolith-look refresh'
 alias reg-settings='xrdb -query'
 
+source /usr/share/autojump/autojump.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 source $HOME/.config/machine/zshrc
 
