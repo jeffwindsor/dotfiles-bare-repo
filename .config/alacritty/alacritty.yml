@@ -5,31 +5,31 @@ font:
   normal:
     family: 'JetBrains Mono'
   size: 12.0
-# Colors (Wombat)
+# Colors (Material Theme)
 colors:
   # Default colors
   primary:
-    background: '0x1f1f1f'
-    foreground: '0xe5e1d8'
+    background: '0x1e282d'
+    foreground: '0xc4c7d1'
 
   # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xf7786d'
-    green:   '0xbde97c'
-    yellow:  '0xefdfac'
-    blue:    '0x6ebaf8'
-    magenta: '0xef88ff'
-    cyan:    '0x90fdf8'
-    white:   '0xe5e1d8'
+    black:   '0x666666'
+    red:     '0xeb606b'
+    green:   '0xc3e88d'
+    yellow:  '0xf7eb95'
+    blue:    '0x80cbc4'
+    magenta: '0xff2f90'
+    cyan:    '0xaeddff'
+    white:   '0xffffff'
 
   # Bright colors
   bright:
-    black:   '0xb4b4b4'
-    red:     '0xf99f92'
-    green:   '0xe3f7a1'
-    yellow:  '0xf2e9bf'
-    blue:    '0xb3d2ff'
-    magenta: '0xe5bdff'
-    cyan:    '0xc2fefa'
+    black:   '0xa1a1a1'
+    red:     '0xeb606b'
+    green:   '0xc3e88d'
+    yellow:  '0xf7eb95'
+    blue:    '0x7dc6bf'
+    magenta: '0x6c71c4'
+    cyan:    '0x35434d'
     white:   '0xffffff'

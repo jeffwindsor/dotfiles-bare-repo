@@ -40,7 +40,7 @@ inoremap jk <esc>
 source $HOME/.config/nvim/plugins.vim
 
 "== Theming
-let g:lightline = { 'colorscheme' : 'tender' }
-colorscheme tender "gruvbox tender 
+let g:lightline = { 'colorscheme' : 'tender' } " one tender nord
+colorscheme tender "gruvbox tender one nord
 
 
