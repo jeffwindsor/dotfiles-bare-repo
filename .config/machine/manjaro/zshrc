@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+alias ls='ls --color=auto'
+alias grep='rg'
+alias ll='ls -la'
+
+alias pmirror='sudo pacman-mirrors --fasttrack'
+alias pup='sudo pacman -Syyu'
+
+source ../zshrc
+
