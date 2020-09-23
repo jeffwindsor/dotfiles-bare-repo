@@ -47,6 +47,31 @@ alias sha1="shasum -a 1 "
 alias sha256="shasum -a 256 "
 alias sha512="shasum -a 512 "
 
+# curls
+alias weather='curl wttr.in'
+alias news='curl getnews.tech'
+alias cheatsheet='curl cheat.sh'
+alias rates='curl rate.sx'
+
+# docker
+alias dkl='docker ps -a'
+alias dkr='docker run --rm'
+alias dkrh='docker run --rm -d -p 8081:80'
+alias dkrt='docker run --rm -it'
+
+# stack
+alias sb='stack build'
+alias sc='stack clean'
+alias stt='stack ide targets'
+alias sg='ghcid --command "stack repl" --test ":main"'
+alias sr='stack repl'
+alias st='stack test'
+alias sn='stack-new'
+stack-new(){
+    stack new $1 && cd $1 && stack setup && stack build;
+    }
+alias sup='stack upgrade --force-download'
+alias sinit='stack init'
 green="$(tput setaf 2)"
 reset="$(tput sgr0)"
 

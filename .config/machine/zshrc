@@ -39,34 +39,22 @@ export KEYTIMEOUT=1
 ###############################################################################
 eval "$(starship init zsh)"
 
+alias k='clear'
+alias kk='clear && reset'
+
 alacritty_change_theme() {
     cat $HOME/.config/alacritty/base.yml > $HOME/.config/alacritty/alacritty.yml
     cat $1 >> $HOME/.config/alacritty/alacritty.yml
 }
-###############################################################################
-# ALIASES
-###############################################################################
-alias k='clear'
-alias kk='clear && reset'
+alias theme='ffs alacritty_change_theme $SRC/hub/alacritty-theme/themes'
 
-find-git-dirs () {
-    find $1 -type d \( -exec test -d "{}/.git" -a "{}" != "." \; -print -prune -o -name .git -prune \)
-}
-exec-git-dirs () {
-    local result=`find-git-dirs $2 | cut -d '/' -f5- | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden --reverse --height 40% | awk -v path="$2/" '{print path $0}'`
-    [ ! -z "$result" ] && $1 $result
-}
-exec-files () {
+ffs () {
     local result=`fd . "$2" -t f -H --ignore-file $XDG_CONFIG_HOME/.fdignore | fzf --reverse --height 40%`
     [ ! -z "$result" ] && $1 "$result"
 }
-alias src='exec-git-dirs cd $SRC'
-alias srcv='exec-git-dirs vscodium $SRC'
-alias srci='exec-git-dirs idea $SRC'
-alias dots='exec-files nvim $XDG_CONFIG_HOME'
-alias machine='exec-files nvim $XDG_CONFIG_HOME/machine'
-alias locs='exec-files nvim $HOME/.local'
-alias theme='exec-files alacritty_change_theme $SRC/hub/alacritty-theme/themes'
+alias dots='ffs nvim $XDG_CONFIG_HOME'
+alias machine='ffs nvim $XDG_CONFIG_HOME/machine'
+alias locs='ffs nvim $HOME/.local'
 
 # aliases and functions
 alias saf='search-alias-functions'
@@ -87,12 +75,6 @@ expand-alias () {
     fi
   fi
 }
-
-# curls
-alias weather='curl wttr.in'
-alias news='curl getnews.tech'
-alias cheatsheet='curl cheat.sh'
-alias rates='curl rate.sx'
 
 # file system
 alias .....='cd ../../../../'
@@ -120,10 +102,18 @@ alias gs='git status -sb --ignore-submodules'
 alias gsync='git checkout master && git pull --rebase && git checkout - && git rebase master'
 git-commit(){
     git commit -m ${1:-'Refactor'};
-    }
+}
 git-log-graph(){
     git log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10};
-    }
+}
+find-git-dirs () {
+    find $1 -type d \( -exec test -d "{}/.git" -a "{}" != "." \; -print -prune -o -name .git -prune \)
+}
+exec-git-dirs () {
+    local result=`find-git-dirs $2 | cut -d '/' -f5- | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden --reverse --height 40% | awk -v path="$2/" '{print path $0}'`
+    [ ! -z "$result" ] && $1 $result
+}
+alias src='exec-git-dirs cd $SRC'
 
 # dotfiles
 dot () {
@@ -144,26 +134,6 @@ dot-log-graph() {
 
 # vscodium
 alias c='code .'
-
-# docker
-alias dkl='docker ps -a'
-alias dkr='docker run --rm'
-alias dkrh='docker run --rm -d -p 8081:80'
-alias dkrt='docker run --rm -it'
-
-# stack
-alias sb='stack build'
-alias sc='stack clean'
-alias stt='stack ide targets'
-alias sg='ghcid --command "stack repl" --test ":main"'
-alias sr='stack repl'
-alias st='stack test'
-alias sn='stack-new'
-stack-new(){
-    stack new $1 && cd $1 && stack setup && stack build;
-    }
-alias sup='stack upgrade --force-download'
-alias sinit='stack init'
 
 # neo-vim
 alias vim='nvim'
