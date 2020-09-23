@@ -27,6 +27,7 @@ brew install clojure
 brew install haskell-stack
 brew install hlint
 brew install rustup-init
+brew install elm
 brew install neovim
 brew cask install vscodium
 
@@ -34,7 +35,6 @@ brew cask install vscodium
 brew tap homebrew/cask-fonts
 brew cask install font-cascadia font-fira-code font-inconsolata
 brew cask install font-source-code-pro font-jetbrains-mono
-
 
 #  installing Mac App Store CLI (mas)
 brew tap mas-cli/tap

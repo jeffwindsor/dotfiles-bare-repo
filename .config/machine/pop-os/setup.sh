@@ -26,8 +26,7 @@ gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
 
 # nvim
-i neovim \
-  && ../setup-neovim-plug.sh
+i neovim && ../setup-neovim-plug.sh
 
 # emacs - doom edition
 i emacs \
@@ -35,22 +34,14 @@ i emacs \
   && git clone --depth 1 https://github.com/hlissner/doom-emacs $HOME/.emacs.d \
   && $HOME/.emacs.d/bin/doom install
 
-# clojure
-i clojure leiningen
-
-# haskell
-i haskell-stack \
-  && ../setup-stack-utils.sh
-
-# rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# js / nodejs
+# languages
+#i clojure leiningen
+i elm
+#i golang
+#i haskell-stack ../setup-stack-utils.sh
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - \
     && i nodejs
-
-# go
-i golang
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # utils
 i ripgrep fzf fd git tldr wget jq autojump
@@ -86,11 +77,6 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/www ['<Shift><Super>Re
 #####################################################################################
 # MANUAL INSTALLS
 #####################################################################################
-# mega
 xdg-open https://mega.nz/sync 
-
-# brave
 xdg-open https://brave-browser.readthedocs.io/en/latest/installing-brave.html
-
-# vscodium
 xdg-open https://github.com/VSCodium/vscodium/releases
