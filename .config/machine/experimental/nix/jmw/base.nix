@@ -14,6 +14,7 @@
   environment.systemPackages = with pkgs; [
 
     # Terminal/Shell
+    alacritty                       # A cross-platform, GPU-accelerated terminal emulator
     starship                        # A minimal, blazing fast, and extremely customizable prompt for any shell
     zsh                             # The Z Shell
     zsh-autosuggestions             # Fish shell autosuggestions for Zsh

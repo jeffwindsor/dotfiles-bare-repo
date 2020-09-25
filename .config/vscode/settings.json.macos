@@ -74,5 +74,6 @@
     "window.titleBarStyle": "custom",
     "aws.telemetry": true,
     "aws.profile": "profile:default",
-    "terminal.integrated.rendererType": "dom"
+    "terminal.integrated.rendererType": "dom",
+    "editor.wordWrapColumn": 120
 }
