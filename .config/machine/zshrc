@@ -41,6 +41,9 @@ eval "$(starship init zsh)"
 
 alias k='clear'
 alias kk='clear && reset'
+alias src='cd $HOME/src'
+alias config='cd $HOME/config'
+alias machine='cd $HOME/machine'
 
 alacritty_change_theme() {
     cat $HOME/.config/alacritty/base.yml > $HOME/.config/alacritty/alacritty.yml
@@ -52,9 +55,9 @@ ffs () {
     local result=`fd . "$2" -t f -H --ignore-file $XDG_CONFIG_HOME/.fdignore | fzf --reverse --height 40%`
     [ ! -z "$result" ] && $1 "$result"
 }
-alias dots='ffs nvim $XDG_CONFIG_HOME'
-alias machine='ffs nvim $XDG_CONFIG_HOME/machine'
-alias locs='ffs nvim $HOME/.local'
+alias configs='ffs nvim $XDG_CONFIG_HOME'
+alias machines='ffs nvim $XDG_CONFIG_HOME/machine'
+alias locals='ffs nvim $HOME/.local'
 
 # aliases and functions
 alias saf='search-alias-functions'
