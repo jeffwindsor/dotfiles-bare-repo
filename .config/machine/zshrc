@@ -42,8 +42,8 @@ eval "$(starship init zsh)"
 alias k='clear'
 alias kk='clear && reset'
 alias src='cd $HOME/src'
-alias config='cd $HOME/config'
-alias machine='cd $HOME/machine'
+alias config='cd $XDG_CONFIG_HOME'
+alias machine='cd $XDG_CONFIG_HOME/machine'
 
 alacritty_change_theme() {
     cat $HOME/.config/alacritty/base.yml > $HOME/.config/alacritty/alacritty.yml
