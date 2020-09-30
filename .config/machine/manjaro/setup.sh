@@ -2,6 +2,10 @@
 set -e
 cd "$(dirname "${0}")"
 
+sudo pacman-mirrors --fasttrack
+sudo pacman -Syyu
+
+
 sudo pacman -S --noconfirm yay
 
 ../setup-git-clones.sh
