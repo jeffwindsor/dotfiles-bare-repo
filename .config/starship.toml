@@ -36,6 +36,9 @@ style = "green"
 symbol = ""
 style = "cyan"
 
+[python]
+disabled = true
+
 [username]
 disabled=false
 format = "[$user](blue)@"
