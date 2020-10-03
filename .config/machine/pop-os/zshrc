@@ -8,6 +8,23 @@ alias ll='ls -la'
 alias reg-refresh='regolith-look refresh'
 alias reg-settings='xrdb -query'
 
+package-upgrade(){
+    sudo apt update
+    sudo apt upgrade
+
+    echo "==> tldr"
+    tldr --update
+
+    echo "==> starship prompt"
+    curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
+    
+    echo "==> rust"
+    rustup update
+
+    echo "==> doom"
+    $HOME/.emacs.d/bin/doom --yes upgrade
+}
+
 source /usr/share/autojump/autojump.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

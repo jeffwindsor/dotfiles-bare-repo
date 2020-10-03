@@ -45,6 +45,7 @@ alias src='cd $HOME/src'
 alias repo='cd $HOME/src'
 alias config='cd $XDG_CONFIG_HOME'
 alias machine='cd $XDG_CONFIG_HOME/machine'
+alias up='package-upgrade'
 
 alacritty_change_theme() {
     cat $HOME/.config/alacritty/base.yml > $HOME/.config/alacritty/alacritty.yml
@@ -53,7 +54,7 @@ alacritty_change_theme() {
 alias theme='ffs alacritty_change_theme $SRC/hub/alacritty-theme/themes'
 
 ffs () {
-    local result=`fd . "$2" -t f -H --ignore-file $XDG_CONFIG_HOME/.fdignore | fzf --reverse --height 40%`
+    local result=`fd . "$2" -t f -H --ignore-file $XDG_CONFIG_HOME/.fdignore | fzf --reverse --height 40% --query="$3"`
     [ ! -z "$result" ] && $1 "$result"
 }
 alias configs='ffs nvim $XDG_CONFIG_HOME'
@@ -125,7 +126,7 @@ dot () {
     git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"
     }
 alias da='dot add'
-alias daa='dot add -u'
+alias daa='dot add -u && dot add $HOME/org/ && dot add $HOME/.config/machine/'
 alias dcm='dot commit -m'
 alias dh='dot-log-graph'
 alias ddiff='dot diff --ignore-space-at-eol -b -w --ignore-blank-lines'
