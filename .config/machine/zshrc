@@ -42,6 +42,7 @@ eval "$(starship init zsh)"
 alias k='clear'
 alias kk='clear && reset'
 alias src='cd $HOME/src'
+alias repo='cd $HOME/src'
 alias config='cd $XDG_CONFIG_HOME'
 alias machine='cd $XDG_CONFIG_HOME/machine'
 
@@ -116,6 +117,7 @@ exec-git-dirs () {
     local result=`find-git-dirs $2 | cut -d '/' -f5- | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden --reverse --height 40% | awk -v path="$2/" '{print path $0}'`
     [ ! -z "$result" ] && $1 $result
 }
+alias srcs='exec-git-dirs cd $SRC'
 alias repos='exec-git-dirs cd $SRC'
 
 # dotfiles
