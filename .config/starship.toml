@@ -1,32 +1,35 @@
-prompt_order = [
-    "username",
-    "hostname",
-    "directory",
-    "git_branch",
-    "git_state",
-    "git_status",
-    "docker_context",
-    "haskell",
-    "rust",
-    "nix_shell",
-    "line_break",
-    "jobs",
-    "time",
-    "cmd_duration",
-    "character",
-]
-
 [character]
-symbol=":"
-vimcd_symbol="::"
+symbol = ":"
+vimcd_symbol = "::"
+
+[prompt]
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$docker_context\
+$haskell\
+$rust\
+$nix_shell\
+$line_break\
+$jobs\
+$time\
+$cmd_duration\
+$character\
+"""
+
+[aws]
+disabled = true
 
 [cmd_duration]
-min_time=4
-style="dimmed yellow"
-disabled=true
+disabled = true
 
 [directory]
 truncation_length = 7
+truncate_to_repo = true
 style = "green"
 
 [git_branch]
@@ -35,12 +38,12 @@ style = "cyan"
 
 [username]
 disabled=false
-style = "blue"
+format = "[$user](blue)@"
 
 [hostname]
 disabled=false
-style = "red"
+format = "[$hostname](red)"
 
 [time]
 disabled=false
-style="dimmed green"
+format = "[$time](dimmed green)"
