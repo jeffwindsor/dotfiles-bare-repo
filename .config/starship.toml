@@ -1,6 +1,7 @@
 [character]
-symbol = ":"
-vimcd_symbol = "::"
+success_symbol = "[ :](green)"
+error_symbol = "[ :](red)"
+vicmd_symbol = "[ ::](green)"
 
 [prompt]
 format = """
