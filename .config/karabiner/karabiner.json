@@ -19,10 +19,29 @@
                         "description": "CapsLock as Escape",
                         "manipulators": [
                             {
-                                "from": { "key_code": "caps_lock", "modifiers": { "optional": [ "any" ] } },
-                                "to": [ { "key_code": "left_command", "modifiers": [ "left_control", "left_option" ] } ],
-                                "to_if_alone": [ { "key_code": "escape" } ],
-                                "type" : "basic"
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -30,28 +49,85 @@
                         "description": "Application Launchers",
                         "manipulators": [
                             {
-                                "from": { "key_code": "return_or_enter", "modifiers": { "mandatory": [ "left_command" ] } },
-                                "to": [ { "shell_command": "open -na 'alacritty'" } ],
+                                "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -na 'alacritty'"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "from": { "key_code": "return_or_enter", "modifiers": { "mandatory": [ "left_command", "left_shift" ] } },
-                                "to": [ { "shell_command": "open -na 'Brave Browser'" } ],
+                                "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -na 'Brave Browser'"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "from": { "key_code": "e", "modifiers": { "mandatory": [ "left_command" ] } },
-                                "to": [ { "shell_command": "open -na 'Emacs'" } ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -na 'Emacs'"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "from": { "key_code": "e", "modifiers": { "mandatory": [ "left_command", "left_shift" ] } },
-                                "to": [ { "shell_command": "open -na 'VSCodium'" } ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -na 'VSCodium'"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "from": { "key_code": "i", "modifiers": { "mandatory": [ "left_command" ] } },
-                                "to": [ { "shell_command": "open -a 'Intellij IDEA'" } ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Intellij IDEA'"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -96,24 +172,7 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "left_command"
-                            },
-                            "to": {
-                                "key_code": "left_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "left_option"
-                            },
-                            "to": {
-                                "key_code": "left_command"
-                            }
-                        }
-                    ]
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
