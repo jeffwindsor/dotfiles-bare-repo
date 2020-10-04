@@ -53,26 +53,8 @@ i spotify-client vlc
 #####################################################################################
 # Gnome
 #####################################################################################
-../setup-gnome.sh
-
-# Keyboard Shortcuts - Emacs
-dconf write /org/gnome/settings-daemon/plugins/media-keys/email @as []
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding '<Super>e'
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command  'emacs'
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name 'Launch eMacs'
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings ['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
-
-# Keyboard Shortcuts - Application Launcher
-dconf write /org/gnome/shell/extensions/pop-shell/activate-launcher ['<Super>space']
-
-# Keyboard Shortcuts - Move Mode
-dconf write /org/gnome/shell/extensions/pop-shell/tile-enter @as ['<Alt><Super>space']
-
-# Keyboard Shortcuts - Terminal
-dconf write /org/gnome/settings-daemon/plugins/media-keys/terminal ['<Super>Return']
-
-# Keyboard Shortcuts - Browser
-dconf write /org/gnome/settings-daemon/plugins/media-keys/www ['<Shift><Super>Return']
+source ../setup-gnome.sh
+source ./gnome-keyboard-shortcuts.sh
 
 #####################################################################################
 # MANUAL INSTALLS
