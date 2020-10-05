@@ -1,60 +1,56 @@
 #!/usr/bin/env sh
-
+set -e
 cd "$(dirname "${0}")"
 
-alias i='sudo apt -y install'
+# POP-OS
+alias ai='sudo apt -y install'
 
-../setup-git-clones.sh
+(source ../clone-know-gits.sh)
 
 # Jetbrains Mono Font
-JBM_FONT_ZIP=JetBrainsMono-2.001.zip
-wget https://download.jetbrains.com/fonts/$JBM_FONT_ZIP \
-    && unzip $JBM_FONT_ZIP -d ~/.local/share/fonts \
-    && fc-cache -f -v \
-rm -f $JBM_FONT_ZIP
+(source ../install-jetbrains-font.sh)
 
 # pimp my shell
-i alacritty
-i zsh zsh-autosuggestions zsh-syntax-highlighting
+ai alacritty
+(source ../install-starship-prompt.sh)
+
+# zsh as deafult shell with bling
+ai zsh zsh-autosuggestions zsh-syntax-highlighting
 chsh -s "$(which zsh)"
-curl -fsSL https://starship.rs/install.sh | bash
 
 # nemo as default file manager
-i nemo
+ai nemo
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
 
 # nvim
-i neovim && ../setup-neovim-plug.sh
+ai neovim && (source ../install-neovim-plug.sh)
 
 # emacs - doom edition
-i emacs \
-  && rm -rf $HOME/.emacs.d \
-  && git clone --depth 1 https://github.com/hlissner/doom-emacs $HOME/.emacs.d \
-  && $HOME/.emacs.d/bin/doom install
+ai emacs && (source ../install-doom-emacs.sh)
 
 # languages
-#i clojure leiningen
-i elm
-#i golang
-#i haskell-stack ../setup-stack-utils.sh
+#ai clojure leiningen
+ai elm
+#ai golang
+#ai haskell-stack ../setup-stack-utils.sh
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - \
-    && i nodejs
+    && ai nodejs
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # utils
-i ripgrep fzf fd git tldr wget jq autojump
+ai ripgrep fzf fd git tldr wget jq autojump
 
 # entertainment
-i spotify-client vlc
-
+ai spotify-client vlc
 
 #####################################################################################
 # Gnome
 #####################################################################################
-source ../setup-gnome.sh
-source ./gnome-keyboard-shortcuts.sh
+(source ../setup-gnome.sh)
+(source ../install-gnome-extensions.sh)
+(source ./gnome-keyboard-shortcuts.sh)
 
 #####################################################################################
 # MANUAL INSTALLS

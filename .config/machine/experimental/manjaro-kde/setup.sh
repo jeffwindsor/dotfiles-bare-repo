@@ -2,6 +2,8 @@
 set -e
 cd "$(dirname "${0}")"
 
+# MANJARO KDE
+
 alias pi='sudo pacman -S --noconfirm'
 alias yi='yay -S --noconfirm'
 
@@ -9,25 +11,26 @@ alias yi='yay -S --noconfirm'
 pi yay
 
 # pimp my shell
-(../setup-git-clones.sh)
+(source ../clone-known-gits.sh)
 pi alacritty
+(source ../install-starship-prompt.sh)
+pi ttf-jetbrains-mono
 
 # languages
 pi clojure leiningen
 pi stack 
 pi nodejs
 pi go
-(../setup-rust.sh)
+(source ../install-rust.sh)
 
 # Editors and Ides
-pi neovim && (../setup-neovim-plug.sh)
-pi emacs && (../setup-doom-emacs.sh)
+pi neovim && (source ../install-neovim-plug.sh)
+pi emacs && (source ../install-doom-emacs.sh)
 
 # vscodium
 yi vscodium-bin
 
 # Fonts
-pi ttf-jetbrains-mono
 
 # utils
 pi ripgrep tldr
@@ -38,10 +41,7 @@ pi vlc
 
 # browsers
 yi vivaldi
-sudo pacman -S --noconfirm brave-browser
-
-# starship prompt
-curl -fsSL https://starship.rs/install.sh | bash
+pi brave-browser
 
 # mega
-xdg-open https://mega.nz/sync 
+xdg-open https://mega.nz/sync
