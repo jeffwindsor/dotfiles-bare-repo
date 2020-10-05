@@ -102,7 +102,7 @@ alias gh='git-log-graph'
 alias gl='git log'
 alias gph='git push'
 alias gpl='git pull'
-alias gr='git remote -v'
+alias gr='git remote -vv'
 alias gs='git status -sb --ignore-submodules'
 alias gsync='git checkout master && git pull --rebase && git checkout - && git rebase master'
 git-commit(){
