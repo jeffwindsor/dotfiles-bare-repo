@@ -18,6 +18,11 @@ alias grep='rg'
 alias f='vifm'
 alias cat='bat -p'
 
+alias java8='export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_202`'
+alias java11='export JAVA_HOME=`/usr/libexec/java_home -v 11`'
+alias java15='export JAVA_HOME=`/usr/libexec/java_home -v 15`'
+
+
 alias cellar="cd /usr/local/Cellar && l"
 alias caskroom="cd /usr/local/Caskroom && l"
 alias bundle_name="osascript -e 'id of app"
