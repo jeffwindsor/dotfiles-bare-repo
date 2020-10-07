@@ -32,11 +32,11 @@ ai emacs && (source ../install-doom-emacs.sh)
 
 # languages
 #ai clojure leiningen
-ai elm
-#ai golang
+ai scala
+ai golang
+ai racket racket-common racket-doc
 #ai haskell-stack ../setup-stack-utils.sh
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - \
-    && ai nodejs
+ai nodejs
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # utils
