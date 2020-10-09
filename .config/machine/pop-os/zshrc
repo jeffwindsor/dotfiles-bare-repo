@@ -7,6 +7,7 @@ alias ls='ls --color=auto'
 alias ll='ls -la'
 alias reg-refresh='regolith-look refresh'
 alias reg-settings='xrdb -query'
+alias ai='sudo apt -y install'
 
 package-upgrade(){
     sudo apt update

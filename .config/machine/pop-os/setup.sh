@@ -18,12 +18,6 @@ ai alacritty
 ai zsh zsh-autosuggestions zsh-syntax-highlighting
 chsh -s "$(which zsh)"
 
-# nemo as default file manager
-ai nemo
-xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
-gsettings set org.gnome.desktop.background show-desktop-icons false
-gsettings set org.nemo.desktop show-desktop-icons true
-
 # nvim
 ai neovim && (source ../install-neovim-plug.sh)
 
@@ -34,7 +28,7 @@ ai emacs && (source ../install-doom-emacs.sh)
 #ai clojure leiningen
 ai scala
 ai golang
-ai racket racket-common racket-doc
+#ai racket racket-common racket-doc
 #ai haskell-stack ../setup-stack-utils.sh
 ai nodejs
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -43,7 +37,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ai ripgrep fzf fd git tldr wget jq autojump
 
 # entertainment
-ai spotify-client vlc
+ai spotify-client vlc brave-browser
 
 #####################################################################################
 # Gnome
@@ -56,5 +50,5 @@ ai spotify-client vlc
 # MANUAL INSTALLS
 #####################################################################################
 xdg-open https://mega.nz/sync 
-xdg-open https://brave-browser.readthedocs.io/en/latest/installing-brave.html
 xdg-open https://github.com/VSCodium/vscodium/releases
+# sudo apt -y install megasync
