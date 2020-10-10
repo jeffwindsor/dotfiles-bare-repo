@@ -46,6 +46,12 @@ ai spotify-client vlc brave-browser
 (source ../install-gnome-extensions.sh)
 (source ./gnome-keyboard-shortcuts.sh)
 
+# Laptop Power Management
+sysdl='/etc/systemd/logind.conf'
+cat $sysdl \
+    | sed -r 's/\#?HandleLidSwitchExternalPower=.*/HandleLidSwitchExternalPower=ignore/g' \
+    | sudo tee $sysdl
+
 #####################################################################################
 # MANUAL INSTALLS
 #####################################################################################
