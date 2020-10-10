@@ -1,0 +1,89 @@
+#+TITLE:Scala
+
+* Scala at light speed
+
+** All things in scala are objects
+
+** To create a function scala an instance of a special set of Func classes
+the object has only an apply method
+
+#+BEGIN_SRC scala
+// functions are defined like this
+val add = new Function2[Int, Int, Int] {
+  override def apply(arg1:Int, arg2:Int): Int = arg1 + arg2
+}
+// syntactic sugar for above, makes for easier usage
+val add : (Int, Int) => Int = (x:Int, y:Int) = x + y
+// or relying on type inference
+val add = (x:Int, y:Int) = x + y
+
+// then used like this
+add(2,3)  // = 5
+#+END_SRC
+
+** Higher order functions are specific to the classes they execute on
+ie fold on Option is defined differently than fold on Array
+*** hf include: map, filter, fold and flatMap
+*** list comprehension exist
+
+
+* 12 tips to better scala
+https://www.youtube.com/watch?v=71yhnTGw0hY
+
+1. Model with Algebraic Data Types
+
+2. Refine with Smart Constructors
+
+3. Embrace Variance (Contra and Co)
+
+4. Learn to Love Folds
+
+5. Prefer Type CLasses Over Interfaces
+   #+BEGIN_SRC scala
+// Interface approach: extension of class (ie mixing it in)
+// example of where an interface cannot be used, would be de-serialization since you do not have the target object instance
+trait Num[A] { self: A => def + (that: A): A }
+class Rational(n:BigInt, d:BigInt) extends Num[Rational] { def + (that: Rational): Rational = ??? }
+
+// Type Class approach: type class, then separate implementation
+class Num[A] { def add(l:A, r:A): A }
+implicit val RationalNum = new Numeric[Rational] { def add(l:Rational, r:Rational) = ??? }
+// if in scala 2 you need this boilerplate, scala 3 will do this for you
+// object Num { def apply[A](inmplicit n: Num[A]) = n }
+// implicit class NumSyntax[A](l:A) { def + (r:A)(implicit n: Num[A]) = n.add(l,r) }
+
+// allows the implementation of a sum without the need for extension
+// allows abstraction over all types, even those you cannot extend
+def sum[A:Num](xs: List[A]): A = ???
+
+// with derivations we can also extend this power to say tuples
+// allows scala to figure out how to add tuples based on adding the base case
+implicit def Tuple2Num[A:Num, B:Num] = new Num[(A,B)] { def add(l:Num[(A,B)], r:Num[(A,B)] ) = ???
+
+   #+END_SRC
+
+6. Make methods Final or Abstract
+   abstract : logic that must be implemented later
+   final : represents a definition
+
+7. Only Use Type Bounds for Variance (Contra or Co)
+   in scala using type bounds to restrict a generic, can lead to inheritance graphs that have tangled webs, and unsafe casts
+   treat generic T ias fully generic, and if capabilities arise then introduce a prism or type class
+
+8. Prefer Return Values Over Exceptions For Expected Errors
+    Option for only one failure mode
+    Try for n number of throwable failures
+    Either n number of pure errors
+
+9. Prefer Non-Determinism
+
+10. Describe with Types, over Do
+
+11. Prefer Global Coherence
+
+12. Prefer One Type Per Scope
+  case class Receiver[A](v:A) extends AnyVal
+  case class Sender[A](v:A) extends AnyVal
+  transfer(Receiver(x), Sender(y))
+
+  shadowing is also an example of how to

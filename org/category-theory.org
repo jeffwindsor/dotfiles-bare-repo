@@ -1,3 +1,10 @@
+* Composition
+read the composition operator as "after", so  "g . f"  is read as "g after f"
+id: for every object A there is an arrow which loops back on the object
+f . id = f
+id . f = f
+
+
 
 * Definitions
 ** Domain and Co-Domain
