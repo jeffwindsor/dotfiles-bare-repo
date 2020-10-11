@@ -14,7 +14,7 @@ brew tap homebrew/cask homebrew/core
 brew cask install alfred amethyst karabiner-elements whichspace
 brew cask install alacritty starship
 brew install bash bash-completion
-
+brew install topgrade
 brew install fish
 curl -L https://get.oh-my.fish | fish
 

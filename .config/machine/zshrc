@@ -45,7 +45,7 @@ alias src='cd $HOME/src'
 alias repo='cd $HOME/src'
 alias config='cd $XDG_CONFIG_HOME'
 alias machine='cd $XDG_CONFIG_HOME/machine'
-alias up='package-upgrade'
+alias up='topgrade' #'package-upgrade'
 
 alacritty_change_theme() {
     cat $HOME/.config/alacritty/base.yml > $HOME/.config/alacritty/alacritty.yml

@@ -13,8 +13,6 @@ alias ai='sudo apt -y install'
 # pimp my shell
 ai alacritty
 (source ../install-starship-prompt.sh)
-
-# zsh as deafult shell with bling
 ai zsh zsh-autosuggestions zsh-syntax-highlighting
 chsh -s "$(which zsh)"
 
@@ -31,10 +29,12 @@ ai golang
 #ai racket racket-common racket-doc
 #ai haskell-stack ../setup-stack-utils.sh
 ai nodejs
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+(source ../install-rust.sh)
+#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # utils
 ai ripgrep fzf fd git tldr wget jq autojump
+cargo install topgrade
 
 # entertainment
 ai spotify-client vlc brave-browser
