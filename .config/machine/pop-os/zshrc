@@ -11,7 +11,7 @@ alias ai='sudo apt -y install'
 
 package-upgrade(){
     sudo apt update
-    sudo apt -y upgrade
+    sudo apt -y dist-upgrade
 
     echo "==> tldr"
     tldr --update
@@ -24,6 +24,8 @@ package-upgrade(){
 
     echo "==> doom"
     $HOME/.emacs.d/bin/doom --yes upgrade
+
+    sudo apt autoremove --purge
 }
 
 source /usr/share/autojump/autojump.zsh
