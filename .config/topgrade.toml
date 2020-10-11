@@ -34,7 +34,7 @@ no_retry = true
 # Cleanup temporary or old files
 cleanup = true
 
-#[git]
+[git]
 max_concurrency = 5
 # Additional git repositories to pull
 repos = [
@@ -48,7 +48,7 @@ repos = [
 # Arguments to pass Git when pulling Repositories
 #arguments = "--rebase --autostash"
 
-#[composer]
+[composer]
 self_update = true
 
 # Commands to run before anything
