@@ -1,5 +1,12 @@
 #+TITLE: Learning Checklist
 
+- [ ] Touch typing
+- [ ] Category Theory
+  + [ ] M Videos
+  + [ ] M Book
+- [ ] Scala
+  + [ ] Functional Scala
+  + [ ] Java Rocks
 - [ ] Cloud
   - [ ] Aws Certification
     + [ ] [[https://app.pluralsight.com/paths/skill/architecting-in-aws][Architecting in AWS]]

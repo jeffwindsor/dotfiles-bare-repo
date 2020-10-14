@@ -56,8 +56,9 @@ self_update = true
 #"Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
 
 # Custom commands
-#[commands]
+[commands]
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
+"Starship Prompt" = "curl -fsSL https://starship.rs/install.sh | bash -s -- --yes"
 
 #[brew]
 #greedy_cask = true
