@@ -2,7 +2,7 @@
 assume_yes = true
 
 # Disable specific steps - same options as the command line flag
-disable = ["stack"]
+disable = ["stack", "microsoft_auto_update"]
 
 # Ignore failures for these steps
 #ignore_failures = ["powershell"]
@@ -59,6 +59,7 @@ self_update = true
 [commands]
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 "Starship Prompt" = "curl -fsSL https://starship.rs/install.sh | bash -s -- --yes"
+"Dotfiles" = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull"
 
 #[brew]
 #greedy_cask = true
