@@ -46,4 +46,4 @@ cd $SRC/hub/
 #xdg-open https://extensions.gnome.org/extension/750/openweather/
 #xdg-open https://extensions.gnome.org/extension/1253/extended-gestures/
 #xdg-open https://extensions.gnome.org/extension/545/hide-top-bar/
-#xdg-open https://extensions.gnome.org/extension/1166/extension-update-notifier/
+#xdg-open https://extensions.gnome.org/extension/1166/extension-update-notifier/:wq

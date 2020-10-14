@@ -14,5 +14,5 @@ echo "cloning themes"
 [[ ! -d relaxed-terminal-themes ]] && git clone https://github.com/Relaxed-Theme/relaxed-terminal-themes
 [[ ! -d gruvbox ]] && git clone https://github.com/morhetz/gruvbox
 [[ ! -d nord ]] && git clone https://github.com/arcticicestudio/nord
-[[ ! -d alacritty-theme ]] && https://github.com/eendroroy/alacritty-theme
+[[ ! -d alacritty-theme ]] && git clone https://github.com/eendroroy/alacritty-theme
 echo "clones complete"
