@@ -124,9 +124,21 @@ alias repos='exec-git-dirs cd $SRC'
 # dotfiles
 dot () {
     git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"
-    }
+}
+dot-add-all(){
+    dot add -u
+    dot add $HOME/org/*
+    dot add $HOME/.config/machine/*
+    dot add $HOME/.config/alacritty/*
+    dot add $HOME/.config/doom/*
+    dot add $HOME/.config/git/*
+    dot add $HOME/.config/nvim/*
+    dot add $HOME/.local/ascii-art/*
+    dot add $HOME/.local/fortune/*
+    dot add $HOME/.local/readme/*
+}
 alias da='dot add'
-alias daa='dot add -u && dot add $HOME/org/ && dot add $HOME/.config/machine/'
+alias daa='dot-add-all'
 alias dcm='dot commit -m'
 alias dh='dot-log-graph'
 alias ddiff='dot diff --ignore-space-at-eol -b -w --ignore-blank-lines'

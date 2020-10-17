@@ -50,3 +50,4 @@
 
 (package! org-brain)
 (package! org-bullets)
+;;(package! vterm)
