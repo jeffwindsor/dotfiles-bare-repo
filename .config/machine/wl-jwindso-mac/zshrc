@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# base machine config
+source $HOME/.config/machine/zshrc
+
 # zsh plugins
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -290,4 +293,3 @@ alias dbstop="VBoxManage controlvm Oracle11g32 poweroff"
 #}
 # aws
 
-source $HOME/.config/machine/zshrc
