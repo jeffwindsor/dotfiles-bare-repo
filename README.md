@@ -6,7 +6,7 @@ requires `git`
 ## Clone Script
 
 ```
-cd && git clone --bare git@github.com:jeffwindsor/dotfiles.git $HOME/.dotfiles \
+cd && git clone --bare https://github.com/jeffwindsor/dotfiles.git $HOME/.dotfiles \
   && cd $HOME/.dotfiles \
   && git config --local status.showUntrackedFiles no \
   && alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' 
