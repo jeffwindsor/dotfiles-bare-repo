@@ -4,7 +4,7 @@
 # ALIASES
 ###############################################################################
 alias ls='ls --color=auto'
-alias ll='ls -la'
+alias ll='ls -la --group-directories-first'
 alias reg-refresh='regolith-look refresh'
 alias reg-settings='xrdb -query'
 alias ai='sudo apt -y install'
