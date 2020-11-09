@@ -75,5 +75,11 @@
     "aws.telemetry": true,
     "aws.profile": "profile:default",
     "terminal.integrated.rendererType": "dom",
-    "editor.wordWrapColumn": 120
+    "editor.wordWrapColumn": 120,
+    "calva.prettyPrintingOptions": {
+        "enabled": false,
+        "printEngine": "pprint",
+        "width": 120,
+        "maxLength": 50
+    }
 }

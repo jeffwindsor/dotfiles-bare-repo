@@ -7,36 +7,49 @@ xcode-select --install
 
 # homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap homebrew/cask homebrew/core homebrew/fonts
 
-# packages
-brew tap homebrew/cask homebrew/core
-
-brew cask install alfred amethyst karabiner-elements whichspace
-brew cask install alacritty starship
+# pimp my terminal
+brew cask install alacritty starship topgrade
 brew install bash bash-completion
-brew install topgrade
-brew install fish
-curl -L https://get.oh-my.fish | fish
-
+brew install fish && curl -L https://get.oh-my.fish | fish
 brew install zsh zsh-completions zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting
-brew install bat exa fd curl coreutils watch gnu-sed ripgrep fzf autojump
-brew install git vifm tig tldr dig
-brew cask install gpg-suite brave-browser spotify vlc slack
+# emitting legal etc/shells file
+sudo cat > /etc/shells <<EOL
+/bin/sh
+/usr/local/bin/bash
+/usr/local/bin/fish
+/usr/local/bin/zsh
+EOL
+# set default shell
+chsh -s "$(which zsh)"
 
+# pimp my desktop
+brew cask install alfred amethyst karabiner-elements whichspace
+
+# utils
+brew install bat exa curl watch autojump
+brew install fd coreutils gnu-sed ripgrep fzf
+brew install git tig tldr dig
+brew install gpg-suite
+
+# languages
 brew install clojure
-brew install haskell-stack
-brew install hlint
+brew install haskell-stack hlint
 brew install rustup-init
-brew install elm
+brew install nodejs
+
+#editors
 brew install neovim
+brew tap d12frosted/emacs-plus && brew install emacs-plus  && ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
+brew cask install intellij-idea
 brew cask install vscodium
 
-#  "installing fonts"
-brew tap homebrew/cask-fonts
+# fonts
 brew cask install font-cascadia font-fira-code font-inconsolata
 brew cask install font-source-code-pro font-jetbrains-mono
 
-#  installing Mac App Store CLI (mas)
+# mac apps
 brew tap mas-cli/tap
 brew install mas                  # Mac App Store command-line interface
 mas "LastPass", id: 926036361
@@ -44,27 +57,9 @@ mas "Microsoft Remote Desktop", id: 1295203466
 mas "Be Focused - Focus Timer", id: 973134470
 mas "iStat Menus", id: 1319778037
 mas "Microsoft OneNote", id:784801555
-# mas "Forecast Bar - Weather + Radar", id: 982710545
+brew cask install brave-browser spotify vlc slack
 
-#  "emitting etc/shells file"
-sudo cat > /etc/shells <<EOL
-/bin/sh
-/usr/local/bin/bash
-/usr/local/bin/fish
-/usr/local/bin/zsh
-EOL
-#  "setting default shell to ZSH"
-chsh -s "$(which zsh)"
-
-#  "installing lolcat-c"
-git clone git@github.com:jaseg/lolcat.git ${HOME}/src/hub/lolcat/ \
-    && pushd ${HOME}/src/hub/lolcat \
-    && make \
-    && ln -fhs ${HOME}/src/hub/lolcat/lolcat /usr/local/bin/lolcat \
-    && popd
-
-
-read -r -p "Install for dotfiles? [y/N] " response
+read -r -p "dotfiles? [y/N] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
@@ -78,7 +73,7 @@ then
 
 fi 
 
-read -r -p "Install for CJ? [y/N] " response
+read -r -p "cj specific? [y/N] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
@@ -97,7 +92,6 @@ then
     brew install "instantclient-sqlplus"
 
     brew cask install "keybase"
-    brew cask install "intellij-idea"
     brew cask install "java8"
     brew cask install "microsoft-teams"
 fi

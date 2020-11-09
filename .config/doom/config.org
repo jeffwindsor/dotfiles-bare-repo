@@ -1,16 +1,31 @@
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+#+BEGIN_SRC emacs-lisp
+;;; $DOOMDIR/config.org -*- lexical-binding: t; -*-
+#+END_SRC
+
+* User Information
+#+BEGIN_SRC emacs-lisp
 (setq
  user-full-name "Jeff Windsor"
- user-mail-address "jeff.windsor@gmail.com"
+ user-mail-address "jeff.windsor@gmail.com")
+#+END_SRC
+
+* Look and Feel
+#+BEGIN_SRC emacs-lisp
+(setq
  doom-font (font-spec :family "JetBrains Mono" :size 18)
  doom-big-font (font-spec :family "JetBrains Mono" :size 24)
  doom-theme 'doom-one
  display-line-numbers-type 'relative
  confirm-kill-emacs nil)
+#+END_SRC
 
-;; projectile
+* Projectile
+#+BEGIN_SRC emacs-lisp
 (setq projectile-project-search-path '("~/src/"))
+#+END_SRC
 
-;; org-bullets
+* Org-bullets
+#+BEGIN_SRC emacs-lisp
 (add-hook! org-mode-hook (lambda () (org-bullets-mode 1)))
+#+END_SRC

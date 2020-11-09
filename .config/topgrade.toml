@@ -2,7 +2,7 @@
 assume_yes = true
 
 # Disable specific steps - same options as the command line flag
-disable = ["stack", "microsoft_auto_update"]
+disable = ["stack", "microsoft_auto_update", "npm"]
 
 # Ignore failures for these steps
 #ignore_failures = ["powershell"]

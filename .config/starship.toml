@@ -37,6 +37,9 @@ style = "green"
 symbol = ""
 style = "cyan"
 
+[nodejs]
+disabled = true
+
 [python]
 disabled = true
 
