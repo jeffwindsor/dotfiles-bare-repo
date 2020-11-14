@@ -6,7 +6,7 @@ cd "$(dirname "${0}")"
 clone-if-missing(){
     cd ${HOME}/src/hub
 
-    [[ ! -d $2 ]] && git clone git@github.com:${1}/${2}.git
+    [[ ! -d $2 ]] && git clone https://github.com/${1}/${2}.git
 }
 
 
