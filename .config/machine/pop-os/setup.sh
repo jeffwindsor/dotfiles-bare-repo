@@ -12,7 +12,7 @@ sudo apt update
 sudo apt upgrade
 
 # pimp my terminal
-(source ../clone-know-gits.sh)
+(source ../clone-known-gits.sh)
 ai alacritty
 ai zsh zsh-autosuggestions zsh-syntax-highlighting
 chsh -s "$(which zsh)"
