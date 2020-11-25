@@ -11,6 +11,9 @@ brew tap homebrew/cask homebrew/core homebrew/fonts
 
 # pimp my terminal
 brew cask install alacritty starship topgrade
+brew install bat exa autojump
+brew install fd ripgrep fzf tldr
+
 brew install bash bash-completion
 brew install fish && curl -L https://get.oh-my.fish | fish
 brew install zsh zsh-completions zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting
@@ -28,20 +31,22 @@ chsh -s "$(which zsh)"
 brew cask install alfred amethyst karabiner-elements whichspace
 
 # utils
-brew install bat exa curl watch autojump
-brew install fd coreutils gnu-sed ripgrep fzf
-brew install git tig tldr dig
-brew install gpg-suite
+brew install gpg-suite 
+brew isntall coreutils gnu-sed dig curl watch 
+brew install git tig
+brew install sshpass
+brew cask install wireshark
 
 # languages
 brew install clojure
 brew install haskell-stack hlint
 brew install rustup-init
 brew install nodejs
+brew install openjdk scala
 
 #editors
 brew install neovim
-brew tap d12frosted/emacs-plus && brew install emacs-plus  && ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
+brew cask install emacs
 brew cask install intellij-idea
 brew cask install vscodium
 
@@ -67,25 +72,26 @@ then
     # dotfiles
     pushd $HOME \
         && git clone --bare https://github.com/jeffwindsor/dotfiles.git $HOME/.dotfiles \
-        && pushd $HOME/.dotfiles \
+        && pushd $home/.dotfiles \
         && git config --local status.showUntrackedFiles no \
         && popd && popd
 
 fi 
 
-read -r -p "cj specific? [y/N] " response
+read -r -p "cj specific? [y/n] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
-    brew install "parquet-tools"
-    brew install "kafka"
-    brew install "maven"
-    brew install "maven-completion"
-    brew install "cassandra"
-    brew install "sbt"
-    brew install "scala"
-    brew install "selenium-server-standalone"
-    brew install "sshpass"
+    brew install parquet-tools
+    brew install kafka
+    brew install maven
+    brew install maven-completion
+    brew install cassandra
+    brew install penjdk
+    brew isntall clojure
+    brew install sbt
+    brew install scala
+    brew install selenium-server-standalone
 
     brew tap InstantClientTap/instantclient
     brew install "instantclient-basic"instantclient-sqlplus
