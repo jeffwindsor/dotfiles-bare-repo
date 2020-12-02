@@ -9,7 +9,7 @@ requires `git`
 cd && git clone --bare https://github.com/jeffwindsor/dotfiles.git $HOME/.dotfiles \
   && cd $HOME/.dotfiles \
   && git config --local status.showUntrackedFiles no \
-  && alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' 
+  && alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' \
   && cd
 ```
 
