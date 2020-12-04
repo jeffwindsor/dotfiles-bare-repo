@@ -49,23 +49,29 @@ mkdir -p $HOME/.icons \
 
 
 # utilities
-ai ripgrep fzf fd git tldr wget jq autojump
+ai ripgrep fzf fd-find git tldr wget jq autojump
 
 # editors
 ai neovim && (source ../install-neovim-plug.sh)
-ai emacs && (source ../install-doom-emacs.sh)
+#ai emacs && (source ../install-doom-emacs.sh)
 
 # languages
-ai scala
 ai golang
 ai nodejs
-cargo install topgrade
 (source ../install-rust.sh)
+cargo install topgrade
+#ai scala
 #ai clojure leiningen
 #ai haskell-stack ../setup-stack-utils.sh
 
 # extra
-ai spotify-client vlc brave-browser
+ai vlc
+## brave-browser
+ai apt-transport-https curl gnupg
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+ai brave-browser
 
 # manual installs
 xdg-open https://mega.nz/sync
@@ -74,9 +80,7 @@ xdg-open https://github.com/VSCodium/vscodium/releases
 # gnome extensions
 xdg-open https://extensions.gnome.org/extension/600/launch-new-instance/
 xdg-open https://extensions.gnome.org/extension/1488/gnome-fuzzy-search/
-xdg-open https://extensions.gnome.org/extension/1000/random-walls/
 xdg-open https://extensions.gnome.org/extension/906/sound-output-device-chooser/
 xdg-open https://extensions.gnome.org/extension/10/windownavigator/
 xdg-open https://extensions.gnome.org/extension/21/workspace-indicator/
-xdg-open https://extensions.gnome.org/extension/615/appindicator-support/
 xdg-open https://extensions.gnome.org/extension/19/user-themes/
