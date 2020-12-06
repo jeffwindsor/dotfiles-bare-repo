@@ -52,6 +52,7 @@ sudo apt -y install zsh zsh-autosuggestions zsh-syntax-highlighting
 chsh -s "$(which zsh)"
 
 echo-color "pimp my desktop"
+sudo apt -y install gnome-tweaks
 wget https://download.jetbrains.com/fonts/JetBrainsMono-2.002.zip \
     && unzip JetBrainsMono-2.002.zip -d ~/.local/share/fonts \
     && fc-cache -f -v \
