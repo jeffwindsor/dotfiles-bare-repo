@@ -4,9 +4,7 @@ set -e
 cd "$(dirname "${0}")"
 
 clone-if-missing(){
-    cd ${HOME}/src/hub
-
-    [[ ! -d $2 ]] && git clone https://github.com/${1}/${2}.git
+    [[ ! -d $HOME/src/hub/$2 ]] && git clone https://github.com/${1}/${2}.git ${HOME}/src/hub/${2}
 }
 
 
@@ -21,9 +19,4 @@ clone-if-missing Relaxed-Theme relaxed-terminal-themes
 clone-if-missing morhetz gruvbox
 clone-if-missing arcticicestudio nord
 clone-if-missing eendroroy alacritty-theme
-
-clone-if-missing pop-os shell
-clone-if-missing pop-os gnome-shell-extension-always-show-workspaces
-clone-if-missing pop-os gnome-shell-extension-alt-tab-raise-first-window
-
 echo "clones complete"

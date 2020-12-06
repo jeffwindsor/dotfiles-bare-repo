@@ -21,3 +21,4 @@ export HISTCONTROL=ignoreboth
 export SRC=$HOME/src
 
 export EDITOR=nvim
+source "$HOME/.cargo/env"
