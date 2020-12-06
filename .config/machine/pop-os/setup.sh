@@ -62,18 +62,6 @@ wget https://download.jetbrains.com/fonts/JetBrainsMono-2.002.zip \
     && gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Medium 12' \
     && gsettings set org.gnome.desktop.wm.preferences titlebar-font 'JetBrains Mono Medium 12' 
 
-mkdir -p $HOME/.themes \
-    && wget "https://www.gnome-look.org/p/1308808/startdownload?file_id=1603172413&file_name=Solarized-Dark-Green-3.36_2.0.3.zip&file_type=application/zip&file_size=959489" \
-    && unzip Solarized-Dark-Green-3.36_2.0.3.zip \
-    && mv ./Solarized-Dark-Green-3.36_2.0.3/* $HOME/.themes \
-    && rm -rf Solarized-Dark-Green-3.36_2.0.3 \
-    && gsettings set org.gnome.desktop.interface gtk-theme 'Solarized-Dark-Green-3.36'
-
-mkdir -p $HOME/.icons \
-    && wget "https://www.pling.com/p/1309239/startdownload?file_id=1597908080&file_name=Solarized-Numix-FLAT-Green_2.0.4.zip&file_type=application/zip&file_size=12511376" \
-    && unzip Solarized-Numix-FLAT-Green_2.0.4.zip -d $HOME/.icons \
-    && rm -f Solarized-Numix-FLAT-Green_2.0.4.zip \
-    && gsettings set org.gnome.desktop.interface icon-theme 'Solarized-FLAT-Green'
 
 echo-color "topgrade package updater" 
 source $HOME/.cargo/env
@@ -90,3 +78,13 @@ echo-color "starship prompt"
 
 echo-color "git clones"
 ../clone-known-gits.sh
+
+echo-color "appearance"
+xdg-open "https://www.gnome-look.org/p/1308808/"
+mkdir -p $HOME/.themes 
+echo "unzip $HOME/Downloads/Solarized-Dark-Green-3.36_2.0.3.zip -d $HOME/.themes"
+
+xdg-open "https://www.pling.com/p/1309239/"
+mkdir -p $HOME/.icons 
+echo "unzip $HOME/Downloads/Solarized-Numix-FLAT-Green_2.0.4.zip -d $HOME/.icons" 
+

@@ -19,7 +19,7 @@ echo-color "POP-OS KEYBINDINGS"
 
 echo-color "Launchers" 
 dconf write '/org/gnome/settings-daemon/plugins/media-keys/terminal' "['<Super>Return']"
-dconf write '/org/gnome/settings-daemon/plugins/media-keys/www' "['<Shift><Super>Return']"
+dconf write '/org/gnome/settings-daemon/plugins/media-keys/www' "['<Ctrl><Super>Return']"
 dconf write '/org/gnome/settings-daemon/plugins/media-keys/control-center' "['<Super>comma']"
 
 echo-color "Move, resize, and swap windows"
