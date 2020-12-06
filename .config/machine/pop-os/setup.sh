@@ -24,8 +24,9 @@ sudo apt -y install nodejs
 ../install-rust.sh
 sudo apt -y install haskell-stack 
 
-echo-color "vlc"
+echo-color "entertainment"
 sudo apt -y install vlc
+sudo apt -y install wallch
 
 echo-color "brave browser"
 sudo apt -y install apt-transport-https curl gnupg
@@ -34,7 +35,7 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable ma
 sudo apt update
 sudo apt -y install brave-browser
 
-echo-color manual installs
+echo-color "manual installs"
 xdg-open https://mega.nz/sync
 xdg-open https://github.com/VSCodium/vscodium/releases
 
@@ -42,12 +43,11 @@ echo-color "gnome extensions"
 xdg-open https://extensions.gnome.org/extension/600/launch-new-instance/
 xdg-open https://extensions.gnome.org/extension/1488/gnome-fuzzy-search/
 xdg-open https://extensions.gnome.org/extension/906/sound-output-device-chooser/
-xdg-open https://extensions.gnome.org/extension/10/windownavigator/
+# xdg-open https://extensions.gnome.org/extension/10/windownavigator/
 xdg-open https://extensions.gnome.org/extension/21/workspace-indicator/
 xdg-open https://extensions.gnome.org/extension/19/user-themes/
-
 xdg-open https://extensions.gnome.org/extension/744/hide-activities-button/
-xdg-open https://extensions.gnome.org/extension/8/places-status-indicator/
+# xdg-open https://extensions.gnome.org/extension/8/places-status-indicator/
 
 
 
