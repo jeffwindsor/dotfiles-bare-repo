@@ -46,6 +46,11 @@ xdg-open https://extensions.gnome.org/extension/10/windownavigator/
 xdg-open https://extensions.gnome.org/extension/21/workspace-indicator/
 xdg-open https://extensions.gnome.org/extension/19/user-themes/
 
+xdg-open https://extensions.gnome.org/extension/744/hide-activities-button/
+xdg-open https://extensions.gnome.org/extension/8/places-status-indicator/
+
+
+
 echo-color "pimp my terminal"
 sudo apt -y install alacritty
 sudo apt -y install zsh zsh-autosuggestions zsh-syntax-highlighting
