@@ -1,24 +1,3 @@
 #!/usr/bin/env zsh
 
-export PATH=$PATH:/home/jmw/.local/bin
-
-# XDG Base Directory Specification
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-
-# NVim
-export NVM_DIR=$HOME/.config/nvim
-export NVIM_LOG_FILE=$HOME/.cache/nvim-log/
-
-# Less
-export LESSHISTFILE="-"
-
-# only store unique commands in history
-export HISTCONTROL=ignoreboth
-
-# source code directory
-export SRC=$HOME/src
-
-export EDITOR=nvim
-source "$HOME/.cargo/env"
+source $HOME/.config/machine/zshenv

@@ -2,33 +2,13 @@
 
 export ZSH_PLUGINS='/usr/local/share'
 
-# XDG Base Directory Specification
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-
-# NVim
-export NVM_DIR=$XDG_CACHE_HOME/nvim
-export NVIM_LOG_FILE=$XDG_CACHE_HOME/nvim-log/
-
 # VsCode / VSCodium
 export VSCODE_EXTENSIONS=$XDG_DATA_HOME/vscode-oss/extensions
 
-# Less
-export LESSHISTFILE="-"
-
-# only store unique commands in history
-export HISTCONTROL=ignoreboth
 export HISTFILE=${XDG_CACHE_HOME}/zsh/zsh_history   # put history to cache, seperating it from the other ZDOT files
-
-# source code directory
-export SRC=$HOME/src
 
 # aliases and functions
 export FUNCS=$HOME/.local/functions
-
-# nixos home-manager
-export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 
 # zsh completions
 if type brew &>/dev/null; then
@@ -61,3 +41,5 @@ export DEVDB_SID=devdb
 #export PATH="$PATH:$SOFTWARE_HOME/bin"
 
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+
+source $HOME/.config/machine/zshenv
