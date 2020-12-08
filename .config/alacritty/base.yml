@@ -1,10 +1,10 @@
 window:
   decorations: none
 
-background_opacity: 0.96
+background_opacity: 0.98
 
 font:
   normal:
     family: 'JetBrains Mono'
-  size: 14.0
+  size: 13.0
 
