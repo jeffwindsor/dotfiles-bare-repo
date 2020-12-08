@@ -1,26 +1,34 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
+################################################################################
+# POP-OS KEYBINDINGS
+################################################################################
+set -e
+cd "$(dirname "${0}")"
+
+echo-color(){ printf "\033[0;32m==> $1 \033[0m \n"; }
 MEDIA_KEYS='/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings' 
 
 addCustom(){
-    dconf write "$MEDIA_KEYS/custom$1/binding" $2
-    dconf write "$MEDIA_KEYS/custom$1/command" $3
-    dconf write "$MEDIA_KEYS/custom$1/name" $4
+    dconf write "$MEDIA_KEYS/custom$1/binding" "$2"
+    dconf write "$MEDIA_KEYS/custom$1/command" "$3"
+    dconf write "$MEDIA_KEYS/custom$1/name" "$4"
 }
 
+echo-color "POP-OS KEYBINDINGS"
 
-# Launchers 
+echo-color "Launchers" 
 dconf write '/org/gnome/settings-daemon/plugins/media-keys/terminal' "['<Super>Return']"
-dconf write '/org/gnome/settings-daemon/plugins/media-keys/www' "['<Shift><Super>Return']"
+dconf write '/org/gnome/settings-daemon/plugins/media-keys/www' "['<Ctrl><Super>Return']"
 dconf write '/org/gnome/settings-daemon/plugins/media-keys/control-center' "['<Super>comma']"
 
-# Move, resize, and swap windows
+echo-color "Move, resize, and swap windows"
 dconf write '/org/gnome/shell/extensions/pop-shell/tile-enter' "@as ['<Super>w']"
 
-# Navigate applications and windows
+echo-color "Navigate applications and windows"
 dconf write '/org/gnome/shell/extensions/pop-shell/activate-launcher' "['<Super>space']"
 
-# Navigation
+echo-color "Navigation"
 dconf write "/org/gnome/desktop/wm/keybindings/move-to-monitor-left" "['<Alt><Super>Left', '<Alt><Super>h']"
 dconf write "/org/gnome/desktop/wm/keybindings/move-to-monitor-right" "['<Alt><Super>Right', '<Alt><Super>l']"
 dconf write "/org/gnome/desktop/wm/keybindings/move-to-workspace-up" "['<Alt><Super>Up', '<Alt><Super>k']"
@@ -43,19 +51,22 @@ dconf write "/org/gnome/desktop/wm/keybindings/switch-applications" "['<Super>Ta
 dconf write "/org/gnome/desktop/wm/keybindings/cycle-applications-backward" "['<Shift><Alt><Super>Tab']"
 dconf write "/org/gnome/desktop/wm/keybindings/cycle-applications" "['<Alt><Super>Tab']"
 
-# System
+echo-color "System"
 dconf write "/org/gnome/shell/keybindings/toggle-application-view" "['<Alt><Super>space']"
 dconf write "/org/gnome/shell/keybindings/toggle-message-tray" "['<Shift><Super>n']"
 dconf write "/org/gnome/desktop/wm/keybindings/panel-main-menu" "['<Alt>F1', '<Alt>equal']"
 dconf write "/org/gnome/desktop/wm/keybindings/panel-run-dialog" "['<Alt>F2', '<Primary><Alt><Super>space']"
 
-# Create Custom Keybinding entries
+echo-color "Create Custom Keybinding entries"
 dconf write "$MEDIA_KEYS" "['$MEDIA_KEYS/custom0/','$MEDIA_KEYS/custom1/','$MEDIA_KEYS/custom2/']"
-### Emacs - remove email short cut to eliminate overlap
+
+echo-color "Emacs - remove email short cut to eliminate overlap"
 dconf write '/org/gnome/settings-daemon/plugins/media-keys/email' '@as []'
-addCustom "0" "'<Super>e'" "'emacs'" "'Launch Emacs'"
-### VSCode
+addCustom "0" "['<Super>e']" "'emacs'" "'Launch Emacs'"
+
+echo-color "VSCode"
 addCustom "1" "'<Super><Shift>e'" "'code'" "'Launch VSCodium'"
-### Intellij
+
+echo-color "Intellij"
 addCustom "2" "'<Super>i'" "'idea'" "'Launch Intellij Idea'"
 

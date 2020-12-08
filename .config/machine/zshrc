@@ -122,9 +122,7 @@ alias srcs='exec-git-dirs cd $SRC'
 alias repos='exec-git-dirs cd $SRC'
 
 # dotfiles
-dot () {
-    git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"
-}
+dot () { git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"; }
 dot-add-all(){
     dot add -u
     dot add $HOME/org/*
@@ -146,9 +144,7 @@ alias dl='dot ls-files'
 alias dph='dot push'
 alias dpl='dot pull'
 alias ds='dot status -sb --ignore-submodules'
-dot-log-graph() {
-    dot log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10};
-    }
+dot-log-graph() { dot log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10}; }
 
 # vscodium
 alias c='code .'
@@ -161,10 +157,10 @@ alias v='nvim'
 alias y='youtube-dl'
 alias ya='youtube-dl --extract-audio --audio-format m4a --audio-quality 0'
 
-# doom emacs
-alias doom="$HOME/.emacs.d/bin/doom"
-doom-install(){
-    git clone --depth 1 https://github.com/hlissner/doom-emacs $HOME/.emacs.d
-    $HOME/.emacs.d/bin/doom install
-}
+## doom emacs
+#alias doom="$HOME/.emacs.d/bin/doom"
+#doom-install(){
+#    git clone --depth 1 https://github.com/hlissner/doom-emacs $HOME/.emacs.d
+#    $HOME/.emacs.d/bin/doom install
+#}
 
