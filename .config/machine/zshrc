@@ -158,7 +158,7 @@ alias y='youtube-dl'
 alias ya='youtube-dl --extract-audio --audio-format m4a --audio-quality 0'
 
 ## doom emacs
-#alias doom="$HOME/.emacs.d/bin/doom"
+alias doom="$HOME/.emacs.d/bin/doom"
 #doom-install(){
 #    git clone --depth 1 https://github.com/hlissner/doom-emacs $HOME/.emacs.d
 #    $HOME/.emacs.d/bin/doom install
