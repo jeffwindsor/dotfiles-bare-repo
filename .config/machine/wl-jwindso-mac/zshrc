@@ -21,11 +21,6 @@ alias grep='rg'
 alias f='vifm'
 alias cat='bat -p'
 
-alias java8='export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_202`'
-alias java11='export JAVA_HOME=`/usr/libexec/java_home -v 11`'
-alias java15='export JAVA_HOME=`/usr/libexec/java_home -v 15`'
-
-
 alias cellar="cd /usr/local/Cellar && l"
 alias caskroom="cd /usr/local/Caskroom && l"
 alias bundle_name="osascript -e 'id of app"
@@ -250,11 +245,15 @@ function adjustments-list(){
 # export MAVEN_OPTS="-Xmx4086m -XX:ReservedCodeCacheSize=256m"
 # export MAVEN_OPTS="-Xmx10G -XX:ReservedCodeCacheSize=256m -Xss8G -XX:+UseG1GC -XX:+UseStringDeduplication"
 
-alias qb='mvn clean install -T 1C -Ddelta.skip=true -Dcleanup.skip=true -Dqunit.numThreads=8 -DskipTests -Dtablespaces.skip=true -Dgulp.task=min'
-alias qqb='mvn install -T 1C -Ddelta.skip=true -Dcleanup.skip=true -Dqunit.numThreads=8 -DskipTests -Dtablespaces.skip=true -Dgulp.task=min'
-alias mc='k && mvn clean'
-alias mci='k && mvn clean install'
-alias mnt='mvn -Dmaven.test.skip=true install'
+alias java8='export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_202`'
+alias java11='export JAVA_HOME=`/usr/libexec/java_home -v 11`'
+alias java15='export JAVA_HOME=`/usr/libexec/java_home -v 15`'
+
+alias qb='java8 && mvn clean install -T 1C -Ddelta.skip=true -Dcleanup.skip=true -Dqunit.numThreads=8 -DskipTests -Dtablespaces.skip=true -Dgulp.task=min && java11'
+alias qqb='java8 && mvn install -T 1C -Ddelta.skip=true -Dcleanup.skip=true -Dqunit.numThreads=8 -DskipTests -Dtablespaces.skip=true -Dgulp.task=min && java11'
+alias mc='k && java8 && mvn clean && java11'
+alias mci='k && java8 && mvn clean install && java11'
+alias mnt='java8 && mvn -Dmaven.test.skip=true install && java11'
 
 ############################################################################################
 # From On-Boarding
