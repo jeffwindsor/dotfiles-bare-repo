@@ -17,7 +17,7 @@ sudo apt -y install ripgrep fzf fd-find git tldr wget jq autojump
 
 echo-color "editors"
 sudo apt -y install neovim && ../install-neovim-plug.sh
-sudo apt -y install emacs && ../install-doom-emcas.sh
+sudo apt -y install emacs && ../install-doom-emacs.sh
 
 echo-color "languages"
 sudo apt -y install golang

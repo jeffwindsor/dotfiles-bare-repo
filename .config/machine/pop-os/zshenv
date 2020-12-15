@@ -1,3 +1,4 @@
 #!/usr/bin/env zsh
 
 source $HOME/.config/machine/zshenv
+source "$HOME/.cargo/env"
