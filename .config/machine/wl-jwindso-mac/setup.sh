@@ -28,7 +28,7 @@ EOL
 chsh -s "$(which zsh)"
 
 # pimp my desktop
-brew cask install alfred amethyst karabiner-elements whichspace
+brew cask install alfred amethyst karabiner-elements whichspace caffeine
 
 # utils
 brew install gpg-suite 

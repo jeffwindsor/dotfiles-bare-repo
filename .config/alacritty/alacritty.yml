@@ -10,37 +10,30 @@ font:
     family: 'JetBrains Mono'
   size: 14.0
 
-# From the famous Cobalt2 sublime theme
-# Source : https://github.com/wesbos/cobalt2/tree/master/Cobalt2
 colors:
   # Default colors
   primary:
-    background: '0x122637'
-    foreground: '0xffffff'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x122637'
-    cursor: '0xf0cb09'
+    background: '0x282828'
+    foreground: '0xeeeeee'
 
   # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xff0000'
-    green:   '0x37dd21'
-    yellow:  '0xfee409'
-    blue:    '0x1460d2'
-    magenta: '0xff005d'
-    cyan:    '0x00bbbb'
-    white:   '0xbbbbbb'
+    black:   '0x282828'
+    red:     '0xf43753'
+    green:   '0xc9d05c'
+    yellow:  '0xffc24b'
+    blue:    '0xb3deef'
+    magenta: '0xd3b987'
+    cyan:    '0x73cef4'
+    white:   '0xeeeeee'
 
   # Bright colors
   bright:
-    black:   '0x545454'
-    red:     '0xf40d17'
-    green:   '0x3bcf1d'
-    yellow:  '0xecc809'
-    blue:    '0x5555ff'
-    magenta: '0xff55ff'
-    cyan:    '0x6ae3f9'
-    white:   '0xffffff'
+    black:   '0x4c4c4c'
+    red:     '0xf43753'
+    green:   '0xc9d05c'
+    yellow:  '0xffc24b'
+    blue:    '0xb3deef'
+    magenta: '0xd3b987'
+    cyan:    '0x73cef4'
+    white:   '0xfeffff'
