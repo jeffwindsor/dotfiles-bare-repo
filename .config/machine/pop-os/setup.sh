@@ -86,11 +86,15 @@ echo-color "git clones"
 ../clone-known-gits.sh
 
 echo-color "appearance"
-xdg-open "https://www.gnome-look.org/p/1308808/"
 mkdir -p $HOME/.themes 
-echo "unzip $HOME/Downloads/Solarized-Dark-Green-3.36_2.0.3.zip -d $HOME/.themes"
-
-xdg-open "https://www.pling.com/p/1309239/"
 mkdir -p $HOME/.icons 
-echo "unzip $HOME/Downloads/Solarized-Numix-FLAT-Green_2.0.4.zip -d $HOME/.icons" 
+
+# Nordic
+xdg-open "https://www.gnome-look.org/p/1267246/"
+
+# Solarized
+# xdg-open "https://www.gnome-look.org/p/1308808/"
+# echo "unzip $HOME/Downloads/Solarized-Dark-Green-3.36_2.0.3.zip -d $HOME/.themes"
+# xdg-open "https://www.pling.com/p/1309239/"
+# echo "unzip $HOME/Downloads/Solarized-Numix-FLAT-Green_2.0.4.zip -d $HOME/.icons" 
 
