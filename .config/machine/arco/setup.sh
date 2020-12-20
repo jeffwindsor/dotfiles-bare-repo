@@ -16,16 +16,13 @@ cd "$(dirname "${0}")"
 sudo pacman -S --noconfirm alacritty
 (source ../install-starship-prompt.sh)
 sudo pacman -S --noconfirm ttf-jetbrains-mono
-sudo pacman -S --noconfirm ripgrep tldr fd
-
-# gnome
-sudo yay -S --noconfirm gnome-extension-pop-shell-git
+sudo pacman -S --noconfirm fd fzf ripgrep tldr
+sudo pacman -S --noconfirm zsh-completions zsh-autosuggestions zsh-syntax-highlighting
 
 # languages
 sudo pacman -S --noconfirm nodejs
 sudo pacman -S --noconfirm go
 (source ../install-rust.sh)
-cargo install topgrade
 #sudo pacman -S --noconfirm clojure leiningen
 #sudo pacman -S --noconfirm stack
 
@@ -36,8 +33,10 @@ yay -S --noconfirm vscodium-bin
 
 # extra
 yay -S --noconfirm spotify
-sudo pacman -S --noconfirm vlc
-sudo pacman -S --noconfirm brave-browser
+sudo pacman -S --noconfirm vlc brave-bin
+
+# requires rust
+#cargo install topgrade
 
 # manual
 xdg-open https://mega.nz/sync
