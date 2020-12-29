@@ -96,15 +96,12 @@ alacritty_change_theme() {
 dot () { git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"; }
 dot-add-all(){
     dot add -u
-    dot add $HOME/org/*
     dot add $HOME/.config/machine/*
-    #dot add $HOME/.config/alacritty/*
     dot add $HOME/.config/doom/*
     dot add $HOME/.config/git/*
     dot add $HOME/.config/nvim/*
     dot add $HOME/.local/ascii-art/*
     dot add $HOME/.local/fortune/*
-    dot add $HOME/.local/readme/*
 }
 dot-log-graph() { dot log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10}; }
 exec-git-dirs () {
@@ -112,7 +109,7 @@ exec-git-dirs () {
     [ ! -z "$result" ] && $1 $result
 }
 ffs () {
-    local result=`fd . "$2" -t f -H --ignore-file $XDG_CONFIG_HOME/.fdignore | fzf --reverse --height 40% --query="$3"`
+    local result=`fd . "$2" -t f -H --ignore-file $XDG_CONFIG_HOME/fdignore | fzf --reverse --height 40% --query="$3"`
     [ ! -z "$result" ] && $1 "$result"
 }
 git-to-main() { git branch -m master main && git push -u origin main; }
