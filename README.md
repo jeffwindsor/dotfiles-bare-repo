@@ -1,5 +1,3 @@
-# Jeff Windsor's Dotfiles
-
 * contains macOs and linux dotfiles
 * requires `git`
 
