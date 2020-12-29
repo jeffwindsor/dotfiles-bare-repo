@@ -1,3 +1,0 @@
-* Test one
-* Test two
-** Test 2.1
