@@ -1,7 +1,7 @@
 [character]
-success_symbol = "[ :](green)"
+success_symbol = "[ :](dimmed yellow)"
 error_symbol = "[ :](red)"
-vicmd_symbol = "[ ::](green)"
+vicmd_symbol = "[ ::](dimmed yellow)"
 
 [prompt]
 format = """
@@ -31,7 +31,7 @@ disabled = true
 [directory]
 truncation_length = 7
 truncate_to_repo = true
-style = "green"
+style = "blue"
 
 [git_branch]
 symbol = ""
@@ -53,4 +53,4 @@ format = "[$hostname](red)"
 
 [time]
 disabled=false
-format = "[$time](dimmed green)"
+format = "[$time](dimmed blue)"

@@ -5,8 +5,9 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
- '(display-line-numbers-type (quote relative))
+ '(display-line-numbers-type 'relative)
  '(font-use-system-font t)
+ '(safe-local-variable-values '((git-commit-major-mode . git-commit-elisp-text-mode)))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
