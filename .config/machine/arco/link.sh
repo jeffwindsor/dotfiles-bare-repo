@@ -8,6 +8,7 @@ ln -sf "${HOME}/.config/gitignore" "$HOME/.gitignore"
 ln -sf "${HOME}/.config/git/personal.gitconfig" "$HOME/.gitconfig"
 ln -sf "${HOME}/.config/ssh/personal.config" "$HOME/.ssh/config"
 ln -sf "${HOME}/.config/machine/arco/spectrwm.conf" "$HOME/.spectrwm.conf"
+ln -sf "${HOME}/.config/machine/arco/baraction.sh" "$HOME/.config/spectrwm/baraction.sh"
 ln -sf "${HOME}/.config/machine/arco/polybar.config" "$HOME/.config/polybar/config"
 #ln -sf "${HOME}/.config/vscode/keybindings.json.macos" \
 #       "$HOME/Library/Application Support/VSCodium/User/keybindings.json"
