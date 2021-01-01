@@ -1,56 +1,22 @@
-[character]
-success_symbol = "[ :](dimmed yellow)"
-error_symbol = "[ :](red)"
-vicmd_symbol = "[ ::](dimmed yellow)"
-
-[prompt]
 format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$git_state\
-$git_status\
-$docker_context\
-$haskell\
-$rust\
-$nix_shell\
-$line_break\
-$jobs\
-$time\
-$cmd_duration\
-$character\
-"""
+$directory$git_branch$git_status
+$time$character"""
 
-[aws]
-disabled = true
-
-[cmd_duration]
-disabled = true
+[character]
+success_symbol = "[:](dimmed yellow)"
+error_symbol   = "[:](red)"
+vicmd_symbol   = "[::](dimmed yellow)"
 
 [directory]
-truncation_length = 7
-truncate_to_repo = true
 style = "blue"
 
 [git_branch]
 symbol = ""
 style = "cyan"
 
-[nodejs]
-disabled = true
-
-[python]
-disabled = true
-
-[username]
-disabled=false
-format = "[$user](blue)@"
-
-[hostname]
-disabled=false
-format = "[$hostname](red)"
+[git_status]
+style = "yellow"
 
 [time]
 disabled=false
-format = "[$time](dimmed blue)"
+style="dimmed blue"

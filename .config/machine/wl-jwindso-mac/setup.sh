@@ -32,7 +32,8 @@ brew cask install alfred amethyst karabiner-elements whichspace caffeine
 
 # utils
 brew install gpg-suite 
-brew isntall coreutils gnu-sed dig curl watch 
+brew install coreutils gnu-sed dig curl watch 
+brew install autojump bat exa fd fzf nnn jq 
 brew install git tig
 brew install sshpass
 brew cask install wireshark
