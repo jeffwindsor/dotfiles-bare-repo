@@ -15,4 +15,7 @@ ln -sFf "$PWD/zshenv" "$HOME/.zshenv"
 ln -sFf "$PWD/zshrc" "$HOME/.zshrc"
 
 # universal links
-../link.sh
+ln -sf "$XDG_CONFIG_HOME/gitignore" "$HOME/.gitignore"
+ln -sf "$XDG_CONFIG_HOME/git/cj.gitconfig" "$HOME/.gitconfig"
+ln -sf "$XDG_CONFIG_HOME/nvim/config.vim" "$HOME/.ideavim"
+ln -sf "$XDG_CONFIG_HOME/ssh/cj.config" "$HOME/.ssh/config"
