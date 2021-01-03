@@ -18,6 +18,7 @@ sudo apt -y install ripgrep fzf fd-find git tldr wget jq autojump
 echo-color "editors"
 sudo apt -y install neovim && ../install-neovim-plug.sh
 sudo apt -y install emacs && ../install-doom-emacs.sh
+flatpak install flathub com.vscodium.codium
 
 echo-color "languages"
 sudo apt -y install golang
@@ -36,22 +37,6 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable ma
 sudo apt update
 sudo apt -y install brave-browser
 
-echo-color "manual installs"
-xdg-open https://mega.nz/sync
-xdg-open https://github.com/VSCodium/vscodium/releases
-
-echo-color "gnome extensions"
-xdg-open https://extensions.gnome.org/extension/600/launch-new-instance/
-xdg-open https://extensions.gnome.org/extension/1488/gnome-fuzzy-search/
-xdg-open https://extensions.gnome.org/extension/906/sound-output-device-chooser/
-# xdg-open https://extensions.gnome.org/extension/10/windownavigator/
-xdg-open https://extensions.gnome.org/extension/21/workspace-indicator/
-xdg-open https://extensions.gnome.org/extension/19/user-themes/
-xdg-open https://extensions.gnome.org/extension/744/hide-activities-button/
-# xdg-open https://extensions.gnome.org/extension/8/places-status-indicator/
-
-
-
 echo-color "pimp my terminal"
 sudo apt -y install alacritty
 sudo apt -y install zsh zsh-autosuggestions zsh-syntax-highlighting
@@ -59,6 +44,7 @@ chsh -s "$(which zsh)"
 
 echo-color "pimp my desktop"
 sudo apt -y install gnome-tweaks
+../setup-laptop.sh
 wget https://download.jetbrains.com/fonts/JetBrainsMono-2.002.zip \
     && unzip JetBrainsMono-2.002.zip -d ~/.local/share/fonts \
     && fc-cache -f -v \
@@ -67,7 +53,6 @@ wget https://download.jetbrains.com/fonts/JetBrainsMono-2.002.zip \
     && gsettings set org.gnome.desktop.interface font-name 'JetBrains Mono Medium 12' \
     && gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Medium 12' \
     && gsettings set org.gnome.desktop.wm.preferences titlebar-font 'JetBrains Mono Medium 12' 
-
 
 echo-color "topgrade package updater" 
 source $HOME/.cargo/env
@@ -89,12 +74,22 @@ echo-color "appearance"
 mkdir -p $HOME/.themes 
 mkdir -p $HOME/.icons 
 
-# Nordic
-xdg-open "https://www.gnome-look.org/p/1267246/"
+echo-color "ssh"
+../setup-machine-ssh.sh
 
-# Solarized
-# xdg-open "https://www.gnome-look.org/p/1308808/"
-# echo "unzip $HOME/Downloads/Solarized-Dark-Green-3.36_2.0.3.zip -d $HOME/.themes"
-# xdg-open "https://www.pling.com/p/1309239/"
-# echo "unzip $HOME/Downloads/Solarized-Numix-FLAT-Green_2.0.4.zip -d $HOME/.icons" 
+echo-color "manual steps"
+xdg-open https://github.com/settings/keys
+xdg-open https://mega.nz/sync
+# extensions
+xdg-open https://extensions.gnome.org/extension/600/launch-new-instance/
+xdg-open https://extensions.gnome.org/extension/1488/gnome-fuzzy-search/
+xdg-open https://extensions.gnome.org/extension/906/sound-output-device-chooser/
+xdg-open https://extensions.gnome.org/extension/21/workspace-indicator/
+xdg-open https://extensions.gnome.org/extension/19/user-themes/
+xdg-open https://extensions.gnome.org/extension/744/hide-activities-button/
+# themes
+xdg-open https://www.gnome-look.org/p/1267246/
+xdg-open https://www.gnome-look.org/p/1357889/
+# icons
+xdg-open https://www.gnome-look.org/s/Gnome/p/1166289 
 

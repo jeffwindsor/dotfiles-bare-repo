@@ -36,11 +36,3 @@ let mapleader = "\<Space>"
 " map escape to rapid jk 
 inoremap jk <esc>
 
-"== Plugins
-source $HOME/.config/nvim/plugins.vim
-
-"== Theming
-let g:lightline = { 'colorscheme' : 'tender' } " one tender nord
-colorscheme tender "gruvbox tender one nord
-
-
