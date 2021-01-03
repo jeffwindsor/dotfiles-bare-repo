@@ -59,7 +59,7 @@ dconf write "/org/gnome/desktop/wm/keybindings/panel-main-menu" "['<Alt>F1', '<A
 dconf write "/org/gnome/desktop/wm/keybindings/panel-run-dialog" "['<Alt>F2', '<Primary><Alt><Super>space']"
 
 echo-color "Create Custom Keybinding entries"
-dconf write "$MEDIA_KEYS" "['$MEDIA_KEYS/custom0/','$MEDIA_KEYS/custom1/','$MEDIA_KEYS/custom2/']"
+dconf write "$MEDIA_KEYS" "['$MEDIA_KEYS/custom0/','$MEDIA_KEYS/custom1/','$MEDIA_KEYS/custom2/','$MEDIA_KEYS/custom3/']"
 
 echo-color "Emacs - remove email short cut to eliminate overlap"
 dconf write '/org/gnome/settings-daemon/plugins/media-keys/email' '@as []'
@@ -71,3 +71,5 @@ addCustom "1" "'<Super><Shift>e'" "'code'" "'Launch VSCodium'"
 echo-color "Intellij"
 addCustom "2" "'<Super>i'" "'idea'" "'Launch Intellij Idea'"
 
+echo-color "Tweaks"
+addCustom "3" "'<Super>.'" "'Gnome Tweaks'" "'Launch Gnome Tweaks'"
