@@ -44,6 +44,7 @@ chsh -s "$(which zsh)"
 
 echo-color "pimp my desktop"
 sudo apt -y install gnome-tweaks
+../setup-laptop.sh
 wget https://download.jetbrains.com/fonts/JetBrainsMono-2.002.zip \
     && unzip JetBrainsMono-2.002.zip -d ~/.local/share/fonts \
     && fc-cache -f -v \
@@ -52,7 +53,6 @@ wget https://download.jetbrains.com/fonts/JetBrainsMono-2.002.zip \
     && gsettings set org.gnome.desktop.interface font-name 'JetBrains Mono Medium 12' \
     && gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Medium 12' \
     && gsettings set org.gnome.desktop.wm.preferences titlebar-font 'JetBrains Mono Medium 12' 
-
 
 echo-color "topgrade package updater" 
 source $HOME/.cargo/env
@@ -74,6 +74,9 @@ echo-color "appearance"
 mkdir -p $HOME/.themes 
 mkdir -p $HOME/.icons 
 
+echo-color "ssh"
+../setup-machine-ssh.sh
+
 echo-color "manual steps"
 xdg-open https://github.com/settings/keys
 xdg-open https://mega.nz/sync
@@ -86,10 +89,7 @@ xdg-open https://extensions.gnome.org/extension/19/user-themes/
 xdg-open https://extensions.gnome.org/extension/744/hide-activities-button/
 # themes
 xdg-open https://www.gnome-look.org/p/1267246/
-
-# Solarized
-# xdg-open "https://www.gnome-look.org/p/1308808/"
-# echo "unzip $HOME/Downloads/Solarized-Dark-Green-3.36_2.0.3.zip -d $HOME/.themes"
-# xdg-open "https://www.pling.com/p/1309239/"
-# echo "unzip $HOME/Downloads/Solarized-Numix-FLAT-Green_2.0.4.zip -d $HOME/.icons" 
+xdg-open https://www.gnome-look.org/p/1357889/
+# icons
+xdg-open https://www.gnome-look.org/s/Gnome/p/1166289 
 
