@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-fonts=(
+packages=(
 ttf-jetbrains-mono
-)
-utils=(
 alacritty
 fd
 fzf
@@ -29,11 +27,11 @@ install() {
 }
 
 ################################################################
-cd "$(dirname "${0}")"
-packages=("${fonts[@]}" "${utils[@]}") 
-foreach name ("${base_os[@]}")
+cd "$(dirname "${0}")" 
+for name in "${packages[@]}"
+do
     install $name
-end
+done
 
 # pimp my shell
 (source ../clone-known-gits.sh)
