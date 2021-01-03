@@ -2,15 +2,17 @@
 set -e
 cd "$(dirname "${0}")"
 
-ln -sf "$PWD/zshenv" "$HOME/.zshenv"
-ln -sf "$PWD/zshrc" "$HOME/.zshrc"
-ln -sf "$XDG_CONFIG_HOME/gitignore" "$HOME/.gitignore"
-ln -sf "$XDG_CONFIG_HOME/git/cj.gitconfig" "$HOME/.gitconfig"
-ln -sf "$XDG_CONFIG_HOME/ssh/cj.config" "$HOME/.ssh/config"
-ln -sf "$XDG_CONFIG_HOME/vscode/keybindings.json.macos" \
-       "$HOME/Library/Application Support/VSCodium/User/keybindings.json"
-ln -sf "$XDG_CONFIG_HOME/vscode/settings.json.macos" \
-       "$HOME/Library/Application Support/VSCodium/User/settings.json"
-ln -sf "$XDG_CONFIG_HOME/machine/wl-jwindso-mac/DefaultKeyBindings.dict" \
-       "$HOME/Library/KeyBindings/DefaultKeyBindings.dict"
-ln -sf "$XDG_CONFIG_HOME/nvim/config.vim" "$HOME/.ideavim"
+
+# machine specific
+ln -sFf "$PWD/alacritty" "$XDG_CONFIG_HOME/alacritty"
+ln -sFf "$PWD/alfred" "$XDG_CONFIG_HOME/alfred"
+ln -sFf "$PWD/iterm" "$XDG_CONFIG_HOME/iterm"
+ln -sFf "$PWD/karabiner" "$XDG_CONFIG_HOME/karabiner"
+ln -sFf "$PWD/DefaultKeyBindings.dict" "$HOME/Library/KeyBindings/DefaultKeyBindings.dict"
+ln -sFf "$PWD/vscode/keybindings.json.macos" "$HOME/Library/Application Support/VSCodium/User/keybindings.json"
+ln -sFf "$PWD/vscode/settings.json.macos" "$HOME/Library/Application Support/VSCodium/User/settings.json"
+ln -sFf "$PWD/zshenv" "$HOME/.zshenv"
+ln -sFf "$PWD/zshrc" "$HOME/.zshrc"
+
+# universal links
+../link.sh

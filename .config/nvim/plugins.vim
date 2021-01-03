@@ -7,7 +7,8 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'rakr/vim-one'
   Plug 'arcticicestudio/nord-vim'
   Plug 'itchyny/lightline.vim'
-  
+  Plug 'ap/vim-css-color'
+
   " Addons
   "Plug 'machakann/vim-highlightedyank'
   Plug 'junegunn/fzf.vim'
