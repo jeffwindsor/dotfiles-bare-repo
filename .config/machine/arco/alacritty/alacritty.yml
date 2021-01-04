@@ -1,0 +1,29 @@
+window:
+  decorations: none
+
+background_opacity: 0.9
+cursor: 
+  style: Block
+
+font:
+  normal:
+    family: 'JetBrains Mono ExtraLight'
+  size: 14.0
+
+# Colors (Doom One)
+colors:
+  # Default colors
+  primary:
+    background: '0x282c34'
+    foreground: '0xbbc2cf'
+
+  # Normal colors
+  normal:
+    black:   '0x282c34'
+    red:     '0xff6c6b'
+    green:   '0x98be65'
+    yellow:  '0xecbe7b'
+    blue:    '0x51afef'
+    magenta: '0xc678dd'
+    cyan:    '0x46d9ff'
+    white:   '0xbbc2cf'
