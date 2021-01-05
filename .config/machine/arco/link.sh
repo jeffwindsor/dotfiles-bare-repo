@@ -6,6 +6,8 @@ ln -sf "$PWD/zshenv" "$HOME/.zshenv"
 ln -sf "$PWD/zshrc" "$HOME/.zshrc"
 ln -sf "$PWD/systemd" "$HOME/.config/systemd"
 ln -sf "$PWD/alacritty" "$HOME/.config/alacritty"
+ln -sf "$PWD/sxhkd" "$HOME/.config/sxhkd"
+ln -sf "$PWD/picom" "$HOME/.config/picom"
 
 ln -sf "${HOME}/.config/gitignore" "$HOME/.gitignore"
 ln -sf "${HOME}/.config/git/personal.gitconfig" "$HOME/.gitconfig"
