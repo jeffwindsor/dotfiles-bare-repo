@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+alias db='cd $HOME/.config/dwm; make;'
+alias di='cd $HOME/.config/dwm; sudo make install;'
+alias dc='nvim $HOME/.config/dwm/config.h'
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 alias l.="ls -A | egrep '^\.'"
 alias ll='ls -la --group-directories-first'
