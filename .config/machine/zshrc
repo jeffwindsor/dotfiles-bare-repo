@@ -43,9 +43,10 @@ alias .....='cd ../../../../'
 alias ....='cd ../../../'
 alias ...='cd ../../'
 alias ..='cd ..'
+alias books='exec-on-file open $HOME/books/'
 alias c='code .'
 alias config='cd $XDG_CONFIG_HOME'
-alias configs='ffs nvim $XDG_CONFIG_HOME'
+alias configs='exec-on-file nvim $XDG_CONFIG_HOME'
 alias da='dot add'
 alias daa='dot-add-all'
 alias dcm='dot commit -m'
@@ -72,15 +73,15 @@ alias gs='git status -sb --ignore-submodules'
 alias gsync='git checkout master && git pull --rebase && git checkout - && git rebase master'
 alias k='clear'
 alias kk='clear && reset'
-alias locals='ffs nvim $HOME/.local'
+alias locals='exec-on-file nvim $HOME/.local'
 alias machine='cd $XDG_CONFIG_HOME/machine'
-alias machines='ffs nvim $XDG_CONFIG_HOME/machine'
+alias machines='exec-on-file nvim $XDG_CONFIG_HOME/machine'
 alias repo='cd $HOME/src'
-alias repos='exec-git-dirs cd $SRC'
+alias repos='exec-on-git-repos cd $SRC'
 alias saf='search-alias-functions'
 alias src='cd $HOME/src'
-alias srcs='exec-git-dirs cd $SRC'
-alias theme='ffs alacritty_change_theme $SRC/hub/alacritty-theme/themes'
+alias srcs='exec-on-git-repos cd $SRC'
+alias theme='exec-on-file alacritty_change_theme $SRC/hub/alacritty-theme/themes'
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias up='topgrade' #'package-upgrade'
@@ -104,11 +105,11 @@ dot-add-all(){
     dot add $HOME/.local/fortune/*
 }
 dot-log-graph() { dot log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10}; }
-exec-git-dirs () {
+exec-on-git-repos () {
     local result=`git-find-dirs $2 | cut -d '/' -f5- | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden --reverse --height 40% | awk -v path="$2/" '{print path $0}'`
     [ ! -z "$result" ] && $1 $result
 }
-ffs () {
+exec-on-file () {
     local result=`fd . "$2" -t f -H --ignore-file $XDG_CONFIG_HOME/fdignore | fzf --reverse --height 40% --query="$3"`
     [ ! -z "$result" ] && $1 "$result"
 }
