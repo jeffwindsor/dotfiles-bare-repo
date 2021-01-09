@@ -46,7 +46,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -na 'Brave Browser'"
+                                        "shell_command": "open -na 'Firefox'"
                                     }
                                 ],
                                 "type": "basic"
