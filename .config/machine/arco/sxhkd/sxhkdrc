@@ -35,7 +35,7 @@ Print
 
 # menu
 super + space
-    dmenu run -i
+    dmenu_run -i -fn 'JetBrains Mono ExtraLight:size=12'
 	#dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
 # terminal 
@@ -48,7 +48,7 @@ F12
 
 # browser
 super + ctrl + Return
-    brave
+    firefox
 
 # file manager
 super + shift + Return 
