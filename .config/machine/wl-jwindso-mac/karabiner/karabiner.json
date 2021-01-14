@@ -79,7 +79,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -na 'VSCodium'"
+                                        "shell_command": "open -na 'Emacs'"
                                     }
                                 ],
                                 "type": "basic"
@@ -96,7 +96,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -na 'Emacs'"
+                                        "shell_command": "open -na 'VSCodium'"
                                     }
                                 ],
                                 "type": "basic"

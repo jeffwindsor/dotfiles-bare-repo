@@ -63,7 +63,7 @@
     "markdown.preview.fontSize": 12,
     "workbench.fontAliasing": "auto",
     "update.mode": "manual",
-    "workbench.colorTheme": "Mayukai Mirage Gruvbox Darktooth",
+    "workbench.colorTheme": "Monokai",
     "typescript.updateImportsOnFileMove.enabled": "never",
     "javascript.updateImportsOnFileMove.enabled": "never",
     "editor.multiCursorModifier": "ctrlCmd",
