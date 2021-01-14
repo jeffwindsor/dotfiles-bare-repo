@@ -3,12 +3,13 @@
 packages=(
 ttf-jetbrains-mono
 alacritty
+emacs
 fd
 fzf
+keychain
+neovim
 ripgrep
 tldr
-neovim
-emacs
 zsh
 zsh-completions
 zsh-autosuggestions
