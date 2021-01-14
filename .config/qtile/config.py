@@ -1,30 +1,3 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
-
 import os
 import re
 import socket
@@ -34,13 +7,27 @@ from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 from libqtile.widget import Spacer
 #import arcobattery
+import colors_tender
 
 #mod4 or mod = super key
 mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
 home = os.path.expanduser('~')
+font = 'JetBrains Mono'
+font_size = 12 
+dmenu_colors = {
+        "nb": colors_tender.bg,
+        "nf": colors_tender.green1, 
+        "sb": colors_tender.green1,
+        "sf": colors_tender.green3
+        }
+group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
+#group_labels = ["", "", "", "", "", "", "", "", "", "",]
+#group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
+group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
+#group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
 
 @lazy.function
 def window_to_prev_group(qtile):
@@ -66,7 +53,10 @@ keys = [
     Key(["mod1"], "h", lazy.spawn('urxvt -e htop')),
 
 # APPLICATIONS
-    Key([mod], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
+    Key([mod], "d", lazy.spawn("dmenu_run -i" 
+        + " -nb " + dmenu_colors["nb"] + " -nf " + dmenu_colors["nf"] 
+        + " -sb " + dmenu_colors["sb"] + " -sf " + dmenu_colors["sf"]
+        + " -fn '" + font + ":size=" + str(font_size) + "'")),
     Key([mod], "e", lazy.spawn('emacs')),
     Key([mod], "v", lazy.spawn('pavucontrol')),
     Key([mod], "x", lazy.spawn('arcolinux-logout')),
@@ -206,12 +196,6 @@ groups = []
 
 # FOR QWERTY KEYBOARDS
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
-group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-#group_labels = ["", "", "", "", "", "", "", "", "", "",]
-#group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
-
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
-#group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
 
 for i in range(len(group_names)):
     groups.append(
@@ -280,22 +264,22 @@ colors = init_colors()
 # WIDGETS FOR THE BAR
 
 def init_widgets_defaults():
-    return dict(font="Noto Sans",
-                fontsize = 12,
+    return dict(font=font,
+                fontsize = font_size,
                 padding = 2,
-                background=colors[1])
+                background="#2F343F")
 
 widget_defaults = init_widgets_defaults()
 
 def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
-               widget.GroupBox(font="FontAwesome",
-                        fontsize = 16,
-                        margin_y = -1,
-                        margin_x = 0,
-                        padding_y = 6,
-                        padding_x = 5,
+               widget.GroupBox(font=font + ", FontAwesome",
+                   fontsize = font_size,
+                        #margin_y = -1,
+                        #margin_x = 0,
+                        #padding_y = 6,
+                        #padding_x = 5,
                         borderwidth = 0,
                         disable_drag = True,
                         active = colors[9],
@@ -418,20 +402,6 @@ def init_widgets_list():
                         core = "all",
                         type = "box"
                         ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
-               widget.TextBox(
-                        font="FontAwesome",
-                        text="  ",
-                        foreground=colors[4],
-                        background=colors[1],
-                        padding = 0,
-                        fontsize=16
-                        ),
                widget.Memory(
                         font="Noto Sans",
                         format = '{MemUsed}M/{MemTotal}M',
@@ -440,31 +410,11 @@ def init_widgets_list():
                         foreground = colors[5],
                         background = colors[1],
                        ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
-               widget.TextBox(
-                        font="FontAwesome",
-                        text="  ",
-                        foreground=colors[3],
-                        background=colors[1],
-                        padding = 0,
-                        fontsize=16
-                        ),
                widget.Clock(
                         foreground = colors[5],
                         background = colors[1],
                         fontsize = 12,
                         format="%Y-%m-%d %H:%M"
-                        ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
                         ),
                widget.Systray(
                         background=colors[1],
