@@ -1,0 +1,12 @@
+#!/bin/sh
+
+icon=""
+#dunstify --replace=1 "Collecting CPU information" "Please wait..."
+cpuinfo=$[100-$(vmstat 1 2|tail -1|awk '{print $15}')]%
+
+printf "%s %s" "$icon" "$cpuinfo" 
+
+case $BUTTON in
+    1) dunstify --replace=1 "CPU usage: $cpuinfo" "Right click to open bashtop";;
+    3) st -e bashtop;;
+esac

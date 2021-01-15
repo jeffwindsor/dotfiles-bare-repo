@@ -1,0 +1,15 @@
+#!/bin/sh
+
+case "$(xset -q | grep LED | awk '{ print $10 }')" in
+  "00000002") KBD="us" ;;
+  "00001002") KBD="hu" ;;
+  *) KBD="unknown" ;;
+esac
+
+# echo ""
+
+dunstify --replace=1 "Keyboard layout: $(echo $KBD | awk '{print toupper($0)}')"
+
+# case $BUTTON in
+#     1) dunstify --replace=1 "Keyboard layout: $(echo $KBD | awk '{print toupper($0)}')" "Alt+sapce to toggle";;
+# esac

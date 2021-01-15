@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# This script uses the curl command to get weather information from a
+# website, called wttr.in. Then the data is written into a file and the 
+# content of that file is displayed in the terminal, piped into less
+
+echo 
+
+[ ! -d "$HOME/.cache/weather" ] && mkdir $HOME/.cache/weather
+
+getforecast() { curl -sf "wttr.in" > "$HOME/.cache/weather/weatherinfo" || exit 1 ;}
+
+getforecast
+
+case $BUTTON in
+    1) st -e less -Srf "$HOME/.cache/weather/weatherinfo" & disown;;
+esac

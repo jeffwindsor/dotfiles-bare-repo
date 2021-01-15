@@ -1,0 +1,14 @@
+#!/bin/bash
+
+UNREAD=$(newsboat -x print-unread | awk '{ print $1 }')
+
+if [ $((UNREAD)) -gt 0 ]; then
+    printf "%s", ""
+else
+    printf "%s", ""
+fi
+
+case $BUTTON in
+    1) dunstify --replace=1 "$UNREAD unread news" "Ritht click to open newsboat";;
+    3) st -e newsboat; pkill -RTMIN+21 dwmblocks;;
+esac

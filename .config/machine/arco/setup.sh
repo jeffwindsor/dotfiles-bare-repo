@@ -1,28 +1,31 @@
 #!/usr/bin/env bash
 
 packages=(
-ttf-jetbrains-mono
 alacritty
 emacs
 fd
 fzf
 keychain
 neovim
+picom
 ripgrep
 tldr
+variety
 zsh
 zsh-completions
 zsh-autosuggestions
 zsh-syntax-highlighting
 nodejs
 go
+terminal-font-awesome
+ttf-jetbrains-mono
 )
 
 install() {
 	if pacman -Qi $1 &> /dev/null; then
-  		echo "###> Skipping package "$1", it is already installed"
+  		echo "==> "$1" [installed]"
 	else
-    	echo "===> Installing package "  $1
+    	echo "==> "$1
     	sudo pacman -S --noconfirm --needed $1
     fi
 }

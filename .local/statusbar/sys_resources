@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo ""
+
+get_sys_info () {
+    dunstify --replace=1 --timeout=1200 "Collecting system information" "Please wait..."
+
+    cpuinfo=$[100-$(vmstat 1 2|tail -1|awk '{print $15}')]%
+    meminfo=$(free | awk '/Mem/{printf("% .f%%"), $3/$2*100} /buffers\/cache/{printf(", buffers: %.2f%"), $4/($3+$4)*100}')
+}
+
+case $BUTTON in
+    1) get_sys_info; dunstify --replace=1 "CPU usage: $cpuinfo
+Memory usage: $meminfo" "Right click to open system monitor";;
+    3) st -e btm & disown;;
+esac

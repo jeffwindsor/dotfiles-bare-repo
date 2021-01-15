@@ -1,0 +1,10 @@
+#!/bin/sh
+# memory used in percentage
+icon=""
+value=$(free -m | sed -n '2{p;q}' | awk '{printf "%d", ($3/$2)}')
+printf "%s %s%%" "$icon" "$value"
+
+case $BUTTON in
+    1) dunstify --replace=1 "Memory usage: $(free | awk '/Mem/{printf("% .f%%"), $3/$2*100} /buffers\/cache/{printf(", buffers: %.2f%"), $4/($3+$4)*100}')" "Right click to open bashtop";;
+    3) st -e bashtop;;
+esac
