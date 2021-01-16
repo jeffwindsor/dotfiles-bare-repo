@@ -14,7 +14,7 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'unblevable/quick-scope'
   Plug 'justinmk/vim-sneak'
-  Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+  "Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
   "Plug 'vimwiki/vimwiki'
   Plug 'jeetsukumaran/vim-filebeagle'
 

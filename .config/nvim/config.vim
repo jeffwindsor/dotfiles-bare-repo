@@ -30,10 +30,3 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 let g:netrw_banner = 0
 let g:sneak#label = 1
 
-"== Keys
-" Space leader
-let mapleader = "\<Space>"
-
-" map escape to rapid jk 
-inoremap jk <esc>
-
