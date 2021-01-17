@@ -3,9 +3,11 @@ call plug#begin('~/.cache/nvim/plugged')
   
   " Themes and Dispay
   Plug 'jacoborus/tender.vim'
-  "Plug 'morhetz/gruvbox'
+  Plug 'morhetz/gruvbox'
   Plug 'rakr/vim-one'
-  "Plug 'arcticicestudio/nord-vim'
+  Plug 'chriskempson/base16-vim'
+  Plug 'sonph/onehalf', { 'rtp': 'vim' }
+  Plug 'arcticicestudio/nord-vim'
   Plug 'itchyny/lightline.vim'
   Plug 'ap/vim-css-color'
 
@@ -19,9 +21,9 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'jeetsukumaran/vim-filebeagle'
 
   " Code
-  "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'frazrepo/vim-rainbow' 
-  Plug 'tpope/vim-commentary'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "Plug 'frazrepo/vim-rainbow' 
+  "Plug 'tpope/vim-commentary'
 
 call plug#end()
 

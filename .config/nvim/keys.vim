@@ -2,7 +2,7 @@
 let mapleader = "\<Space>"
 nnoremap <leader><Space> :Commands<CR>
 nnoremap <leader>h :Helptags<CR>
-nnoremap <leader>qq :qq<CR>
+nnoremap <leader>q :q<CR>
 inoremap jk <esc>
 
 "== Configs =======================================================
