@@ -1,56 +1,59 @@
-" map escape to rapid jk 
-inoremap jk <esc>
-
-"== Mappings: SpaceMacs ================================================== 
+"== Commands =======================================================
 let mapleader = "\<Space>"
-
-"Commands
 nnoremap <leader><Space> :Commands<CR>
 nnoremap <leader>h :Helptags<CR>
 nnoremap <leader>qq :qq<CR>
+inoremap jk <esc>
 
-"Configs
+"== Configs =======================================================
+"Open
 nnoremap <leader>ce :e $MYVIMRC<CR>
-nnoremap <leader>cs :source $MYVIMRC<CR>
-">Swith Color Schemes
+"Reload
+nnoremap <leader>cr :source $MYVIMRC<CR>
+"Swith Color Schemes
 nnoremap <leader>cc :Colors<CR>
 
-"Buffers
+"== Buffers =======================================================
+"Fuzzy List
 nnoremap <leader>bb :Buffers<CR>
+"Switch Prev
 nnoremap <leader>bh :bprevious<CR>
+"Switch Next
 nnoremap <leader>bl :bnext<CR>
 
-"Files
-">Save
+"== Files =======================================================
+"Save
 nnoremap <leader>fs :w<CR>
-">Save As
+"Save As
 nnoremap <leader>fa :sav 
-">Fuzzy Find
-nnoremap <leader>fo :Files<CR>
-">Search
-nnoremap <leader>fs :rg
-">Change Highlighting
+"Fuzzy Find
+nnoremap <leader>fo :Files $HOME<CR>
+"Search
+nnoremap <leader>ff :rg
+"Change Highlighting
 nnoremap <leader>ft :Filetypes<CR>
 
-"Windows
+"== Windows =======================================================
 nnoremap <leader>wv :vsplit<CR>
-nnoremap <leader>ws :split<CR>
-">Resize Height
+nnoremap <leader>wh :split<CR>
+"Resize Height
 nnoremap <leader>w+ :resize +5<CR>
 nnoremap <leader>w- :resize -5<CR>
-">Resize Width
+"Resize Width
 nnoremap <leader>w> :vertical resize +5<CR>
 nnoremap <leader>w< :vertical resize -5<CR>
-">Select by Search
+"Select by Search
 nnoremap <leader>ww :Windows<CR> 
-">Select By Direction
+"Select By Direction
 nnoremap <leader>wh <C-W><C-H> 
 nnoremap <leader>wj <C-W><C-J> 
 nnoremap <leader>wk <C-W><C-K> 
 nnoremap <leader>wl <C-W><C-L> 
-">Swap Forward
+"Swap Forward
 nnoremap <leader>w<Right> <C-W><C-r> 
-">Swap Backward
+"Swap Backward
 nnoremap <leader>w<Left> <C-W><C-R> 
-">Close
-nnoremap <leader>wq :close[!]<CR> 
+"Close
+nnoremap <leader>wq :close<CR> 
+nnoremap <leader>wqo :only<CR> 
+

@@ -29,4 +29,4 @@ syntax enable                                       " turn on all the magic, inc
 autocmd BufRead,BufNewFile *.md setlocal spell
 let g:netrw_banner = 0
 let g:sneak#label = 1
-
+set timeoutlen=2000
