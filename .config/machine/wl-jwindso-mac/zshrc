@@ -10,139 +10,9 @@ source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/etc/profile.d/autojump.sh
 source $HOME/.fzf.zsh
 
-alias vc='nvim $HOME/.config/machine/wl-jwindso-mac/zshrc'
-alias ve='nvim $HOME/.config/machine/wl-jwindso-mac/zshenv'
-alias d='dirs -v | head -10'
-alias tree='exa --tree'
-alias l='exa -1Fa --group-directories-first'
-alias ll='exa --long --all --group-directories-first'
-alias lt='exa --tree --level=2'
-alias grep='rg'
-alias f='vifm'
-alias cat='bat -p'
-
-alias cellar="cd /usr/local/Cellar && l"
-alias caskroom="cd /usr/local/Caskroom && l"
-alias bundle_name="osascript -e 'id of app"
-alias bl="brew list && brew cask list && mas list"
-alias bi="brew info"
-alias bc="brew cask"
-alias bl="brew leaves | xargs brew deps --installed --for-each | sed \"s/^.*:/$(tput setaf 4)&$(tput sgr0)/\""
-alias bs="brew search"
-brews() {
-    local result=$(brew search --formulae | fzf -m --preview="brew info {}" --preview-window=:hidden --bind=space:toggle-preview)
-    [ ! -z "$result" ] && brew install "$result"
-}
-
-casks() {
-    local result=$(brew search --casks | fzf -m --preview="brew cask info {}" --preview-window=:hidden --bind=space:toggle-preview)
-    [ ! -z "$result" ] && brew cask install "$result"
-}
-
-alias mi="mas install"
-alias mf="mas info"
-alias ml="mas list"
-alias mr="mas uninstall"
-alias ms="mas search"
-alias mup="mas upgrade"
-alias sha1="shasum -a 1 "
-alias sha256="shasum -a 256 "
-alias sha512="shasum -a 512 "
-
-# curls
-alias weather='curl wttr.in'
-alias news='curl getnews.tech'
-alias cheatsheet='curl cheat.sh'
-alias rates='curl rate.sx'
-
-# docker
-alias dkl='docker ps -a'
-alias dkr='docker run --rm'
-alias dkrh='docker run --rm -d -p 8081:80'
-alias dkrt='docker run --rm -it'
-
-# stack
-alias sb='stack build'
-alias sc='stack clean'
-alias stt='stack ide targets'
-alias sg='ghcid --command "stack repl" --test ":main"'
-alias sr='stack repl'
-alias st='stack test'
-alias sn='stack-new'
-stack-new(){
-    stack new $1 && cd $1 && stack setup && stack build;
-    }
-alias sup='stack upgrade --force-download'
-alias sinit='stack init'
 green="$(tput setaf 2)"
 reset="$(tput sgr0)"
 
-say(){
-    echo "${green}${1}${reset}"
-}
-package-list(){
-    say "Current Languages"
-    echo "Clojure: $(clj -Sdescribe | grep :version)"
-    java -version
-    kotlin -version
-    git --version
-    go version
-    stack ghc -- --version
-    echo "Idris : $(idris --version)"
-    echo "Node  : $(node --version)"
-    echo "Npm   : $(npm --version)"
-    python --version
-    ruby --version
-    scala --version
-
-    say "Current Brews"
-    brew list
-
-    say "Current Brew: Casks"
-    brew cask list
-
-    say "Current Brew: Mas"
-    mas list
-}
-
-package-upgrade(){
-    say "to long did not read pages"
-    tldr --update
-
-    say "Haskell Stack"
-    stack update && stack upgrade --force-download
-
-    say "Brews"
-    brew upgrade
-
-    say "Casks"
-    brew upgrade --cask
-
-    say "Masses"
-    mas upgrade
-
-    say "Cleanup"
-    brew cleanup
-
-    say "doom emacs"
-    $HOME/.emacs.d/bin/doom --yes upgrade
-}
-
-packout(){
-    brew outdated
-    brew cask outdated
-}
-
-
-############################################################################################
-# SQLPLUS
-############################################################################################
-alias shopcart='sqlplus -L jwindsor@shopcart'
-alias t1='sqlplus -L cj@tcjoweb1'
-
-############################################################################################
-# AWS
-############################################################################################
 aws-pro() {
     aws-assume-role 'cjorganization/CJProvisionerAccessRole' 3599 $1 $2
 }
@@ -184,7 +54,6 @@ aws-assume-role() {
 }
 aoc () {
     open "$(aws-get-url-inline)"
-    # open -a "Brave Browser" $($HOME/.local/functions/aws-get-url.py);
 }
 aws-get-url-inline () {
 	python3 <<EOF
@@ -208,61 +77,86 @@ signin_token = data['SigninToken']
 print('https://signin.aws.amazon.com/federation?Action=login&Destination=https%3A%2F%2Fconsole.aws.amazon.com&SigninToken='+signin_token)
 EOF
 }
-function aes () { eval $(env | sed -En 's/^(AWS_[^=]*)=.*$/unset \1/p'); }
+aes () { eval $(env | sed -En 's/^(AWS_[^=]*)=.*$/unset \1/p'); }
+aws-cloudfront-describe () { aws cloudformation describe-stacks --stack-name "$@"; }
+aws-cloudfront-describe-status () { aws-cloudfront-describe $@ | grep StackStatus; }
+brews() {
+    local result=$(brew search --formulae | fzf -m --preview="brew info {}" --preview-window=:hidden --bind=space:toggle-preview)
+    [ ! -z "$result" ] && brew install "$result"
+}
+casks() {
+    local result=$(brew search --casks | fzf -m --preview="brew cask info {}" --preview-window=:hidden --bind=space:toggle-preview)
+    [ ! -z "$result" ] && brew cask install "$result"
+}
+patch-update(){ ssh -t ${1} "sudo /usr/sbin/cnvr-patch update"; }
+patch-query() { ssh -t ${1} "sudo /usr/sbin/cnvr-patch query"; }
+stack-new(){
+    stack new $1 && cd $1 && stack setup && stack build;
+    }
+say(){
+    echo "${green}${1}${reset}"
+}
+
 alias acd="aws-cloudfront-describe"
-function aws-cloudfront-describe () { aws cloudformation describe-stacks --stack-name "$@"; }
 alias acd="aws-cloudfront-describe-status"
-function aws-cloudfront-describe-status () { aws-cloudfront-describe $@ | grep StackStatus; }
-
-
-############################################################################################
-# Patching
-############################################################################################
-function patch-update(){ ssh -t ${1} "sudo /usr/sbin/cnvr-patch update"; }
-function patch-query() { ssh -t ${1} "sudo /usr/sbin/cnvr-patch query"; }
-
-############################################################################################
-# ITP
-############################################################################################
-function invoke-adjustments-processor(){
-    local token=$1
-
-    aws-pro $EMPIRE_PROD_ACCT $token
-    aws lambda invoke --function-name adjustment-processor adjustment-processor.txt
-    cat adjustment-processor.txt
-    aes
-}
-function adjustments-list(){
-    local token=$1
-    aws-dev $EMPIRE_DEV_ACCT $token
-    echo "ITP Source Browser Adjustments"
-    aws s3 ls "s3://datalake-s3-buckets-datalake-659qwgl37b60/browserAdjustments/" | grep ".json" | sort
-    aes
-}
-############################################################################################
-# Mavin
-############################################################################################
-# export MAVEN_OPTS="-Xmx4086m -XX:ReservedCodeCacheSize=256m"
-# export MAVEN_OPTS="-Xmx10G -XX:ReservedCodeCacheSize=256m -Xss8G -XX:+UseG1GC -XX:+UseStringDeduplication"
-
-alias java8='export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_202`'
-alias java11='export JAVA_HOME=`/usr/libexec/java_home -v 11`'
-alias java15='export JAVA_HOME=`/usr/libexec/java_home -v 15`'
-
-alias qb='java8 && mvn clean install -T 1C -Ddelta.skip=true -Dcleanup.skip=true -Dqunit.numThreads=8 -DskipTests -Dtablespaces.skip=true -Dgulp.task=min && java11'
-alias qqb='java8 && mvn install -T 1C -Ddelta.skip=true -Dcleanup.skip=true -Dqunit.numThreads=8 -DskipTests -Dtablespaces.skip=true -Dgulp.task=min && java11'
-alias mc='k && java8 && mvn clean && java11'
-alias mci='k && java8 && mvn clean install && java11'
-alias mnt='java8 && mvn -Dmaven.test.skip=true install && java11'
-
-############################################################################################
-# From On-Boarding
-############################################################################################
+alias bc="brew cask"
+alias bi="brew info"
+alias bl="brew leaves | xargs brew deps --installed --for-each | sed \"s/^.*:/$(tput setaf 4)&$(tput sgr0)/\""
+alias bl="brew list && brew cask list && mas list"
+alias bs="brew search"
+alias bundle_name="osascript -e 'id of app"
+alias caskroom="cd /usr/local/Caskroom && l"
+alias cat='bat -p'
+alias cellar="cd /usr/local/Cellar && l"
+alias d='dirs -v | head -10'
 alias dbstart="nohup VBoxHeadless --startvm 'Oracle11g32' &> /dev/null &"
 alias dbstop="VBoxManage controlvm Oracle11g32 poweroff"
+alias dkl='docker ps -a'
+alias dkr='docker run --rm'
+alias dkrh='docker run --rm -d -p 8081:80'
+alias dkrt='docker run --rm -it'
+alias f='vifm'
+alias grep='rg'
+alias java11='export JAVA_HOME=`/usr/libexec/java_home -v 11`'
+alias java15='export JAVA_HOME=`/usr/libexec/java_home -v 15`'
+alias java8='export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_202`'
+alias l='exa -1Fa --group-directories-first'
+alias ll='exa --long --all --group-directories-first'
+alias lt='exa --tree --level=2'
+alias mc='k && java8 && mvn clean && java11'
+alias mci='k && java8 && mvn clean install && java11'
+alias mf="mas info"
+alias mi="mas install"
+alias ml="mas list"
+alias mnt='java8 && mvn -Dmaven.test.skip=true install && java11'
+alias mr="mas uninstall"
+alias ms="mas search"
+alias mup="mas upgrade"
+alias qb='java8 && mvn clean install -T 1C -Ddelta.skip=true -Dcleanup.skip=true -Dqunit.numThreads=8 -DskipTests -Dtablespaces.skip=true -Dgulp.task=min && java11'
+alias qqb='java8 && mvn install -T 1C -Ddelta.skip=true -Dcleanup.skip=true -Dqunit.numThreads=8 -DskipTests -Dtablespaces.skip=true -Dgulp.task=min && java11'
+alias sb='stack build'
+alias sc='stack clean'
+alias sg='ghcid --command "stack repl" --test ":main"'
+alias sha1="shasum -a 1 "
+alias sha256="shasum -a 256 "
+alias sha512="shasum -a 512 "
+alias shopcart='sqlplus -L jwindsor@shopcart'
+alias sinit='stack init'
+alias sn='stack-new'
+alias sr='stack repl'
+alias st='stack test'
+alias stt='stack ide targets'
+alias sup='stack upgrade --force-download'
+alias t1='sqlplus -L cj@tcjoweb1'
+alias test-schemas='java -jar ./target/schemas-main-SNAPSHOT.one-jar.jar locator=T5 tnsnames=/USers/jwindsor/.local/cjdev/ci/tns-admin/tnsnames.ora'
+alias tree='exa --tree'
+alias vc='nvim $HOME/.config/machine/wl-jwindso-mac/zshrc'
+alias ve='nvim $HOME/.config/machine/wl-jwindso-mac/zshenv'
 
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && source "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
+# export MAVEN_OPTS="-Xmx4086m -XX:ReservedCodeCacheSize=256m"
+# export MAVEN_OPTS="-Xmx10G -XX:ReservedCodeCacheSize=256m -Xss8G -XX:+UseG1GC -XX:+UseStringDeduplication"
 # NVM =============================================
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
