@@ -28,7 +28,7 @@ export MAVEN_OPTS="-Xmx8G -Xss3m -XX:ReservedCodeCacheSize=256m"
 export PROJECTS_DIR="$HOME/.local/cjdev"
 export SOFTWARE_HOME="$PROJECTS_DIR"
 export JAVA_HOME=`/usr/libexec/java_home -v 11`
-export TNS_ADMIN="$SOFTWARE_HOME/sqlplus/"
+export TNS_ADMIN="$SOFTWARE_HOME/ci/tns-admin/"
 export DYLD_LIBRARY_PATH="$SOFTWARE_HOME/sqlplus/darwin"
 export CLASSPATH="$SOFTWARE_HOME/bin:$CLASSPATH"
 export DEVDB_HOST=devdb.db.cj.com
