@@ -88,14 +88,18 @@ casks() {
     local result=$(brew search --casks | fzf -m --preview="brew cask info {}" --preview-window=:hidden --bind=space:toggle-preview)
     [ ! -z "$result" ] && brew cask install "$result"
 }
+find-name(){
+    # errors not displayed
+    find "$1" -name "$2" -print 2>/dev/null
+}
 patch-update(){ ssh -t ${1} "sudo /usr/sbin/cnvr-patch update"; }
 patch-query() { ssh -t ${1} "sudo /usr/sbin/cnvr-patch query"; }
-stack-new(){
-    stack new $1 && cd $1 && stack setup && stack build;
-    }
-say(){
-    echo "${green}${1}${reset}"
-}
+say(){ echo "${green}${1}${reset}"; }
+stack-new(){ stack new $1 && cd $1 && stack setup && stack build; }
+sha1c()  { shasum -a 1 -c "$1.sha1"; }
+sha256c(){ shasum -a 256 -c "$1.sha256"; }
+sha512c(){ shasum -a 512 -c "$1.sha512"; }
+md5c()  { md5 -r "$1" | diff "$1.md5" -; }
 
 alias acd="aws-cloudfront-describe"
 alias acd="aws-cloudfront-describe-status"
@@ -137,9 +141,9 @@ alias qqb='java8 && mvn install -T 1C -Ddelta.skip=true -Dcleanup.skip=true -Dqu
 alias sb='stack build'
 alias sc='stack clean'
 alias sg='ghcid --command "stack repl" --test ":main"'
-alias sha1="shasum -a 1 "
-alias sha256="shasum -a 256 "
-alias sha512="shasum -a 512 "
+alias sha1="shasum -a 1"
+alias sha256="shasum -a 256"
+alias sha512="shasum -a 512"
 alias shopcart='sqlplus -L jwindsor@shopcart'
 alias sinit='stack init'
 alias sn='stack-new'
@@ -149,6 +153,7 @@ alias stt='stack ide targets'
 alias sup='stack upgrade --force-download'
 alias t1='sqlplus -L cj@tcjoweb1'
 alias test-schemas='java -jar ./target/schemas-main-SNAPSHOT.one-jar.jar locator=T5 tnsnames=/USers/jwindsor/.local/cjdev/ci/tns-admin/tnsnames.ora'
+alias tns='v ~/.local/cjdev/ci/tns-admin/tnsnames.ora'
 alias tree='exa --tree'
 alias vc='nvim $HOME/.config/machine/wl-jwindso-mac/zshrc'
 alias ve='nvim $HOME/.config/machine/wl-jwindso-mac/zshenv'
