@@ -15,7 +15,7 @@ status=$(cat /sys/class/power_supply/BAT1/status)
 #    icon=""
 #fi
  
-printf "%s%%            " "$capacity"
+printf "%s%%              " "$capacity"
 
 case $BUTTON in
     1) dunstify --replace=1 "Battery: $capacity%" "$status";;

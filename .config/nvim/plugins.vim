@@ -31,4 +31,7 @@ source $HOME/.config/nvim/plugin-config-vim-sneak.vim"
 source $HOME/.config/nvim/plugin-config-quick-scope.vim"
 source $HOME/.config/nvim/plugin-config-which-key.vim"
 source $HOME/.config/nvim/plugin-config-fzf.vim"
+"== File Beagle ==========================
+"g:filebeagle_show_hidden=1
+"g:filebeagle_show_line_relativenumbers=1
 
