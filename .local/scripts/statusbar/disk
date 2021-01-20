@@ -1,8 +1,8 @@
 #!/bin/sh
 value="$(df -h /dev/sda2 | sed -n '2{p;q}' | awk '{print $5}')"
-icon=""
+#icon=""
 
-printf "%s %s" "$icon" "$value"
+printf "%s" "$value"
 
 case $BUTTON in
     1) dunstify --replace=1 "Free space(home): $value" "Right click to open pcmanfm";;

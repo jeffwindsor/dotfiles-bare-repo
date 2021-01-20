@@ -9,6 +9,7 @@ keychain
 neovim
 picom
 ripgrep
+stack
 tldr
 variety
 zsh

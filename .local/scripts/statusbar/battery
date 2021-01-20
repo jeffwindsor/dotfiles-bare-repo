@@ -1,21 +1,21 @@
 #!/bin/sh
 
-icon=""
+#icon=""
 
 capacity=$(cat /sys/class/power_supply/BAT1/capacity) || exit
 status=$(cat /sys/class/power_supply/BAT1/status)
 
-if [ "$capacity" -le 75 -a "$capacity" -gt 50 ]; then
-    icon=""
-elif [ "$capacity" -le 50 -a "$capacity" -gt 30 ]; then
-    icon=""
-elif [ "$capacity" -le 30 -a "$capacity" -gt 20 ]; then
-    icon=""
-elif [ "$capacity" -le 20 ]; then
-    icon=""
-fi
+#if [ "$capacity" -le 75 -a "$capacity" -gt 50 ]; then
+#    icon=""
+#elif [ "$capacity" -le 50 -a "$capacity" -gt 30 ]; then
+#    icon=""
+#elif [ "$capacity" -le 30 -a "$capacity" -gt 20 ]; then
+#    icon=""
+#elif [ "$capacity" -le 20 ]; then
+#    icon=""
+#fi
  
-printf "%s %s%%" "$icon" "$capacity"
+printf "%s%%            " "$capacity"
 
 case $BUTTON in
     1) dunstify --replace=1 "Battery: $capacity%" "$status";;
