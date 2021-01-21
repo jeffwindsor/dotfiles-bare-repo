@@ -4,21 +4,17 @@ cd "$(dirname "${0}")"
 
 ln -sf "$PWD/zshenv" "$HOME/.zshenv"
 ln -sf "$PWD/zshrc" "$HOME/.zshrc"
-ln -sf "$PWD/systemd" "$HOME/.config/systemd"
-ln -sf "$PWD/alacritty" "$HOME/.config/alacritty"
-ln -sf "$PWD/sxhkd" "$HOME/.config/sxhkd"
-ln -sf "$PWD/picom" "$HOME/.config/picom"
+
+mkdir -p "$HOME/.config/sxhkd"
+ln -sf "$PWD/sxhkdrc" "$HOME/.config/sxhkd/sxhkdrc"
+
+mkdir -p "$HOME/.config/picom"
+ln -sf "$PWD/picom.conf" "$HOME/.config/picom/picom.conf"
+
+mkdir -p "$HOME/.config/alacritty"
+ln -sf "$PWD/base.yml" "$HOME/.config/alacritty/base.yml"
 
 ln -sf "${HOME}/.config/gitignore" "$HOME/.gitignore"
 ln -sf "${HOME}/.config/git/personal.gitconfig" "$HOME/.gitconfig"
 ln -sf "${HOME}/.config/ssh/personal.config" "$HOME/.ssh/config"
 
-
-
-#ln -sf "${HOME}/.config/machine/arco/spectrwm.conf" "$HOME/.spectrwm.conf"
-#ln -sf "${HOME}/.config/machine/arco/spectrbar.sh" "$HOME/.config/spectrwm/spectrbar.sh"
-#ln -sf "${HOME}/.config/machine/arco/polybar.config" "$HOME/.config/polybar/config"
-#ln -sf "${HOME}/.config/vscode/keybindings.json.macos" \
-#       "$HOME/Library/Application Support/VSCodium/User/keybindings.json"
-#ln -sf "${HOME}/.config/vscode/settings.json.macos" \
-#       "$HOME/Library/Application Support/VSCodium/User/settings.json"
