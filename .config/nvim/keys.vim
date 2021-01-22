@@ -36,12 +36,11 @@ nnoremap <leader>ft :Filetypes<CR>
 "== Windows =======================================================
 nnoremap <leader>wv :vsplit<CR>
 nnoremap <leader>wh :split<CR>
-"Resize Height
-nnoremap <leader>w+ :resize +5<CR>
-nnoremap <leader>w- :resize -5<CR>
-"Resize Width
-nnoremap <leader>w> :vertical resize +5<CR>
-nnoremap <leader>w< :vertical resize -5<CR>
+"Resize
+nnoremap <leader>wH :vertical resize -5<CR>
+nnoremap <leader>wJ :resize -5<CR>
+nnoremap <leader>wK :resize +5<CR>
+nnoremap <leader>wL :vertical resize +5<CR>
 "Select by Search
 nnoremap <leader>ww :Windows<CR> 
 "Select By Direction

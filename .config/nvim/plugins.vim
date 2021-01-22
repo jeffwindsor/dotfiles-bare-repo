@@ -8,8 +8,7 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'chriskempson/base16-vim'
   Plug 'sonph/onehalf', { 'rtp': 'vim' }
   Plug 'arcticicestudio/nord-vim'
-  Plug 'itchyny/lightline.vim'
-  Plug 'ap/vim-css-color'
+  "Plug 'itchyny/lightline.vim'
 
   " Addons
   "Plug 'machakann/vim-highlightedyank'
@@ -17,13 +16,14 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'unblevable/quick-scope'
   Plug 'justinmk/vim-sneak'
   "Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-  "Plug 'vimwiki/vimwiki'
+  Plug 'vimwiki/vimwiki'
   Plug 'jeetsukumaran/vim-filebeagle'
+  Plug 'dhruvasagar/vim-table-mode'
 
-  " Code
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  "Plug 'frazrepo/vim-rainbow' 
-  "Plug 'tpope/vim-commentary'
+  Plug 'ap/vim-css-color'
+  "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'frazrepo/vim-rainbow' 
+  Plug 'tpope/vim-commentary'
 
 call plug#end()
 
