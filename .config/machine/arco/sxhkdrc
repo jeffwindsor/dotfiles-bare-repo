@@ -1,108 +1,91 @@
-
-super + space
-    dmenu_run
-
-super + control + space
-    ls -p $HOME/.local/scripts | rg -v / | dmenu
-
-super + Return
-    alacritty
-
-super + shift + Return
-    thunar
-
-super + control + Return
-    firefox
-
-super + .
-    arcolinux-tweak-tool
-
-super + v
-    pavuctrl
-
+# processes
 super + Escape
     xfce4-taskmanager
 
-super + x
-    arcolinux-logout
+# launcher
+super + space
+    dmenu_run
 
+# scripts
+super + control + space
+    ls -p $HOME/.local/scripts | rg -v / | dmenu
+
+# terminal
+super + Return
+    alacritty
+super + Down
+    xfce4-terminal --drop-down
+
+
+# files
+super + shift + Return
+    thunar
+
+# browser
+super + control + Return
+    firefox
+super + control + alt + Return
+    brave
+
+# settings (alternate)
+super + .
+    arcolinux-tweak-tool
+
+# editors
 super + e 
     emacs
+super + n
+    nvim
+
+# sxhkd - reload
+super + control + s
+	pkill -USR1 -x sxhkd
+
+# volume control
+super + v
+    pavuctrl
+
+# exit window manager
+super + x
+    arcolinux-logout
 
 # wallpapers
 control + Left
     variety -p
-
 control + Right
     variety -n
 
-# kill window
-super + q
-    xkill
+# media
+XF86AudioRaiseVolume
+    amixer set Master 10%+
+XF86AudioLowerVolume
+    amixer set Master 10%-
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
 
-## reload sxhkd:
-#super + shift + s
-#	pkill -USR1 -x sxhkd
+XF86AudioPlay
+    playerctl play-pause
+XF86AudioNext
+    playerctl next
+XF86AudioPrev
+    playerctl previous
+XF86AudioStop
+    playerctl stop
+
+# monitor brightness
+XF86MonBrightnessUp
+    xbacklight -inc 10
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
 
 ## print screen
 #Print
 #    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
-
-# dropdown dropdown
-F12
-    xfce4-terminal --drop-down
-
+# conky
 #super + c
 #    conky-toggle
-#
 #ctrl + alt + Next
 #     conky-rotate -n
-#
 #ctrl + alt + Prior
 #    conky-rotate -p
-
-##Raises volume
-#XF86AudioRaiseVolume
-#    amixer set Master 10%+
-#
-##Lowers volume
-#XF86AudioLowerVolume
-#    amixer set Master 10%-
-#
-##Mute
-#XF86AudioMute
-#    amixer -D pulse set Master 1+ toggle
-#
-##Playerctl works for Pragha, Spotify and others
-##Delete the line for playerctl if you want to use mpc
-##and replace it with the corresponding code
-##mpc works for e.g.ncmpcpp
-##mpc toggle
-##mpc next
-##mpc prev
-##mpc stop
-#
-##PLAY
-#XF86AudioPlay
-#    playerctl play-pause
-#
-##Next
-#XF86AudioNext
-#    playerctl next
-#
-##previous
-#XF86AudioPrev
-#    playerctl previous
-#
-##Stop
-#XF86AudioStop
-#    playerctl stop
-#
-##Brightness up
-#XF86MonBrightnessUp
-#    xbacklight -inc 10
-#
-##Brightness down
-#XF86MonBrightnessDown
-#    xbacklight -dec 10
-#
