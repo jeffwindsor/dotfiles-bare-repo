@@ -1,50 +1,68 @@
 #!/usr/bin/env bash
+cd "$(dirname "${0}")"
+sudo apt update && sudo apt upgrade
 
 ################################################################################
 # POP-OS
 ################################################################################
-set -e
-cd "$(dirname "${0}")"
+install() {
+    if [ $(dpkg-query -W -f='${Status}' $1 2>/dev/null | grep -c "ok installed") -eq 0 ];
+        printf "\033[0;32m==> $1 \033[0m [installed] \n"
+    then
+        printf "\033[0;32m==> installing $1 \033[0m \n"
+        sudo apt-get install $1;
+    fi
+}
 
-echo-color(){ printf "\033[0;32m==> $1 \033[0m \n"; }
+################################################################################
+# HARDWARE: MACBOOK PRO 
+################################################################################
+echo "macbook pro retina 2015 proprietary wireless drive for broadcom 14E4:43A0"
+#https://unix.stackexchange.com/questions/175810/how-to-install-broadcom-bcm4360-on-debian-on-macbook-pro
+install broadcom-sta-dkms
+sudo modprobe -r b44 b43 b43legacy ssb brcmsmac
+sudo modprobe wl
 
-echo-color "packages"
-sudo apt update
-sudo apt upgrade
+################################################################################
+# SOFTWARE: 
+################################################################################
+packages=(
+alacritty
+ripgrep
+fzf
+fd
+git
+tldr
+wget
+jq
+autojump
+vlc
+wallch
+golang
+nodejs
+haskell-stack
+wallch
+zsh 
+zsh-autosuggestions 
+zsh-syntax-highlighting
+gnome-tweaks
+)
+source ../setup.sh "${packages[@]}"
 
-echo-color "utilities"
-sudo apt -y install ripgrep fzf fd-find git tldr wget jq autojump
-
-echo-color "editors"
-sudo apt -y install neovim && ../install-neovim-plug.sh
-sudo apt -y install emacs && ../install-doom-emacs.sh
+################################################################################
+echo "vscodium"
 flatpak install flathub com.vscodium.codium
 
-echo-color "languages"
-sudo apt -y install golang
-sudo apt -y install nodejs
-../install-rust.sh
-sudo apt -y install haskell-stack 
-
-echo-color "entertainment"
-sudo apt -y install vlc
-sudo apt -y install wallch
-
-echo-color "brave browser"
-sudo apt -y install apt-transport-https curl gnupg
+################################################################################
+echo "brave browser"
+install apt-transport-https curl gnupg
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
-sudo apt -y install brave-browser
+install brave-browser
 
-echo-color "pimp my terminal"
-sudo apt -y install alacritty
-sudo apt -y install zsh zsh-autosuggestions zsh-syntax-highlighting
-chsh -s "$(which zsh)"
-
-echo-color "pimp my desktop"
-sudo apt -y install gnome-tweaks
-../setup-laptop.sh
+################################################################################
+echo "JetBrains Font"
 wget https://download.jetbrains.com/fonts/JetBrainsMono-2.002.zip \
     && unzip JetBrainsMono-2.002.zip -d ~/.local/share/fonts \
     && fc-cache -f -v \
@@ -54,42 +72,34 @@ wget https://download.jetbrains.com/fonts/JetBrainsMono-2.002.zip \
     && gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Medium 12' \
     && gsettings set org.gnome.desktop.wm.preferences titlebar-font 'JetBrains Mono Medium 12' 
 
-echo-color "topgrade package updater" 
-source $HOME/.cargo/env
+################################################################################
+echo "topgrade package updater" 
 cargo install topgrade
 
-echo-color "link config files" 
+################################################################################
+echo "link config files" 
 ./link.sh
 
-echo-color "gnome keybindings"
-./gnome-keybindings.sh
-
-echo-color "starship prompt"
-../install-starship-prompt.sh
-
-echo-color "git clones"
-../clone-known-gits.sh
-
-echo-color "appearance"
+################################################################################
+echo "appearance"
 mkdir -p $HOME/.themes 
 mkdir -p $HOME/.icons 
 
-echo-color "ssh"
-../setup-machine-ssh.sh
+################################################################################
+./setup-laptop.sh
 
-echo-color "manual steps"
+################################################################################
+echo "manual steps"
+
 xdg-open https://github.com/settings/keys
 xdg-open https://mega.nz/sync
-# extensions
 xdg-open https://extensions.gnome.org/extension/600/launch-new-instance/
 xdg-open https://extensions.gnome.org/extension/1488/gnome-fuzzy-search/
 xdg-open https://extensions.gnome.org/extension/906/sound-output-device-chooser/
 xdg-open https://extensions.gnome.org/extension/21/workspace-indicator/
 xdg-open https://extensions.gnome.org/extension/19/user-themes/
 xdg-open https://extensions.gnome.org/extension/744/hide-activities-button/
-# themes
 xdg-open https://www.gnome-look.org/p/1267246/
 xdg-open https://www.gnome-look.org/p/1357889/
-# icons
 xdg-open https://www.gnome-look.org/s/Gnome/p/1166289 
 

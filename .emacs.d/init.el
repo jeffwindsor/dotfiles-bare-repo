@@ -33,6 +33,8 @@
 (load-theme 'doom-one 't)
 (doom-modeline-mode 1)
 (ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-count-format "(%d/%d) ")
 
 ;; Visuals
 (setq inhibit-startup-message t)

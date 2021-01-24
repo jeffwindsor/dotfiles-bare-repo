@@ -1,27 +1,10 @@
 #!/usr/bin/env bash
+cd "$(dirname "${0}")" 
+sudo pacman -Syyu
 
-packages=(
-alacritty
-emacs
-fd
-fzf
-keychain
-neovim
-picom
-ripgrep
-stack
-tldr
-variety
-zsh
-zsh-completions
-zsh-autosuggestions
-zsh-syntax-highlighting
-nodejs
-go
-terminal-font-awesome
-ttf-jetbrains-mono
-)
-
+################################################################
+# ARCO LINUX
+################################################################
 install() {
 	if pacman -Qi $1 &> /dev/null; then
   		echo "==> "$1" [installed]"
@@ -32,26 +15,52 @@ install() {
 }
 
 ################################################################
-cd "$(dirname "${0}")" 
-for name in "${packages[@]}"
-do
-    install $name
-done
+# HARDWARE: MACBOOK PRO 15
+################################################################
+install broadcom-wl-dkms
 
-# pimp my shell
-(source ../clone-known-gits.sh)
-(source ../install-starship-prompt.sh)
+################################################################
+# Standard
+################################################################
+packages=(
+alacritty
+autojump
+emacs
+fd
+fzf
+git
+go
+keychain
+neovim
+nodejs
+picom
+ripgrep
+stack
+terminal-font-awesome
+tldr
+ttf-jetbrains-mono
+variety
+vlc
+zsh
+zsh-autosuggestions
+zsh-completions
+zsh-syntax-highlighting
+)
+source ../setup.sh "${packages[@]}"
 
-# languages
-(source ../install-rust.sh)
+################################################################
+# zsh as default shell
+chsh -s "$(which zsh)"
 
-# editors
-(source ../install-neovim-plug.sh)
-(source ../install-doom-emacs.sh)
-
-# requires rust
+################################################################
+echo "topgrade package updater" 
 cargo install topgrade
 
-# manual
+################################################################
+echo "link config files" 
+./link.sh
+
+################################################################
+echo "manual steps"
 xdg-open https://mega.nz/sync
 
