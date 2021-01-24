@@ -3,6 +3,7 @@
 		     doom-themes
 		     doom-modeline
              evil
+             evil-leader
              ivy))
 
 ;; Packages: repositories
@@ -25,7 +26,10 @@
 
 ;; Packages: Configuration
 (require 'evil)
+(require 'evil-leader)
+(global-evil-leader-mode)
 (evil-mode t)
+
 (load-theme 'doom-one 't)
 (doom-modeline-mode 1)
 (ivy-mode 1)
@@ -39,4 +43,27 @@
 (menu-bar-mode -1)          ; Disable the menu bar
 
 ;;Keys 
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key 
+  "b" 'switch-to-buffer
+  "e" 'find-file
+  "k" 'kill-buffer
+  )
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)     ;; Make ESC quit prompts
+
+
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(which-key use-package rainbow-delimiters no-littering ivy-rich hydra helpful general evil-collection doom-themes doom-modeline counsel command-log-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
