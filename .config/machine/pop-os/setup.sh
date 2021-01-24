@@ -6,7 +6,7 @@ sudo apt update && sudo apt upgrade
 # POP-OS
 ################################################################################
 install() {
-    if [ $(dpkg-query -W -f='${Status}' $1 2>/dev/null | grep -c "ok installed") -eq 0 ];
+    if [ $(dpkg-query -W -f='${Status}' $1 | grep -c "ok installed") -eq 0 ];
     then
         printf "\033[0;32m==> $1 \033[0m [installed] \n"
     else
@@ -52,7 +52,7 @@ source ../setup.sh "${packages[@]}"
 
 ################################################################################
 echo "vscodium"
-flatpak install flathub com.vscodium.codium
+flatpak install -y flathub com.vscodium.codium
 
 ################################################################################
 echo "brave browser"
