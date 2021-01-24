@@ -12,7 +12,7 @@ mkdir -p "$HOME/.config/picom"
 ln -sf "$PWD/picom.conf" "$HOME/.config/picom/picom.conf"
 
 mkdir -p "$HOME/.config/alacritty"
-ln -sf "$PWD/base.yml" "$HOME/.config/alacritty/base.yml"
+ln -sf "$PWD/alacritty-base.yml" "$HOME/.config/alacritty/base.yml"
 
 ln -sf "${HOME}/.config/gitignore" "$HOME/.gitignore"
 ln -sf "${HOME}/.config/git/personal.gitconfig" "$HOME/.gitconfig"
