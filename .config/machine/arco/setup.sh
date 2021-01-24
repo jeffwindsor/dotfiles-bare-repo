@@ -35,7 +35,6 @@ neovim
 nodejs
 picom
 ripgrep
-stack
 terminal-font-awesome
 tldr
 ttf-jetbrains-mono
@@ -47,6 +46,10 @@ zsh-completions
 zsh-syntax-highlighting
 )
 source ../setup.sh "${packages[@]}"
+
+cd $HOME/src/dwm && sudo make clean install && cd -
+cd $HOME/src/dwmblocks && sudo make clean install && cd -
+cd $HOME/src/dmenu && sudo make clean install && cd -
 
 ################################################################
 # zsh as default shell
