@@ -19,6 +19,20 @@ install() {
 ################################################################
 install broadcom-wl-dkms
 
+# hidpi retina screen to 200%
+cat << EOF >> $HOME/.Xresources
+
+Xft.dpi: 192
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+EOF
+
+
 ################################################################
 # Standard
 ################################################################
@@ -46,7 +60,6 @@ zsh-completions
 zsh-syntax-highlighting
 )
 source ../setup.sh "${packages[@]}"
-
 cd $HOME/src/dwm && sudo make clean install && cd -
 cd $HOME/src/dwmblocks && sudo make clean install && cd -
 cd $HOME/src/dmenu && sudo make clean install && cd -

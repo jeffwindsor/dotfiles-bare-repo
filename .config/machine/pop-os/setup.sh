@@ -16,13 +16,20 @@ install() {
 }
 
 ################################################################################
-# HARDWARE: MACBOOK PRO 
+# MACBOOK PRO 2015 
 ################################################################################
-echo "macbook pro retina 2015 proprietary wireless drive for broadcom 14E4:43A0"
-#https://unix.stackexchange.com/questions/175810/how-to-install-broadcom-bcm4360-on-debian-on-macbook-pro
+echo "macbook pro retina 2015"
+# Wireless proprietary wireless drive for broadcom 14E4:43A0
+#   https://unix.stackexchange.com/questions/175810/how-to-install-broadcom-bcm4360-on-debian-on-macbook-pro
 install broadcom-sta-dkms
 sudo modprobe -r b44 b43 b43legacy ssb brcmsmac
 sudo modprobe wl
+# Laptop Power Management
+sysdl='/etc/systemd/logind.conf'
+cat $sysdl \
+    | sed -r 's/\#?HandleLidSwitchExternalPower=.*/HandleLidSwitchExternalPower=ignore/g' \
+    | sed -r 's/\#?HandleLidSwitch=.*/HandleLidSwitch=poweroff/g' \
+    | sudo tee $sysdl
 
 ################################################################################
 # SOFTWARE: 
@@ -49,6 +56,10 @@ zsh-syntax-highlighting
 gnome-tweaks
 )
 source ../setup.sh "${packages[@]}"
+
+################################################################################
+echo "link config files" 
+source ./link.sh
 
 ################################################################################
 echo "vscodium"
@@ -78,16 +89,9 @@ echo "topgrade package updater"
 cargo install topgrade
 
 ################################################################################
-echo "link config files" 
-./link.sh
-
-################################################################################
 echo "appearance"
 mkdir -p $HOME/.themes 
 mkdir -p $HOME/.icons 
-
-################################################################################
-./setup-laptop.sh
 
 ################################################################################
 echo "manual steps"
