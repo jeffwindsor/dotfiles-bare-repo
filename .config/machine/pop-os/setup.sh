@@ -8,10 +8,10 @@ sudo apt update && sudo apt upgrade
 install() {
     if [ $(dpkg-query -W -f='${Status}' $1 | grep -c "ok installed") -eq 0 ];
     then
-        printf "\033[0;32m==> $1 \033[0m [installed] \n"
-    else
         printf "\033[0;32m==> installing $1 \033[0m \n"
         sudo apt-get -y install $1;
+    else
+        printf "\033[0;32m==> $1 \033[0m [installed] \n"
     fi
 }
 
