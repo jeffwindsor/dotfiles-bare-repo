@@ -36,24 +36,23 @@ cat $sysdl \
 ################################################################################
 packages=(
 alacritty
-ripgrep
-fzf
-fd
-git
-tldr
-wget
-jq
 autojump
+fd-find
+fzf
+git
+gnome-tweaks
+golang
+haskell-stack
+jq
+nodejs
+ripgrep
+tldr
 vlc
 wallch
-golang
-nodejs
-haskell-stack
-wallch
+wget
 zsh 
 zsh-autosuggestions 
 zsh-syntax-highlighting
-gnome-tweaks
 )
 source ../setup.sh "${packages[@]}"
 
