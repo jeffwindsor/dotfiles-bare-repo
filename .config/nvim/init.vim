@@ -7,8 +7,8 @@ source $HOME/.config/nvim/plugins.vim
 "== Keys
 source $HOME/.config/nvim/keys.vim
 
-"== Theming
-let g:lightline = { 'colorscheme' : 'tender' } " one tender nord
-colorscheme tender "gruvbox tender one nord
+"== Theming "tender one nord
+let g:lightline = { 'colorscheme' : 'tender' }
+colorscheme tender
 
 

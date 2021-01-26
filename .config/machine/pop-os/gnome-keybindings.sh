@@ -35,6 +35,9 @@ dconf write "/org/gnome/desktop/wm/keybindings/move-to-monitor-right" "['<Shift>
 dconf write "/org/gnome/desktop/wm/keybindings/move-to-workspace-up" "['<Shift><Ctrl><Super>Up', '<Shift><Ctrl><Super>k']"
 dconf write "/org/gnome/desktop/wm/keybindings/move-to-workspace-down" "['<Shift><Ctrl><Super>Down', '<Shift><Ctrl><Super>j']"
 
+dconf write "/org/gnome/mutter/dynamic-workspaces" "false"
+dconf write "/org/gnome/desktop/wm/preferences/num-workspaces" "9"
+
 dconf write "/org/gnome/desktop/wm/keybindings/move-to-workspace-1" "['<Shift><Super>1']"
 dconf write "/org/gnome/desktop/wm/keybindings/move-to-workspace-2" "['<Shift><Super>2']"
 dconf write "/org/gnome/desktop/wm/keybindings/move-to-workspace-3" "['<Shift><Super>3']"
@@ -44,6 +47,11 @@ dconf write "/org/gnome/desktop/wm/keybindings/switch-to-workspace-1" "['<Super>
 dconf write "/org/gnome/desktop/wm/keybindings/switch-to-workspace-2" "['<Super>2']"
 dconf write "/org/gnome/desktop/wm/keybindings/switch-to-workspace-3" "['<Super>3']"
 dconf write "/org/gnome/desktop/wm/keybindings/switch-to-workspace-4" "['<Super>4']"
+dconf write "/org/gnome/desktop/wm/keybindings/switch-to-workspace-5" "['<Super>5']"
+dconf write "/org/gnome/desktop/wm/keybindings/switch-to-workspace-6" "['<Super>6']"
+dconf write "/org/gnome/desktop/wm/keybindings/switch-to-workspace-7" "['<Super>7']"
+dconf write "/org/gnome/desktop/wm/keybindings/switch-to-workspace-8" "['<Super>8']"
+dconf write "/org/gnome/desktop/wm/keybindings/switch-to-workspace-9" "['<Super>9']"
 dconf write "/org/gnome/desktop/wm/keybindings/switch-to-workspace-last" "@as []"
 
 dconf write "/org/gnome/desktop/wm/keybindings/switch-applications-backward" "['<Shift><Super>Tab']"
@@ -59,7 +67,7 @@ dconf write "/org/gnome/desktop/wm/keybindings/panel-main-menu" "['<Alt>F1', '<A
 dconf write "/org/gnome/desktop/wm/keybindings/panel-run-dialog" "['<Alt>F2', '<Primary><Alt><Super>space']"
 
 echo-color "Create Custom Keybinding entries"
-dconf write "$MEDIA_KEYS" "['$MEDIA_KEYS/custom0/','$MEDIA_KEYS/custom1/','$MEDIA_KEYS/custom2/','$MEDIA_KEYS/custom3/']"
+dconf write "$MEDIA_KEYS" "['$MEDIA_KEYS/custom0/','$MEDIA_KEYS/custom1/','$MEDIA_KEYS/custom2/','$MEDIA_KEYS/custom3/','$MEDIA_KEYS/custom4/','$MEDIA_KEYS/custom5/']"
 
 echo-color "Emacs - remove email short cut to eliminate overlap"
 dconf write '/org/gnome/settings-daemon/plugins/media-keys/email' '@as []'
@@ -72,4 +80,10 @@ echo-color "Intellij"
 addCustom "2" "'<Super>i'" "'idea'" "'Launch Intellij Idea'"
 
 echo-color "Tweaks"
-addCustom "3" "'<Super>.'" "'Gnome Tweaks'" "'Launch Gnome Tweaks'"
+addCustom "3" "'<Super>period'" "'Gnome Tweaks'" "'Launch Gnome Tweaks'"
+
+echo-color "Logout"
+addCustom "4" "'<Super><Ctrl>x'" "'gnome-session-quit'" "'Logout'"
+
+echo-color "Tweaks"
+addCustom "5" "'<Super><Shift>x'" "'reboot'" "'Restart'"

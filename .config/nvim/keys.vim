@@ -6,12 +6,6 @@ nnoremap <leader>q :q<CR>
 inoremap jk <esc>
 
 "== Configs =======================================================
-"Open
-nnoremap <leader>ce :e $MYVIMRC<CR>
-"Reload
-nnoremap <leader>cr :source $MYVIMRC<CR>
-"Swith Color Schemes
-nnoremap <leader>cc :Colors<CR>
 
 "== Buffers =======================================================
 "Fuzzy List
@@ -30,29 +24,35 @@ nnoremap <leader>fa :sav
 nnoremap <leader>fo :Files $HOME<CR>
 "Search
 nnoremap <leader>ff :rg
-"Change Highlighting
+"Change Type 
 nnoremap <leader>ft :Filetypes<CR>
+"Open
+nnoremap <leader>fce :e $MYVIMRC<CR>
+"Reload
+nnoremap <leader>fcr :source $MYVIMRC<CR>
 
 "== Windows =======================================================
+"Splits
 nnoremap <leader>wv :vsplit<CR>
-nnoremap <leader>wh :split<CR>
+nnoremap <leader>ws :split<CR>
 "Resize
-nnoremap <leader>wH :vertical resize -5<CR>
-nnoremap <leader>wJ :resize -5<CR>
-nnoremap <leader>wK :resize +5<CR>
+nnoremap <leader>wh :vertical resize -5<CR>
+nnoremap <leader>wj :resize -5<CR>
+nnoremap <leader>wk :resize +5<CR>
 nnoremap <leader>wL :vertical resize +5<CR>
 "Select by Search
 nnoremap <leader>ww :Windows<CR> 
 "Select By Direction
-nnoremap <leader>wh <C-W><C-H> 
-nnoremap <leader>wj <C-W><C-J> 
-nnoremap <leader>wk <C-W><C-K> 
-nnoremap <leader>wl <C-W><C-L> 
-"Swap Forward
+nnoremap <leader>sh <C-W><C-H> 
+nnoremap <leader>sj <C-W><C-J> 
+nnoremap <leader>sk <C-W><C-K> 
+nnoremap <leader>sl <C-W><C-L> 
+"Swap
 nnoremap <leader>w<Right> <C-W><C-r> 
-"Swap Backward
 nnoremap <leader>w<Left> <C-W><C-R> 
 "Close
 nnoremap <leader>wq :close<CR> 
 nnoremap <leader>wqo :only<CR> 
+"Swith Color Schemes
+nnoremap <leader>wc :Colors<CR>
 
