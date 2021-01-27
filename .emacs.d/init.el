@@ -29,14 +29,19 @@
 (require 'evil-leader)
 (global-evil-leader-mode)
 (evil-mode t)
-
-(load-theme 'doom-one 't)
-(doom-modeline-mode 1)
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d/%d) ")
+(doom-modeline-mode 1)
 
-;; Visuals
+;; show column number in bottom bar
+(column-number-mode)
+;; display line numbers
+(global-display-line-numbers-mode t)
+;; theme
+(load-theme 'doom-one 't)
+
+;; turn off gui extras
 (setq inhibit-startup-message t)
 (scroll-bar-mode -1)        ; Disable visible scrollbar
 (tool-bar-mode -1)          ; Disable the toolbar
@@ -48,7 +53,7 @@
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key 
   "b" 'switch-to-buffer
-  "e" 'find-file
+  "e" 'eval-buffer
   "k" 'kill-buffer
   )
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)     ;; Make ESC quit prompts
