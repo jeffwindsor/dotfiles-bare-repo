@@ -2,15 +2,6 @@
 cd "$(dirname "${0}")" 
 
 ################################################################
-# INSTALL PACKAGES (install function must already be defined
-################################################################
-echo "==> INSTALL PACKAGES"
-for name in "$@"
-do
-    install $name
-done
-
-################################################################
 echo "==> GIT REPOS INTO HOME ${HOME}/SRC"
 
 clone-if-missing(){
