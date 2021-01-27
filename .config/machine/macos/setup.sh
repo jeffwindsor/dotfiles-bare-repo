@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e
 cd "$(dirname "${0}")"
 
 install-package() {
@@ -11,7 +10,7 @@ install-package() {
     fi
 }
 install-cask() {
-	if brew list $1 &> /dev/null; then
+	if brew list --cask $1 &> /dev/null; then
   		echo "==> "$1" [installed]"
 	else
     	echo "==> "$1
@@ -53,20 +52,17 @@ if [[ "$response" =~ ^(yes|y)$ ]]
 then            
 
 packages=(
-alacritty
 autojump
 bash
 bash-completion
 bat
 coreutils
 curl
-dig
 exa
 fd
 fzf
 git
 gnu-sed
-gpg-suite
 haskell-stack
 hlint
 jq
@@ -90,24 +86,26 @@ zsh-syntax-highlighting
 )
 
 casks=(
+alacritty
 alfred
 amethyst
-karabiner-elements
-whichspace
+brave-browser
 caffeine
-wireshark
 emacs
-intellij-idea
-vscodium
 font-cascadia
 font-fira-code
 font-inconsolata
-font-source-code-pro
 font-jetbrains-mono
-brave-browser
+font-source-code-pro
+gpg-suite
+intellij-idea
+karabiner-elements
+slack
 spotify
 vlc
-slack
+vscodium
+whichspace
+wireshark
 )
     
     for p in "${packages[@]}"; do install-package "$p"; done;
@@ -167,13 +165,13 @@ then
     brew tap InstantClientTap/instantclient
 
 packages=(
-parquet-tools
+cassandra
+clojure
 kafka
 maven
 maven-completion
-cassandra
 openjdk
-clojure
+parquet-tools
 sbt
 scala
 selenium-server-standalone
@@ -183,8 +181,8 @@ casks=(
 instantclient-basic
 instantclient-sqlplus
 instantclient-sqlplus
-keybase
 java8
+keybase
 microsoft-teams
 )
 
