@@ -44,7 +44,10 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tomtom/tcomment_vim'
   Plug 'jeetsukumaran/vim-filebeagle'
+
+  Plug 'junegunn/fzf.vim', { 'do': { -> fzf#install() }}
   Plug 'junegunn/fzf.vim'
+  Plug 'airblade/vim-rooter'
 
   " Experimental
   Plug 'unblevable/quick-scope'
@@ -58,7 +61,6 @@ source $HOME/.config/nvim/plugin-config-vim-sneak.vim"
 source $HOME/.config/nvim/plugin-config-quick-scope.vim"
 "source $HOME/.config/nvim/plugin-config-which-key.vim"
 source $HOME/.config/nvim/plugin-config-fzf.vim"
-source $HOME/.config/nvim/plugins.vim
 
 "== Keys =======================================================
 let mapleader = "\<Space>"
@@ -80,7 +82,7 @@ nnoremap <leader>fa :sav
 nnoremap <leader>fo :Files $HOME<CR>
 "Search
 nnoremap <leader>ff :rg
-"Change Type 
+"Fuzzy Change Type 
 nnoremap <leader>ft :Filetypes<CR>
 "Open
 nnoremap <leader>fce :e $MYVIMRC<CR>
@@ -94,20 +96,15 @@ nnoremap <leader>wh :vertical resize -5<CR>
 nnoremap <leader>wj :resize -5<CR>
 nnoremap <leader>wk :resize +5<CR>
 nnoremap <leader>wL :vertical resize +5<CR>
-"Select by Search
+"Fuzzy Select by Search
 nnoremap <leader>ww :Windows<CR> 
-"Select By Direction
-nnoremap <leader>sh <C-W><C-H> 
-nnoremap <leader>sj <C-W><C-J> 
-nnoremap <leader>sk <C-W><C-K> 
-nnoremap <leader>sl <C-W><C-L> 
 "Swap
 nnoremap <leader>w<Right> <C-W><C-r> 
 nnoremap <leader>w<Left> <C-W><C-R> 
 "Close
 nnoremap <leader>wq :close<CR> 
 nnoremap <leader>wqo :only<CR> 
-"Swith Color Schemes
+"Fuzzy Swith Color Schemes
 nnoremap <leader>wc :Colors<CR>
 
 "== Theming =============================================== "tender one nord
