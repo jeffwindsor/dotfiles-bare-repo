@@ -105,7 +105,6 @@ spotify
 vlc
 vscodium
 whichspace
-wireshark
 )
     ################################################################
     for p in "${packages[@]}"; do install-package "$p"; done;
