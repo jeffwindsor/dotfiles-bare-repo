@@ -81,5 +81,9 @@
         "printEngine": "pprint",
         "width": 120,
         "maxLength": 50
+    },
+    "[css]": {
+
+        "editor.suggest.insertMode": "replace"
     }
 }
