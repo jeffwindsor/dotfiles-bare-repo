@@ -78,9 +78,10 @@ casks=(
 alacritty
 alfred
 amethyst
-brave-browser
+#brave-browser
 caffeine
 emacs
+firefox
 font-cascadia
 font-fira-code
 font-inconsolata

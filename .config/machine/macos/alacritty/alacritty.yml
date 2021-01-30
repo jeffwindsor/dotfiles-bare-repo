@@ -8,7 +8,7 @@ cursor:
 font:
   normal:
     family: 'JetBrains Mono ExtraLight'
-  size: 12.0
+  size: 14.0
 colors:
   # Default colors
   primary:
