@@ -1,12 +1,1 @@
-window:
-  decorations: none
-
-background_opacity: 0.9
-cursor: 
-  style: Block
-
-font:
-  normal:
-    family: 'JetBrains Mono ExtraLight'
-  size: 14.0
-
+/Users/jeffwindsor/.config/machine/macos/alacritty/base.yml

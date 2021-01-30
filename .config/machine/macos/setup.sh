@@ -107,9 +107,10 @@ vscodium
 whichspace
 wireshark
 )
-    
+    ################################################################
     for p in "${packages[@]}"; do install-package "$p"; done;
-    for p in "${casks[@]}"; do install-cask "$p"; done;
+    for p in "${casks[@]}";    do install-cask "$p";    done;
+
     ################################################################
     echo "==> GIT REPOS INTO HOME ${HOME}/SRC"
     mkdir -p ${HOME}/src/hub
@@ -144,6 +145,11 @@ wireshark
     echo "==> NVIM PLUGINS"
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     nvim --headless +PlugInstall +qall
+
+    ################################################################
+    echo "==> DOOM EMACS"
+    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+    ~/.emacs.d/bin/doom install
 fi
 
 read -r -p "Install Apple Store Applications? [y/n] " response
