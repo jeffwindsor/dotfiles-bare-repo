@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 cd "$(dirname "${0}")"
 
+##########################################################
 install-package() {
 	if brew list $1 &> /dev/null; then
   		echo "==> "$1" [installed]"
@@ -9,6 +10,7 @@ install-package() {
     	brew install $1
     fi
 }
+
 install-cask() {
 	if brew list --cask $1 &> /dev/null; then
   		echo "==> "$1" [installed]"
@@ -17,10 +19,12 @@ install-cask() {
     	brew install --cask $1
     fi
 }
+
 clone-if-missing(){
     [[ ! -d $2 ]] && git clone https://github.com/${1}/${2}.git $2
 }
 
+##########################################################
 read -r -p "Add Homebrew? [y/n] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
@@ -35,6 +39,7 @@ then
     brew tap mas-cli/tap
 fi 
 
+##########################################################
 read -r -p "Add Standard Packages? [y/n] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
@@ -141,6 +146,7 @@ whichspace
     ~/.emacs.d/bin/doom install
 fi
 
+##########################################################
 read -r -p "Install Apple Store Applications? [y/n] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
@@ -153,9 +159,69 @@ then
     mas "Microsoft OneNote", id:784801555
 fi
 
+##########################################################
 read -r -p "Create SSH key? [y/n] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
     ssh-keygen -t rsa -b 4096 -C "jeff.windsor@gmail.com"
 fi 
+
+##########################################################
+read -r -p "Add key to SSH Agent? [y/n] " response
+response=${response,,}    # tolower
+if [[ "$response" =~ ^(yes|y)$ ]]
+then            
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_rsa
+fi 
+
+##########################################################
+read -r -p "Set zsh as default? [y/n] " response
+response=${response,,}    # tolower
+if [[ "$response" =~ ^(yes|y)$ ]]
+then            
+    sudo cat > /etc/shells <<EOL
+/bin/sh
+/usr/local/bin/bash
+/usr/local/bin/fish
+/usr/local/bin/zsh
+EOL
+
+    # set default shell
+    chsh -s "$(which zsh)"
+fi 
+##########################################################
+read -r -p "Add CJ specific packages? [y/n] " response
+response=${response,,}    # tolower
+if [[ "$response" =~ ^(yes|y)$ ]]
+then            
+    brew tap InstantClientTap/instantclient
+
+packages=(
+cassandra
+clojure
+kafka
+maven
+maven-completion
+openjdk
+parquet-tools
+sbt
+scala
+selenium-server-standalone
+)
+
+casks=(
+instantclient-basic
+instantclient-sqlplus
+instantclient-sqlplus
+java8
+keybase
+microsoft-teams
+)
+
+    for p in "${packages[@]}"; do install-package "$p"; done;
+    for p in "${casks[@]}"; do install-cask "$p"; done;
+fi
+
+
