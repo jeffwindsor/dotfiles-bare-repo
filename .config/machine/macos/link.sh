@@ -24,7 +24,6 @@ else
 fi
 
 ln -sfv "$PWD/alfred/Alfred.alfredpreferences" "$HOME/.config/alfred/Alfred.alfredpreferences"
-ln -sfv "$PWD/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
 ln -sfv "$PWD/vscode/keybindings.json.macos" "$HOME/Library/Application Support/VSCodium/User/keybindings.json"
 ln -sfv "$PWD/vscode/settings.json.macos" "$HOME/Library/Application Support/VSCodium/User/settings.json"
 ln -sfv "$PWD/ssh/config" "$HOME/.ssh/config"
