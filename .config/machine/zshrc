@@ -47,11 +47,6 @@ dot () { git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"; }
 dot-add-all(){
     dot add -u
     dot add $HOME/.config/machine/*
-    dot add $HOME/.config/doom/*
-    dot add $HOME/.config/git/*
-    dot add $HOME/.config/nvim/*
-    dot add $HOME/.local/ascii-art/*
-    dot add $HOME/.local/fortune/*
 }
 dot-log-graph() { dot log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10}; }
 exec-on-git-repos () {
