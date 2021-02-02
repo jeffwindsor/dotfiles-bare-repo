@@ -17,9 +17,9 @@
        doom-dashboard    ; a nifty splash screen for Emacs
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;;indent-guides     ; highlighted indent columns
-       ;;modeline          ; snazzy, Atom-inspired modeline, plus API
+       modeline          ; snazzy, Atom-inspired modeline, plus API
        ;;nav-flash         ; blink cursor line after big motions
-       ;;neotree           ; a project drawer, like NERDTree for vim
+       neotree           ; a project drawer, like NERDTree for vim
        ;;ophints           ; highlight the region an operation acts on
        (popup +all +defaults)       ; tame sudden yet inevitable temporary windows
        ligatures         ; ligatures or substitute text with pretty symbols
@@ -32,7 +32,7 @@
        :editor
        (evil +everywhere)  ; come to the dark side, we have cookies
        ;;file-templates      ; auto-snippets for empty files
-       ;;fold                ; (nigh) universal code folding
+       fold                ; (nigh) universal code folding
        (format +onsave)  ; automated prettiness
        ;;god               ; run Emacs commands without modifier keys
        ;;lispy             ; vim for lisp, for people who don't like vim
@@ -53,7 +53,7 @@
        :term
        ;;eshell            ; the elisp shell that works everywhere
        ;;shell             ; simple shell REPL for Emacs
-       term              ; basic terminal emulator for Emacs
+       ;;term              ; basic terminal emulator for Emacs
        ;;vterm             ; the best terminal emulation in Emacs
 
        :checkers
@@ -62,7 +62,7 @@
        ;;grammar           ; tasing grammar mistake every you make
 
        :os
-       ;;macos             ; MacOS-specific commands
+       macos             ; MacOS-specific commands
        :tools
        ;;ansible
        ;;debugger          ; FIXME stepping through code, to help you add bugs
@@ -74,7 +74,7 @@
        ;;gist              ; interacting with github gists
        ;;(lookup +devdocs +docsets)          ; navigate your code and its documentation
        ;;lsp
-       ;;magit             ; a git porcelain for Emacs
+       magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
        ;;pdf               ; pdf enhancements

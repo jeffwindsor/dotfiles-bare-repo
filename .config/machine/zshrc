@@ -39,6 +39,35 @@ export KEYTIMEOUT=1
 ###############################################################################
 eval "$(starship init zsh)"
 
+alacritty_change_theme() {
+    cat $HOME/.config/alacritty/base.yml > $HOME/.config/alacritty/alacritty.yml
+    cat $1 >> $HOME/.config/alacritty/alacritty.yml
+}
+dot () { git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"; }
+dot-add-all(){
+    dot add -u
+    dot add $HOME/.config/machine/*
+}
+dot-log-graph() { dot log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10}; }
+exec-on-git-repos () {
+    local result=`git-find-dirs $2 | cut -d '/' -f5- | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden --reverse --height 40% | awk -v path="$2/" '{print path $0}'`
+    [ ! -z "$result" ] && $1 $result
+}
+exec-on-file () {
+    local result=`fd . "$2" -t f -H --ignore-file $XDG_CONFIG_HOME/fdignore | fzf --reverse --height 40% --query="$3"`
+    [ ! -z "$result" ] && $1 "$result"
+}
+git-to-main() { git branch -m master main && git push -u origin main; }
+git-commit(){ git commit -m ${1:-'Refactor'}; }
+git-log-graph(){ git log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10}; }
+git-find-dirs () { find $1 -type d \( -exec test -d "{}/.git" -a "{}" != "." \; -print -prune -o -name .git -prune \); }
+search-alias-functions(){
+    echo '\e[1;34mNames\e[0m'
+    print -l ${(ok)functions} | grep $1;
+    echo '\e[1;34mAliases\e[0m'
+    alias | grep $1;
+}
+
 alias .....='cd ../../../../'
 alias ....='cd ../../../'
 alias ...='cd ../../'
@@ -81,7 +110,8 @@ alias repos='exec-on-git-repos cd $SRC'
 alias saf='search-alias-functions'
 alias src='cd $HOME/src'
 alias srcs='exec-on-git-repos cd $SRC'
-alias theme='exec-on-file alacritty_change_theme $SRC/hub/alacritty-theme/themes'
+alias theme='exec-on-file alacritty_change_theme $SRC/hub/iTerm2-Color-Schemes/alacritty/'
+alias theme2='exec-on-file alacritty_change_theme $SRC/hub/alacritty-theme/themes'
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias up='topgrade' #'package-upgrade'
@@ -91,36 +121,3 @@ alias vim='nvim'
 alias y='youtube-dl'
 alias ya='youtube-dl --extract-audio --audio-format m4a --audio-quality 0'
 
-alacritty_change_theme() {
-    cat $HOME/.config/alacritty/base.yml > $HOME/.config/alacritty/alacritty.yml
-    cat $1 >> $HOME/.config/alacritty/alacritty.yml
-}
-dot () { git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"; }
-dot-add-all(){
-    dot add -u
-    dot add $HOME/.config/machine/*
-    dot add $HOME/.config/doom/*
-    dot add $HOME/.config/git/*
-    dot add $HOME/.config/nvim/*
-    dot add $HOME/.local/ascii-art/*
-    dot add $HOME/.local/fortune/*
-}
-dot-log-graph() { dot log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10}; }
-exec-on-git-repos () {
-    local result=`git-find-dirs $2 | cut -d '/' -f5- | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden --reverse --height 40% | awk -v path="$2/" '{print path $0}'`
-    [ ! -z "$result" ] && $1 $result
-}
-exec-on-file () {
-    local result=`fd . "$2" -t f -H --ignore-file $XDG_CONFIG_HOME/fdignore | fzf --reverse --height 40% --query="$3"`
-    [ ! -z "$result" ] && $1 "$result"
-}
-git-to-main() { git branch -m master main && git push -u origin main; }
-git-commit(){ git commit -m ${1:-'Refactor'}; }
-git-log-graph(){ git log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10}; }
-git-find-dirs () { find $1 -type d \( -exec test -d "{}/.git" -a "{}" != "." \; -print -prune -o -name .git -prune \); }
-search-alias-functions(){
-    echo '\e[1;34mNames\e[0m'
-    print -l ${(ok)functions} | grep $1;
-    echo '\e[1;34mAliases\e[0m'
-    alias | grep $1;
-}
