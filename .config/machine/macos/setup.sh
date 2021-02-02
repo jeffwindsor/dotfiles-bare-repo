@@ -117,7 +117,7 @@ whichspace
     clone-if-missing morhetz gruvbox
     clone-if-missing arcticicestudio nord
     clone-if-missing eendroroy alacritty-theme
-    
+    clone-if-missing mbadolato iTerm2-Color-Schemes.git   
     ################################################################
     echo "==> STARSHIP PROMPT"
     curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
