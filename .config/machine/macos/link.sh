@@ -4,6 +4,8 @@ cd "$(dirname "${0}")"
 mkdir -p $HOME/.config/alacritty
 mkdir -p $HOME/.config/alfred
 mkdir -p $HOME/.config/karabiner
+mkdir -p $HOME/.config/skhd
+mkdir -p $HOME/.config/yabai
 
 read -r -p "CJ Profile? [y/n] " response
 response=${response,,}    # tolower
@@ -20,6 +22,8 @@ else
     ln -sfv "$PWD/zshrc" "$HOME/.zshrc"
     ln -sfv "$PWD/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
     ln -sfv "$PWD/alacritty/base.yml" "$HOME/.config/alacritty/base.yml"
+    ln -sfv "$PWD/skhd/skhdrc" "$HOME/.config/skhd/skhdrc"
+    ln -sfv "$PWD/yabai/yabairc" "$HOME/.config/yabai/yabairc"
 
 fi
 
