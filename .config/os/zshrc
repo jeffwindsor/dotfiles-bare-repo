@@ -67,6 +67,8 @@ search-alias-functions(){
     echo '\e[1;34mAliases\e[0m'
     alias | grep $1;
 }
+sshkey(){ ssh-keygen -t ed25519 -C "jeff.wnindsor@gmail.com" -f $1; }
+sshadd(){ eval "$(ssh-agent -s)" && ssh-add -K ~/.ssh/${1}; }
 
 alias .....='cd ../../../../'
 alias ....='cd ../../../'
