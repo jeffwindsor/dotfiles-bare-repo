@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-# base machine config
-source $HOME/.config/machine/zshrc
+# base os config
+source $HOME/.config/os/zshrc
 
 # zsh plugins
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -73,5 +73,3 @@ alias st='stack test'
 alias stt='stack ide targets'
 alias sup='stack upgrade --force-download'
 alias tree='exa --tree'
-alias vc='nvim $HOME/.config/machine/wl-jwindso-mac/zshrc'
-alias ve='nvim $HOME/.config/machine/wl-jwindso-mac/zshenv'

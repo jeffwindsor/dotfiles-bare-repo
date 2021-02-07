@@ -46,7 +46,7 @@ alacritty_change_theme() {
 dot () { git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"; }
 dot-add-all(){
     dot add -u
-    dot add $HOME/.config/machine/*
+    dot add $HOME/.config/os/*
 }
 dot-log-graph() { dot log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10}; }
 exec-on-git-repos () {
@@ -103,8 +103,8 @@ alias gsync='git checkout master && git pull --rebase && git checkout - && git r
 alias k='clear'
 alias kk='clear && reset'
 alias locals='exec-on-file nvim $HOME/.local'
-alias machine='cd $XDG_CONFIG_HOME/machine'
-alias machines='exec-on-file nvim $XDG_CONFIG_HOME/machine'
+alias os='cd $XDG_CONFIG_HOME/os'
+alias oss='exec-on-file nvim $XDG_CONFIG_HOME/os'
 alias repo='cd $HOME/src'
 alias repos='exec-on-git-repos cd $SRC'
 alias saf='search-alias-functions'

@@ -15,4 +15,4 @@ if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 fi
 
-source $HOME/.config/machine/zshenv
+source $HOME/.config/os/zshenv

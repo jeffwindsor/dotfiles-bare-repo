@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-# base machine config
-source $HOME/.config/machine/zshrc
+# base os config
+source $HOME/.config/os/zshrc
 
 # zsh plugins
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -155,8 +155,6 @@ alias t1='sqlplus -L cj@tcjoweb1'
 alias test-schemas='java -jar ./target/schemas-main-SNAPSHOT.one-jar.jar locator=T5 tnsnames=/USers/jwindsor/.local/cjdev/ci/tns-admin/tnsnames.ora'
 alias tns='v ~/.local/cjdev/ci/tns-admin/tnsnames.ora'
 alias tree='exa --tree'
-alias vc='nvim $HOME/.config/machine/wl-jwindso-mac/zshrc'
-alias ve='nvim $HOME/.config/machine/wl-jwindso-mac/zshenv'
 
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && source "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 

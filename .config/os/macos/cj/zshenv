@@ -35,4 +35,4 @@ export DEVDB_SID=devdb
 
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 
-source $HOME/.config/machine/macos/zshenv
+source $HOME/.config/os/macos/zshenv
