@@ -23,7 +23,6 @@ else
     ln -sfv "$PWD/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
     ln -sfv "$PWD/alacritty/base.yml" "$HOME/.config/alacritty/base.yml"
     ln -sfv "$PWD/skhd/skhdrc" "$HOME/.config/skhd/skhdrc"
-    ln -sfv "$PWD/yabai/yabairc" "$HOME/.config/yabai/yabairc"
 
 fi
 

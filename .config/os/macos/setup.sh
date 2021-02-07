@@ -60,6 +60,7 @@ gnu-sed
 haskell-stack
 hlint
 jq
+koekeishiya/formulae/skhd
 mas
 neovim
 nnn
@@ -83,7 +84,6 @@ casks=(
 alacritty
 alfred
 amethyst
-#brave-browser
 caffeine
 emacs
 firefox
@@ -94,16 +94,17 @@ font-jetbrains-mono
 font-source-code-pro
 gpg-suite
 intellij-idea
-karabiner-elements
 slack
 spotify
 vlc
 vscodium
-whichspace
 )
     ################################################################
     for p in "${packages[@]}"; do install-package "$p"; done;
     for p in "${casks[@]}";    do install-cask "$p";    done;
+
+    ################################################################
+    brew services start skhd &
 
     ################################################################
     echo "==> GIT REPOS INTO HOME ${HOME}/SRC"
