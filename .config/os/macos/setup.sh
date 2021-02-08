@@ -72,6 +72,7 @@ starship
 tig
 tldr
 topgrade
+yabai
 watch
 zsh
 zsh-autosuggestions
@@ -105,7 +106,8 @@ vscodium
 
     ################################################################
     brew services start skhd &
-
+    brew services start koekeishiya/formulae/yabai &
+    
     ################################################################
     echo "==> GIT REPOS INTO HOME ${HOME}/SRC"
     mkdir -p ${HOME}/src/hub
