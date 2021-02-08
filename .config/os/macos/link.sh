@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 cd "$(dirname "${0}")"
 
-mkdir -p $HOME/.config/alacritty
-mkdir -p $HOME/.config/alfred
-mkdir -p $HOME/.config/karabiner
-mkdir -p $HOME/.config/skhd
-mkdir -p $HOME/.config/yabai
+mkdir -p $HOME/.config/alacritty/
+mkdir -p $HOME/.config/alfred/
+mkdir -p $HOME/.config/karabiner/
+mkdir -p $HOME/.config/skhd/
+mkdir -p $HOME/.config/yabai/
 
 read -r -p "CJ Profile? [y/n] " response
 response=${response,,}    # tolower
