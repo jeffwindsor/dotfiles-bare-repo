@@ -1,21 +1,25 @@
-# https://github.com/koekeishiya/skhd
+# code: https://github.com/koekeishiya/skhd
+# keys: https://github.com/koekeishiya/skhd/issues/1
 
-cmd              - return  : open -na 'alacritty'
-cmd + shift      - return  : open -a  'Finder'
-cmd + ctrl       - return  : open -na 'firefox'
-cmd + alt + ctrl - return  : open -na 'brave'
-cmd + ctrl       - e       : open -na 'emacs'
-cmd + ctrl       - i       : open -na 'Intellij IDEA'
+# launchers
+cmd              - return : open -na 'alacritty'
+cmd + shift      - return : open -a  'Finder'
+cmd + ctrl       - return : open -na 'firefox'
+cmd + alt + ctrl - return : open -na 'brave'
+cmd + ctrl       - e      : open -na 'emacs'
+cmd + ctrl       - i      : open -na 'Intellij IDEA'
+cmd              - 0x2B   : open -a 'System Preferences'        # Comma
 
 # reload skhd
 cmd + ctrl       - r : skhd -r
 # reload yabai
 cmd + ctrl + alt - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
-# layouts
-cmd + ctrl - b : yabai -m config layout bsp
-cmd + ctrl - s : yabai -m config layout stack
-cmd + ctrl - f : yabai -m config layout float
+# 
+cmd + ctrl - b : yabai -m window --toggle border
+cmd + ctrl - s : yabai -m window --toggle sticky
+cmd + ctrl - z : yabai -m window --toggle zoom-parent 
+cmd + ctrl - s : yabai -m window --toggle split 
 
 # focus
 cmd - h     : yabai -m window --focus west
@@ -56,4 +60,4 @@ cmd + ctrl - 0     : yabai -m window --space 0; yabai -m space --focus 0;
 # gaps
 ctrl - left  : yabai -m space --padding rel:-4:-4:-4:-4; yabai -m space --gap rel:-4;
 ctrl - right : yabai -m space --padding rel:4:4:4:4; yabai -m space --gap rel:4;
-
+ctrl - up    : yabai -m space --toggle padding; yabai -m space --toggle gap;
