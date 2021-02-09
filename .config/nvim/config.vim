@@ -3,6 +3,7 @@ set nocompatible                                    " Disable compatibility to o
 set viminfo+=n~/.cache/nvim/viminfo                 " neo vim
 set runtimepath^=~/.viDTreeShowHidden=1uvim/after   " neo vim
 let &packpath = &runtimepath                        " neo vim
+
 set autoindent                                      " autoindent
 set clipboard+=unnamedplus                          " yank to clipboard
 set cursorline                                      " highlight current line
@@ -12,23 +13,26 @@ set ignorecase                                      " Do case insensitive matchi
 set inccommand=split
 set incsearch                                       " search as characters are entered
 set lazyredraw                                      " redraw only when we need to.
+set mouse=a
 set nowrap
 set number relativenumber                           " hybrid line numbers
 set shiftwidth=4
 set softtabstop=4
+set spell
+set spelllang=en_us
 set splitbelow
 set splitright
 set tabstop=4
-set mouse=a
+set timeoutlen=2000
+set wildmenu
+set wildmode=longest,list                           " get bash-like tab completions
+
 if (has("termguicolors"))
  set termguicolors
 endif
-set wildmenu
-set wildmode=longest,list                           " get bash-like tab completions
 filetype plugin on
 syntax enable                                       " turn on all the magic, including Explorer and syntax highlighting
 autocmd BufRead,BufNewFile *.md setlocal spell
 let g:netrw_banner = 0
 let g:sneak#label = 1
-set timeoutlen=2000
 
