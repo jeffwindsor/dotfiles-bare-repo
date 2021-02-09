@@ -4,18 +4,19 @@ source $HOME/.config/nvim/config.vim
 "== Plugins ===============================================================
 call plug#begin('~/.cache/nvim/plugged')
   
-  Plug 'airblade/vim-rooter'
+  " Plug 'airblade/vim-rooter'
   Plug 'ap/vim-css-color'
-  Plug 'dhruvasagar/vim-table-mode'
-  Plug 'frazrepo/vim-rainbow' 
+  Plug 'chriskempson/base16-vim'
+  " Plug 'dhruvasagar/vim-table-mode'
+  " Plug 'frazrepo/vim-rainbow' 
   Plug 'itchyny/lightline.vim'
   Plug 'jacoborus/tender.vim'
   Plug 'jeetsukumaran/vim-filebeagle'
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'tomtom/tcomment_vim'
-  Plug 'tpope/vim-surround'
-  Plug 'unblevable/quick-scope'
+  " Plug 'tpope/vim-surround'
+  " Plug 'unblevable/quick-scope'
 
 call plug#end()
 
@@ -31,7 +32,7 @@ nnoremap <leader>q :q<CR>
 inoremap jk <esc>
 "Fuzzy List
 nnoremap <leader>bb :Buffers<CR>
-"Switch Prev
+"Switch Previous
 nnoremap <leader>bh :bprevious<CR>
 "Switch Next
 nnoremap <leader>bl :bnext<CR>
@@ -40,9 +41,9 @@ nnoremap <leader>fs :w<CR>
 "Save As
 nnoremap <leader>fa :sav 
 "Fuzzy Find
-nnoremap <leader>fo :Files $HOME<CR>
+nnoremap <leader>fo :Files $PWD <CR>
 "Search
-nnoremap <leader>ff :rg
+nnoremap <leader>ff :Rg
 "Fuzzy Change Type 
 nnoremap <leader>ft :Filetypes<CR>
 "Open
