@@ -61,3 +61,6 @@ cmd + ctrl - 0     : yabai -m window --space 0; yabai -m space --focus 0;
 ctrl - left  : yabai -m space --padding rel:-4:-4:-4:-4; yabai -m space --gap rel:-4;
 ctrl - right : yabai -m space --padding rel:4:4:4:4; yabai -m space --gap rel:4;
 ctrl - up    : yabai -m space --toggle padding; yabai -m space --toggle gap;
+
+# Create space on the active display: yabai -m space --create
+# Delete focused space and focus first space on display: yabai -m space --destroy

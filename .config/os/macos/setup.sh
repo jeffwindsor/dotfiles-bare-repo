@@ -118,14 +118,14 @@ vscodium
     clone-if-missing jeffwindsor dmenu
     
     cd $HOME/src/hub
-    clone-if-missing jacoborus tender.vim
-    clone-if-missing tombell tender-iterm2
-    clone-if-missing huyvohcmc tender-alacritty
-    clone-if-missing Relaxed-Theme relaxed-terminal-themes
-    clone-if-missing morhetz gruvbox
-    clone-if-missing arcticicestudio nord
-    clone-if-missing eendroroy alacritty-theme
-    clone-if-missing mbadolato iTerm2-Color-Schemes.git   
+    #clone-if-missing jacoborus tender.vim
+    #clone-if-missing tombell tender-iterm2
+    #clone-if-missing huyvohcmc tender-alacritty
+    #clone-if-missing Relaxed-Theme relaxed-terminal-themes
+    #clone-if-missing morhetz gruvbox
+    #clone-if-missing arcticicestudio nord
+    #clone-if-missing eendroroy alacritty-theme
+    #clone-if-missing mbadolato iTerm2-Color-Schemes.git   
     ################################################################
     echo "==> STARSHIP PROMPT"
     curl -fsSL https://starship.rs/install.sh | bash -s -- --yes

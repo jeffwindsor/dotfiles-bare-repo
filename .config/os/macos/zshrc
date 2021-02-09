@@ -73,3 +73,5 @@ alias st='stack test'
 alias stt='stack ide targets'
 alias sup='stack upgrade --force-download'
 alias tree='exa --tree'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
