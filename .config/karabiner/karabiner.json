@@ -16,7 +16,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Application Launchers",
+                        "description": "Terminal - cmd + enter",
                         "manipulators": [
                             {
                                 "from": {
@@ -33,7 +33,11 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }]
+                    },
+                    {
+                        "description": "Browser - cmd + ctrl + enter",
+                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "return_or_enter",
@@ -50,7 +54,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Browser (Alt) - cmd + ctrl + alt + enter",
+                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "return_or_enter",
@@ -68,7 +77,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Files - cmd + shift + enter",
+                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "return_or_enter",
@@ -85,7 +99,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Editor - cmd + e",
+                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "e",
@@ -101,24 +120,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command",
-                                            "left_control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -na 'VSCodium'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "IDE - cmd + i",
+                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "i",
