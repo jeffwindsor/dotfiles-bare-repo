@@ -14,7 +14,7 @@ green="$(tput setaf 2)"
 reset="$(tput sgr0)"
 
 brews() {
-    local result=$(brew search --formulae | fzf -m --preview="brew info {}" --preview-window=:hidden --bind=space:toggle-preview)
+    local result=$(brew formulae | fzf -m --preview="brew info {}" --preview-window=:hidden --bind=space:toggle-preview)
     [ ! -z "$result" ] && brew install "$result"
 }
 casks() {

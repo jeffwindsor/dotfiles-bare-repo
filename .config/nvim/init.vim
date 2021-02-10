@@ -40,16 +40,20 @@ nnoremap <leader>bl :bnext<CR>
 nnoremap <leader>fs :w<CR>
 "Save As
 nnoremap <leader>fa :sav 
-"Fuzzy Find
-nnoremap <leader>fo :Files $PWD <CR>
-"Search
-nnoremap <leader>ff :Rg
+
+" Fuzzy Find in current file directory
+nnoremap <leader>ff :Files <C-R>=expand('%:h')<CR><CR>
+" Search in Files
+nnoremap <leader>fs :Rg
+
 "Fuzzy Change Type 
 nnoremap <leader>ft :Filetypes<CR>
-"Open
+
+" Config Open
 nnoremap <leader>fce :e $MYVIMRC<CR>
-"Reload
+" Config Reload
 nnoremap <leader>fcr :source $MYVIMRC<CR>
+
 "Splits
 nnoremap <leader>wv :vsplit<CR>
 nnoremap <leader>ws :split<CR>
@@ -58,6 +62,7 @@ nnoremap <leader>wh :vertical resize -5<CR>
 nnoremap <leader>wj :resize -5<CR>
 nnoremap <leader>wk :resize +5<CR>
 nnoremap <leader>wL :vertical resize +5<CR>
+
 "Fuzzy Select by Search
 nnoremap <leader>ww :Windows<CR> 
 "Swap
