@@ -63,7 +63,7 @@
     "markdown.preview.fontSize": 12,
     "workbench.fontAliasing": "auto",
     "update.mode": "manual",
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Atom One Dark",
     "typescript.updateImportsOnFileMove.enabled": "never",
     "javascript.updateImportsOnFileMove.enabled": "never",
     "editor.multiCursorModifier": "ctrlCmd",

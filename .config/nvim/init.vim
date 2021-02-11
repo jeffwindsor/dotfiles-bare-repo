@@ -7,6 +7,7 @@ call plug#begin('~/.cache/nvim/plugged')
   " Plug 'airblade/vim-rooter'
   Plug 'ap/vim-css-color'
   Plug 'chriskempson/base16-vim'
+  " Plug 'dawikur/base16-vim-airline-themes'
   " Plug 'dhruvasagar/vim-table-mode'
   " Plug 'frazrepo/vim-rainbow' 
   Plug 'itchyny/lightline.vim'
