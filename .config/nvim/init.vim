@@ -37,20 +37,24 @@ nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>bh :bprevious<CR>
 "Switch Next
 nnoremap <leader>bl :bnext<CR>
+
 "Save
 nnoremap <leader>fs :w<CR>
 "Save As
 nnoremap <leader>fa :sav 
-"Fuzzy Find
-nnoremap <leader>fo :Files $PWD <CR>
-"Search
-nnoremap <leader>ff :Rg
+" Fuzzy Find in current file directory
+nnoremap <leader>ff :Files <C-R>=expand('%:h')<CR><CR>
+"nnoremap <leader>fl :Locate /<CR>
+" Search in Files
+nnoremap <leader>fs :Rg
 "Fuzzy Change Type 
 nnoremap <leader>ft :Filetypes<CR>
-"Open
-nnoremap <leader>fce :e $MYVIMRC<CR>
-"Reload
-nnoremap <leader>fcr :source $MYVIMRC<CR>
+
+" Config Open
+nnoremap <leader>ce :e $MYVIMRC<CR>
+" Config Reload
+nnoremap <leader>cr :source $MYVIMRC<CR>
+
 "Splits
 nnoremap <leader>wv :vsplit<CR>
 nnoremap <leader>ws :split<CR>
