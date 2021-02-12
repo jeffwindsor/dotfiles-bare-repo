@@ -48,18 +48,18 @@ mkdir -p $HOME/.dotfiles
 | 8           | cmd + ctrl       | move window to 8 space         |
 | 9           | cmd              | focus 9 space                  |
 | 9           | cmd + ctrl       | move window to 9 space         |
-| <end>       | cmd              | 3column layout                 |
-| <home>      | cmd              | tall layout                    |
-| <left>      | cmd              | focus previous space           |
-| <left>      | cmd + ctrl       | move window to previous space  |
-| <page down> | cmd              | full screen layout             |
-| <page up>   | cmd              | wide layout                    |
-| <return>    | cmd              | open new Alacritty             |
-| <return>    | cmd + ctrl       | open new Firefox               |
-| <return>    | cmd + ctrl + alt | open new Brave                 |
-| <return>    | cmd + shift      | open new Finder                |
-| <right>     | cmd              | focus next space               |
-| <right>     | cmd + ctrl       | move window to next space      |
+| [end]       | cmd              | 3column layout                 |
+| [home]      | cmd              | tall layout                    |
+| [left]      | cmd              | focus previous space           |
+| [left]      | cmd + ctrl       | move window to previous space  |
+| [page down] | cmd              | full screen layout             |
+| [page up]   | cmd              | wide layout                    |
+| [return]    | cmd              | open new Alacritty             |
+| [return]    | cmd + ctrl       | open new Firefox               |
+| [return]    | cmd + ctrl + alt | open new Brave                 |
+| [return]    | cmd + shift      | open new Finder                |
+| [right]     | cmd              | focus next space               |
+| [right]     | cmd + ctrl       | move window to next space      |
 | e           | cmd              | open new Emacs                 |
 | h           | cmd              | shrink main pane               |
 | i           | cmd              | open new Intellij IDEA         |
