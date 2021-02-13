@@ -8,9 +8,10 @@ cmd + ctrl       - r : skhd -r
 cmd              - return : open -na 'alacritty'
 cmd + shift      - return : open -a  'Finder'
 cmd + ctrl       - return : open -na 'firefox'
-cmd + alt + ctrl - return : open -na 'brave'
+cmd + ctrl + alt - return : open -na 'brave'
 cmd              - e      : open -na 'emacs'
-cmd              - i      : open -na 'Intellij IDEA'
+cmd + ctrl       - e      : open -na 'Intellij IDEA'
+cmd + ctrl + alt - e      : open -na 'VSCodium'
 #cmd              - 0x2B   : open -a 'System Preferences'        # Comma
 
 # yabai interaction

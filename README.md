@@ -45,8 +45,7 @@ mkdir -p $HOME/.dotfiles
 | [page down] | full screen    |                  |                    |             |
 | [page up]   | wide           |                  |                    |             |
 | [return]    | Alacritty      | Firefox          | Brave              | Finder      |
-| e           | Emacs          |                  |                    |             |
-| i           | Intellij       |                  |                    |             |
+| e           | Emacs          | Intellij         | VSCodium           |             |
 | h           | shrink main    |                  |                    |             |
 | j           | focus ⟳        | move ⟳           |                    |             |
 | k           | focus ⟲        | move ⟲           |                    |             |
