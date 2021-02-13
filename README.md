@@ -24,49 +24,31 @@ mkdir -p $HOME/.dotfiles
 
 ## Keys
 
-| key         | modifiers        | action                         |
-|:------------|:-----------------|--------------------------------|
-| ,           | cmd              | increase main pane count       |
-| .           | cmd              | decrease main pane count       |
-| 0           | cmd              | focus 0 space                  |
-| 0           | cmd + ctrl       | move window to 0 space         |
-| 1           | cmd              | focus 1 space                  |
-| 1           | cmd + ctrl       | move window to 1 space         |
-| 2           | cmd              | focus 2 space                  |
-| 2           | cmd + ctrl       | move window to 2 space         |
-| 3           | cmd              | focus 3 space                  |
-| 3           | cmd + ctrl       | move window to 3 space         |
-| 4           | cmd              | focus 4 space                  |
-| 4           | cmd + ctrl       | move window to 4 space         |
-| 5           | cmd              | focus 5 space                  |
-| 5           | cmd + ctrl       | move window to 5 space         |
-| 6           | cmd              | focus 6 space                  |
-| 6           | cmd + ctrl       | move window to 6 space         |
-| 7           | cmd              | focus 7 space                  |
-| 7           | cmd + ctrl       | move window to 7 space         |
-| 8           | cmd              | focus 8 space                  |
-| 8           | cmd + ctrl       | move window to 8 space         |
-| 9           | cmd              | focus 9 space                  |
-| 9           | cmd + ctrl       | move window to 9 space         |
-| [end]       | cmd              | 3column layout                 |
-| [home]      | cmd              | tall layout                    |
-| [left]      | cmd              | focus previous space           |
-| [left]      | cmd + ctrl       | move window to previous space  |
-| [page down] | cmd              | full screen layout             |
-| [page up]   | cmd              | wide layout                    |
-| [return]    | cmd              | open new Alacritty             |
-| [return]    | cmd + ctrl       | open new Firefox               |
-| [return]    | cmd + ctrl + alt | open new Brave                 |
-| [return]    | cmd + shift      | open new Finder                |
-| [right]     | cmd              | focus next space               |
-| [right]     | cmd + ctrl       | move window to next space      |
-| e           | cmd              | open new Emacs                 |
-| h           | cmd              | shrink main pane               |
-| i           | cmd              | open new Intellij IDEA         |
-| j           | cmd              | focus clockwise window         |
-| j           | cmd + ctrl       | move window clockwise          |
-| k           | cmd              | focus counter clockwise window |
-| k           | cmd + ctrl       | move window counter clockwise  |
-| l           | cmd              | expand main pane               |
-| r           | cmd + ctrl       | reload hot keys                |
-| r           | cmd + ctrl + alt | reload window manager          |
+| key         | cmd            | cmd + ctrl       | cmd + alt + ctrl   | cmd + shift |
+|:------------|:---------------|:-----------------|:-------------------|:------------|
+| ,           | + main count   |                  |                    |             |
+| .           | - main count   |                  |                    |             |
+| 0           | focus space 0  | move to space 0  | move to 🖥 0        |             |
+| 1           | focus space 1  | move to space 1  | move to 🖥 1        |             |
+| 2           | focus space 2  | move to space 2  | move to 🖥 2        |             |
+| 3           | focus space 3  | move to space 3  | move to 🖥 3        |             |
+| 4           | focus space 4  | move to space 4  | move to 🖥 4        |             |
+| 5           | focus space 5  | move to space 5  | move to 🖥 5        |             |
+| 6           | focus space 6  | move to space 6  | move to 🖥 6        |             |
+| 7           | focus space 7  | move to space 7  | move to 🖥 7        |             |
+| 8           | focus space 8  | move to space 8  | move to 🖥 8        |             |
+| 9           | focus space 9  | move to space 9  | move to 🖥 9        |             |
+| ->          | focus space -> | move to space -> | move to 🖥 ->       |             |
+| <-          | focus space <- | move to space <- | move to 🖥 <-       |             |
+| [end]       | 3column        |                  |                    |             |
+| [home]      | tall           |                  |                    |             |
+| [page down] | full screen    |                  |                    |             |
+| [page up]   | wide           |                  |                    |             |
+| [return]    | Alacritty      | Firefox          | Brave              | Finder      |
+| e           | Emacs          |                  |                    |             |
+| i           | Intellij       |                  |                    |             |
+| h           | shrink main    |                  |                    |             |
+| j           | focus ⟳        | move ⟳           |                    |             |
+| k           | focus ⟲        | move ⟲           |                    |             |
+| l           | expand main    |                  |                    |             |
+| r           |                | reload hot keys  | reload win manager |             |
