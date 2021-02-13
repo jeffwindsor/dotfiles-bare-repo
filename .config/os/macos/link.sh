@@ -5,28 +5,25 @@ mkdir -p $HOME/.config/alacritty/
 mkdir -p $HOME/.config/alfred/
 mkdir -p $HOME/.config/karabiner/
 mkdir -p $HOME/.config/skhd/
-mkdir -p $HOME/.config/yabai/
+#mkdir -p $HOME/.config/yabai/
 
 read -r -p "CJ Profile? [y/n] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
-    ln -sfv "$PWD/cj/zshenv" "$HOME/.zshenv"
-    ln -sfv "$PWD/cj/zshrc" "$HOME/.zshrc"
-    ln -sfv "$PWD/cj/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
-    ln -sfv "$PWD/cj/alacritty/base.yml" "$HOME/.config/alacritty/base.yml"
-    ln -sfv "$PWD/cj/DefaultKeyBindings.dict" "$HOME/Library/KeyBindings/DefaultKeyBindings.dict"
-
+    MACHINE=$PWD/cj
 else
-    ln -sfv "$PWD/zshenv" "$HOME/.zshenv"
-    ln -sfv "$PWD/zshrc" "$HOME/.zshrc"
-    ln -sfv "$PWD/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
-    ln -sfv "$PWD/alacritty/base.yml" "$HOME/.config/alacritty/base.yml"
-    ln -sfv "$PWD/skhd/skhdrc" "$HOME/.config/skhd/skhdrc"
-    ln -sfv "$PWD/yabai/yabairc" "$HOME/.config/yabai/yabairc"
-
+    MACHINE=$PWD
+    #ln -sfv "$PWD/yabai/yabairc" "$HOME/.config/yabai/yabairc"
 fi
 
+ln -sfv "$MACHINE/zshenv" "$HOME/.zshenv"
+ln -sfv "$MACHINE/zshrc" "$HOME/.zshrc"
+ln -sfv "$MACHINE/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
+ln -sfv "$MACHINE/alacritty/base.yml" "$HOME/.config/alacritty/base.yml"
+
+ln -sfv "$PWD/DefaultKeyBindings.dict" "$HOME/Library/KeyBindings/DefaultKeyBindings.dict"
+ln -sfv "$PWD/skhd/skhdrc" "$HOME/.config/skhd/skhdrc"
 ln -sfv "$PWD/alfred/Alfred.alfredpreferences" "$HOME/.config/alfred/Alfred.alfredpreferences"
 ln -sfv "$PWD/vscode/keybindings.json.macos" "$HOME/Library/Application Support/VSCodium/User/keybindings.json"
 ln -sfv "$PWD/vscode/settings.json.macos" "$HOME/Library/Application Support/VSCodium/User/settings.json"
