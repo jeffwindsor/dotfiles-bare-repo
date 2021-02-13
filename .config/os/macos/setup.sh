@@ -150,6 +150,22 @@ vscodium
 fi
 
 ##########################################################
+read -r -p "Experimental Languages? [y/n] " response
+response=${response,,}    # tolower
+if [[ "$response" =~ ^(yes|y)$ ]]
+then            
+    
+packages=(
+haskell-stack
+hlint
+golang
+ats2-postiats
+idris
+)
+
+fi
+
+##########################################################
 read -r -p "Install Apple Store Applications? [y/n] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
