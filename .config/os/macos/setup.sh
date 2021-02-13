@@ -72,7 +72,6 @@ starship
 tig
 tldr
 topgrade
-yabai
 watch
 zsh
 zsh-autosuggestions
@@ -161,6 +160,7 @@ hlint
 golang
 ats2-postiats
 idris
+gcc
 )
 
 fi
