@@ -38,14 +38,15 @@ mkdir -p $HOME/.dotfiles
 | 7           | focus space 7  | move to space 7  | move to 🖥 7        |             |
 | 8           | focus space 8  | move to space 8  | move to 🖥 8        |             |
 | 9           | focus space 9  | move to space 9  | move to 🖥 9        |             |
-| ->          | focus space -> | move to space -> | move to 🖥 ->       |             |
-| <-          | focus space <- | move to space <- | move to 🖥 <-       |             |
+| [right]     | focus space -> | move to space -> | move to 🖥 ->       |             |
+| [left]      | focus space <- | move to space <- | move to 🖥 <-       |             |
+| [page up]   | wide           |                  |                    |             |
+| [page down] | full screen    |                  |                    |             |
 | [end]       | 3column        |                  |                    |             |
 | [home]      | tall           |                  |                    |             |
-| [page down] | full screen    |                  |                    |             |
-| [page up]   | wide           |                  |                    |             |
 | [return]    | Alacritty      | Firefox          | Brave              | Finder      |
-| e           | Emacs          | Intellij         | VSCodium           |             |
+| [space]     | Alfred         | Char Viewer      |                    |             |
+| [backslash] | Emacs          | Intellij         | VSCodium           |             |
 | h           | shrink main    |                  |                    |             |
 | j           | focus ⟳        | move ⟳           |                    |             |
 | k           | focus ⟲        | move ⟲           |                    |             |
