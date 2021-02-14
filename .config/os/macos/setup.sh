@@ -72,7 +72,6 @@ starship
 tig
 tldr
 topgrade
-yabai
 watch
 zsh
 zsh-autosuggestions
@@ -147,6 +146,23 @@ vscodium
     echo "==> DOOM EMACS"
     git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
     ~/.emacs.d/bin/doom install
+fi
+
+##########################################################
+read -r -p "Experimental Languages? [y/n] " response
+response=${response,,}    # tolower
+if [[ "$response" =~ ^(yes|y)$ ]]
+then            
+    
+packages=(
+haskell-stack
+hlint
+golang
+ats2-postiats
+idris
+gcc
+)
+
 fi
 
 ##########################################################
