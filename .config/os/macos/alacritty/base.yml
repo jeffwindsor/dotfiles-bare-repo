@@ -9,5 +9,5 @@ cursor:
 
 font:
   normal:
-    family: 'JetBrains Mono ExtraLight'
-  size: 14.0
+      family: 'Fira Code Retina'
+  size: 12.0
