@@ -4,5 +4,9 @@
 <dict>
 	<key>hidehat</key>
 	<true/>
+	<key>hidemenu</key>
+	<true/>
+	<key>visibleresults</key>
+	<integer>6</integer>
 </dict>
 </plist>
