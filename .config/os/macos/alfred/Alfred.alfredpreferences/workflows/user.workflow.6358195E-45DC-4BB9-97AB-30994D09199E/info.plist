@@ -496,7 +496,7 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>350</integer>
 			<key>ypos</key>
 			<integer>55</integer>
 		</dict>
@@ -518,7 +518,7 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>note</key>
 			<string>Code</string>
 			<key>xpos</key>
-			<integer>765</integer>
+			<integer>790</integer>
 			<key>ypos</key>
 			<integer>345</integer>
 		</dict>
@@ -536,7 +536,7 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>335</integer>
+			<integer>345</integer>
 			<key>ypos</key>
 			<integer>195</integer>
 		</dict>
@@ -547,7 +547,7 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>note</key>
 			<string>Safari</string>
 			<key>xpos</key>
-			<integer>475</integer>
+			<integer>485</integer>
 			<key>ypos</key>
 			<integer>195</integer>
 		</dict>
@@ -576,7 +576,7 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>note</key>
 			<string>Intellij</string>
 			<key>xpos</key>
-			<integer>475</integer>
+			<integer>485</integer>
 			<key>ypos</key>
 			<integer>345</integer>
 		</dict>
@@ -596,7 +596,7 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<integer>625</integer>
+			<integer>650</integer>
 			<key>ypos</key>
 			<integer>345</integer>
 		</dict>
@@ -616,7 +616,7 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<integer>335</integer>
+			<integer>345</integer>
 			<key>ypos</key>
 			<integer>345</integer>
 		</dict>
@@ -625,7 +625,7 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>480</integer>
+			<integer>490</integer>
 			<key>ypos</key>
 			<integer>55</integer>
 		</dict>
