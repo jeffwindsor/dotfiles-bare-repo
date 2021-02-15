@@ -2,7 +2,7 @@
 cd "$(dirname "${0}")"
 
 ##########################################################
-install-package() {
+install() {
 	if brew list $1 &> /dev/null; then
   		echo "==> "$1" [installed]"
 	else
@@ -11,7 +11,7 @@ install-package() {
     fi
 }
 
-install-cask() {
+installcask() {
 	if brew list --cask $1 &> /dev/null; then
   		echo "==> "$1" [installed]"
 	else
@@ -45,68 +45,45 @@ response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
 
-packages=(
-autojump
-bash
-bash-completion
-bat
-coreutils
-curl
-exa
-fd
-fzf
-git
-gnu-sed
-haskell-stack
-hlint
-jq
-mas
-neovim
-nnn
-nodejs
-ripgrep
-rustup-init
-sshpass
-starship
-tig
-tldr
-topgrade
-watch
-zsh
-zsh-autosuggestions
-zsh-completions
-zsh-history-substring-search
-zsh-syntax-highlighting
-)
+    install autojump
+    install bat
+    install exa
+    install fd
+    install fzf
+    install git
+    install jq
+    install mas
+    install neovim
+    install nnn
+    install ripgrep
+    install starship
+    install tldr
+    install topgrade
+    install zsh
+    install zsh-autosuggestions
+    install zsh-completions
+    install zsh-history-substring-search
+    install zsh-syntax-highlighting
 
-casks=(
-alacritty
-alfred
-amethyst
-caffeine
-dash
-emacs
-firefox
-font-cascadia
-font-fira-code
-font-inconsolata
-font-jetbrains-mono
-font-source-code-pro
-gpg-suite
-intellij-idea
-slack
-spotify
-vlc
-vscodium
-)
-    ################################################################
-    for p in "${packages[@]}"; do install-package "$p"; done;
-    for p in "${casks[@]}";    do install-cask "$p";    done;
+    installcask alacritty
+    installcask alfred
+    installcask amethyst
+    installcask caffeine
+    installcask dash
+    installcask emacs
+    installcask firefox
+    installcask font-cascadia
+    installcask font-fira-code
+    installcask font-inconsolata
+    installcask font-jetbrains-mono
+    installcask font-source-code-pro
+    installcask gpg-suite
+    installcask intellij-idea
+    installcask slack
+    installcask spotify
+    installcask vlc
+    installcask vscodium
 
-    ################################################################
-    brew services start skhd &
-    brew services start koekeishiya/formulae/yabai &
-    
     ################################################################
     echo "==> GIT REPOS INTO HOME ${HOME}/SRC"
     mkdir -p ${HOME}/src/hub
@@ -117,25 +94,10 @@ vscodium
     clone-if-missing jeffwindsor dmenu
     
     cd $HOME/src/hub
-    #clone-if-missing jacoborus tender.vim
-    #clone-if-missing tombell tender-iterm2
-    #clone-if-missing huyvohcmc tender-alacritty
-    #clone-if-missing Relaxed-Theme relaxed-terminal-themes
-    #clone-if-missing morhetz gruvbox
-    #clone-if-missing arcticicestudio nord
-    #clone-if-missing eendroroy alacritty-theme
-    #clone-if-missing mbadolato iTerm2-Color-Schemes.git   
+
     ################################################################
     echo "==> STARSHIP PROMPT"
     curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
-    
-    ################################################################
-    echo "==> RUST LANG"
-    curl --proto '=https' --tlsv1.2 -sSfo rustup-init.sh https://sh.rustup.rs
-    chmod +x rustup-init.sh
-    ./rustup-init.sh -y
-    rm -f rustup-init.sh
-    source $HOME/.cargo/env
     
     ################################################################
     echo "==> NVIM PLUGINS"
@@ -149,34 +111,41 @@ vscodium
 fi
 
 ##########################################################
-read -r -p "Experimental Languages? [y/n] " response
+read -r -p "Development Languages? [y/n] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
     
-packages=(
-haskell-stack
-hlint
-golang
-ats2-postiats
-idris
-gcc
-)
+    install haskell-stack
+    install hlint
+    install golang
+    install ats2-postiats
+    install idris
+    install gcc
+    install nodejs
+
+    ################################################################
+    echo "==> RUST LANG"
+    curl --proto '=https' --tlsv1.2 -sSfo rustup-init.sh https://sh.rustup.rs
+    chmod +x rustup-init.sh
+    ./rustup-init.sh -y
+    rm -f rustup-init.sh
+    source $HOME/.cargo/env
 
 fi
 
 ##########################################################
-read -r -p "Install Apple Store Applications? [y/n] " response
-response=${response,,}    # tolower
-if [[ "$response" =~ ^(yes|y)$ ]]
-then            
-    # mac apps
-    mas "LastPass", id: 926036361
-    mas "Microsoft Remote Desktop", id: 1295203466
-    mas "Be Focused - Focus Timer", id: 973134470
-    mas "iStat Menus", id: 1319778037
-    mas "Microsoft OneNote", id:784801555
-fi
+#read -r -p "Install Apple Store Applications? [y/n] " response
+#response=${response,,}    # tolower
+#if [[ "$response" =~ ^(yes|y)$ ]]
+#then            
+#    # mac apps
+#    mas "LastPass", id: 926036361
+#    mas "Microsoft Remote Desktop", id: 1295203466
+#    mas "Be Focused - Focus Timer", id: 973134470
+#    mas "iStat Menus", id: 1319778037
+#    mas "Microsoft OneNote", id:784801555
+#fi
 
 ##########################################################
 read -r -p "Create SSH key? [y/n] " response
@@ -217,30 +186,24 @@ if [[ "$response" =~ ^(yes|y)$ ]]
 then            
     brew tap InstantClientTap/instantclient
 
-packages=(
-cassandra
-clojure
-kafka
-maven
-maven-completion
-openjdk
-parquet-tools
-sbt
-scala
-selenium-server-standalone
-)
+    install cassandra
+    install clojure
+    install kafka
+    install maven
+    install maven-completion
+    install openjdk
+    install parquet-tools
+    install sbt
+    install scala
+    install selenium-server-standalone
 
-casks=(
-instantclient-basic
-instantclient-sqlplus
-instantclient-sqlplus
-java8
-keybase
-microsoft-teams
-)
+    installcask instantclient-basic
+    installcask instantclient-sqlplus
+    installcask instantclient-sqlplus
+    installcask java8
+    installcask keybase
+    installcask microsoft-teams
 
-    for p in "${packages[@]}"; do install-package "$p"; done;
-    for p in "${casks[@]}"; do install-cask "$p"; done;
 fi
 
 open http://www.packal.org/workflow/colors
