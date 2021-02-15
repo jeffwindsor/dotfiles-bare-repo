@@ -131,6 +131,8 @@ then
     rm -f rustup-init.sh
     source $HOME/.cargo/env
 
+    install cargo-completions
+
 fi
 
 ##########################################################
@@ -191,14 +193,17 @@ then
     install maven
     install maven-completion
     install openjdk
-    install parquet-tools
+    #install parquet-tools
     install sbt
     install scala
     install selenium-server-standalone
     install jq
+    install aws-cdk
+    install awscli
+    install awscli@1
+    install openjdk@11
 
     installcask instantclient-basic
-    installcask instantclient-sqlplus
     installcask instantclient-sqlplus
     installcask java8
     installcask keybase
