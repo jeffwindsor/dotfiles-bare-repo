@@ -16,3 +16,4 @@ if type brew &>/dev/null; then
 fi
 
 source $HOME/.config/os/zshenv
+source "$HOME/.cargo/env"

@@ -45,16 +45,13 @@ response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
 
-    install autojump
     install bat
     install exa
     install fd
     install fzf
     install git
-    install jq
     install mas
     install neovim
-    install nnn
     install ripgrep
     install starship
     install tldr
@@ -81,6 +78,7 @@ then
     installcask intellij-idea
     installcask slack
     installcask spotify
+    installcask transmission
     installcask vlc
     installcask vscodium
 
@@ -116,12 +114,13 @@ response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
     
-    install haskell-stack
-    install hlint
+    #install ats2-postiats
+    #install gcc
+    install ghc
     install golang
-    install ats2-postiats
-    install idris
-    install gcc
+    #install haskell-stack
+    #install hlint
+    #install idris
     install nodejs
 
     ################################################################
@@ -196,6 +195,7 @@ then
     install sbt
     install scala
     install selenium-server-standalone
+    install jq
 
     installcask instantclient-basic
     installcask instantclient-sqlplus
