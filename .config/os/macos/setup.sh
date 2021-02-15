@@ -60,7 +60,6 @@ gnu-sed
 haskell-stack
 hlint
 jq
-koekeishiya/formulae/skhd
 mas
 neovim
 nnn
@@ -85,6 +84,7 @@ alacritty
 alfred
 amethyst
 caffeine
+dash
 emacs
 firefox
 font-cascadia
@@ -243,4 +243,6 @@ microsoft-teams
     for p in "${casks[@]}"; do install-cask "$p"; done;
 fi
 
-
+open http://www.packal.org/workflow/colors
+open http://www.packal.org/workflow/github-repos
+open https://www.alfredapp.com/blog/productivity/dash-quicker-api-documentation-search/

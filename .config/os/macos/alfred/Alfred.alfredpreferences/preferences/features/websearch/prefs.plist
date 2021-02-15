@@ -61,7 +61,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>gh</string>
+			<string>github</string>
 			<key>text</key>
 			<string>Github</string>
 			<key>url</key>
