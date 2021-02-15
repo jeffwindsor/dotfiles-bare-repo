@@ -5,13 +5,18 @@ sudo pacman -Syyu
 ################################################################
 # ARCO LINUX
 ################################################################
-install() {
+install() { sudo pacman -S --noconfirm --needed $1; }
+installif() {
 	if pacman -Qi $1 &> /dev/null; then
   		echo "==> "$1" [installed]"
 	else
     	echo "==> "$1
-    	sudo pacman -S --noconfirm --needed $1
+        install "$1"
     fi
+}
+
+clone-if-missing(){
+    [[ ! -d $2 ]] && git clone https://github.com/${1}/${2}.git $2
 }
 
 ################################################################
@@ -36,33 +41,61 @@ EOF
 ################################################################
 # Standard
 ################################################################
-packages=(
-alacritty
-autojump
-emacs
-fd
-fzf
-git
-go
-keychain
-neovim
-nodejs
-picom
-ripgrep
-terminal-font-awesome
-tldr
-ttf-jetbrains-mono
-variety
-vlc
-zsh
-zsh-autosuggestions
-zsh-completions
-zsh-syntax-highlighting
-)
-source ../setup.sh "${packages[@]}"
-cd $HOME/src/dwm && sudo make clean install && cd -
-cd $HOME/src/dwmblocks && sudo make clean install && cd -
-cd $HOME/src/dmenu && sudo make clean install && cd -
+installif paru
+installif alacritty
+installif autojump
+installif emacs
+installif fd
+installif fzf
+installif git
+installif go
+installif keychain
+installif neovim
+installif nodejs
+installif picom
+installif ripgrep
+installif terminal-font-awesome
+installif tldr
+installif ttf-jetbrains-mono
+installif variety
+installif vlc
+installif zsh
+installif zsh-autosuggestions
+installif zsh-completions
+installif zsh-syntax-highlighting
+
+mkdir -p ${HOME}/src/hub
+cd $HOME/src
+
+clone-if-missing jeffwindsor dwm
+cd ./dwm && sudo make clean install && cd -
+
+clone-if-missing jeffwindsor dwmblocks
+cd ./dwmblocks && sudo make clean install && cd -
+
+clone-if-missing jeffwindsor dmenu
+cd ./dmenu && sudo make clean install && cd -
+
+################################################################
+echo "==> STARSHIP PROMPT"
+curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
+
+################################################################
+echo "==> RUST LANG"
+curl --proto '=https' --tlsv1.2 -sSfo rustup-init.sh https://sh.rustup.rs
+chmod +x rustup-init.sh
+./rustup-init.sh -y
+rm -f rustup-init.sh
+source $HOME/.cargo/env
+
+################################################################
+echo "==> NVIM PLUGINS"
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+nvim --headless +PlugInstall +qall
+
+################################################################
+echo "==> SSH"
+ssh-keygen -t rsa -b 4096 -C "jeff.windsor@gmail.com"
 
 ################################################################
 # zsh as default shell
