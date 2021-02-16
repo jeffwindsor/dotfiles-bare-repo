@@ -36,3 +36,5 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 let g:netrw_banner = 0
 let g:sneak#label = 1
 
+" automatically leave insert mode after 'updatetime' milliseconds of inaction
+au CursorHoldI * stopinsert
