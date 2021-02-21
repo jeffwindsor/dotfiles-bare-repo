@@ -12,6 +12,9 @@
  display-line-numbers-type 'relative
  confirm-kill-emacs nil)
 
+;; Default working directory
+(setq default-directory (concat (getenv "HOME") "/"))
+
 ;; Projectile
 (setq projectile-project-search-path '("~/src/"))
 
