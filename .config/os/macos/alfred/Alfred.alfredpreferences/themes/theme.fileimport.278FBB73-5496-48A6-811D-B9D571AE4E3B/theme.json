@@ -1,0 +1,64 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 12,
+        "colorSelected" : "#FFFFFFCB",
+        "font" : "Menlo",
+        "color" : "#FFFFFF66"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#F5F4FFFF",
+        "font" : "Menlo",
+        "color" : "#FFFFFF7E"
+      },
+      "backgroundSelected" : "#0000001A",
+      "text" : {
+        "size" : 14,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "Menlo",
+        "color" : "#FFFFFF99"
+      },
+      "iconPaddingHorizontal" : 7,
+      "roundness" : 0,
+      "paddingVertical" : 6,
+      "iconSize" : 40
+    },
+    "search" : {
+      "backgroundSelected" : "#C9D05CFF",
+      "paddingHorizontal" : 8,
+      "spacing" : 0,
+      "text" : {
+        "size" : 24,
+        "colorSelected" : "#000000FF",
+        "font" : "Menlo",
+        "color" : "#FFFFFFFF"
+      },
+      "background" : "#000000FF",
+      "roundness" : 0,
+      "paddingVertical" : 10
+    },
+    "window" : {
+      "color" : "#282828FF",
+      "paddingHorizontal" : 0,
+      "width" : 464,
+      "borderPadding" : 4,
+      "borderColor" : "#C9D05CFF",
+      "blur" : 40,
+      "roundness" : 3,
+      "paddingVertical" : 0
+    },
+    "credit" : "Jeff",
+    "separator" : {
+      "color" : "#00000000",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#C9D05CFF",
+      "thickness" : 5
+    },
+    "name" : "Tender"
+  }
+}

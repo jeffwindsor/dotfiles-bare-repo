@@ -27,7 +27,7 @@
       "iconSize" : 40
     },
     "search" : {
-      "backgroundSelected" : "#F5C3C5FF",
+      "backgroundSelected" : "#C9D05CFF",
       "paddingHorizontal" : 8,
       "spacing" : 0,
       "text" : {
@@ -36,29 +36,29 @@
         "font" : "Menlo",
         "color" : "#FFFFFFFF"
       },
-      "background" : "#00000000",
+      "background" : "#000000FF",
       "roundness" : 0,
       "paddingVertical" : 10
     },
     "window" : {
-      "color" : "#00112DFF",
+      "color" : "#282828FF",
       "paddingHorizontal" : 0,
-      "width" : 405,
-      "borderPadding" : 0,
-      "borderColor" : "#00000000",
+      "width" : 464,
+      "borderPadding" : 4,
+      "borderColor" : "#C9D05CFF",
       "blur" : 40,
       "roundness" : 3,
       "paddingVertical" : 0
     },
-    "credit" : "Mack",
     "separator" : {
-      "color" : "#CBCBCBF3",
+      "color" : "#00000000",
       "thickness" : 0
     },
     "scrollbar" : {
-      "color" : "#00FFA6FF",
+      "color" : "#C9D05CFF",
       "thickness" : 5
     },
-    "name" : "Solarized Dark"
+    "name" : "Tender",
+    "credit" : "Jeff"
   }
 }
