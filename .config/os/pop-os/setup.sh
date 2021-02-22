@@ -14,51 +14,60 @@ install() {
         printf "\033[0;32m==> $1 \033[0m [installed] \n"
     fi
 }
+clone-if-missing(){
+    [[ ! -d $2 ]] && git clone https://github.com/${1}/${2}.git $2
+}
 
 ################################################################################
 # MACBOOK PRO 2015 
 ################################################################################
-echo "macbook pro retina 2015"
-# Wireless proprietary wireless drive for broadcom 14E4:43A0
-#   https://unix.stackexchange.com/questions/175810/how-to-install-broadcom-bcm4360-on-debian-on-macbook-pro
-install broadcom-sta-dkms
-sudo modprobe -r b44 b43 b43legacy ssb brcmsmac
-sudo modprobe wl
-# Laptop Power Management
-sysdl='/etc/systemd/logind.conf'
-cat $sysdl \
-    | sed -r 's/\#?HandleLidSwitchExternalPower=.*/HandleLidSwitchExternalPower=ignore/g' \
-    | sed -r 's/\#?HandleLidSwitch=.*/HandleLidSwitch=poweroff/g' \
-    | sudo tee $sysdl
+read -r -p "Macbook? [y/n] " response
+response=${response,,}    # tolower
+if [[ "$response" =~ ^(yes|y)$ ]]
+then            
+    echo "macbook pro retina 2015"
+    # Wireless proprietary wireless drive for broadcom 14E4:43A0
+    #   https://unix.stackexchange.com/questions/175810/how-to-install-broadcom-bcm4360-on-debian-on-macbook-pro
+    install broadcom-sta-dkms
+    sudo modprobe -r b44 b43 b43legacy ssb brcmsmac
+    sudo modprobe wl
+    # Laptop Power Management
+    sysdl='/etc/systemd/logind.conf'
+    cat $sysdl \
+        | sed -r 's/\#?HandleLidSwitchExternalPower=.*/HandleLidSwitchExternalPower=ignore/g' \
+        | sed -r 's/\#?HandleLidSwitch=.*/HandleLidSwitch=poweroff/g' \
+        | sudo tee $sysdl
+fi
 
 ################################################################################
 # SOFTWARE: 
 ################################################################################
-packages=(
-alacritty
-autojump
-fd-find
-fzf
-git
-gnome-tweaks
-golang
-haskell-stack
-jq
-nodejs
-ripgrep
-tldr
-vlc
-wallch
-wget
-zsh 
-zsh-autosuggestions 
-zsh-syntax-highlighting
-)
-source ../setup.sh "${packages[@]}"
+install alacritty
+install autojump
+install fd-find
+install fzf
+install gnome-tweaks
+install ripgrep
+install tldr
+install vlc
+install wallch
+install zsh 
+install zsh-autosuggestions 
+install zsh-syntax-highlighting
 
-################################################################################
-echo "link config files" 
-source ./link.sh
+################################################################
+echo "==> STARSHIP PROMPT"
+curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
+
+################################################################
+echo "==> NVIM PLUGINS"
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+nvim --headless +PlugInstall +qall
+
+################################################################
+echo "==> DOOM EMACS"
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
 
 ################################################################################
 echo "vscodium"
@@ -83,9 +92,44 @@ wget https://download.jetbrains.com/fonts/JetBrainsMono-2.002.zip \
     && gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Medium 12' \
     && gsettings set org.gnome.desktop.wm.preferences titlebar-font 'JetBrains Mono Medium 12' 
 
+##########################################################
+read -r -p "Development Languages? [y/n] " response
+response=${response,,}    # tolower
+if [[ "$response" =~ ^(yes|y)$ ]]
+then            
+
+    install golang
+    install haskell-stack
+    install jq
+    install nodejs
+
+    ################################################################
+    echo "==> RUST LANG"
+    curl --proto '=https' --tlsv1.2 -sSfo rustup-init.sh https://sh.rustup.rs
+    chmod +x rustup-init.sh
+    ./rustup-init.sh -y
+    rm -f rustup-init.sh
+    source $HOME/.cargo/env
+
+    echo "==> topgrade package updater" 
+    install cargo-completions
+    cargo install topgrade
+fi
+
 ################################################################################
-echo "topgrade package updater" 
-cargo install topgrade
+echo "link config files" 
+source ./link.sh
+
+################################################################
+echo "==> GIT REPOS INTO HOME ${HOME}/SRC"
+mkdir -p ${HOME}/src/hub
+
+cd $HOME/src
+clone-if-missing jeffwindsor dwm
+clone-if-missing jeffwindsor dwmblocks
+clone-if-missing jeffwindsor dmenu
+
+cd $HOME/src/hub
 
 ################################################################################
 echo "appearance"
