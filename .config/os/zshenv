@@ -4,6 +4,8 @@ export EDITOR=nvim
 export GIT_LOG_PRETTY_FORMAT='%C(green)%h%C(auto)%d%C(reset) - %s | %C(cyan)%an %C(dim)%cr%C(reset)'
 export HISTCONTROL=ignoreboth
 export LESSHISTFILE="-"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'" # use bat as man pager
+export MANPAGER="nvim -c 'set ft=man'"              # use nvim as man pager
 export NVIM_LOG_FILE=$HOME/.cache/nvim-log/
 export NVM_DIR=$HOME/.config/nvim
 export PATH=$PATH:$HOME/.local/bin
