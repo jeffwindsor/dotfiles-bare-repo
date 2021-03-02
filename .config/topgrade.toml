@@ -2,7 +2,7 @@
 assume_yes = true
 
 # Disable specific steps - same options as the command line flag
-disable = ["stack", "microsoft_auto_update", "node"]
+disable = ["stack", "microsoft_auto_update", "node", "emacs"]
 
 # Ignore failures for these steps
 #ignore_failures = ["powershell"]

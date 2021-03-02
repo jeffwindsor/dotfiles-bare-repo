@@ -21,6 +21,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>102081E8-9322-4A7E-8EED-213AB3A675F4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>714D7E9D-8144-432E-8988-5C0A04764F9C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>2F2720A3-2015-44E9-B29B-43FD9AE27586</key>
 		<array>
 			<dict>
@@ -413,7 +426,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>open -na 'intellij'</string>
+				<string>open -na 'Intellij Idea'</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -482,6 +495,56 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>31</integer>
+				<key>hotmod</key>
+				<integer>1310720</integer>
+				<key>hotstring</key>
+				<string>O</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>102081E8-9322-4A7E-8EED-213AB3A675F4</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Microsoft Outlook.app</string>
+					<string>/Applications/Microsoft Teams.app</string>
+					<string>/Applications/Slack.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>714D7E9D-8144-432E-8988-5C0A04764F9C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Use hotkeys to launch actions by pressing a key combination. You can connect one or more actions to be performed.
@@ -499,6 +562,15 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<integer>350</integer>
 			<key>ypos</key>
 			<integer>55</integer>
+		</dict>
+		<key>102081E8-9322-4A7E-8EED-213AB3A675F4</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<integer>55</integer>
+			<key>ypos</key>
+			<integer>560</integer>
 		</dict>
 		<key>1F067FEE-648B-4024-A199-A977B3D7E2BA</key>
 		<dict>
@@ -550,6 +622,15 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<integer>485</integer>
 			<key>ypos</key>
 			<integer>195</integer>
+		</dict>
+		<key>714D7E9D-8144-432E-8988-5C0A04764F9C</key>
+		<dict>
+			<key>note</key>
+			<string>Outlook, Teams, Slack</string>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>560</integer>
 		</dict>
 		<key>7F06D968-A68C-481E-83C0-7B45F509D2D1</key>
 		<dict>
