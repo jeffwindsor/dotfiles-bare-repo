@@ -132,7 +132,7 @@ then
     source $HOME/.cargo/env
 
     install cargo-completions
-
+    cargo install cargo-update
 fi
 
 ##########################################################
