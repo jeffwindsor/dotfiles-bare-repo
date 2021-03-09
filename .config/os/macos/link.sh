@@ -5,7 +5,6 @@ mkdir -p $HOME/.config/alacritty/
 mkdir -p $HOME/.config/alfred/
 mkdir -p $HOME/.config/karabiner/
 mkdir -p $HOME/.config/skhd/
-#mkdir -p $HOME/.config/yabai/
 
 read -r -p "CJ Profile? [y/n] " response
 response=${response,,}    # tolower
@@ -14,7 +13,6 @@ then
     MACHINE=$PWD/cj
 else
     MACHINE=$PWD
-    #ln -sfv "$PWD/yabai/yabairc" "$HOME/.config/yabai/yabairc"
 fi
 
 ln -sfv "$MACHINE/zshenv" "$HOME/.zshenv"
@@ -30,4 +28,4 @@ ln -sfv "$PWD/vscode/settings.json.macos" "$HOME/Library/Application Support/VSC
 ln -sfv "$PWD/ssh/config" "$HOME/.ssh/config"
 ln -sfv "$PWD/gitconfig" "$HOME/.gitconfig"
 ln -sfv "$PWD/gitignore" "$HOME/.gitignore"
-ln -sfv "$HOME/.config/nvim/config.vim" "$HOME/.ideavimrc"
+#ln -sfv "$HOME/.config/nvim/config.vim" "$HOME/.ideavimrc"
