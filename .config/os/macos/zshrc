@@ -31,6 +31,8 @@ sha256c(){ shasum -a 256 -c "$1.sha256"; }
 sha512c(){ shasum -a 512 -c "$1.sha512"; }
 md5c()  { md5 -r "$1" | diff "$1.md5" -; }
 
+alias aws1="alias aws='/usr/local/opt/awscli@1/bin/aws'"
+alias aws2="unalias aws"
 alias bc="brew cask"
 alias bi="brew info"
 alias bl="brew leaves | xargs brew deps --installed --for-each | sed \"s/^.*:/$(tput setaf 4)&$(tput sgr0)/\""
