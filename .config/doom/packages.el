@@ -48,6 +48,6 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! org-brain)
-(package! org-bullets)
+;;(package! org-brain)
+;;(package! org-bullets)
 ;;(package! vterm)

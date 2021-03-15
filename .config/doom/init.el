@@ -14,13 +14,13 @@
 
        :ui
        doom              ; what makes DOOM look the way it does
-       ;;doom-dashboard    ; a nifty splash screen for Emacs
+       doom-dashboard    ; a nifty splash screen for Emacs
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
-       ;;indent-guides     ; highlighted indent columns
+       indent-guides     ; highlighted indent columns
        modeline          ; snazzy, Atom-inspired modeline, plus API
        ;;nav-flash         ; blink cursor line after big motions
        neotree           ; a project drawer, like NERDTree for vim
-       ;;ophints           ; highlight the region an operation acts on
+       ophints           ; highlight the region an operation acts on
        (popup +all +defaults)       ; tame sudden yet inevitable temporary windows
        ligatures         ; ligatures or substitute text with pretty symbols
        tabs              ; an tab bar for Emacs

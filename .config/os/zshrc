@@ -114,6 +114,7 @@ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias up='topgrade' #'package-upgrade'
 alias v='nvim'
 alias vv='nvim -O'
+alias vs='nvim -u $HOME/.Spacevim/init.vim'
 alias vim='nvim'
 alias y='youtube-dl'
 alias ya='youtube-dl --extract-audio --audio-format m4a --audio-quality 0'

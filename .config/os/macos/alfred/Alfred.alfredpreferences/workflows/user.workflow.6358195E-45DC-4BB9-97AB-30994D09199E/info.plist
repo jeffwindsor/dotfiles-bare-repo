@@ -77,7 +77,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E6B14D10-A650-4D84-AEEC-11DF7DFD3A31</string>
+				<string>9BC85198-7EB2-4920-8DDE-ED9C7ACFAD45</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -341,7 +341,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>open -na 'vscodium'</string>
+				<string>open -na 'VSCodium'</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -401,7 +401,7 @@
 				<key>hotkey</key>
 				<integer>42</integer>
 				<key>hotmod</key>
-				<integer>1572864</integer>
+				<integer>1835008</integer>
 				<key>hotstring</key>
 				<string>\</string>
 				<key>leftcursor</key>
@@ -491,7 +491,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>E6B14D10-A650-4D84-AEEC-11DF7DFD3A31</string>
+			<string>9BC85198-7EB2-4920-8DDE-ED9C7ACFAD45</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -650,6 +650,17 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>ypos</key>
 			<integer>350</integer>
 		</dict>
+		<key>9BC85198-7EB2-4920-8DDE-ED9C7ACFAD45</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>note</key>
+			<string>Emacs</string>
+			<key>xpos</key>
+			<integer>195</integer>
+			<key>ypos</key>
+			<integer>350</integer>
+		</dict>
 		<key>A4CFC5CC-9D72-458F-95E9-ACB84FF7BF0D</key>
 		<dict>
 			<key>colorindex</key>
@@ -680,17 +691,6 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<integer>650</integer>
 			<key>ypos</key>
 			<integer>345</integer>
-		</dict>
-		<key>E6B14D10-A650-4D84-AEEC-11DF7DFD3A31</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>note</key>
-			<string>Emacs</string>
-			<key>xpos</key>
-			<integer>185</integer>
-			<key>ypos</key>
-			<integer>350</integer>
 		</dict>
 		<key>F639B6CF-45DF-45DE-9162-71F2B828C519</key>
 		<dict>

@@ -1,5 +1,6 @@
+# All SpaceVim option below [option] section
 [options]
-    colorscheme = "srcery"
+    colorscheme = "tender"
     colorscheme_bg = "dark"
     enable_guicolors = true
     statusline_separator = "arrow"
@@ -26,3 +27,10 @@ name = "lang#haskell"
 
 [[layers]]
 name = "lang#c"
+
+[[layers]]
+name = "fzf"
+
+[[custom_plugins]]
+repo = "jacoborus/tender.vim"
+merged=0
