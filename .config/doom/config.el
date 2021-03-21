@@ -6,7 +6,7 @@
 
 ;; Look and Feel
 (setq
- doom-font (font-spec :family "JetBrains Mono" :size 14)
+ doom-font (font-spec :family "JetBrains Mono" :size 14 :weight 'regular)
  doom-big-font (font-spec :family "JetBrains Mono" :size 18)
  doom-theme 'doom-molokai
  display-line-numbers-type 'relative

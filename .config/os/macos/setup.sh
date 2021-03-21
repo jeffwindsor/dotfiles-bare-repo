@@ -7,7 +7,7 @@ install() {
   		echo "==> "$1" [installed]"
 	else
     	echo "==> "$1
-    	brew install $1
+    	brew install $@
     fi
 }
 
@@ -67,7 +67,7 @@ then
     installcask amethyst
     installcask caffeine
     installcask dash
-    installcask emacs
+    installcask emacs-plus --HEAD
     installcask firefox
     installcask font-cascadia
     installcask font-fira-code
@@ -103,9 +103,20 @@ then
     nvim --headless +PlugInstall +qall
 
     ################################################################
+    echo "==> EMACS PACKAGE DEPENDENCIES"
+    install aspell                  # for spell checker
+    install rtags                   # for c / c++
+    install cabal-install           # haskell
+    # npm install --save-dev js-beautify stylelint
+
+    echo "==> EMACS PLUS"
+    ln -s /usr/local/opt/emacs-plus@27/Emacs.app /Applications
+    brew services start d12frosted/emacs-plus/emacs-plus@27
+
     echo "==> DOOM EMACS"
     git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
     ~/.emacs.d/bin/doom install
+
 fi
 
 ##########################################################
