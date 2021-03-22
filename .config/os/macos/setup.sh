@@ -105,6 +105,8 @@ then
     ################################################################
     echo "==> EMACS PACKAGE DEPENDENCIES"
     install aspell                  # for spell checker
+    install fontconfig              # for fontchanges 
+    install marked                  # for markdown compiler
     install rtags                   # for c / c++
     install cabal-install           # haskell
     # npm install --save-dev js-beautify stylelint
