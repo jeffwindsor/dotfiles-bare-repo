@@ -1,16 +1,3 @@
-window:
-  decorations: none
-  padding:
-      x: 4
-      y: 4
-background_opacity: 0.94
-cursor: 
-  style: Block
-
-font:
-  normal:
-      family: 'JetBrains Mono'
-  size: 14.0
 # Colors (Gruvbox dark)
 colors:
   primary:
