@@ -15,5 +15,13 @@ if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 fi
 
+# RUST
 source $HOME/.config/os/zshenv
 source "$HOME/.cargo/env"
+
+# APL
+export LDFLAGS="-L/usr/local/opt/readline/lib"
+export CPPFLAGS="-I/usr/local/opt/readline/include"
+
+export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
+[ -f "/Users/jeffwindsor/.ghcup/env" ] && source "/Users/jeffwindsor/.ghcup/env" # ghcup-env

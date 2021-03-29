@@ -76,7 +76,3 @@ alias sup='stack upgrade --force-download'
 alias tree='exa --tree'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
-# ZIG - LLVM 
-export LDFLAGS="-L/usr/local/opt/libffi/lib"
-export CPPFLAGS="-I/usr/local/opt/libffi/include"

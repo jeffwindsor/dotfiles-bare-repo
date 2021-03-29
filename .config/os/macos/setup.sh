@@ -107,8 +107,8 @@ then
     install aspell                  # for spell checker
     install fontconfig              # for fontchanges 
     install marked                  # for markdown compiler
-    install rtags                   # for c / c++
-    install cabal-install           # haskell
+    #install rtags                   # for c / c++
+    #install cabal-install           # haskell
     # npm install --save-dev js-beautify stylelint
 
     echo "==> EMACS PLUS"
@@ -126,15 +126,20 @@ read -r -p "Development Languages? [y/n] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
-    
+   
+    #install gnu-apl
     #install ats2-postiats
     #install gcc
     install ghc
     install golang
-    #install haskell-stack
-    #install hlint
     #install idris
     install nodejs
+
+    ################################################################
+    echo "==> haskell"
+    curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+    
+    #install haskell-stack
 
     ################################################################
     echo "==> RUST LANG"

@@ -6,13 +6,17 @@ call plug#begin('~/.cache/nvim/plugged')
   
   " Plug 'airblade/vim-rooter'
   Plug 'ap/vim-css-color'
+  Plug 'arcticicestudio/nord-vim'
+  Plug 'artanikin/vim-synthwave84'
   " Plug 'chriskempson/base16-vim'
+  Plug 'cocopon/iceberg.vim'
   " Plug 'dawikur/base16-vim-airline-themes'
   " Plug 'dhruvasagar/vim-table-mode'
   " Plug 'frazrepo/vim-rainbow' 
   Plug 'itchyny/lightline.vim'
   Plug 'jacoborus/tender.vim'
   Plug 'jeetsukumaran/vim-filebeagle'
+  Plug 'joshdick/onedark.vim'
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'tomtom/tcomment_vim'
@@ -74,8 +78,8 @@ nnoremap <leader>wqo :only<CR>
 "Fuzzy Swith Color Schemes
 nnoremap <leader>wc :Colors<CR>
 
-"== Theming =============================================== "tender one nord
-let g:lightline = { 'colorscheme' : 'tender' }
-colorscheme tender
+"== Theming =============================================== "tender onedark nord synthwave84 iceberg
+let g:lightline = { 'colorscheme' : 'iceberg' }
+colorscheme iceberg
 
 
