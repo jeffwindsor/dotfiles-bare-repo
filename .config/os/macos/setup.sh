@@ -33,10 +33,12 @@ then
     
     # homebrew
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew tap homebrew/cask 
-    brew tap homebrew/core 
-    brew tap homebrew/fonts
-    brew tap mas-cli/tap
+    
+    brew tap homebrew/core
+    brew tap homebrew/cask
+    brew tap homebrew/cask-fonts 
+    brew tap homebrew/services
+    #brew tap mas-cli/tap
 fi 
 
 ##########################################################
@@ -50,10 +52,10 @@ then
     install fd
     install fzf
     install git
-    install mas
+    #install mas
     install neovim
+    install luarocks        # neovim 0.5
     install ripgrep
-    install starship
     install tldr
     install topgrade
     install zsh
@@ -66,16 +68,13 @@ then
     installcask alfred
     installcask amethyst
     installcask caffeine
-    installcask dash
-    installcask emacs-plus --HEAD
+    #installcask dash
+    #installcask emacs-plus --HEAD
     installcask firefox
-    installcask font-cascadia
-    installcask font-fira-code
-    installcask font-inconsolata
-    installcask font-jetbrains-mono
-    installcask font-source-code-pro
-    installcask gpg-suite
-    installcask intellij-idea
+    installcask font-fira-code-nerd-font
+    installcask font-hack-nerd-font
+    installcask font-jetbrains-mono-nerd-font
+    #installcask gpg-suite
     installcask slack
     installcask spotify
     installcask transmission
@@ -91,8 +90,6 @@ then
     clone-if-missing jeffwindsor dwmblocks
     clone-if-missing jeffwindsor dmenu
     
-    cd $HOME/src/hub
-
     ################################################################
     echo "==> STARSHIP PROMPT"
     curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
@@ -103,21 +100,21 @@ then
     nvim --headless +PlugInstall +qall
 
     ################################################################
-    echo "==> EMACS PACKAGE DEPENDENCIES"
-    install aspell                  # for spell checker
-    install fontconfig              # for fontchanges 
-    install marked                  # for markdown compiler
+    #echo "==> EMACS PACKAGE DEPENDENCIES"
+    #install aspell                  # for spell checker
+    #install fontconfig              # for fontchanges 
+    #install marked                  # for markdown compiler
     #install rtags                   # for c / c++
     #install cabal-install           # haskell
     # npm install --save-dev js-beautify stylelint
 
-    echo "==> EMACS PLUS"
-    ln -s /usr/local/opt/emacs-plus@27/Emacs.app /Applications
-    brew services start d12frosted/emacs-plus/emacs-plus@27
+    #echo "==> EMACS PLUS"
+    #ln -s /usr/local/opt/emacs-plus@27/Emacs.app /Applications
+    #brew services start d12frosted/emacs-plus/emacs-plus@27
 
-    echo "==> DOOM EMACS"
-    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-    ~/.emacs.d/bin/doom install
+    #echo "==> DOOM EMACS"
+    #git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+    #~/.emacs.d/bin/doom install
 
 fi
 
@@ -130,15 +127,15 @@ then
     #install gnu-apl
     #install ats2-postiats
     #install gcc
-    install ghc
     install golang
+    #install dotty
     #install idris
     install nodejs
 
     ################################################################
-    echo "==> haskell"
+    echo "==> HASKELL"
+    install ghc
     curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-    
     #install haskell-stack
 
     ################################################################
@@ -221,6 +218,7 @@ then
     install awscli@1
     install openjdk@11
 
+    installcask intellij-idea
     installcask instantclient-basic
     installcask instantclient-sqlplus
     installcask java8
@@ -229,6 +227,6 @@ then
 
 fi
 
-open http://www.packal.org/workflow/colors
-open http://www.packal.org/workflow/github-repos
-open https://www.alfredapp.com/blog/productivity/dash-quicker-api-documentation-search/
+#open http://www.packal.org/workflow/colors
+#open http://www.packal.org/workflow/github-repos
+#open https://www.alfredapp.com/blog/productivity/dash-quicker-api-documentation-search/

@@ -3,11 +3,11 @@ window:
   padding:
       x: 4
       y: 4
-background_opacity: 0.94
+background_opacity: 0.96
 cursor: 
   style: Block
 
 font:
   normal:
-      family: 'JetBrains Mono'
+      family: 'Hack Nerd Font Mono'
   size: 14.0
