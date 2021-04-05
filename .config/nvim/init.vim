@@ -4,24 +4,23 @@ source $HOME/.config/nvim/config.vim
 "== Plugins ===============================================================
 call plug#begin('~/.cache/nvim/plugged')
   
-  " Plug 'airblade/vim-rooter'
+  Plug 'airblade/vim-rooter'
   Plug 'ap/vim-css-color'
-  Plug 'arcticicestudio/nord-vim'
-  Plug 'artanikin/vim-synthwave84'
-  " Plug 'chriskempson/base16-vim'
+  "Plug 'arcticicestudio/nord-vim'
+  "Plug 'artanikin/vim-synthwave84'
   Plug 'cocopon/iceberg.vim'
-  " Plug 'dawikur/base16-vim-airline-themes'
   " Plug 'dhruvasagar/vim-table-mode'
   " Plug 'frazrepo/vim-rainbow' 
   Plug 'itchyny/lightline.vim'
   Plug 'jacoborus/tender.vim'
   Plug 'jeetsukumaran/vim-filebeagle'
-  Plug 'joshdick/onedark.vim'
+  "Plug 'joshdick/onedark.vim'
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'tomtom/tcomment_vim'
   " Plug 'tpope/vim-surround'
   " Plug 'unblevable/quick-scope'
+  Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 

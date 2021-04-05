@@ -480,7 +480,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>open -na 'emacs'</string>
+				<string>open -na 'vimr'</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -655,7 +655,7 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>note</key>
-			<string>Emacs</string>
+			<string>NeoVim</string>
 			<key>xpos</key>
 			<integer>195</integer>
 			<key>ypos</key>
