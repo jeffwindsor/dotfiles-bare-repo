@@ -78,6 +78,7 @@ then
     installcask slack
     installcask spotify
     installcask transmission
+    installcask vimr
     installcask vlc
     installcask vscodium
 
