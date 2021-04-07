@@ -6,21 +6,21 @@ call plug#begin('~/.cache/nvim/plugged')
   
   Plug 'airblade/vim-rooter'
   Plug 'ap/vim-css-color'
-  "Plug 'arcticicestudio/nord-vim'
-  "Plug 'artanikin/vim-synthwave84'
+  Plug 'arcticicestudio/nord-vim'
   Plug 'cocopon/iceberg.vim'
-  " Plug 'dhruvasagar/vim-table-mode'
-  " Plug 'frazrepo/vim-rainbow' 
+  "Plug 'dhruvasagar/vim-table-mode'
+  "Plug 'frazrepo/vim-rainbow' 
   Plug 'itchyny/lightline.vim'
   Plug 'jacoborus/tender.vim'
   Plug 'jeetsukumaran/vim-filebeagle'
-  "Plug 'joshdick/onedark.vim'
+  Plug 'joshdick/onedark.vim'
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'tomtom/tcomment_vim'
-  " Plug 'tpope/vim-surround'
-  " Plug 'unblevable/quick-scope'
+  "Plug 'tpope/vim-surround'
+  "Plug 'unblevable/quick-scope'
   Plug 'ryanoasis/vim-devicons'
+  "Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
@@ -30,55 +30,34 @@ source $HOME/.config/nvim/plugin-config-fzf.vim"
 
 "== Keys =======================================================
 let mapleader = "\<Space>"
+" inoremap jk <esc>
 nnoremap <leader><Space> :Commands<CR>
 nnoremap <leader>h :Helptags<CR>
 nnoremap <leader>q :q<CR>
-inoremap jk <esc>
-"Fuzzy List
+nnoremap <leader>c :Colors<CR>
 nnoremap <leader>bb :Buffers<CR>
-"Switch Previous
 nnoremap <leader>bh :bprevious<CR>
-"Switch Next
 nnoremap <leader>bl :bnext<CR>
-
-"Save
-nnoremap <leader>fs :w<CR>
-"Save As
-nnoremap <leader>fa :sav 
-" Fuzzy Find in current file directory
-nnoremap <leader>ff :Files <C-R>=expand('%:h')<CR><CR>
-"nnoremap <leader>fl :Locate /<CR>
-" Search in Files
-nnoremap <leader>fs :Rg
-"Fuzzy Change Type 
-nnoremap <leader>ft :Filetypes<CR>
-
-" Config Open
 nnoremap <leader>ce :e $MYVIMRC<CR>
-" Config Reload
 nnoremap <leader>cr :source $MYVIMRC<CR>
-
-"Splits
+nnoremap <leader>fs :w<CR>
+nnoremap <leader>fa :sav 
+nnoremap <leader>ff :Files <C-R>=expand('%:h')<CR><CR>
+nnoremap <leader>ft :Filetypes<CR>
+nnoremap <leader>pc :PlugClean<CR>
+nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>wv :vsplit<CR>
 nnoremap <leader>ws :split<CR>
-"Resize
 nnoremap <leader>wh :vertical resize -5<CR>
 nnoremap <leader>wj :resize -5<CR>
 nnoremap <leader>wk :resize +5<CR>
 nnoremap <leader>wL :vertical resize +5<CR>
-"Fuzzy Select by Search
 nnoremap <leader>ww :Windows<CR> 
-"Swap
 nnoremap <leader>w<Right> <C-W><C-r> 
 nnoremap <leader>w<Left> <C-W><C-R> 
-"Close
 nnoremap <leader>wq :close<CR> 
 nnoremap <leader>wqo :only<CR> 
-"Fuzzy Swith Color Schemes
-nnoremap <leader>wc :Colors<CR>
 
-"== Theming =============================================== "tender onedark nord synthwave84 iceberg
+"== Theming ====== "tender onedark nord iceberg
 let g:lightline = { 'colorscheme' : 'iceberg' }
 colorscheme iceberg
-
-
