@@ -4,11 +4,11 @@ window:
       x: 8
       y: 8
 
-background_opacity: 0.9
+background_opacity: 0.96
 cursor: 
   style: Block
 
 font:
   normal:
-    family: 'JetBrains Mono ExtraLight'
+    family: 'JetBrains Mono'
   size: 14.0

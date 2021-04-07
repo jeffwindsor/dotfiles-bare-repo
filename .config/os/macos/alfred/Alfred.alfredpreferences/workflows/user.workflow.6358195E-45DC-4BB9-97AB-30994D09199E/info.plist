@@ -337,11 +337,11 @@
 			<key>config</key>
 			<dict>
 				<key>concurrently</key>
-				<false/>
+				<true/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>open -na 'VSCodium'</string>
+				<string>open -na VSCodium.app --args --extensions-dir ~/.vscode-oss/extensions</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>

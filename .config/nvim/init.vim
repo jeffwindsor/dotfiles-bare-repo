@@ -20,12 +20,18 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'tomtom/tcomment_vim'
   " Plug 'tpope/vim-surround'
   " Plug 'unblevable/quick-scope'
-  Plug 'ryanoasis/vim-devicons'
+  " Plug 'ryanoasis/vim-devicons'
+
+  "== LUA NVIM 0.5+ ============================================================================
+  " Plug 'nvim-lua/completion-nvim'
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-lua/completion-nvim' 
+  Plug 'nvim-lua/lsp_extensions.nvim' 
 
 call plug#end()
 
 source $HOME/.config/nvim/plugin-config-vim-sneak.vim"
-source $HOME/.config/nvim/plugin-config-quick-scope.vim"
+"source $HOME/.config/nvim/plugin-config-quick-scope.vim"
 source $HOME/.config/nvim/plugin-config-fzf.vim"
 
 "== Keys =======================================================
@@ -33,30 +39,28 @@ let mapleader = "\<Space>"
 nnoremap <leader><Space> :Commands<CR>
 nnoremap <leader>h :Helptags<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>m :Maps<CR>
 inoremap jk <esc>
-"Fuzzy List
+"
+"Buffers
 nnoremap <leader>bb :Buffers<CR>
-"Switch Previous
 nnoremap <leader>bh :bprevious<CR>
-"Switch Next
 nnoremap <leader>bl :bnext<CR>
 
-"Save
+" Config
+nnoremap <leader>ce :e $MYVIMRC<CR>
+nnoremap <leader>cr :source $MYVIMRC<CR>
+
+"Files
 nnoremap <leader>fs :w<CR>
-"Save As
 nnoremap <leader>fa :sav 
-" Fuzzy Find in current file directory
 nnoremap <leader>ff :Files <C-R>=expand('%:h')<CR><CR>
-"nnoremap <leader>fl :Locate /<CR>
-" Search in Files
-nnoremap <leader>fs :Rg
-"Fuzzy Change Type 
+nnoremap <leader>fr :Rg
 nnoremap <leader>ft :Filetypes<CR>
 
-" Config Open
-nnoremap <leader>ce :e $MYVIMRC<CR>
-" Config Reload
-nnoremap <leader>cr :source $MYVIMRC<CR>
+" Plugs 
+nnoremap <leader>pc :PlugClean<CR>
+nnoremap <leader>pi :PlugInstall<CR>
 
 "Splits
 nnoremap <leader>wv :vsplit<CR>
