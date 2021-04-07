@@ -17,15 +17,20 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'tomtom/tcomment_vim'
-  "Plug 'tpope/vim-surround'
-  "Plug 'unblevable/quick-scope'
-  Plug 'ryanoasis/vim-devicons'
+  " Plug 'tpope/vim-surround'
+  " Plug 'unblevable/quick-scope'
+  " Plug 'ryanoasis/vim-devicons'
+
+  "== LUA NVIM 0.5+ ============================================================================
+  " Plug 'nvim-lua/completion-nvim'
   "Plug 'neovim/nvim-lspconfig'
+  "Plug 'nvim-lua/completion-nvim' 
+  "Plug 'nvim-lua/lsp_extensions.nvim' 
 
 call plug#end()
 
 source $HOME/.config/nvim/plugin-config-vim-sneak.vim"
-source $HOME/.config/nvim/plugin-config-quick-scope.vim"
+"source $HOME/.config/nvim/plugin-config-quick-scope.vim"
 source $HOME/.config/nvim/plugin-config-fzf.vim"
 
 "== Keys =======================================================
@@ -34,7 +39,8 @@ let mapleader = "\<Space>"
 nnoremap <leader><Space> :Commands<CR>
 nnoremap <leader>h :Helptags<CR>
 nnoremap <leader>q :q<CR>
-nnoremap <leader>c :Colors<CR>
+nnoremap <leader>m :Maps<CR>
+inoremap jk <esc>
 nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>bh :bprevious<CR>
 nnoremap <leader>bl :bnext<CR>
@@ -43,6 +49,7 @@ nnoremap <leader>cr :source $MYVIMRC<CR>
 nnoremap <leader>fs :w<CR>
 nnoremap <leader>fa :sav 
 nnoremap <leader>ff :Files <C-R>=expand('%:h')<CR><CR>
+nnoremap <leader>fr :Rg
 nnoremap <leader>ft :Filetypes<CR>
 nnoremap <leader>pc :PlugClean<CR>
 nnoremap <leader>pi :PlugInstall<CR>

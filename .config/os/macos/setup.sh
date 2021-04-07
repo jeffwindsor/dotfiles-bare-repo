@@ -82,6 +82,8 @@ then
     installcask vlc
     installcask vscodium
 
+    pip install lookatme
+
     ################################################################
     echo "==> GIT REPOS INTO HOME ${HOME}/SRC"
     mkdir -p ${HOME}/src/hub
