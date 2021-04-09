@@ -35,24 +35,33 @@ source $HOME/.config/nvim/plugin-config-fzf.vim"
 
 "== Keys =======================================================
 let mapleader = "\<Space>"
-" inoremap jk <esc>
-nnoremap <leader><Space> :Commands<CR>
-nnoremap <leader>h :Helptags<CR>
+
 nnoremap <leader>q :q<CR>
-nnoremap <leader>m :Maps<CR>
-inoremap jk <esc>
+
 nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>bh :bprevious<CR>
 nnoremap <leader>bl :bnext<CR>
-nnoremap <leader>ce :e $MYVIMRC<CR>
-nnoremap <leader>cr :source $MYVIMRC<CR>
-nnoremap <leader>fs :w<CR>
+
 nnoremap <leader>fa :sav 
-nnoremap <leader>ff :Files <C-R>=expand('%:h')<CR><CR>
-nnoremap <leader>fr :Rg
+nnoremap <leader>fc :Files $HOME/.config/<CR>
+nnoremap <leader>ff :Files <CR>
+nnoremap <leader>fh :History<CR>
+nnoremap <leader>fs :w<CR>
 nnoremap <leader>ft :Filetypes<CR>
+nnoremap <leader>fv :e $MYVIMRC<CR>
+
 nnoremap <leader>pc :PlugClean<CR>
 nnoremap <leader>pi :PlugInstall<CR>
+
+nnoremap <leader>rr :source $MYVIMRC<CR>
+
+nnoremap <leader>sc :Commands<CR>
+nnoremap <leader>sh :Helptags<CR>
+nnoremap <leader>sk :Maps<CR>
+nnoremap <leader>sl :Lines<CR>
+nnoremap <leader>sm :Marks<CR>
+nnoremap <leader>st :Tags<CR>
+
 nnoremap <leader>wv :vsplit<CR>
 nnoremap <leader>ws :split<CR>
 nnoremap <leader>wh :vertical resize -5<CR>
