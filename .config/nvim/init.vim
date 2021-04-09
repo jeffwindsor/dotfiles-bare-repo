@@ -17,12 +17,13 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'tomtom/tcomment_vim'
-  " Plug 'tpope/vim-surround'
-  " Plug 'unblevable/quick-scope'
-  " Plug 'ryanoasis/vim-devicons'
+  "Plug 'rust-lang/rust.vim'
+  "Plug 'tpope/vim-surround'
+  "Plug 'unblevable/quick-scope'
+  "Plug 'ryanoasis/vim-devicons'
 
   "== LUA NVIM 0.5+ ============================================================================
-  " Plug 'nvim-lua/completion-nvim'
+  "Plug 'nvim-lua/completion-nvim'
   "Plug 'neovim/nvim-lspconfig'
   "Plug 'nvim-lua/completion-nvim' 
   "Plug 'nvim-lua/lsp_extensions.nvim' 
