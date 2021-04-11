@@ -38,6 +38,7 @@ then
     brew tap homebrew/cask
     brew tap homebrew/cask-fonts 
     brew tap homebrew/services
+    brew tap railwaycat/emacsmacport
     #brew tap mas-cli/tap
 fi 
 
@@ -67,14 +68,18 @@ then
     installcask alacritty
     installcask alfred
     installcask amethyst
-    installcask caffeine
+    installcask keepingyouawake
     #installcask dash
-    #installcask emacs-plus --HEAD
+    
+    brew tap railwaycat/emacsmacport
+    installcask emacs-mac
+    brew untap railwaycat/emacsmacport
+
     installcask firefox
     installcask font-fira-code-nerd-font
     installcask font-hack-nerd-font
     installcask font-jetbrains-mono-nerd-font
-    #installcask gpg-suite
+    installcask gpg-suite
     installcask slack
     installcask spotify
     installcask transmission
@@ -109,15 +114,15 @@ then
     #install marked                  # for markdown compiler
     #install rtags                   # for c / c++
     #install cabal-install           # haskell
-    # npm install --save-dev js-beautify stylelint
+    #npm install --save-dev js-beautify stylelint
 
     #echo "==> EMACS PLUS"
-    #ln -s /usr/local/opt/emacs-plus@27/Emacs.app /Applications
-    #brew services start d12frosted/emacs-plus/emacs-plus@27
+    ln -s /usr/local/opt/emacs-plus@27/Emacs.app /Applications
+    brew services start d12frosted/emacs-plus/emacs-plus@27
 
     #echo "==> DOOM EMACS"
-    #git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-    #~/.emacs.d/bin/doom install
+    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+    ~/.emacs.d/bin/doom install
 
 fi
 
