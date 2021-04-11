@@ -45,6 +45,7 @@ nnoremap <leader>bl :bnext<CR>
 
 nnoremap <leader>fa :sav 
 nnoremap <leader>fc :Files $HOME/.config/<CR>
+nnoremap <leader>fo :Files $HOME/.config/os/<CR>
 nnoremap <leader>ff :Files <CR>
 nnoremap <leader>fh :History<CR>
 nnoremap <leader>fs :w<CR>
