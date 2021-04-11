@@ -77,5 +77,5 @@ nnoremap <leader>wq :close<CR>
 nnoremap <leader>wqo :only<CR> 
 
 "== Theming ====== "tender onedark nord iceberg
-let g:lightline = { 'colorscheme' : 'iceberg' }
-colorscheme iceberg
+let g:lightline = { 'colorscheme' : 'tender' }
+colorscheme tender
