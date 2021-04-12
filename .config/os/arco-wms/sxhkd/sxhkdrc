@@ -13,28 +13,27 @@ super + control + space
 # terminal
 super + Return
     alacritty
+
 super + Down
     xfce4-terminal --drop-down
 
-
 # files
-super + shift + Return
+super + control + alt + Return
     thunar
 
 # browser
 super + control + Return
     firefox
-super + control + alt + Return
-    brave
 
 # settings (alternate)
 super + .
     arcolinux-tweak-tool
 
 # editors
-super + e 
+super + control + \ 
     emacs
-super + n
+    
+super + \
     nvim
 
 # sxhkd - reload
