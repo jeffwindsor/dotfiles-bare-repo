@@ -53,7 +53,7 @@ then
     install fd
     install fzf
     install git
-    #install mas
+    install mas
     install neovim
     install luarocks        # neovim 0.5
     install ripgrep
@@ -97,6 +97,8 @@ then
     clone-if-missing jeffwindsor dwm
     clone-if-missing jeffwindsor dwmblocks
     clone-if-missing jeffwindsor dmenu
+    clone-if-missing jeffwindsor nord-startpage
+    clone-if-missing jeffwindsor learn
     
     ################################################################
     echo "==> STARSHIP PROMPT"

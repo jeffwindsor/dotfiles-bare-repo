@@ -60,6 +60,7 @@ self_update = true
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 "Starship Prompt" = "curl -fsSL https://starship.rs/install.sh | bash -s -- --yes"
 "Dotfiles" = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull"
+"Haskell" = "ghcup upgrade"
 
 #[brew]
 #greedy_cask = true
