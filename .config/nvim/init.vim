@@ -4,35 +4,37 @@ source $HOME/.config/nvim/config.vim
 "== Plugins ===============================================================
 call plug#begin('~/.cache/nvim/plugged')
   
-  Plug 'airblade/vim-rooter'
-  Plug 'ap/vim-css-color'
+  "== eye candy
   Plug 'arcticicestudio/nord-vim'
   Plug 'cocopon/iceberg.vim'
-  "Plug 'dhruvasagar/vim-table-mode'
-  "Plug 'frazrepo/vim-rainbow' 
   Plug 'itchyny/lightline.vim'
   Plug 'jacoborus/tender.vim'
-  Plug 'jeetsukumaran/vim-filebeagle'
   Plug 'joshdick/onedark.vim'
+  "Plug 'ryanoasis/vim-devicons'
+
+  "== system
+  Plug 'airblade/vim-rooter'
+  Plug 'jeetsukumaran/vim-filebeagle'
   Plug 'junegunn/fzf.vim'
+
+  "== development
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'ap/vim-css-color'
+  " Plug 'cespare/vim-toml'
   Plug 'justinmk/vim-sneak'
   Plug 'tomtom/tcomment_vim'
   "Plug 'rust-lang/rust.vim'
   "Plug 'tpope/vim-surround'
   "Plug 'unblevable/quick-scope'
-  "Plug 'ryanoasis/vim-devicons'
-
-  "== LUA NVIM 0.5+ ============================================================================
-  "Plug 'nvim-lua/completion-nvim'
-  "Plug 'neovim/nvim-lspconfig'
-  "Plug 'nvim-lua/completion-nvim' 
-  "Plug 'nvim-lua/lsp_extensions.nvim' 
+  "Plug 'dhruvasagar/vim-table-mode'
+  "Plug 'frazrepo/vim-rainbow' 
 
 call plug#end()
 
 source $HOME/.config/nvim/plugin-config-vim-sneak.vim"
 "source $HOME/.config/nvim/plugin-config-quick-scope.vim"
 source $HOME/.config/nvim/plugin-config-fzf.vim"
+" source $HOME/.config/nvim/plugin-config-coc.vim"
 
 "== Keys =======================================================
 let mapleader = "\<Space>"
@@ -78,4 +80,4 @@ nnoremap <leader>wqo :only<CR>
 
 "== Theming ====== "tender onedark nord iceberg
 let g:lightline = { 'colorscheme' : 'tender' }
-colorscheme tender
+colorscheme iceberg
