@@ -29,7 +29,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Hotkey_Vimr</string>
+	<string>Hotkey_Emacs</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -40,7 +40,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>open -na 'VimR.app'</string>
+				<string>open -na 'emacs'</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
