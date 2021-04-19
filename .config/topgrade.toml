@@ -2,7 +2,7 @@
 assume_yes = true
 
 # Disable specific steps - same options as the command line flag
-disable = ["emacs", "microsoft_auto_update", "node", "stack"]
+#disable = ["emacs", "microsoft_auto_update", "node", "stack"]
 
 # Ignore failures for these steps
 ignore_failures = ["emacs"]
@@ -38,8 +38,7 @@ cleanup = true
 max_concurrency = 1
 # Additional git repositories to pull
 repos = [
-    "~/src/*/",
-#    "~/.config/something"
+    "~/src/*/"
 ]
 
 # Don't pull the predefined git repos

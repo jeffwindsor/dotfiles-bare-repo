@@ -24,7 +24,7 @@ call plug#begin('~/.cache/nvim/plugged')
   "== development
   " Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'ap/vim-css-color'
-  " Plug 'cespare/vim-toml'
+  Plug 'cespare/vim-toml'
   Plug 'justinmk/vim-sneak'
   Plug 'tomtom/tcomment_vim'
   "Plug 'rust-lang/rust.vim'
