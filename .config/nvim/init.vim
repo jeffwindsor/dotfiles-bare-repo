@@ -1,21 +1,25 @@
 "== Vim ====================================================================
 source $HOME/.config/nvim/config.vim
-
+"
 "== Plugins ===============================================================
 call plug#begin('~/.cache/nvim/plugged')
   
   "== eye candy
   Plug 'arcticicestudio/nord-vim'
   Plug 'cocopon/iceberg.vim'
-  Plug 'itchyny/lightline.vim'
   Plug 'jacoborus/tender.vim'
   Plug 'joshdick/onedark.vim'
   "Plug 'ryanoasis/vim-devicons'
+  Plug 'kyazdani42/nvim-web-devicons'       " bar icons
+  Plug 'romgrk/barbar.nvim'                 " tab bar
+  Plug 'itchyny/lightline.vim'              " bottom bar
+  Plug '907th/vim-auto-save'                " Auto Save
 
   "== system
   Plug 'airblade/vim-rooter'
   Plug 'jeetsukumaran/vim-filebeagle'
   Plug 'junegunn/fzf.vim'
+  Plug 'vimwiki/vimwiki'
 
   "== development
   " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -34,7 +38,8 @@ call plug#end()
 source $HOME/.config/nvim/plugin-config-vim-sneak.vim"
 "source $HOME/.config/nvim/plugin-config-quick-scope.vim"
 source $HOME/.config/nvim/plugin-config-fzf.vim"
-" source $HOME/.config/nvim/plugin-config-coc.vim"
+source $HOME/.config/nvim/plugin-config-autosave.vim"
+
 
 "== Keys =======================================================
 let mapleader = "\<Space>"
@@ -50,12 +55,13 @@ nnoremap <leader>fc :Files $HOME/.config/<CR>
 nnoremap <leader>fo :Files $HOME/.config/os/<CR>
 nnoremap <leader>ff :Files <CR>
 nnoremap <leader>fh :History<CR>
+nnoremap <leader>fn :tabnew<CR>
 nnoremap <leader>fs :w<CR>
 nnoremap <leader>ft :Filetypes<CR>
 nnoremap <leader>fv :e $MYVIMRC<CR>
 
-nnoremap <leader>pc :PlugClean<CR>
-nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>pc :w<CR> :source $MYVIMRC<CR> :PlugClean<CR>
+nnoremap <leader>pi :w<CR> :source $MYVIMRC<CR> :PlugInstall<CR>
 
 nnoremap <leader>rr :source $MYVIMRC<CR>
 
