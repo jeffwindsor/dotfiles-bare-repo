@@ -10,7 +10,7 @@ cursor:
 
 font:
   normal:
-    family: 'JetBrains Mono'
+    family: 'JetBrainsMono Nerd Font Mono'
   size: 14.0
 # Colors (Iceberg Dark)
 colors:
