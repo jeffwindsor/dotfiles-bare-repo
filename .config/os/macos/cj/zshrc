@@ -76,6 +76,11 @@ print('https://signin.aws.amazon.com/federation?Action=login&Destination=https%3
 EOF
 }
 aes () { eval $(env | sed -En 's/^(AWS_[^=]*)=.*$/unset \1/p'); }
+aws-test-sec(){
+    curl --form "fileupload=@${2}" \
+     -H 'Accept: application/json' \
+     -H "authorization: Bearer ${1}" "https://4ybonx0pcf.execute-api.us-east-1.amazonaws.com/prod/extend-dev-creds?id=${EMPIRE_DEV_ACCT}"
+}
 aws-cloudfront-describe () { aws cloudformation describe-stacks --stack-name "$@"; }
 aws-cloudfront-describe-status () { aws-cloudfront-describe $@ | grep StackStatus; }
 brews() {
@@ -189,3 +194,4 @@ alias tree='exa --tree'
 #}
 # aws
 
+[ -f "/Users/jwindsor/.ghcup/env" ] && source "/Users/jwindsor/.ghcup/env" # ghcup-env
