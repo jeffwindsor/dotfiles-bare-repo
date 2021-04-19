@@ -77,9 +77,9 @@ EOF
 }
 aes () { eval $(env | sed -En 's/^(AWS_[^=]*)=.*$/unset \1/p'); }
 aws-test-sec(){
-    curl --form "fileupload=@${1}" \
+    curl --form "fileupload=@${2}" \
      -H 'Accept: application/json' \
-     -H "authorization: Bearer 56bghcv350dkh4b0qgrrjzxj2d" "https://4ybonx0pcf.execute-api.us-east-1.amazonaws.com/prod/extend-dev-creds?id=${EMPIRE_DEV_ACCT}"
+     -H "authorization: Bearer ${1}" "https://4ybonx0pcf.execute-api.us-east-1.amazonaws.com/prod/extend-dev-creds?id=${EMPIRE_DEV_ACCT}"
 }
 aws-cloudfront-describe () { aws cloudformation describe-stacks --stack-name "$@"; }
 aws-cloudfront-describe-status () { aws-cloudfront-describe $@ | grep StackStatus; }
