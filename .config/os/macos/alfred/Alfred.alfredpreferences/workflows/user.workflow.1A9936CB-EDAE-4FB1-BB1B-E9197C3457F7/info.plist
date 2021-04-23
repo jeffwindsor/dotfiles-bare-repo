@@ -27,7 +27,7 @@
 	<key>description</key>
 	<string></string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>Hotkey_Alacritty</string>
 	<key>objects</key>
