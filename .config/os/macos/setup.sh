@@ -75,6 +75,11 @@ then
     installcask emacs-mac
     brew untap railwaycat/emacsmacport
 
+    install koekeishiya/formulae/yabai
+    brew services start yabai
+    brew install koekeishiya/formulae/skhd
+    brew services start skhd
+
     installcask firefox
     installcask font-fira-code-nerd-font
     installcask font-hack-nerd-font
