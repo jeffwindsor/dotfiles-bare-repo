@@ -12,6 +12,9 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'itchyny/lightline.vim'              " bottom bar
   Plug 'jeetsukumaran/vim-filebeagle'       " file browser
   Plug 'junegunn/fzf.vim'                   " fuzzy magic goodness
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'airblade/vim-rooter'
   Plug 'godlygeek/tabular'                  " align text
   Plug '907th/vim-auto-save'                " Auto Save
   "Plug 'justinmk/vim-sneak'
