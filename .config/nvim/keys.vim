@@ -22,3 +22,8 @@ nnoremap <leader>wo :only<CR>
 nnoremap <leader>wq :close<CR> 
 nnoremap <leader>ws :split<CR>
 nnoremap <leader>wv :vsplit<CR>
+
+" like copy paste in other apps, deletes current selection and throws it away,
+" replaces it with the current yank register
+vnoremap <leader>p "_dP
+
