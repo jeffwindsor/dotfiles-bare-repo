@@ -1,3 +1,23 @@
+
+" copy paste 
+vnoremap <leader>p "_dP
+nmap ,p "0p
+nmap ,P "0P
+
+" do not need shift to enter command mode
+nnoremap ; :
+vnoremap ; :
+
+" surround word with backticks, useful in markdown
+nmap <leader>` ysiw`
+
+" window movement
+nnoremap <leader><left> <C-W><left> 
+nnoremap <leader><right> <C-W><right> 
+nnoremap <leader><up> <C-W><up> 
+nnoremap <leader><down> <C-W><down> 
+
+" Leader maps
 nnoremap <leader>b<Left> :BufferMovePrevious<CR>
 nnoremap <leader>b<Right> :BufferMoveNext<CR>
 nnoremap <leader>bc :BufferClose<CR>
@@ -11,8 +31,6 @@ nnoremap <leader>pc :source $MYVIMRC<CR> :PlugClean<CR>
 nnoremap <leader>pi :source $MYVIMRC<CR> :PlugInstall<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>rr :source $MYVIMRC<CR>
-nnoremap <leader>w<Left> <C-W><C-R> 
-nnoremap <leader>w<Right> <C-W><C-r> 
 nnoremap <leader>wL :vertical resize +5<CR>
 nnoremap <leader>wc :close<CR> 
 nnoremap <leader>wh :vertical resize -5<CR>
@@ -22,8 +40,3 @@ nnoremap <leader>wo :only<CR>
 nnoremap <leader>wq :close<CR> 
 nnoremap <leader>ws :split<CR>
 nnoremap <leader>wv :vsplit<CR>
-
-" like copy paste in other apps, deletes current selection and throws it away,
-" replaces it with the current yank register
-vnoremap <leader>p "_dP
-
