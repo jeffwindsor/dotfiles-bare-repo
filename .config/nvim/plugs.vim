@@ -20,6 +20,7 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'kyazdani42/nvim-web-devicons'       " bar icons
   Plug 'romgrk/barbar.nvim'                 " tab bar
   Plug 'tomtom/tcomment_vim'
+  Plug 'tpope/vim-surround'
  
   "== syntax highlighters
   "Plug 'dense-analysis/ale'                 " linter
