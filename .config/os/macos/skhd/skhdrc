@@ -1,64 +1,51 @@
+# keycode and key reference 
+#   https://github.com/koekeishiya/skhd/issues/1
 
-# app launchers
-cmd              - return    : open -na 'alacritty'
-cmd + ctrl       - return    : open -na 'firefox'
-cmd + alt        - return    : open -na 'safari'
-cmd + ctrl +alt  - return    : open -a  'Finder'
-cmd              - 0x2A      : open -na 'emacs'         # backslash
-cmd + ctrl       - 0x2A      : open -na 'Intellij IDEA' # backslash
-cmd + ctrl + alt - 0x2A      : open -na 'VSCodium'      # backslash
-#cmd              - 0x2B      : open -a 'System Preferences'        # Comma
+ctrl + cmd - return         : open -na 'alacritty'
+ctrl + alt + cmd - return   : open -na 'firefox'
+alt + cmd  - return         : open -a  'Finder'
 
-# reload skhd
-cmd + ctrl - delete         : skhd -r
-#
-# re-balance windows
-cmd + ctrl + alt - delete   : yabai -m space --balance 
+ctrl + cmd - 0x2A           : open -na 'emacs'         # backslash
+ctrl + alt + cmd - 0x2A     : open -na 'Intellij IDEA' # backslash
+alt + cmd - 0x2A            : open -na 'VSCodium'      # backslash
+
+ctrl + cmd - delete         : skhd -r
+ctrl + alt + cmd - delete   : yabai -m space --balance 
 
 # layouts
-cmd + ctrl - b              : yabai -m config layout bsp
-cmd + ctrl - s              : yabai -m config layout stack
-cmd + ctrl - f              : yabai -m config layout float
+ctrl + cmd - b              : yabai -m config layout bsp
+ctrl + cmd - s              : yabai -m config layout stack
+ctrl + cmd - f              : yabai -m config layout float
 
-# focus windows
-cmd + ctrl - h              : yabai -m window --focus west
-cmd + ctrl - j              : yabai -m window --focus south
-cmd + ctrl - k              : yabai -m window --focus north
-cmd + ctrl - l              : yabai -m window --focus east
+# windows
+ctrl + cmd - h              : yabai -m window --focus west
+ctrl + cmd - j              : yabai -m window --focus south
+ctrl + cmd - k              : yabai -m window --focus north
+ctrl + cmd - l              : yabai -m window --focus east
+ctrl + alt + cmd - h        : yabai -m window --swap west
+ctrl + alt + cmd - j        : yabai -m window --swap south
+ctrl + alt + cmd - k        : yabai -m window --swap north
+ctrl + alt + cmd - l        : yabai -m window --swap east
+alt + cmd - h               : yabai -m window --warp west
+alt + cmd - j               : yabai -m window --warp south
+alt + cmd - k               : yabai -m window --warp north
+alt + cmd - l               : yabai -m window --warp east
 
-# warp windows
-cmd + alt - h               : yabai -m window --swap west
-cmd + alt - j               : yabai -m window --swap south
-cmd + alt - k               : yabai -m window --swap north
-cmd + alt - l               : yabai -m window --swap east
+# move
+ctrl + alt + cmd - 1        : yabai -m window --space 1; yabai -m space --focus 1;
+ctrl + alt + cmd - 2        : yabai -m window --space 2; yabai -m space --focus 2;
+ctrl + alt + cmd - 3        : yabai -m window --space 3; yabai -m space --focus 3;
+ctrl + alt + cmd - 4        : yabai -m window --space 4; yabai -m space --focus 4;
+ctrl + alt + cmd - 5        : yabai -m window --space 5; yabai -m space --focus 5;
+ctrl + alt + cmd - 6        : yabai -m window --space 6; yabai -m space --focus 6;
+ctrl + alt + cmd - 7        : yabai -m window --space 7; yabai -m space --focus 7;
+ctrl + alt + cmd - 8        : yabai -m window --space 8; yabai -m space --focus 8;
+ctrl + alt + cmd - 9        : yabai -m window --space 9; yabai -m space --focus 9;
+ctrl + alt + cmd - 0        : yabai -m window --space 0; yabai -m space --focus 0;
 
-# swap windows
-cmd + ctrl + alt - h        : yabai -m window --swap west
-cmd + ctrl + alt - j        : yabai -m window --swap south
-cmd + ctrl + alt - k        : yabai -m window --swap north
-cmd + ctrl + alt - l        : yabai -m window --swap east
-
-# swap to space
-cmd + ctrl + alt - left     : yabai -m window --space prev; yabai -m space --focus prev;
-cmd + ctrl + alt - right    : yabai -m window --space next; yabai -m space --focus next;
-
-# resize windows
-cmd + ctrl - left           : yabai -m window --ratio rel:-0.1 
-cmd + ctrl - right          : yabai -m window --ratio rel:0.1 
-
-#    move
-cmd + ctrl - 1              : yabai -m window --space 1; yabai -m space --focus 1;
-cmd + ctrl - 2              : yabai -m window --space 2; yabai -m space --focus 2;
-cmd + ctrl - 3              : yabai -m window --space 3; yabai -m space --focus 3;
-cmd + ctrl - 4              : yabai -m window --space 4; yabai -m space --focus 4;
-cmd + ctrl - 5              : yabai -m window --space 5; yabai -m space --focus 5;
-cmd + ctrl - 6              : yabai -m window --space 6; yabai -m space --focus 6;
-cmd + ctrl - 7              : yabai -m window --space 7; yabai -m space --focus 7;
-cmd + ctrl - 8              : yabai -m window --space 8; yabai -m space --focus 8;
-cmd + ctrl - 9              : yabai -m window --space 9; yabai -m space --focus 9;
-cmd + ctrl - 0              : yabai -m window --space 0; yabai -m space --focus 0;
-
-# GAPS
-ctrl - left                 : yabai -m space --padding rel:-4:-4:-4:-4; yabai -m space --gap rel:-4;
-ctrl - right                : yabai -m space --padding rel:4:4:4:4; yabai -m space --gap rel:4;
+# resize windows (minus, plus)
+ctrl + cmd - 0x1B           : yabai -m window --ratio rel:-0.1 
+ctrl + cmd - 0x18           : yabai -m window --ratio rel:0.1 
+ctrl + alt + cmd - 0x1B     : yabai -m space --padding rel:-4:-4:-4:-4; yabai -m space --gap rel:-4;
+ctrl + alt + cmd - 0x18     : yabai -m space --padding rel:4:4:4:4;     yabai -m space --gap rel:4;
 
