@@ -22,11 +22,14 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'tomtom/tcomment_vim'
   Plug 'tpope/vim-surround'
  
-  "== syntax highlighters
+  "== development
   "Plug 'dense-analysis/ale'                 " linter
+  Plug 'sheerun/vim-polyglot'
   Plug 'ap/vim-css-color'
-  Plug 'cespare/vim-toml'
- 
+  " Plug 'puremourning/vimspector'             " debugger
+  " Plug 'honza/vim-snippets'
+
+
   "== applications
   "Plug 'vimwiki/vimwiki'                    " well... wiki
   Plug 'tpope/vim-fugitive'                  " git 
