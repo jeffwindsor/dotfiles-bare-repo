@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+###############################################################################
+# ALIASES
+###############################################################################
+alias ls='ls --color=auto'
+alias ll='ls -la --group-directories-first'
+alias reg-refresh='regolith-look refresh'
+alias reg-settings='xrdb -query'
+alias ai='sudo apt -y install'
+alias fd='fdfind'
+
+source /usr/share/autojump/autojump.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source $HOME/.config/machine/zshrc

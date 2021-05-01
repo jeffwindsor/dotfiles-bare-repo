@@ -3,7 +3,9 @@ call plug#begin('~/.cache/nvim/plugged')
   "Plug 'APZelos/blamer.nvim'                " git lens / blame
   "Plug 'dense-analysis/ale'                 " linter
   "Plug 'dyng/ctrlsf.vim'
+  "Plug 'honza/vim-snippets'
   "Plug 'justinmk/vim-sneak'
+  "Plug 'puremourning/vimspector'            " debugger
   "Plug 'vimwiki/vimwiki'                    " well... wiki
   Plug '907th/vim-auto-save'                " Auto Save
   Plug 'airblade/vim-rooter'                " current directory moves with file
