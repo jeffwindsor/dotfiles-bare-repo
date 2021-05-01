@@ -26,7 +26,6 @@ clone-if-missing(){
 
 ##########################################################
 read -r -p "Add Homebrew? [y/n] " response
-response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
     xcode-select --install
@@ -57,6 +56,7 @@ then
     install neovim
     install luarocks        # neovim 0.5
     install ripgrep
+    install shellcheck
     install tldr
     install topgrade
     install zsh

@@ -57,19 +57,18 @@ command! -bang -nargs=* GGrep
 
 
 nnoremap <leader>sb :Buffers<CR>
+nnoremap <leader>sc :Files $HOME/.config/<CR>
+nnoremap <leader>ss :Files $HOME/src/<CR>
+nnoremap <leader>so :Files $HOME/.config/os/<CR>
+nnoremap <leader>sh :History<CR>
+nnoremap <leader>st :Filetypes<CR>
 
-nnoremap <leader>sfc :Files $HOME/.config/<CR>
-nnoremap <leader>sfs :Files $HOME/src/<CR>
-nnoremap <leader>sfo :Files $HOME/.config/os/<CR>
-nnoremap <leader>sfh :History<CR>
-nnoremap <leader>sft :Filetypes<CR>
-
-nnoremap <leader>sa :Commands<CR>
-nnoremap <leader>sc :Colors<CR>
-nnoremap <leader>sh :Helptags<CR>
-nnoremap <leader>sk :Maps<CR>
-nnoremap <leader>sl :Lines<CR>
-nnoremap <leader>sm :Marks<CR>
-nnoremap <leader>st :Tags<CR>
-nnoremap <leader>ss :Rg<CR>
-nnoremap <leader>sw :Windows<CR> 
+nnoremap <leader>sxa :Commands<CR>
+nnoremap <leader>sxc :Colors<CR>
+noremap <leader>sxh :Helptags<CR>
+nnoremap <leader>sxk :Maps<CR>
+nnoremap <leader>sxl :Lines<CR>
+nnoremap <leader>sxm :Marks<CR>
+nnoremap <leader>sxt :Tags<CR>
+nnoremap <leader>sxs :Rg<CR>
+nnoremap <leader>sxw :Windows<CR> 
