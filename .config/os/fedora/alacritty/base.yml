@@ -5,5 +5,5 @@ cursor:
     style: Block
 font:
     normal:
-        family: 'JetBrains Mono'
-    size: 14.0
+        family: 'JetBrains Mono Nerd Font Mono'
+  size: 14.0
