@@ -4,10 +4,10 @@
 ctrl + cmd - return         : open -na 'alacritty'
 ctrl + alt + cmd - return   : open -na 'firefox'
 alt + cmd  - return         : open -a  'Finder'
-
-ctrl + cmd - 0x2A           : open -na 'emacs'         # backslash
-ctrl + alt + cmd - 0x2A     : open -na 'Intellij IDEA' # backslash
-alt + cmd - 0x2A            : open -na 'VSCodium'      # backslash
+# backslash
+ctrl + cmd - 0x2A           : open -na 'emacs'        
+ctrl + alt + cmd - 0x2A     : open -na 'Intellij IDEA'
+alt + cmd - 0x2A            : open -na 'VSCodium.app' --args --extensions-dir $HOME/.vscode-oss/extensions
 
 ctrl + cmd - delete         : skhd -r
 ctrl + alt + cmd - delete   : yabai -m space --balance 
