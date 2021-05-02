@@ -35,7 +35,7 @@ no_retry = true
 cleanup = true
 
 [git]
-max_concurrency = 1
+max_concurrency = 2
 # Additional git repositories to pull
 repos = [
     "~/src/*/"
@@ -57,9 +57,10 @@ self_update = true
 # Custom commands
 [commands]
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
-"Starship Prompt" = "curl -fsSL https://starship.rs/install.sh | bash -s -- --yes"
+#"Starship Prompt" = "curl -fsSL https://starship.rs/install.sh | bash -s -- --yes"
 "Dotfiles" = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull"
 "Haskell" = "ghcup upgrade"
+"NeoVim-Dev" = "brew reinstall neovim"
 
 #[brew]
 #greedy_cask = true
