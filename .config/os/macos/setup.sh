@@ -11,7 +11,7 @@ install() {
     fi
 }
 
-installcask() {
+install_cask() {
 	if brew list --cask $1 &> /dev/null; then
   		echo "==> "$1" [installed]"
 	else
@@ -65,32 +65,35 @@ then
     install zsh-history-substring-search
     install zsh-syntax-highlighting
 
-    installcask alacritty
-    installcask alfred
-    installcask amethyst
-    installcask keepingyouawake
-    #installcask dash
+    install_cask alacritty
+    install_cask alfred
+    install_cask amethyst
+    install_cask keepingyouawake
+    #install_cask dash
     
     brew tap railwaycat/emacsmacport
-    installcask emacs-mac
+    install_cask emacs-mac
     brew untap railwaycat/emacsmacport
 
+    # tiling window manager
     install koekeishiya/formulae/yabai
     brew services start yabai
-    brew install koekeishiya/formulae/skhd
+    install koekeishiya/formulae/skhd
     brew services start skhd
+    install cmacrae/formulae/spacebar
+    brew services start spacebar
 
-    installcask firefox
-    installcask font-fira-code-nerd-font
-    installcask font-hack-nerd-font
-    installcask font-jetbrains-mono-nerd-font
-    installcask gpg-suite
-    installcask slack
-    installcask spotify
-    installcask transmission
-    installcask vimr
-    installcask vlc
-    installcask vscodium
+    install_cask firefox
+    install_cask font-fira-code-nerd-font
+    install_cask font-hack-nerd-font
+    install_cask font-jetbrains-mono-nerd-font
+    install_cask gpg-suite
+    install_cask slack
+    install_cask spotify
+    install_cask transmission
+    install_cask vimr
+    install_cask vlc
+    install_cask vscodium
 
     pip install lookatme
 
@@ -234,12 +237,12 @@ then
     install awscli@1
     install openjdk@11
 
-    installcask intellij-idea
-    installcask instantclient-basic
-    installcask instantclient-sqlplus
-    installcask java8
-    installcask keybase
-    installcask microsoft-teams
+    install_cask intellij-idea
+    install_cask instantclient-basic
+    install_cask instantclient-sqlplus
+    install_cask java8
+    install_cask keybase
+    install_cask microsoft-teams
 
 fi
 
