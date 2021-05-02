@@ -18,11 +18,6 @@ nnoremap <leader><up> <C-W><up>
 nnoremap <leader><down> <C-W><down> 
 
 " Leader maps
-nnoremap <leader>b<Left> :BufferMovePrevious<CR>
-nnoremap <leader>b<Right> :BufferMoveNext<CR>
-nnoremap <leader>bc :BufferClose<CR>
-nnoremap <leader>bh :BufferMovePrevious<CR>
-nnoremap <leader>bl :BufferMoveNext<CR>
 nnoremap <leader>bn :tabnew<CR>
 nnoremap <leader>fa :sav 
 nnoremap <leader>fn :tabnew<CR>

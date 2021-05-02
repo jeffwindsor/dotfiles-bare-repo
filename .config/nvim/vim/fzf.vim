@@ -56,7 +56,13 @@ command! -bang -nargs=* GGrep
   \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 
 
-nnoremap <leader>sb :Buffers<CR>
+nnoremap <leader>b<Left> :BufferMovePrevious<CR>
+nnoremap <leader>b<Right> :BufferMoveNext<CR>
+nnoremap <leader>bc :BufferClose<CR>
+nnoremap <leader>bh :BufferMovePrevious<CR>
+nnoremap <leader>bl :BufferMoveNext<CR>
+nnoremap <leader>bb :Buffers<CR>
+
 nnoremap <leader>sc :Files $HOME/.config/<CR>
 nnoremap <leader>ss :Files $HOME/src/<CR>
 nnoremap <leader>so :Files $HOME/.config/os/<CR>
