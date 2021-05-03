@@ -1,19 +1,17 @@
-# Dotfiles
+# dotfiles
 
-## Setup
+## setup
 
+1. setup repo locally
 ```
-git clone --bare https://github.com/jeffwindsor/dotfiles.git $HOME/.dotfiles 
-&& git -C $HOME/.dotfiles config --local status.showUntrackedFiles no
+git clone --bare https://github.com/jeffwindsor/dotfiles.git $HOME/.dotfiles \
+&& git -C $HOME/.dotfiles config --local status.showUntrackedFiles no \
 && alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ```
+1. run `setup.sh` and `link.sh` from ~/.config/os/{current os} 
+1. use the `dot` alias just as you would the `git` command for example `dot checkout <prefered branch>` or `dot add <list of file>` or `dot commit -m "some message"`
 
-## Notes
-
-* Use the `dot` alias just as you would the `git` command for example `dot checkout <prefered branch>` or `dot add <list of file>` or `dot commit -m "some message"`
-* each os has a folder in the ~/.config/os/ path with a setup shell file 
-
-## Key Mappings
+## macos + yabai + skhd
 
 | key           | ctrl + cmd         | ctrl + alt + cmd     | alt + cmd           | shift + cmd         | shift + alt + cmd   |
 | :------------ | :----------------- | :------------------- | :------------------ | :------------------ | :------------------ |
@@ -40,4 +38,11 @@ git clone --bare https://github.com/jeffwindsor/dotfiles.git $HOME/.dotfiles
 | space         | launcher           |                      |                     |                     |                     |
 | backspace     | emacs              | intellij             | vscodium            |                     |                     |
 | delete        | reload hot keys    | balance windows      |                     |                     |                     |
+
+## [fedora gnome + tiling extension](https://getfedora.org/en/workstation/)
+
+* [pop_shell](https://github.com/pop-os/shell) 
+* [material_shell](https://github.com/material-shell/material-shell)
+
+## [archcraft](https://archcraft-os.github.io/index.html)
 
