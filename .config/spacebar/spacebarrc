@@ -15,7 +15,7 @@ spacebar -m config icon_font            "JetBrainsMono Nerd Font Mono:Regular:12
 spacebar -m config background_color     0xee202020
 spacebar -m config foreground_color     0xffa8a8a8
 
-#spacebar -m config display_separator                on
+spacebar -m config display_separator                off
 #spacebar -m config display_separator_icon           "|" 
 #spacebar -m config display_separator_icon_color     0xffa8a8a8
 
@@ -24,9 +24,10 @@ spacebar -m config space_icon           "."
 spacebar -m config space_icon_color     0xff458588
 spacebar -m config space_icon_strip     1 2 3 4 5 6 7 8 9
 
+spacebar -m config clock                off
 spacebar -m config clock_icon           " "
 spacebar -m config clock_icon_color     0xffa8a8a8
-spacebar -m config clock_format         "%Y-%m-%d %R"
+spacebar -m config clock_format         "%A %B, %d %I:%M%p"
 
 spacebar -m config power_icon_strip     "🔋" "⚡"
 spacebar -m config power_icon_color     0xffcd950c
@@ -35,7 +36,9 @@ spacebar -m config battery_icon_color   0xffd75f5f
 spacebar -m config dnd_icon             "*"
 spacebar -m config dnd_icon_color       0xffa8a8a8
 
-spacebar -m config right_shell          off
+spacebar -m config right_shell          on
+spacebar -m config right_shell_icon     " "
+spacebar -m config right_shell_command  "echo $(ansiweather -l ventura,us -u imperial -a false -p false -h false -w false -s false) \| $(date +'%A %B, %d %I:%M%p') \|"
 #spacebar -m config right_shell_icon     "☁️"
 #spacebar -m config right_shell_command  "ansiweather -l ventura,us -u imperial -a false -p false -h false -w false -s false"
 
