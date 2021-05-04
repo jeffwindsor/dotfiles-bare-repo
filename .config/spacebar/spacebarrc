@@ -24,7 +24,7 @@ spacebar -m config space_icon           "."
 spacebar -m config space_icon_color     0xff458588
 spacebar -m config space_icon_strip     1 2 3 4 5 6 7 8 9
 
-spacebar -m config clock                off
+spacebar -m config clock                on
 spacebar -m config clock_icon           " "
 spacebar -m config clock_icon_color     0xffa8a8a8
 spacebar -m config clock_format         "%A %B, %d %I:%M%p"
@@ -36,9 +36,12 @@ spacebar -m config battery_icon_color   0xffd75f5f
 spacebar -m config dnd_icon             "*"
 spacebar -m config dnd_icon_color       0xffa8a8a8
 
-spacebar -m config right_shell          on
-spacebar -m config right_shell_icon     " "
-spacebar -m config right_shell_command  "echo $(ansiweather -l ventura,us -u imperial -a false -p false -h false -w false -s false) \| $(date +'%A %B, %d %I:%M%p') \|"
+
+spacebar -m config left_shell           off
+spacebar -m config center_shell         off
+spacebar -m config right_shell          off
+#spacebar -m config right_shell_icon     " "
+#spacebar -m config right_shell_command  "echo $(ansiweather -l ventura,us -u imperial -a false -p false -h false -w false -s false) \| $(date +'%A %B, %d %I:%M%p') \|"
 #spacebar -m config right_shell_icon     "☁️"
 #spacebar -m config right_shell_command  "ansiweather -l ventura,us -u imperial -a false -p false -h false -w false -s false"
 
