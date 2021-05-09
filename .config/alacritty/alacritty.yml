@@ -7,7 +7,6 @@ background_opacity: 0.96
 cursor: 
   style: Block
 
-font:
-  normal:
-      family: 'Hack Nerd Font Mono'
-  size: 14.0
+import:
+  - ~/.config/alacritty/theme.yml
+  - ~/.config/alacritty/os.yml

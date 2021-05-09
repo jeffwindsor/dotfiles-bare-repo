@@ -5,7 +5,7 @@ ln -sf "$PWD/zshenv" "$HOME/.zshenv"
 ln -sf "$PWD/zshrc" "$HOME/.zshrc"
 
 mkdir -p "$HOME/.config/alacritty"
-ln -sf "$PWD/alacritty/base.yml" "$HOME/.config/alacritty/base.yml"
+ln -sf "$PWD/alacritty/os.yml" "$HOME/.config/alacritty/os.yml"
 
 ln -sf "$HOME/.config/gitignore" "$HOME/.gitignore"
 ln -sf "$HOME/.config/git/personal.gitconfig" "$HOME/.gitconfig"

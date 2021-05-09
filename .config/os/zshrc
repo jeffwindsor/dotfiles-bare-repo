@@ -36,8 +36,7 @@ _comp_options+=(globdots)    #include hidden files
 eval "$(starship init zsh)"
 
 alacritty_change_theme() {
-    cat $HOME/.config/alacritty/base.yml > $HOME/.config/alacritty/alacritty.yml
-    cat $1 >> $HOME/.config/alacritty/alacritty.yml
+    ln -sfv "${1}" $HOME/.config/alacritty/theme.yml
 }
 dot () { git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"; }
 dot-add-all(){
@@ -63,7 +62,7 @@ search-alias-functions(){
     echo '\e[1;34mAliases\e[0m'
     alias | grep $1;
 }
-sshkey(){ ssh-keygen -t ed25519 -C "jeff.wnindsor@gmail.com" -f $1; }
+sshkey(){ ssh-keygen -t ed25519 -C "jeff.windsor@gmail.com" -f $1; }
 sshadd(){ eval "$(ssh-agent -s)" && ssh-add -K ~/.ssh/${1}; }
 
 alias .....='cd ../../../../'
