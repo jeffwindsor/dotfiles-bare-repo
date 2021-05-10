@@ -63,11 +63,13 @@ nnoremap <leader>bh :BufferMovePrevious<CR>
 nnoremap <leader>bl :BufferMoveNext<CR>
 nnoremap <leader>bb :Buffers<CR>
 
-nnoremap <leader>sc :Files $HOME/.config/<CR>
-nnoremap <leader>ss :Files $HOME/src/<CR>
-nnoremap <leader>so :Files $HOME/.config/os/<CR>
-nnoremap <leader>sh :History<CR>
-nnoremap <leader>st :Filetypes<CR>
+nnoremap <leader><leader> :Files <CR>
+nnoremap <leader>ff :Files <CR>
+nnoremap <leader>fc :Files $HOME/.config/<CR>
+nnoremap <leader>fs :Files $HOME/src/<CR>
+nnoremap <leader>fo :Files $HOME/.config/os/<CR>
+nnoremap <leader>fh :History<CR>
+nnoremap <leader>ft :Filetypes<CR>
 
 nnoremap <leader>sxa :Commands<CR>
 nnoremap <leader>sxc :Colors<CR>

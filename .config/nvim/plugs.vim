@@ -25,6 +25,9 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'tpope/vim-markdown'
   Plug 'tpope/vim-surround'
 
+ " langs
+  Plug 'neovimhaskell/haskell-vim'          " haskell
+
  " themes
   Plug 'arcticicestudio/nord-vim'
   Plug 'ayu-theme/ayu-vim'

@@ -19,9 +19,8 @@ nnoremap <leader><down> <C-W><down>
 
 " Leader maps
 nnoremap <leader>bn :tabnew<CR>
-nnoremap <leader>fa :sav 
-nnoremap <leader>fn :tabnew<CR>
-nnoremap <leader>fs :w<CR>
+nnoremap <leader>ba :sav 
+nnoremap <leader>bs :w<CR>
 nnoremap <leader>pc :source $MYVIMRC<CR> :PlugClean<CR>
 nnoremap <leader>pi :source $MYVIMRC<CR> :PlugInstall<CR>
 nnoremap <leader>q :q<CR>

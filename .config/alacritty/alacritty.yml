@@ -10,3 +10,4 @@ cursor:
 import:
   - ~/.config/alacritty/theme.yml
   - ~/.config/alacritty/os.yml
+
