@@ -7,6 +7,7 @@ call plug#begin('~/.cache/nvim/plugged')
   "Plug 'justinmk/vim-sneak'
   "Plug 'puremourning/vimspector'            " debugger
   "Plug 'vimwiki/vimwiki'                    " well... wiki
+
   Plug '907th/vim-auto-save'                " Auto Save
   Plug 'airblade/vim-rooter'                " current directory moves with file
   Plug 'ap/vim-css-color'                   " highlight hex colors in actual color
@@ -26,7 +27,8 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'tpope/vim-surround'
 
  " langs
-  Plug 'neovimhaskell/haskell-vim'          " haskell
+" Plug 'neovimhaskell/haskell-vim'          " haskell
+" Plug 'neovim/nvim-lspconfig'
 
  " themes
   Plug 'arcticicestudio/nord-vim'
