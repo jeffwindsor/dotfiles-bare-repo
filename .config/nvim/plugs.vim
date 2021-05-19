@@ -20,15 +20,18 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'junegunn/vim-peekaboo'              " show my registers, fool... 
   Plug 'kyazdani42/nvim-web-devicons'       " icons for bar bar
   Plug 'romgrk/barbar.nvim'                 " tab bar (lua)
-  Plug 'sheerun/vim-polyglot'               " syntax highlighting to rule them all
+  "Plug 'sheerun/vim-polyglot'               " syntax highlighting to rule them all
   Plug 'tomtom/tcomment_vim'
   Plug 'tpope/vim-fugitive'                 " git integration 
   Plug 'tpope/vim-markdown'
   Plug 'tpope/vim-surround'
 
- " langs
+ " lsp (need configs)
 " Plug 'neovimhaskell/haskell-vim'          " haskell
-" Plug 'neovim/nvim-lspconfig'
+ Plug 'neovim/nvim-lspconfig'
+ "Plug 'kosayoda/nvim-lightbulb'            " lightbulb like suggestions
+ "Plug 'glepnir/lspsaga.nvim'
+ "Plug 'gfanto/fzf-lsp.nvim'
 
  " themes
   Plug 'arcticicestudio/nord-vim'

@@ -167,6 +167,9 @@ then
 
     install cargo-completions
     cargo install cargo-update
+
+    # LSPs
+    npm install -g typescript typescript-language-server
 fi
 
 ##########################################################

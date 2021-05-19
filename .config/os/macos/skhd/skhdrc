@@ -44,8 +44,8 @@ ctrl + alt + cmd - 9        : yabai -m window --space 9; yabai -m space --focus 
 ctrl + alt + cmd - 0        : yabai -m window --space 0; yabai -m space --focus 0;
 
 # resize windows (minus, plus)
-ctrl + cmd - 0x1B           : yabai -m window --ratio rel:-0.1 
-ctrl + cmd - 0x18           : yabai -m window --ratio rel:0.1 
-ctrl + alt + cmd - 0x1B     : yabai -m space --padding rel:-4:-4:-4:-4; yabai -m space --gap rel:-4;
-ctrl + alt + cmd - 0x18     : yabai -m space --padding rel:4:4:4:4;     yabai -m space --gap rel:4;
+ctrl + cmd - 0x1B           : yabai -m window --ratio rel:-0.01 
+ctrl + cmd - 0x18           : yabai -m window --ratio rel:0.01
+ctrl + alt + cmd - 0x1B     : yabai -m space --padding rel:-2:-2:-2:-2; yabai -m space --gap rel:-2;
+ctrl + alt + cmd - 0x18     : yabai -m space --padding rel:2:2:2:2;     yabai -m space --gap rel:2;
 
