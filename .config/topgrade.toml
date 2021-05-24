@@ -62,7 +62,7 @@ self_update = true
 "Haskell" = "ghcup upgrade"
 "NeoVim-Dev" = "brew reinstall neovim"
 "restart emacs-plus@27 service" = "brew services stop emacs-plus@27 && brew services start emacs-plus@27"
-"restart yabai service" = "brew services restart yabai && brew services restart stop spacebar"
+"restart yabai service" = "brew services restart yabai && brew services restart spacebar"
 "restart skhd service" = "brew services restart skhd"
 
 #[brew]
