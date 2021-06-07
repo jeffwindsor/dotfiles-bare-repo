@@ -28,7 +28,10 @@ call plug#begin('~/.cache/nvim/plugged')
 
  " lsp (need configs)
 " Plug 'neovimhaskell/haskell-vim'          " haskell
+ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+ Plug 'nvim-treesitter/playground'
  Plug 'neovim/nvim-lspconfig'
+ Plug 'hrsh7th/nvim-compe'
  "Plug 'kosayoda/nvim-lightbulb'            " lightbulb like suggestions
  "Plug 'glepnir/lspsaga.nvim'
  "Plug 'gfanto/fzf-lsp.nvim'
