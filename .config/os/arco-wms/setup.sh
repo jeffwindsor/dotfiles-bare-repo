@@ -92,7 +92,7 @@ nvim --headless +PlugInstall +qall
 
 ################################################################
 #echo "==> SSH"
-#ssh-keygen -t rsa -b 4096 -C "jeff.windsor@gmail.com"
+ssh-keygen -t rsa -b 4096 -C "jeff.windsor@gmail.com"
 
 ################################################################
 # zsh as default shell
