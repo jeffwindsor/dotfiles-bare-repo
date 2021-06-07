@@ -15,7 +15,7 @@ alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias update.="yay -Syu --noconfirm"
 alias update='sudo pacman -Syyu'
 
-eval $(keychain --eval --quiet id_rsa)
+#eval $(keychain --eval --quiet id_rsa)
 
 # ex = EXtractor for all kinds of archives
 # usage: ex <file>
@@ -46,4 +46,4 @@ ex ()
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source $HOME/.config/machine/zshrc
+source $HOME/.config/os/zshrc

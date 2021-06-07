@@ -1,3 +1,12 @@
+# sxhkd - reload
+super + control + Delete
+	pkill -USR1 -x sxhkd
+
+# exit window manager
+super + x
+    arcolinux-logout
+
+## Applications ###########
 # processes
 super + Escape
     xfce4-taskmanager
@@ -13,7 +22,6 @@ super + control + space
 # terminal
 super + Return
     alacritty
-
 super + Down
     xfce4-terminal --drop-down
 
@@ -32,21 +40,32 @@ super + .
 # editors
 super + control + \ 
     emacs
-    
 super + \
     nvim
 
-# sxhkd - reload
-super + control + s
-	pkill -USR1 -x sxhkd
+## Menus ##################
+# dmenu
+super + alt + Space
+	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
+# Rofi
+super + Space
+    rofi -show drun
+
+#Rofi theme selector
+super + r
+    rofi-theme-selector
+
+## Desktop ################
 # volume control
-super + v
+super + control + v
     pavuctrl
 
-# exit window manager
-super + x
-    arcolinux-logout
+# print screen
+super + Escape
+    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+super + shift + Escape
+    xfce4-screenshooter
 
 # wallpapers
 control + Left
@@ -77,14 +96,3 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     xbacklight -dec 10
 
-
-## print screen
-#Print
-#    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
-# conky
-#super + c
-#    conky-toggle
-#ctrl + alt + Next
-#     conky-rotate -n
-#ctrl + alt + Prior
-#    conky-rotate -p

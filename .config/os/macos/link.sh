@@ -26,6 +26,7 @@ ln -sfv "$PWD/DefaultKeyBindings.dict" "$HOME/Library/KeyBindings/DefaultKeyBind
 ln -sfv "$PWD/skhd/skhdrc" "$HOME/.config/skhd/skhdrc"
 ln -sfv "$PWD/yabai/yabairc" "$HOME/.config/yabai/yabairc"
 ln -sfv "$PWD/spacebar/spacebarrc" "$HOME/.config/spacebar/spacebarrc"
+ln -sfv "$PWD/topgrade.toml" "$HOME/.config/topgrade.toml"
 
 ln -sfv "$PWD/alfred/Alfred.alfredpreferences" "$HOME/.config/alfred/Alfred.alfredpreferences"
 ln -sfv "$PWD/vscode/settings.json.macos" "$HOME/Library/Application Support/VSCodium/User/settings.json"
