@@ -41,9 +41,7 @@ EOF
 ################################################################
 # Standard
 ################################################################
-installif paru
 installif alacritty
-installif autojump
 installif emacs
 installif fd
 installif fzf
@@ -54,7 +52,6 @@ installif neovim
 installif nodejs
 installif picom
 installif ripgrep
-installif terminal-font-awesome
 installif tldr
 installif ttf-jetbrains-mono
 installif variety
@@ -94,20 +91,23 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 nvim --headless +PlugInstall +qall
 
 ################################################################
-echo "==> SSH"
-ssh-keygen -t rsa -b 4096 -C "jeff.windsor@gmail.com"
-
-################################################################
-# zsh as default shell
-chsh -s "$(which zsh)"
-
-################################################################
 echo "topgrade package updater" 
 cargo install topgrade
+cargo isntall cargo-update
 
 ################################################################
 echo "link config files" 
 ./link.sh
+
+################################################################
+#echo "==> SSH"
+ssh-keygen -t ed25519 -C "jeff.windsor@gmail.com"
+eval $(ssh-agent)
+ssh-add ~/.ssh/id_ed25519_sk
+
+################################################################
+# zsh as default shell
+chsh -s "$(which zsh)"
 
 ################################################################
 echo "manual steps"
