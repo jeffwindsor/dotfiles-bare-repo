@@ -67,7 +67,6 @@ then
 
     install_cask alacritty
     install_cask alfred
-    install_cask amethyst
     install_cask keepingyouawake
     #install_cask dash
     
@@ -80,8 +79,13 @@ then
     brew services start yabai
     install koekeishiya/formulae/skhd
     brew services start skhd
-    install cmacrae/formulae/spacebar
-    brew services start spacebar
+
+    # bars
+    #install cmacrae/formulae/spacebar
+    #brew services start spacebar
+    install ubersicht 
+    git clone https://github.com/Jean-Tinland/simple-bar $HOME/Library/Application\ Support/Übersicht/widgets/simple-bar
+    install jq
 
     install_cask firefox
     install_cask font-fira-code-nerd-font
@@ -234,7 +238,6 @@ then
     install sbt
     install scala
     install selenium-server-standalone
-    install jq
     install aws-cdk
     install awscli
     install awscli@1
