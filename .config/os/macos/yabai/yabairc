@@ -44,6 +44,17 @@ yabai -m config left_padding                 08
 yabai -m config right_padding                08
 yabai -m config window_gap                   08
 
+# space labels
+yabai -m space 1 --label I
+yabai -m space 2 --label II
+yabai -m space 3 --label III
+yabai -m space 4 --label IV
+yabai -m space 5 --label V
+yabai -m space 6 --label VI
+yabai -m space 7 --label VII
+yabai -m space 8 --label VIII
+yabai -m space 9 --label IX
+
 # leave room for bars
 yabai -m config external_bar all:26:0
 
