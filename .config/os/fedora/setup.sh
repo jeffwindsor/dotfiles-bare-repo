@@ -18,6 +18,7 @@ install util-linux-user
 install ripgrep tldr fd-find fzf bat exa
 install zsh zsh-autosuggestions zsh-syntax-highlighting
 chsh -s "$(which zsh)"
+
 #starship
 curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
 install gnome-tweaks
@@ -33,10 +34,10 @@ source $HOME/.cargo/env
 install cargo-completions
 cargo install cargo-update
 
-install nodejs
-install go
+#install nodejs
+#install go
 #install clojure leiningen
-install stack
+#install stack
 
 install neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -44,6 +45,9 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 install emacs
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
+
+# bspwm
+#install bspwm sxkhd dmenu rofi polybar
 
 
 # repos
