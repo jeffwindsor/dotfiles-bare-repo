@@ -45,9 +45,9 @@ spacebar -m config right_shell          off
 #spacebar -m config right_shell_icon     "☁️"
 #spacebar -m config right_shell_command  "ansiweather -l ventura,us -u imperial -a false -p false -h false -w false -s false"
 
-echo "spacebar configuration loaded.."
+#echo "spacebar configuration loaded.."
 
-SPACEBAR_HEIGHT=$(spacebar -m config height)
-yabai -m config external_bar all:$SPACEBAR_HEIGHT:0
+#SPACEBAR_HEIGHT=$(spacebar -m config height)
+#yabai -m config external_bar all:$SPACEBAR_HEIGHT:0
 
 echo "yabai configured for spacebar"
