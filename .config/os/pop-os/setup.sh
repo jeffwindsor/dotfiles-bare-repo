@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-cd "$(dirname "${0}")"
-sudo apt update && sudo apt upgrade
-
 ################################################################################
 # POP-OS
 ################################################################################
+cd "$(dirname "${0}")"
+
 install() {
     if [ $(dpkg-query -W -f='${Status}' $1 | grep -c "ok installed") -eq 0 ];
     then
@@ -19,31 +18,29 @@ clone-if-missing(){
 }
 
 ################################################################################
-# MACBOOK PRO 2015 
-################################################################################
-read -r -p "Macbook? [y/n] " response
-response=${response,,}    # tolower
-if [[ "$response" =~ ^(yes|y)$ ]]
-then            
-    echo "macbook pro retina 2015"
-    # Wireless proprietary wireless drive for broadcom 14E4:43A0
-    #   https://unix.stackexchange.com/questions/175810/how-to-install-broadcom-bcm4360-on-debian-on-macbook-pro
-    install broadcom-sta-dkms
-    sudo modprobe -r b44 b43 b43legacy ssb brcmsmac
-    sudo modprobe wl
-    # Laptop Power Management
-    sysdl='/etc/systemd/logind.conf'
-    cat $sysdl \
-        | sed -r 's/\#?HandleLidSwitchExternalPower=.*/HandleLidSwitchExternalPower=ignore/g' \
-        | sed -r 's/\#?HandleLidSwitch=.*/HandleLidSwitch=poweroff/g' \
-        | sudo tee $sysdl
-fi
+sudo apt update 
+sudo apt upgrade
 
-################################################################################
-# SOFTWARE: 
-################################################################################
+# common directories
+mkdir -p ${HOME}/src/hub
+mkdir -p $HOME/.themes 
+mkdir -p $HOME/.icons 
+
+# MacbookPro Retina 15 Wifi: broadcom 14E4:43A0
+#   https://unix.stackexchange.com/questions/175810/how-to-install-broadcom-bcm4360-on-debian-on-macbook-pro
+install broadcom-sta-dkms
+sudo modprobe -r b44 b43 b43legacy ssb brcmsmac
+sudo modprobe wl
+
+# Laptop Power Management
+sysdl='/etc/systemd/logind.conf'
+cat $sysdl \
+    | sed -r 's/\#?HandleLidSwitchExternalPower=.*/HandleLidSwitchExternalPower=ignore/g' \
+    | sed -r 's/\#?HandleLidSwitch=.*/HandleLidSwitch=poweroff/g' \
+    | sudo tee $sysdl
+
+# Software
 install alacritty
-install autojump
 install fd-find
 install fzf
 install gnome-tweaks
@@ -55,33 +52,20 @@ install zsh
 install zsh-autosuggestions 
 install zsh-syntax-highlighting
 
-################################################################
 echo "==> STARSHIP PROMPT"
 curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
 
-################################################################
 echo "==> NVIM PLUGINS"
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim --headless +PlugInstall +qall
 
-################################################################
 echo "==> DOOM EMACS"
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 
-################################################################################
 echo "vscodium"
 flatpak install -y flathub com.vscodium.codium
 
-################################################################################
-echo "brave browser"
-install apt-transport-https curl gnupg
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update
-install brave-browser
-
-################################################################################
 echo "JetBrains Font"
 wget https://download.jetbrains.com/fonts/JetBrainsMono-2.002.zip \
     && unzip JetBrainsMono-2.002.zip -d ~/.local/share/fonts \
@@ -92,53 +76,24 @@ wget https://download.jetbrains.com/fonts/JetBrainsMono-2.002.zip \
     && gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Medium 12' \
     && gsettings set org.gnome.desktop.wm.preferences titlebar-font 'JetBrains Mono Medium 12' 
 
-##########################################################
-read -r -p "Development Languages? [y/n] " response
-response=${response,,}    # tolower
-if [[ "$response" =~ ^(yes|y)$ ]]
-then            
+#install golang
+#install haskell-stack
+#install jq
+#install nodejs
 
-    install golang
-    install haskell-stack
-    install jq
-    install nodejs
+echo "==> RUST LANG"
+curl --proto '=https' --tlsv1.2 -sSfo rustup-init.sh https://sh.rustup.rs
+chmod +x rustup-init.sh
+./rustup-init.sh -y
+rm -f rustup-init.sh
+source $HOME/.cargo/env
 
-    ################################################################
-    echo "==> RUST LANG"
-    curl --proto '=https' --tlsv1.2 -sSfo rustup-init.sh https://sh.rustup.rs
-    chmod +x rustup-init.sh
-    ./rustup-init.sh -y
-    rm -f rustup-init.sh
-    source $HOME/.cargo/env
-
-    echo "==> topgrade package updater" 
-    install cargo-completions
-    cargo install topgrade
-fi
-
-################################################################################
-echo "link config files" 
-source ./link.sh
-
-################################################################
-echo "==> GIT REPOS INTO HOME ${HOME}/SRC"
-mkdir -p ${HOME}/src/hub
-
-cd $HOME/src
-clone-if-missing jeffwindsor dwm
-clone-if-missing jeffwindsor dwmblocks
-clone-if-missing jeffwindsor dmenu
-
-cd $HOME/src/hub
-
-################################################################################
-echo "appearance"
-mkdir -p $HOME/.themes 
-mkdir -p $HOME/.icons 
+install cargo-completions
+cargo install topgrade
+cargo install cargo-update
 
 ################################################################################
 echo "manual steps"
-
 xdg-open https://github.com/settings/keys
 xdg-open https://mega.nz/sync
 xdg-open https://extensions.gnome.org/extension/600/launch-new-instance/

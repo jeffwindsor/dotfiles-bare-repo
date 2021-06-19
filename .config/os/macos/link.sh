@@ -19,9 +19,8 @@ fi
 ln -sfv "$MACHINE/zshenv" "$HOME/.zshenv"
 ln -sfv "$MACHINE/zshrc" "$HOME/.zshrc"
 ln -sfv "$MACHINE/alacritty/os.yml" "$HOME/.config/alacritty/os.yml"
-ln -sfv "$MACHINE/gitconfig" "$HOME/.gitconfig"
-
-ln -sfv "$PWD/DefaultKeyBindings.dict" "$HOME/Library/KeyBindings/DefaultKeyBindings.dict"
+rm $HOME/.gitconfig
+cp "$MACHINE/gitconfig" "$HOME/.gitconfig"
 
 ln -sfv "$PWD/skhd/skhdrc" "$HOME/.config/skhd/skhdrc"
 ln -sfv "$PWD/yabai/yabairc" "$HOME/.config/yabai/yabairc"
