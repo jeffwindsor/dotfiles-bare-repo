@@ -13,8 +13,8 @@
 (setq org-directory "~/org/")
 
 ;; visual
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font Mono" :size 14)
-      doom-big-font (font-spec :family "JetBrainsMono Nerd Font Mono" :size 18))
+(setq doom-font (font-spec :family "JetBrains Mono" :size 14)
+      doom-big-font (font-spec :family "JetBrains Mono" :size 18))
 
 (setq doom-theme 'doom-molokai)
 (setq display-line-numbers-type 'relative)
