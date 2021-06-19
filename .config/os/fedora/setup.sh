@@ -12,13 +12,14 @@ sudo dnf -y upgrade
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf -y install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-# pimp my shell
+# shell
 install alacritty
 install util-linux-user
 install ripgrep tldr fd-find fzf bat exa
 install zsh zsh-autosuggestions zsh-syntax-highlighting
 chsh -s "$(which zsh)"
-#starship
+
+# starship prompt
 curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
 install gnome-tweaks
 install vlc
@@ -32,11 +33,12 @@ source $HOME/.cargo/env
 
 install cargo-completions
 cargo install cargo-update
+cargo install topgrade
 
-install nodejs
-install go
+#install nodejs
+#install go
 #install clojure leiningen
-install stack
+#install stack
 
 install neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -49,9 +51,9 @@ git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 # repos
 mkdir -p ${HOME}/src/hub
 cd $HOME/src
-clone-if-missing jeffwindsor dwm
-clone-if-missing jeffwindsor dwmblocks
-clone-if-missing jeffwindsor dmenu
+#clone-if-missing jeffwindsor dwm
+#clone-if-missing jeffwindsor dwmblocks
+#clone-if-missing jeffwindsor dmenu
 clone-if-missing jeffwindsor nord-startpage
 clone-if-missing jeffwindsor learn
 cd 
@@ -59,12 +61,13 @@ cd
 # manual
 xdg-open https://github.com/settings/keys
 xdg-open https://mega.nz/sync
+xdg-open https://bitwarden.com/download
 xdg-open https://extensions.gnome.org/extension/600/launch-new-instance/
-xdg-open https://extensions.gnome.org/extension/1488/gnome-fuzzy-search/
+#xdg-open https://extensions.gnome.org/extension/1488/gnome-fuzzy-search/
 xdg-open https://extensions.gnome.org/extension/906/sound-output-device-chooser/
 xdg-open https://extensions.gnome.org/extension/21/workspace-indicator/
 xdg-open https://extensions.gnome.org/extension/19/user-themes/
 xdg-open https://extensions.gnome.org/extension/744/hide-activities-button/
 xdg-open https://www.gnome-look.org/p/1267246/
-xdg-open https://www.gnome-look.org/p/1357889/
+xdg-open https://www.gnome-look.org/p/1308808/
 xdg-open https://www.gnome-look.org/s/Gnome/p/1166289 
