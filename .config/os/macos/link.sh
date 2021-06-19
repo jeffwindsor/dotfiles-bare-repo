@@ -19,16 +19,16 @@ fi
 ln -sfv "$MACHINE/zshenv" "$HOME/.zshenv"
 ln -sfv "$MACHINE/zshrc" "$HOME/.zshrc"
 ln -sfv "$MACHINE/alacritty/os.yml" "$HOME/.config/alacritty/os.yml"
-rm $HOME/.gitconfig
-cp "$MACHINE/gitconfig" "$HOME/.gitconfig"
+ln -sfv "$MACHINE/gitconfig" "$HOME/.gitconfig"
+
+rm -f $HOME/.gitignore
+cp "$PWD/gitignore" "$HOME/.gitignore"
 
 ln -sfv "$PWD/skhd/skhdrc" "$HOME/.config/skhd/skhdrc"
 ln -sfv "$PWD/yabai/yabairc" "$HOME/.config/yabai/yabairc"
 ln -sfv "$PWD/spacebar/spacebarrc" "$HOME/.config/spacebar/spacebarrc"
 ln -sfv "$PWD/topgrade.toml" "$HOME/.config/topgrade.toml"
-
 ln -sfv "$PWD/alfred/Alfred.alfredpreferences" "$HOME/.config/alfred/Alfred.alfredpreferences"
 ln -sfv "$PWD/vscode/settings.json.macos" "$HOME/Library/Application Support/VSCodium/User/settings.json"
 ln -sfv "$PWD/ssh/config" "$HOME/.ssh/config"
-ln -sfv "$PWD/gitignore" "$HOME/.gitignore"
-#ln -sfv "$HOME/.config/nvim/config.vim" "$HOME/.ideavimrc"
+ln -sfv "$HOME/.config/nvim/config.vim" "$HOME/.ideavimrc"

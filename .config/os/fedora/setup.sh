@@ -5,7 +5,9 @@
 cd "$(dirname "${0}")"
 
 alias install='sudo dnf -y install'
-clone-if-missing { [[ ! -d $2 ]] && git clone https://github.com/${1}/${2}.git $2; }
+clone-if-missing (){
+    [[ ! -d $2 ]] && git clone https://github.com/${1}/${2}.git $2
+}
 
 # package manager update
 sudo dnf -y upgrade
