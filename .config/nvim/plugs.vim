@@ -18,8 +18,9 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'junegunn/fzf.vim'                   " fuzzy magic goodness
   Plug 'junegunn/gv.vim'                    " git browser
   Plug 'junegunn/vim-peekaboo'              " show my registers, fool... 
-  Plug 'kyazdani42/nvim-web-devicons'       " icons for bar bar
-  Plug 'romgrk/barbar.nvim'                 " tab bar (lua)
+  Plug 'drmingdrmer/vim-tabbar'
+  "Plug 'kyazdani42/nvim-web-devicons'       " icons for bar bar
+  "Plug 'romgrk/barbar.nvim'                 " tab bar (lua)
   "Plug 'sheerun/vim-polyglot'               " syntax highlighting to rule them all
   Plug 'tomtom/tcomment_vim'
   Plug 'tpope/vim-fugitive'                 " git integration 
@@ -28,10 +29,10 @@ call plug#begin('~/.cache/nvim/plugged')
 
  " lsp (need configs)
 " Plug 'neovimhaskell/haskell-vim'          " haskell
- Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
- Plug 'nvim-treesitter/playground'
- Plug 'neovim/nvim-lspconfig'
- Plug 'hrsh7th/nvim-compe'
+ "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+ "Plug 'nvim-treesitter/playground'
+ "Plug 'neovim/nvim-lspconfig'
+ "Plug 'hrsh7th/nvim-compe'
  "Plug 'kosayoda/nvim-lightbulb'            " lightbulb like suggestions
  "Plug 'glepnir/lspsaga.nvim'
  "Plug 'gfanto/fzf-lsp.nvim'
