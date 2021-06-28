@@ -1,6 +1,4 @@
 #!/usr/bin/env zsh
 
-export PATH="$HOME/.local/scripts:$PATH"
 source "$HOME/.config/os/zshenv"
 source "$HOME/.cargo/env"
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
