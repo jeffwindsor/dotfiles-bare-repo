@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Community Material Theme Darker High Contrast",
+    "workbench.colorTheme": "Monokai",
     "editor.fontFamily": "'Hack Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 14,
     "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",

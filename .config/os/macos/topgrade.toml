@@ -57,10 +57,7 @@ self_update = true
 # Custom commands
 [commands]
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
-#"Starship Prompt" = "curl -fsSL https://starship.rs/install.sh | bash -s -- --yes"
 "Dotfiles" = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull"
-"Haskell" = "ghcup upgrade"
-#"NeoVim-Dev" = "brew reinstall neovim"
 #"restart emacs-plus@27 service" = "brew services stop emacs-plus@27 && brew services start emacs-plus@27"
 "restart yabai service" = "brew services stop yabai && brew services start yabai"
 "restart skhd service" = "brew services stop skhd && brew services start skhd"

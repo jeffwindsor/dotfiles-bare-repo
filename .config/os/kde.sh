@@ -8,8 +8,17 @@ widget() {
     plasmapkg -u $1.plasmoid 
 }
 
-# install KWIN Script Krohnkite
-# install Global themes
-#   nordic
-#
+# KWIN Script:  Krohnkite [https://github.com/esjeon/krohnkite]
+# Global theme: nordic [https://store.kde.org/p/1327093/]
+# Widgets:
+#   Better inline Clock
+#   BigSur-Inline Battery
+#   Kpple Menu (optional left upper apple menu)
+#   Window Title / Application Title (shows selected window in bar)
+#   
+
+
+# install kvantum
+# install alfred
+# 
 
