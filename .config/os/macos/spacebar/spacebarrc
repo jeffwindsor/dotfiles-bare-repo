@@ -48,3 +48,7 @@ spacebar -m config dnd_icon_color       0xffa8a8a8
 spacebar -m config left_shell           off
 spacebar -m config center_shell         off
 spacebar -m config right_shell          off
+
+# leave room for spacebar at top
+yabai -m config external_bar all:26:0
+
