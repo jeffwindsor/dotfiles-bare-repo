@@ -44,6 +44,7 @@ install alacritty
 install fd-find
 install fzf
 install gnome-tweaks
+install neovim
 install ripgrep
 install tldr
 install vlc
@@ -88,9 +89,16 @@ chmod +x rustup-init.sh
 rm -f rustup-init.sh
 source $HOME/.cargo/env
 
-install cargo-completions
 cargo install topgrade
-cargo install cargo-update
+#cargo install cargo-update
+
+#echo "==> SSH"
+ssh-keygen -t ed25519 -C "jeff.windsor@gmail.com"
+eval $(ssh-agent)
+ssh-add ~/.ssh/id_ed25519
+
+# zsh as default shell
+chsh -s "$(which zsh)"
 
 ################################################################################
 echo "manual steps"

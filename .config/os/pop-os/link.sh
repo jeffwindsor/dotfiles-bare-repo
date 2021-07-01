@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 cd "$(dirname "${0}")"
 
+mkdir -p $HOME/.ssh
+mkdir -p "$HOME/.config/alacritty"
+
 ln -sf "$PWD/zshenv" "$HOME/.zshenv"
 ln -sf "$PWD/zshrc" "$HOME/.zshrc"
-
-mkdir -p "$HOME/.config/alacritty"
 ln -sf "$PWD/alacritty/os.yml" "$HOME/.config/alacritty/os.yml"
-
-ln -sf "$HOME/.config/gitignore" "$HOME/.gitignore"
-ln -sf "$HOME/.config/git/personal.gitconfig" "$HOME/.gitconfig"
-ln -sf "$HOME/.config/ssh/personal.config" "$HOME/.ssh/config"
+ln -sf "$PWD/git/gitignore" "$HOME/.gitignore"
+ln -sf "$PWD/git/gitconfig" "$HOME/.gitconfig"
+ln -sf "$PWD/ssh/config" "$HOME/.ssh/config"
 
 #ln -sf "$HOME/.config/vscode/keybindings.json.macos" \
 #       "$HOME/Library/Application Support/VSCodium/User/keybindings.json"
