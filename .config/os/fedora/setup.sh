@@ -14,20 +14,19 @@ sudo dnf -y upgrade
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf -y install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+# macbook wifi
+install broadcom-wl 
+
 # applications
 install alacritty
 install albert
 install bat
-#install clojure leiningen
 install emacs
 install exa
 install fd-find
 install fzf
-#install go
 install neovim
-#install nodejs
 install ripgrep
-#install stack
 install tldr
 install util-linux-user
 install vlc
@@ -64,7 +63,12 @@ cd $HOME/src
 #clone-if-missing jeffwindsor dmenu
 clone-if-missing jeffwindsor nord-startpage
 clone-if-missing jeffwindsor learn
-cd 
+cd
+
+# ssh
+ssh-keygen -t ed25519 -C "jeff.windsor@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
 
 # manual
 xdg-open https://github.com/settings/keys
