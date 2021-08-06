@@ -7,7 +7,7 @@ source $HOME/.config/os/zshrc
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source $HOME/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 green="$(tput setaf 2)"
 reset="$(tput sgr0)"
@@ -76,4 +76,3 @@ alias sup='stack upgrade --force-download'
 alias tree='exa --tree'
 alias uber='cd Library/Application\ Support/Übersicht/widgets/'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
