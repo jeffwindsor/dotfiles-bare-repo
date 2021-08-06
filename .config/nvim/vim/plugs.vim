@@ -18,10 +18,10 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'junegunn/fzf.vim'                   " fuzzy magic goodness
   Plug 'junegunn/gv.vim'                    " git browser
   Plug 'junegunn/vim-peekaboo'              " show my registers, fool... 
-  Plug 'drmingdrmer/vim-tabbar'
-  "Plug 'kyazdani42/nvim-web-devicons'       " icons for bar bar
-  "Plug 'romgrk/barbar.nvim'                 " tab bar (lua)
-  "Plug 'sheerun/vim-polyglot'               " syntax highlighting to rule them all
+  "Plug 'drmingdrmer/vim-tabbar'
+  Plug 'kyazdani42/nvim-web-devicons'       " icons for bar bar
+  Plug 'romgrk/barbar.nvim'                 " tab bar (lua)
+  Plug 'sheerun/vim-polyglot'               " syntax highlighting to rule them all
   Plug 'tomtom/tcomment_vim'
   Plug 'tpope/vim-fugitive'                 " git integration 
   Plug 'tpope/vim-markdown'
