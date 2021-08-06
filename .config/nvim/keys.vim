@@ -1,4 +1,6 @@
 
+let mapleader = "\<Space>"
+
 " copy paste 
 vnoremap <leader>p "_dP
 nmap ,p "0p

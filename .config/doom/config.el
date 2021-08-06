@@ -16,7 +16,7 @@
 (setq doom-font (font-spec :family "JetBrains Mono" :size 14)
       doom-big-font (font-spec :family "JetBrains Mono" :size 18))
 
-(setq doom-theme 'doom-molokai)
+(setq doom-theme 'doom-monokai-machine)
 (setq display-line-numbers-type 'relative)
 (setq confirm-kill-emacs nil)
 
