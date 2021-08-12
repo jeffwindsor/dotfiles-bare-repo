@@ -3,5 +3,10 @@ Host *
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519
 
+Host *.cnvr.net
+    User jwindsor
+    GSSAPIAuthentication yes
+
 Host *.cj.com
+    User jwindsor
     GSSAPIAuthentication yes
