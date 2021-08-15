@@ -1,5 +1,6 @@
+#!/usr/bin/env bash
 
-ARCH=$HOME/.config/os/arch
+cd "$(dirname "${0}")"
 
-ln -sf $ARCH/zshenv $HOME/.zshenv
-ln -sf $ARCH/zshrc $HOME/.zshrc 
+ln -sf $PWD/zshenv $HOME/.zshenv
+ln -sf $PWD/zshrc $HOME/.zshrc 
