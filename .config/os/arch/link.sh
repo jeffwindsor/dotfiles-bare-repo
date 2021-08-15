@@ -19,8 +19,9 @@ mkdir -p $HOME/.config/polybar/scripts
 ln -sf $PWD/polybar/launch.sh $HOME/.config/polybar/launch.sh
 ln -sf $PWD/polybar/config $HOME/.config/polybar/config
 
-for f in $PWD/polybar/scripts/ 
+FILES="$PWD/polybar/scripts/*.*" 
+for f in $FILES
 do
-  ln -sf $PWD/polybar/scripts/$f $HOME/.config/polybar/scripts/$f
+  ln -sf $f $HOME/.config/polybar/scripts/${file##*/}
 done
 
