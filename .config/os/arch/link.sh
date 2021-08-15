@@ -25,3 +25,6 @@ do
   ln -sf $f $HOME/.config/polybar/scripts/${file##*/}
 done
 
+# JOHAN'S PICOM
+ln -sf $PWD/picom/picom.conf $HOME/.config/picom/picom.conf
+

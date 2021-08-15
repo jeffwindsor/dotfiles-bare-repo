@@ -35,6 +35,10 @@ check_install picom
 # AUR
 check_install paru 
 
+# ARCO
+check_install arcolinux-tweak-tool-git
+check_install arcolinux-logout
+
 # AUDIO
 check_install pulseaudio
 check_install pulseaudio-alsa
@@ -95,23 +99,24 @@ check_install awesome-terminal-fonts
 check_install ttf-ubuntu-font-family
 check_install nerd-fonts-complete
 
-# USE ABILITY
+# TUI
 check_install bat
 check_install exa
 check_install fd
 check_install feh
-check_install firefox
 check_install fzf
 check_install git
 check_install neovim
 check_install ripgrep
-check_install rofi
 check_install tldr
-check_install vlc
 check_install zsh
 check_install zsh-autosuggestions
 check_install zsh-completions
 check_install zsh-history-substring-search
 check_install zsh-fast-syntax-highlighting
-check_install spotify
 
+# GUI
+check_install firefox
+check_install rofi
+check_install spotify
+check_install vlc
