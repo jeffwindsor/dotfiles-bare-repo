@@ -99,6 +99,7 @@ check_install sharutils
 # SEARCHERS
 check_install ripgrep
 check_install fzf
+check_install rofi
 
 # CONKY
 check_install conky-lua-archers

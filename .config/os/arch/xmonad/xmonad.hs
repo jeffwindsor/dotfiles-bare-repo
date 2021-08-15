@@ -159,7 +159,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
 myStartupHook :: X()
 myStartupHook = do
-    spawn "$HOME/.xmonad/scripts/autostart.sh"
+    spawn "$HOME/.xmonad/autostart.sh"
     setWMName "LG3D"
 
 main :: IO ()
