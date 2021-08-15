@@ -98,7 +98,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((super, xK_x),       spawn $ "arcolinux-logout")        --logout
   --, ((super, xK_y),     spawn $ "polybar-msg cmd toggle")
   , ((superShift , xK_r), spawn $ "xmonad --recompile && xmonad --restart")
-  , ((superShift , xK_p), spawn $ "$HOME/.xmonad/polybar/launch.sh")
+  , ((superShift , xK_p), spawn $ "$HOME/.config/polybar/launch.sh")
   --------------------------------------------------------------------
   --  LAUNCHERS
   , ((super, xK_space),       spawn $ "rofi -show run")
