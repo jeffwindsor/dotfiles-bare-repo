@@ -79,11 +79,6 @@ then
     brew services start skhd
 
     # bars
-    #install cmacrae/formulae/spacebar
-    #brew services start spacebar
-    install ubersicht 
-    git clone https://github.com/jeffwindsor/simple-bar $HOME/Library/Application\ Support/Übersicht/widgets/simple-bar
-    #git clone https://github.com/aprowe/mini-system-charts.widget $HOME/Library/Application\ Support/Übersicht/widgets/mini-system-charts.widget
     install jq
 
     install_cask firefox
@@ -140,6 +135,7 @@ then
     #install dotty
     #install idris
     install nodejs
+    install rustup-init rust-analyzer
 
     ################################################################
     echo "==> HASKELL"
@@ -149,15 +145,14 @@ then
     #install haskell-stack
 
     ################################################################
-    echo "==> RUST LANG"
-    curl --proto '=https' --tlsv1.2 -sSfo rustup-init.sh https://sh.rustup.rs
-    chmod +x rustup-init.sh
-    ./rustup-init.sh -y
-    rm -f rustup-init.sh
-    source $HOME/.cargo/env
-
-    install cargo-completions
-    cargo install cargo-update
+    #echo "==> RUST LANG"
+    #curl --proto '=https' --tlsv1.2 -sSfo rustup-init.sh https://sh.rustup.rs
+    #chmod +x rustup-init.sh
+    #./rustup-init.sh -y
+    #rm -f rustup-init.sh
+    #source $HOME/.cargo/env
+    #install cargo-completions
+    #cargo install cargo-update
 
     # LSPs
     npm install -g typescript typescript-language-server
