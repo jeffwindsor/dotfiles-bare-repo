@@ -188,7 +188,7 @@ modules-right = filesystem
 
 [module/arch-updates]
 type = custom/script
-exec = ~/.config/polybar/scripts/check-arch-updates.sh
+exec = $PWD/scripts/check-arch-updates.sh
 interval = 1000
 label = Arch: %output%
 format-foreground = ${colors.foreground}
@@ -199,7 +199,7 @@ format-underline = #FFBB00
 
 [module/aur-updates]
 type = custom/script
-exec = ~/.config/polybar/scripts/check-aur-updates.sh
+exec = $PWD/scripts/check-aur-updates.sh
 interval = 1000
 label = Aur: %output%
 format-foreground = ${colors.foreground}
@@ -727,11 +727,11 @@ format-prefix = " "
 type = custom/script
 tail = true
 label = %output%
-exec = ~/.config/polybar/scripts/pavolume.sh --listen
+exec = $PWD/scripts/pavolume.sh --listen
 click-right = exec pavucontrol
-click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
-scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
-scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
+click-left = $PWD/scripts/pavolume.sh --togmute
+scroll-up = $PWD/scripts/pavolume.sh --up
+scroll-down = $PWD/scripts/pavolume.sh --down
 ;format-underline = #3EC13F
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -743,7 +743,7 @@ format-background = ${colors.background}
 [module/pub-ip]
 ;https://linuxconfig.org/polybar-a-better-wm-panel-for-your-linux-system
 type = custom/script
-exec = ~/.config/polybar/scripts/pub-ip.sh
+exec = $PWD/scripts/pub-ip.sh
 interval = 100
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -781,7 +781,7 @@ format-background = ${colors.background}
 [module/spotify1]
 ;https://github.com/NicholasFeldman/dotfiles/blob/master/polybar/.config/polybar/spotify.sh
 type = custom/script
-exec = ~/.config/polybar/scripts/spotify1.sh
+exec = $PWD/scripts/spotify1.sh
 interval = 1
 
 ;format = <label>
@@ -804,7 +804,7 @@ format-prefix = "  "
 format = <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+exec = $PWD/scripts/scroll_spotify_status.sh
 
 
 [module/spotify-prev]
@@ -875,7 +875,7 @@ ramp-foreground =${colors.foreground}
 
 [module/temperature2]
 type = custom/script
-exec = ~/.config/polybar/scripts/tempcores.sh
+exec = $PWD/scripts/tempcores.sh
 interval = 2
 format-padding = 1
 format-foreground = ${colors.foreground}
@@ -960,7 +960,7 @@ format-prefix-foreground = #3EC13F
 format-underline = #3EC13F
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-exec = python -u ~/.config/polybar/scripts/weather.py
+exec = python -u $PWD/scripts/weather.py
 tail = true
 
 #################################################################################
