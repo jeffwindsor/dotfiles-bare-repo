@@ -20,11 +20,11 @@ else
 fi
 
 # bottom bar
-if [ $count = 1 ]; then
-  m=$(xrandr --query | grep " connected" | cut -d" " -f1)
-  MONITOR=$m polybar --reload mainbar-xmonad-extra -c $PWD/config &
-else
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload mainbar-xmonad-extra -c $PWD/config &
-  done
-fi
+#if [ $count = 1 ]; then
+#  m=$(xrandr --query | grep " connected" | cut -d" " -f1)
+#  MONITOR=$m polybar --reload mainbar-xmonad-extra -c $PWD/config &
+#else
+#  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+#    MONITOR=$m polybar --reload mainbar-xmonad-extra -c $PWD/config &
+#  done
+#fi
