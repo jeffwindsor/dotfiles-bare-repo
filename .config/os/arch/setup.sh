@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "${0}")"
+cd "$(dirname "${0}")" || exit
 
 check_install() {
-	if pacman -Qi $1 &> /dev/null; then
+	if pacman -Qi "$1" &> /dev/null; then
 		tput setaf 2
-  		echo "################## The package "$1" is already installed"
+  		echo "################## The package is already installed " "$1"
       	echo
 		tput sgr0
 	else
     	tput setaf 3
-    	echo "##################  Installing package "  $1
+    	echo "##################  Installing package "  "$1"
     	echo
     	tput sgr0
-    	sudo pacman -S --noconfirm --needed $1
+    	sudo pacman -S --noconfirm --needed "$1"
     fi
 }
 
@@ -107,6 +107,7 @@ check_install feh
 check_install fzf
 check_install git
 check_install neovim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 check_install ripgrep
 check_install tldr
 check_install zsh

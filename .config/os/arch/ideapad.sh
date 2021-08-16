@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # normally not found firmware 
 paru upd72929x

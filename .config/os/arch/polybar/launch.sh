@@ -1,30 +1,29 @@
-#!/usr/bin/env sh
-cd "$(dirname "${0}")"
+#!/usr/bin/env bash
+set -euo pipefail
 
-# More info : https://github.com/jaagr/polybar/wiki
+# move to directory where script resides, exit if failure
+cd "$(dirname "${0}")" || exit
+
+# kill current polybars and wait for it to complete
 killall -q polybar
+while pgrep -u "$UID" -x polybar > /dev/null; do sleep 1; done
 
-# Wait until the processes have been shut down
-while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
-
+# collect monitors
 count=$(xrandr --query | grep " connected" | cut -d" " -f1 | wc -l)
 
-# top bar
-if [ $count = 1 ]; then
+# instantiate bars on each monitor
+if [ "$count" = 1 ]; then
   m=$(xrandr --query | grep " connected" | cut -d" " -f1)
-  MONITOR=$m polybar --reload mainbar-xmonad -c $PWD/config &
+  MONITOR=$m polybar --reload mainbar-xmonad -c "$PWD"/config &
+
+#  m=$(xrandr --query | grep " connected" | cut -d" " -f1)
+#  MONITOR=$m polybar --reload mainbar-xmonad-extra -c "$PWD"/config &
 else
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload mainbar-xmonad -c $PWD/config &
+    MONITOR=$m polybar --reload mainbar-xmonad -c "$PWD"/config &
   done
-fi
 
-# bottom bar
-#if [ $count = 1 ]; then
-#  m=$(xrandr --query | grep " connected" | cut -d" " -f1)
-#  MONITOR=$m polybar --reload mainbar-xmonad-extra -c $PWD/config &
-#else
 #  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-#    MONITOR=$m polybar --reload mainbar-xmonad-extra -c $PWD/config &
+#    MONITOR=$m polybar --reload mainbar-xmonad-extra -c "$PWD"/config &
 #  done
-#fi
+fi
