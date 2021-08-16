@@ -20,6 +20,8 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'tpope/vim-markdown'
   Plug 'tpope/vim-surround'
 
+  Plug 'neovim/nvim-lspconfig'
+
   "Plug 'APZelos/blamer.nvim'                " git lens / blame
   "Plug 'dense-analysis/ale'                 " linter
   "Plug 'dyng/ctrlsf.vim'
@@ -32,7 +34,6 @@ call plug#begin('~/.cache/nvim/plugged')
 " Plug 'neovimhaskell/haskell-vim'          " haskell
  "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
  "Plug 'nvim-treesitter/playground'
- "Plug 'neovim/nvim-lspconfig'
  "Plug 'hrsh7th/nvim-compe'
  "Plug 'kosayoda/nvim-lightbulb'            " lightbulb like suggestions
  "Plug 'glepnir/lspsaga.nvim'
