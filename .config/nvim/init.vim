@@ -6,4 +6,4 @@ source $HOME/.config/nvim/vim/keys.vim
 let g:lightline = { 'colorscheme' : 'tender' }
 colorscheme iceberg
 
-command! Scratch lua require'tools'.makeScratch()
+"command! Scratch lua require'tools'.makeScratch()
