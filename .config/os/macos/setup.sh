@@ -7,7 +7,7 @@ install() {
   		echo "==> "$1" [installed]"
 	else
     	echo "==> "$1
-    	brew install $@
+    	brew install $1
     fi
 }
 
@@ -39,6 +39,9 @@ then
     brew tap homebrew/services
     brew tap railwaycat/emacsmacport
     #brew tap mas-cli/tap
+
+    # apple store integration
+    install mas
 fi 
 
 ##########################################################
@@ -48,13 +51,15 @@ if [[ "$response" =~ ^(yes|y)$ ]]
 then            
 
     install bat
+    install cmacrae/formulae/spacebar && brew services start spacebar
     install exa
     install fd
     install fzf
     install git
-    install mas
-    install neovim
+    install koekeishiya/formulae/skhd  && brew services start skhd
+    install koekeishiya/formulae/yabai && brew services start yabai
     install luarocks        # neovim 0.5
+    install neovim
     install ripgrep
     install shellcheck
     install tldr
@@ -64,32 +69,19 @@ then
     install zsh-completions
     install zsh-history-substring-search
     install zsh-syntax-highlighting
-
     install_cask alacritty
     install_cask alfred
-    install_cask keepingyouawake
-    #install_cask dash
-    
     install_cask emacs-mac
-
-    # tiling window manager
-    install koekeishiya/formulae/yabai
-    brew services start yabai
-    install koekeishiya/formulae/skhd
-    brew services start skhd
-
-    # bars
-    install jq
-
     install_cask firefox
     install_cask font-fira-code-nerd-font
     install_cask font-hack-nerd-font
     install_cask font-jetbrains-mono-nerd-font
     install_cask gpg-suite
+    install_cask keepingyouawake
     install_cask slack
     install_cask spotify
+    install starship
     install_cask transmission
-    install_cask vimr
     install_cask vlc
     install_cask vscodium
 
@@ -103,12 +95,8 @@ then
     clone-if-missing jeffwindsor dwm
     clone-if-missing jeffwindsor dwmblocks
     clone-if-missing jeffwindsor dmenu
-    clone-if-missing jeffwindsor nord-startpage
+    clone-if-missing jeffwindsor startpage
     clone-if-missing jeffwindsor learn
-    
-    ################################################################
-    echo "==> STARSHIP PROMPT"
-    curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
     
     ################################################################
     echo "==> NVIM PLUGINS"
@@ -177,13 +165,6 @@ response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
     ssh-keygen -t rsa -b 4096 -C "jeff.windsor@gmail.com"
-fi 
-
-##########################################################
-read -r -p "Add key to SSH Agent? [y/n] " response
-response=${response,,}    # tolower
-if [[ "$response" =~ ^(yes|y)$ ]]
-then            
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/id_rsa
 fi 
