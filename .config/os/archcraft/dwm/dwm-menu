@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Menu to launch by dwm menu key
+
+## Dmenu
+dmenu_run -h 34 -p " RUN " -fn "Iosevka:size=12" -nb "#0F1215" -nf "#A6BCAA" -sb "#3A654D" -sf "#FFFFFF"
+
+## Rofi
+#rofi -no-lazy-grab -show drun -theme /usr/share/archcraft-dwm/rofi/launcher.rasi
