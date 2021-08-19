@@ -10,8 +10,3 @@ git clone --bare https://github.com/jeffwindsor/dotfiles.git $HOME/.dotfiles \
 ```
 1. run `setup.sh` and `link.sh` from ~/.config/os/{current os} 
 1. use the `dot` alias just as you would the `git` command for example `dot checkout <prefered branch>` or `dot add <list of file>` or `dot commit -m "some message"`
-
-* [fedora gnome + tiling extension](https://getfedora.org/en/workstation/)
-    * [pop_shell](https://github.com/pop-os/shell) 
-    * [material_shell](https://github.com/material-shell/material-shell)
-* [arcolinux](https://www.arcolinuxd.com/)
