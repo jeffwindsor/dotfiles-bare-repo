@@ -9,10 +9,13 @@ ctrl + cmd - 0x2A           : open -na 'emacs'
 ctrl + alt + cmd - 0x2A     : open -na 'Intellij IDEA'
 alt + cmd - 0x2A            : open -na 'VSCodium.app' --args --extensions-dir $HOME/.vscode-oss/extensions
 
-ctrl + cmd - delete         : skhd -r
-ctrl + alt + cmd - delete   : yabai -m space --balance 
+# restart
+shift + cmd - r             : brew services stop yabai && brew services start yabai
+ctrl + cmd - r              : brew services stop spacebar && brew services start spacebar
+alt + cmd - r               : skhd -r
 
 # layouts
+ctrl + cmd - x              : yabai -m space --balance 
 ctrl + cmd - b              : yabai -m config layout bsp
 ctrl + cmd - s              : yabai -m config layout stack
 ctrl + cmd - f              : yabai -m config layout float

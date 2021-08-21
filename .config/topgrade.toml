@@ -60,7 +60,8 @@ self_update = true
 "Dotfiles" = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull"
 #"restart emacs-plus@27 service" = "brew services stop emacs-plus@27 && brew services start emacs-plus@27"
 "restart yabai service" = "brew services stop yabai && brew services start yabai"
-#"restart skhd service" = "brew services stop skhd && brew services start skhd"
+"restart spacebar service" = "brew services stop spacebar && brew services start spacebar"
+"restart skhd service" = "brew services stop skhd && brew services start skhd"
 
 #[brew]
 #greedy_cask = true
