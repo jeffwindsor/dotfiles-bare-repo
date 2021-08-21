@@ -59,8 +59,7 @@ self_update = true
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 "Dotfiles" = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull"
 #"restart emacs-plus@27 service" = "brew services stop emacs-plus@27 && brew services start emacs-plus@27"
-"restart yabai service" = "brew services stop yabai && brew services start yabai"
-"restart spacebar service" = "brew services stop spacebar && brew services start spacebar"
+"restart yabai service" = "brew services stop yabai && brew services start yabai && brew services stop spacebar && brew services start spacebar"
 "restart skhd service" = "brew services stop skhd && brew services start skhd"
 
 #[brew]
