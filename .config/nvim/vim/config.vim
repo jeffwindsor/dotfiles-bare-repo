@@ -31,22 +31,17 @@ set spell
 set spelllang=en_us
 set splitbelow
 set splitright
-set t_Co=256                            " Support 256 colors
+"set t_Co=256                            " Support 256 colors
 set tabstop=4
 set timeoutlen=2000
 set updatetime=300                      " Faster completion
 set wildmenu
 set wildmode=longest,list                           " get bash-like tab completions
 
-if (has("termguicolors"))
-  set termguicolors
-endif
-autocmd BufRead,BufNewFile *.md setlocal spell
-let g:netrw_banner = 0
-let g:sneak#label = 1
+"if (has("termguicolors"))
+"  set termguicolors
+"endif
+"autocmd BufRead,BufNewFile *.md setlocal spell
+"let g:netrw_banner = 0
+"let g:sneak#label = 1
 
-" automatically leave insert mode after 'updatetime' milliseconds of inaction
-"au CursorHoldI * stopinsert
-
-set nobackup                            " This is recommended by coc
-set nowritebackup                       " This is recommended by coc
