@@ -1,17 +1,17 @@
 
 let mapleader = "\<Space>"
 
-" copy paste 
-vnoremap <leader>p "_dP
-nmap ,p "0p
-nmap ,P "0P
-
 " do not need shift to enter command mode
 nnoremap ; :
 vnoremap ; :
 
-" surround word with backticks, useful in markdown
-nmap <leader>` ysiw`
+" Yank act like other capital letters
+nnoremap Y y$
+
+" Keeping it centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 
 " window movement
 nnoremap <leader><left> <C-W><left> 
