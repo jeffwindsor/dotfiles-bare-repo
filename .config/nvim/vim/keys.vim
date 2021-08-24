@@ -30,7 +30,7 @@ nnoremap <leader>bs :w<CR>
 
 nnoremap <leader><leader> :Files <CR>
 nnoremap <leader>fc :Files $HOME/.config/<CR>
-nnoremap <leader>ff :Files <CR>
+nnoremap <leader>ff :Files $HOME<CR>
 nnoremap <leader>fo :Files $HOME/.config/os/<CR>
 nnoremap <leader>fs :Files $HOME/src/<CR>
 
