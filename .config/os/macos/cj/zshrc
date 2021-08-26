@@ -106,8 +106,31 @@ md5c()  { md5 -r "$1" | diff "$1.md5" -; }
 shuttle-init() {
     mkdir shuttle
     cd shuttle
-    touch build.sh
-    touch deploy.sh
+    
+    cat << EOF >> build.sh
+#!/usr/bin/env sh
+set -ex
+cd "\$(dirname "\${0}")"
+
+# call build.sh in root directory
+../build.sh
+
+EOF
+
+    chmod +x build.sh
+
+    cat << EOF >> deploy.sh
+#!/usr/bin/env sh
+set -ex
+cd "\$(dirname "\${0}")"
+
+# call deploy.sh in root directory
+../deploy.sh
+
+EOF
+
+    chmod +x deploy.sh
+
     cat << EOF >> shuttle.json
 {
   "environments": [
@@ -121,7 +144,10 @@ shuttle-init() {
   ]
 }
 EOF
+    
+    nvim -p build.sh deploy.sh shuttle.json
 }
+
 
 alias aws1="alias aws='/usr/local/opt/awscli@1/bin/aws'"
 alias aws2="unalias aws"
