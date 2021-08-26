@@ -1,5 +1,8 @@
-" ===== EYE CANDY =========================
-colorscheme tender
+set nocompatible                                    " Disable compatibility to old-time vi
+" ===== NEOVIM ============================
+set viminfo+=n~/.cache/nvim/viminfo                 " neo vim
+set runtimepath^=~/.viDTreeShowHidden=1uvim/after   " neo vim
+let &packpath = &runtimepath                        " neo vim
 
 " ===== PLUGS =============================
 call plug#begin('~/.cache/nvim/plugged')
@@ -35,8 +38,10 @@ source $HOME/.config/nvim/vim/vim-sneak.vim
 source $HOME/.config/nvim/vim/autosave.vim
 source $HOME/.config/nvim/vim/fzf.vim
 
-" ===== KEYS ==============================
+" ===== EYE CANDY =========================
+colorscheme tender
 
+" ===== KEYS ==============================
 let mapleader = "\<Space>"
 
 " do not need shift to enter command mode
@@ -98,13 +103,7 @@ nnoremap <leader>wq :close<CR>
 nnoremap <leader>ws :split<CR>
 nnoremap <leader>wv :vsplit<CR>
 
-" ===== NEOVIM ============================
-set viminfo+=n~/.cache/nvim/viminfo                 " neo vim
-set runtimepath^=~/.viDTreeShowHidden=1uvim/after   " neo vim
-let &packpath = &runtimepath                        " neo vim
-
 " ===== SETS ==============================
-set nocompatible                                    " Disable compatibility to old-time vi
 set autoindent                                      " autoindent
 set clipboard+=unnamedplus                          " yank to clipboard
 set cursorline                                      " highlight current line
