@@ -145,7 +145,6 @@ EOF
 }
 EOF
     
-    nvim -p build.sh deploy.sh shuttle.json
 }
 
 
