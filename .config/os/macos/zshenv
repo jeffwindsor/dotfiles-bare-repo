@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 export ZSH_PLUGINS='/usr/local/share'
+export TERM='xterm-256color'
 
 # VsCode / VSCodium
 export VSCODE_EXTENSIONS=$XDG_DATA_HOME/vscode-oss/extensions

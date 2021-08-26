@@ -35,10 +35,10 @@ set splitbelow
 set splitright
 set tabstop=4
 set timeoutlen=2000
+set termguicolors
 set updatetime=300                      " Faster completion
 set wildmenu
 set wildmode=longest,list                           " get bash-like tab completions
-set t_Co=256
 
 " ===== PLUGS =============================
 call plug#begin('~/.cache/nvim/plugged')
@@ -52,10 +52,8 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'tomasr/molokai'
   
   " decorations
-  "Plug 'itchyny/lightline.vim'              " bottom bar
-  Plug 'famiu/feline.nvim'
-  Plug 'kyazdani42/nvim-web-devicons' " lua
-  Plug 'ryanoasis/vim-devicons' " vimscript
+  Plug 'kyazdani42/nvim-web-devicons'       " lua
+  Plug 'famiu/feline.nvim'                  " lua
 
   " system
   Plug '907th/vim-auto-save'                " Auto Save
@@ -82,10 +80,7 @@ source $HOME/.config/nvim/vim/autosave.vim
 source $HOME/.config/nvim/vim/fzf.vim
 
 lua << EOF
-  require'nvim-web-devicons'.get_icons()
-  require('feline').setup({
-        preset = 'noicon'
-    })
+    require('feline').setup()
 EOF
 
 " ===== EYE CANDY =========================
