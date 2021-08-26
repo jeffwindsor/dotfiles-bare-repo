@@ -102,7 +102,6 @@ nnoremap <leader>wv :vsplit<CR>
 set viminfo+=n~/.cache/nvim/viminfo                 " neo vim
 set runtimepath^=~/.viDTreeShowHidden=1uvim/after   " neo vim
 let &packpath = &runtimepath                        " neo vim
-set rtp+=/usr/local/opt/fzf
 
 " ===== SETS ==============================
 set nocompatible                                    " Disable compatibility to old-time vi
