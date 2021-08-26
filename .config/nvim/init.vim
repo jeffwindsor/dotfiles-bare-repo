@@ -1,8 +1,44 @@
 set nocompatible                                    " Disable compatibility to old-time vi
+
 " ===== NEOVIM ============================
 set viminfo+=n~/.cache/nvim/viminfo                 " neo vim
 set runtimepath^=~/.viDTreeShowHidden=1uvim/after   " neo vim
 let &packpath = &runtimepath                        " neo vim
+
+" ===== SETS ==============================
+filetype plugin on
+syntax enable                                       " turn on all the magic, including Explorer and syntax highlighting
+
+set autoindent                                      " autoindent
+set clipboard+=unnamedplus                          " yank to clipboard
+set cursorline                                      " highlight current line
+set encoding=UTF-8
+set expandtab
+set fileencoding=utf-8                  " The encoding written to file
+set hidden                                          " Required to keep multiple buffers open multiple buffers
+set hlsearch                                        " highlight matches
+set ignorecase                                      " Do case insensitive matching
+set inccommand=split
+set incsearch                                       " search as characters are entered
+set lazyredraw                                      " redraw only when we need to.
+set mouse=a
+set nowrap
+set number relativenumber                           " hybrid line numbers
+set ruler              			            " Show the cursor position all the time
+set shiftwidth=4
+set smartindent                         " Makes indenting smart
+set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
+set softtabstop=4
+set spell
+set spelllang=en_us
+set splitbelow
+set splitright
+set tabstop=4
+set timeoutlen=2000
+set updatetime=300                      " Faster completion
+set wildmenu
+set wildmode=longest,list                           " get bash-like tab completions
+set t_Co=256
 
 " ===== PLUGS =============================
 call plug#begin('~/.cache/nvim/plugged')
@@ -14,6 +50,12 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'jacoborus/tender.vim'
   Plug 'joshdick/onedark.vim'
   Plug 'tomasr/molokai'
+  
+  " decorations
+  "Plug 'itchyny/lightline.vim'              " bottom bar
+  Plug 'famiu/feline.nvim'
+  Plug 'kyazdani42/nvim-web-devicons' " lua
+  Plug 'ryanoasis/vim-devicons' " vimscript
 
   " system
   Plug '907th/vim-auto-save'                " Auto Save
@@ -27,16 +69,24 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'romgrk/barbar.nvim'                 " tab bar (lua)
   Plug 'justinmk/vim-sneak'
 
-  Plug 'itchyny/lightline.vim'              " bottom bar
-  "Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-  Plug 'kyazdani42/nvim-web-devicons' " lua
-  "Plug 'ryanoasis/vim-devicons' " vimscript
+  " development
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/playground'
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'hrsh7th/nvim-compe'
 
 call plug#end()
 
 source $HOME/.config/nvim/vim/vim-sneak.vim
 source $HOME/.config/nvim/vim/autosave.vim
 source $HOME/.config/nvim/vim/fzf.vim
+
+lua << EOF
+  require'nvim-web-devicons'.get_icons()
+  require('feline').setup({
+        preset = 'noicon'
+    })
+EOF
 
 " ===== EYE CANDY =========================
 colorscheme tender
@@ -103,35 +153,3 @@ nnoremap <leader>wq :close<CR>
 nnoremap <leader>ws :split<CR>
 nnoremap <leader>wv :vsplit<CR>
 
-" ===== SETS ==============================
-set autoindent                                      " autoindent
-set clipboard+=unnamedplus                          " yank to clipboard
-set cursorline                                      " highlight current line
-set encoding=UTF-8
-set expandtab
-set fileencoding=utf-8                  " The encoding written to file
-set hidden                                          " Required to keep multiple buffers open multiple buffers
-set hlsearch                                        " highlight matches
-set ignorecase                                      " Do case insensitive matching
-set inccommand=split
-set incsearch                                       " search as characters are entered
-set lazyredraw                                      " redraw only when we need to.
-set mouse=a
-set nowrap
-set number relativenumber                           " hybrid line numbers
-set ruler              			            " Show the cursor position all the time
-set shiftwidth=4
-set smartindent                         " Makes indenting smart
-set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
-set softtabstop=4
-set spell
-set spelllang=en_us
-set splitbelow
-set splitright
-set tabstop=4
-set timeoutlen=2000
-set updatetime=300                      " Faster completion
-set wildmenu
-set wildmode=longest,list                           " get bash-like tab completions
-filetype plugin on
-syntax enable                                       " turn on all the magic, including Explorer and syntax highlighting
