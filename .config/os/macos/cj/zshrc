@@ -108,9 +108,14 @@ shuttle-init() {
     cd shuttle
     
     cat << EOF >> build.sh
-#!/usr/bin/env sh
-set -ex
+#!/bin/bash
+set -o errexit
+set -o noglob
+set -o nounset
+set -o pipefail
+
 cd "\$(dirname "\${0}")"
+
 
 # call build.sh in root directory
 ../build.sh
@@ -120,8 +125,12 @@ EOF
     chmod +x build.sh
 
     cat << EOF >> deploy.sh
-#!/usr/bin/env sh
-set -ex
+#!/bin/bash
+set -o errexit
+set -o noglob
+set -o nounset
+set -o pipefail
+
 cd "\$(dirname "\${0}")"
 
 # call deploy.sh in root directory
@@ -140,7 +149,6 @@ EOF
     }
   ],
   "artifactFiles": [
-    "source/target/*"
   ]
 }
 EOF
