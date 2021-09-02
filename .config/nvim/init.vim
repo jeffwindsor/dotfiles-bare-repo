@@ -52,26 +52,28 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'tomasr/molokai'
   
   " decorations
+  Plug 'ryanoasis/vim-devicons'             " vim script version
   Plug 'kyazdani42/nvim-web-devicons'       " lua
   Plug 'famiu/feline.nvim'                  " lua
+  Plug 'romgrk/barbar.nvim'                 " tab bar (lua)
 
   " system
   Plug '907th/vim-auto-save'                " Auto Save
   Plug 'airblade/vim-rooter'                " current directory moves with file
   Plug 'ap/vim-css-color'                   " highlight hex colors in actual color
   Plug 'jeetsukumaran/vim-filebeagle'       " simple file browser
+  Plug 'preservim/nerdtree'                 " tree
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'                   " fuzzy magic goodness
-  Plug 'junegunn/gv.vim'                    " git browser
+  "Plug 'junegunn/gv.vim'                    " git browser
   Plug 'junegunn/vim-peekaboo'              " show my registers, fool... 
-  Plug 'romgrk/barbar.nvim'                 " tab bar (lua)
   Plug 'justinmk/vim-sneak'
 
   " development
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'nvim-treesitter/playground'
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'hrsh7th/nvim-compe'
+  "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  "Plug 'nvim-treesitter/playground'
+  "Plug 'neovim/nvim-lspconfig'
+  "Plug 'hrsh7th/nvim-compe'
 
 call plug#end()
 
@@ -141,6 +143,7 @@ nnoremap <leader>pi :source $MYVIMRC<CR> :PlugInstall<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>rr :source $MYVIMRC<CR>
 
+" fzf
 nnoremap <leader>b<Left> :BufferMovePrevious<CR>
 nnoremap <leader>b<Right> :BufferMoveNext<CR>
 nnoremap <leader>ba :sav 
@@ -150,13 +153,11 @@ nnoremap <leader>bh :BufferMovePrevious<CR>
 nnoremap <leader>bl :BufferMoveNext<CR>
 nnoremap <leader>bn :tabnew<CR>
 nnoremap <leader>bs :w<CR>
-
 nnoremap <leader><leader> :Files <CR>
 nnoremap <leader>fc :Files $HOME/.config/<CR>
 nnoremap <leader>ff :Files $HOME<CR>
 nnoremap <leader>fo :Files $HOME/.config/os/<CR>
 nnoremap <leader>fs :Files $HOME/src/<CR>
-
 nnoremap <leader>sa :Commands<CR>
 nnoremap <leader>sc :Colors<CR>
 nnoremap <leader>sft :Filetypes<CR>
@@ -169,6 +170,7 @@ nnoremap <leader>ss :Rg<CR>
 nnoremap <leader>st :Tags<CR>
 nnoremap <leader>sw :Windows<CR> 
 
+" movement and windows
 nnoremap <leader>w<down> <C-W><down> 
 nnoremap <leader>w<left> <C-W><left> 
 nnoremap <leader>w<right> <C-W><right> 
@@ -183,3 +185,5 @@ nnoremap <leader>wq :close<CR>
 nnoremap <leader>ws :split<CR>
 nnoremap <leader>wv :vsplit<CR>
 
+nnoremap <leader>tf :NERDTreeFocus<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
