@@ -1,4 +1,4 @@
-iset nocompatible                                    " Disable compatibility to old-time vi
+set nocompatible                                    " Disable compatibility to old-time vi
 
 " ===== NEOVIM ============================
 set viminfo+=n~/.cache/nvim/viminfo                 " neo vim
