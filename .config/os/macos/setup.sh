@@ -51,17 +51,15 @@ if [[ "$response" =~ ^(yes|y)$ ]]
 then            
 
     install bat
-    install cmacrae/formulae/spacebar && brew services start spacebar
     install exa
     install fd
     install fzf
     install git
     install koekeishiya/formulae/skhd  && brew services start skhd
     install koekeishiya/formulae/yabai && brew services start yabai
-    install luarocks        # neovim 0.5
     install neovim
     install ripgrep
-    install shellcheck
+    install starship
     install tldr
     install topgrade
     install zsh
@@ -69,23 +67,16 @@ then
     install zsh-completions
     install zsh-history-substring-search
     install zsh-syntax-highlighting
+
     install_cask alacritty
     install_cask alfred
-    install_cask emacs-mac
     install_cask firefox
     install_cask font-fira-code-nerd-font
     install_cask font-hack-nerd-font
     install_cask font-jetbrains-mono-nerd-font
-    install_cask gpg-suite
     install_cask keepingyouawake
     install_cask slack
     install_cask spotify
-    install starship
-    install_cask transmission
-    install_cask vlc
-    install_cask vscodium
-
-    #pip install lookatme
 
     ################################################################
     echo "==> GIT REPOS INTO HOME ${HOME}/SRC"
@@ -103,33 +94,28 @@ then
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     nvim --headless +PlugInstall +qall
 
-    ################################################################
-    echo "==> DOOM EMACS"
-    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-    ~/.emacs.d/bin/doom install
-
 fi
 
 ##########################################################
-read -r -p "Development Languages? [y/n] " response
-response=${response,,}    # tolower
-if [[ "$response" =~ ^(yes|y)$ ]]
-then            
+#read -r -p "Development Languages? [y/n] " response
+#response=${response,,}    # tolower
+#if [[ "$response" =~ ^(yes|y)$ ]]
+#then            
    
     #install gnu-apl
     #install ats2-postiats
     #install gcc
-    install golang
+    #install golang
     #install dotty
     #install idris
-    install nodejs
-    install rustup-init rust-analyzer
+    #install nodejs
+    #install rustup-init rust-analyzer
 
     ################################################################
-    echo "==> HASKELL"
-    install ghc
-    curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-    install hlint
+    #echo "==> HASKELL"
+    #install ghc
+    #curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+    #install hlint
     #install haskell-stack
 
     ################################################################
@@ -143,8 +129,8 @@ then
     #cargo install cargo-update
 
     # LSPs
-    npm install -g typescript typescript-language-server
-fi
+    #npm install -g typescript typescript-language-server
+#fi
 
 ##########################################################
 #read -r -p "Install Apple Store Applications? [y/n] " response

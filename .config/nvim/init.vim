@@ -1,4 +1,4 @@
-set nocompatible                                    " Disable compatibility to old-time vi
+iset nocompatible                                    " Disable compatibility to old-time vi
 
 " ===== NEOVIM ============================
 set viminfo+=n~/.cache/nvim/viminfo                 " neo vim
@@ -38,42 +38,32 @@ set timeoutlen=2000
 set termguicolors
 set updatetime=300                      " Faster completion
 set wildmenu
-set wildmode=longest,list                           " get bash-like tab completions
+set wildmode=longest,list               " get bash-like tab completions
 
 " ===== PLUGS =============================
 call plug#begin('~/.cache/nvim/plugged')
   
  " themes
   Plug 'arcticicestudio/nord-vim'
-  Plug 'ayu-theme/ayu-vim'
   Plug 'cocopon/iceberg.vim'
   Plug 'jacoborus/tender.vim'
   Plug 'joshdick/onedark.vim'
-  Plug 'tomasr/molokai'
-  
-  " decorations
-  Plug 'ryanoasis/vim-devicons'             " vim script version
-  Plug 'kyazdani42/nvim-web-devicons'       " lua
-  Plug 'famiu/feline.nvim'                  " lua
-  Plug 'romgrk/barbar.nvim'                 " tab bar (lua)
+  Plug 'mhartington/oceanic-next'
+  Plug 'lifepillar/vim-solarized8'
 
   " system
   Plug '907th/vim-auto-save'                " Auto Save
   Plug 'airblade/vim-rooter'                " current directory moves with file
-  Plug 'ap/vim-css-color'                   " highlight hex colors in actual color
-  Plug 'jeetsukumaran/vim-filebeagle'       " simple file browser
-  Plug 'preservim/nerdtree'                 " tree
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'                   " fuzzy magic goodness
-  "Plug 'junegunn/gv.vim'                    " git browser
+  Plug 'ap/vim-css-color'                   " highlight hex colors
+  Plug 'itchyny/lightline.vim'
   Plug 'junegunn/vim-peekaboo'              " show my registers, fool... 
   Plug 'justinmk/vim-sneak'
 
-  " development
-  "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  "Plug 'nvim-treesitter/playground'
-  "Plug 'neovim/nvim-lspconfig'
-  "Plug 'hrsh7th/nvim-compe'
+  " files
+  Plug 'mcchrish/nnn.vim'                   
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'                   
+
 
 call plug#end()
 
@@ -81,47 +71,10 @@ source $HOME/.config/nvim/vim/vim-sneak.vim
 source $HOME/.config/nvim/vim/autosave.vim
 source $HOME/.config/nvim/vim/fzf.vim
 
-lua << EOF
-    require('feline').setup()
-    vim.o.completeopt = "menuone,noselect"
-    require('compe').setup {
-        enabled = true;
-        autocomplete = true;
-        debug = false;
-        min_length = 1;
-        preselect = 'enable';
-        throttle_time = 80;
-        source_timeout = 200;
-        resolve_timeout = 800;
-        incomplete_delay = 400;
-        max_abbr_width = 100;
-        max_kind_width = 100;
-        max_menu_width = 100;
-        documentation = {
-            border = { '', '' ,'', ' ', '', '', '', ' ' }, -- the border option is the same as `|help nvim_open_win|`
-            winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
-            max_width = 120,
-            min_width = 60,
-            max_height = math.floor(vim.o.lines * 0.3),
-            min_height = 1,
-        };
-
-        source = {
-            path = true;
-            buffer = true;
-            calc = true;
-            nvim_lsp = true;
-            nvim_lua = true;
-            vsnip = true;
-            ultisnips = true;
-            luasnip = true;
-        };
-    }
-
-EOF
 
 " ===== EYE CANDY =========================
-colorscheme tender
+colorscheme nord
+let g:lightline = { 'colorscheme': 'nord'}
 
 " ===== KEYS ==============================
 let mapleader = "\<Space>"

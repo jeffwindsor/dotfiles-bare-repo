@@ -2,3 +2,7 @@ font:
   normal:
     family: 'JetBrainsMono Nerd Font Mono'
   size: 14.0
+
+window:
+  opacity: 0.9
+
