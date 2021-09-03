@@ -1,28 +1,13 @@
 #!/usr/bin/env zsh
+source $HOME/.config/os/zshenv
 
 export ZSH_PLUGINS='/usr/local/share'
 export TERM='xterm-256color'
-
-# VsCode / VSCodium
 export VSCODE_EXTENSIONS=$XDG_DATA_HOME/vscode-oss/extensions
-
 export HISTFILE=${XDG_CACHE_HOME}/zsh/zsh_history   # put history to cache, seperating it from the other ZDOT files
 
-# aliases and functions
-export FUNCS=$HOME/.local/functions
-
+source "$HOME/.cargo/env"
 # zsh completions
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 fi
-
-# RUST
-source $HOME/.config/os/zshenv
-source "$HOME/.cargo/env"
-
-# APL
-export LDFLAGS="-L/usr/local/opt/readline/lib"
-export CPPFLAGS="-I/usr/local/opt/readline/include"
-
-export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
-[ -f "/Users/jeffwindsor/.ghcup/env" ] && source "/Users/jeffwindsor/.ghcup/env" # ghcup-env
