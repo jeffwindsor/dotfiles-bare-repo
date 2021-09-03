@@ -58,12 +58,13 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'itchyny/lightline.vim'
   Plug 'junegunn/vim-peekaboo'              " show my registers, fool... 
   Plug 'justinmk/vim-sneak'
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'romgrk/barbar.nvim'
 
   " files
   Plug 'mcchrish/nnn.vim'                   
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'                   
-
 
 call plug#end()
 
