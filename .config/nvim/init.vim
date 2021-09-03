@@ -73,7 +73,7 @@ source $HOME/.config/nvim/vim/fzf.vim
 
 
 " ===== EYE CANDY =========================
-colorscheme nord
+colorscheme iceberg
 let g:lightline = { 'colorscheme': 'nord'}
 
 " ===== KEYS ==============================
@@ -106,7 +106,7 @@ nnoremap <leader>bh :BufferMovePrevious<CR>
 nnoremap <leader>bl :BufferMoveNext<CR>
 nnoremap <leader>bn :tabnew<CR>
 nnoremap <leader>bs :w<CR>
-nnoremap <leader><leader> :Files <CR>
+nnoremap <leader>f  :Files <CR>
 nnoremap <leader>fc :Files $HOME/.config/<CR>
 nnoremap <leader>ff :Files $HOME<CR>
 nnoremap <leader>fo :Files $HOME/.config/os/<CR>
@@ -117,6 +117,7 @@ nnoremap <leader>sft :Filetypes<CR>
 nnoremap <leader>sh :History<CR>
 nnoremap <leader>sht :Helptags<CR>
 nnoremap <leader>sk :Maps<CR>
+nnoremap <leader><leader> :Lines<CR>
 nnoremap <leader>sl :Lines<CR>
 nnoremap <leader>sm :Marks<CR>
 nnoremap <leader>ss :Rg<CR>
