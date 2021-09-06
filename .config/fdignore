@@ -9,6 +9,7 @@
 .cache
 .npm
 npm
+alfred
 
 # Icon must end with two \r
 Icon
