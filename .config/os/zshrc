@@ -81,6 +81,7 @@ alias dcm='dot commit -m'
 alias ddiff='dot diff --ignore-space-at-eol -b -w --ignore-blank-lines'
 alias dh='dot-log-graph'
 alias dl='dot ls-files'
+alias docker-remove-images='docker rmi -f $(docker images -a -q)'
 alias doom="$HOME/.emacs.d/bin/doom"
 alias dph='dot push'
 alias dpl='dot pull'
