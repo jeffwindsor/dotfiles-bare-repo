@@ -100,7 +100,7 @@ nnoremap <leader>bh :BufferMovePrevious<CR>
 nnoremap <leader>bl :BufferMoveNext<CR>
 nnoremap <leader>bn :tabnew<CR>
 nnoremap <leader>bs :w<CR>
-nnoremap <leader>f  :Files <CR>
+nnoremap <leader>f  :Files %:p:h<CR>
 nnoremap <leader>fc :Files $HOME/.config/<CR>
 nnoremap <leader>ff :Files $HOME<CR>
 nnoremap <leader>fo :Files $HOME/.config/os/<CR>
