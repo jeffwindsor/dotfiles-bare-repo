@@ -8,8 +8,8 @@ endif
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $FZF_DEFAULT_COMMAND="rg --files --hidden"
+"let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
+"let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
