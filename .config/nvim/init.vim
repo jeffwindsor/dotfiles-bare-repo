@@ -100,26 +100,15 @@ nnoremap <leader>bh :BufferMovePrevious<CR>
 nnoremap <leader>bl :BufferMoveNext<CR>
 nnoremap <leader>bn :tabnew<CR>
 nnoremap <leader>bs :w<CR>
-nnoremap <leader>f  :Files %:p:h<CR>
 nnoremap <leader>fc :Files $HOME/.config/<CR>
-nnoremap <leader>ff :Files $HOME<CR>
+nnoremap <leader>ff :Files %:p:h<CR>
+nnoremap <leader>fh :Files $HOME<CR>
 nnoremap <leader>fo :Files $HOME/.config/os/<CR>
 nnoremap <leader>fs :Files $HOME/src/<CR>
 nnoremap <leader>pc :source $MYVIMRC<CR> :PlugClean<CR>
 nnoremap <leader>pi :source $MYVIMRC<CR> :PlugInstall<CR>
 nnoremap <leader>q  :quit<CR>
 nnoremap <leader>rr :source $MYVIMRC<CR>
-nnoremap <leader>sa :Commands<CR>
-nnoremap <leader>sc :Colors<CR>
-nnoremap <leader>sf :Filetypes<CR>
-nnoremap <leader>sh :History<CR>
-nnoremap <leader>sp :Helptags<CR>
-nnoremap <leader>sk :Maps<CR>
-nnoremap <leader>sl :Lines<CR>
-nnoremap <leader>sm :Marks<CR>
-nnoremap <leader>ss :Rg<CR>
-nnoremap <leader>st :Tags<CR>
-nnoremap <leader>sw :Windows<CR> 
 nnoremap <leader>wc :close<CR> 
 nnoremap <leader>wh <C-W><left> 
 nnoremap <leader>wj <C-W><down> 
@@ -133,3 +122,14 @@ nnoremap <leader>wxh :vertical resize -5<CR>
 nnoremap <leader>wxj :resize -5<CR>
 nnoremap <leader>wxk :resize +5<CR>
 nnoremap <leader>wxl :vertical resize +5<CR>
+nnoremap <leader>za :Commands<CR>
+nnoremap <leader>zc :Colors<CR>
+nnoremap <leader>zf :Filetypes<CR>
+nnoremap <leader>zh :History<CR>
+nnoremap <leader>zk :Maps<CR>
+nnoremap <leader>zl :Lines<CR>
+nnoremap <leader>zm :Marks<CR>
+nnoremap <leader>zp :Helptags<CR>
+nnoremap <leader>zs :Rg<CR>
+nnoremap <leader>zt :Tags<CR>
+nnoremap <leader>zw :Windows<CR> 
