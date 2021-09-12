@@ -5,9 +5,4 @@ window:
       y: 4
 cursor: 
   style: Block
-
 draw_bold_text_with_bright_colors: true
-
-import:
-  - ~/.config/alacritty/theme.yml
-  - ~/.config/alacritty/os.yml

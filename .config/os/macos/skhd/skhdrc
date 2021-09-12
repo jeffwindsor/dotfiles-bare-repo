@@ -11,7 +11,7 @@ alt + cmd - 0x2A            : open -na 'VSCodium.app' --args --extensions-dir $H
 
 # restart
 shift + cmd - r             : brew services stop yabai && brew services start yabai
-ctrl + cmd - r              : brew services stop spacebar && brew services start spacebar
+# ctrl + cmd - r              : brew services stop spacebar && brew services start spacebar
 alt + cmd - r               : skhd -r
 
 # layouts

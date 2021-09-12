@@ -36,7 +36,7 @@ _comp_options+=(globdots)    #include hidden files
 eval "$(starship init zsh)"
 
 alacritty_change_theme() {
-    ln -sfv "${1}" $HOME/.config/alacritty/theme.yml
+    cat $HOME/.config/alacritty/base.yml $HOME/.config/alacritty/os.yml "${1}" > $HOME/.config/alacritty/alacritty.yml
 }
 dot () { git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"; }
 dot-add-all(){
