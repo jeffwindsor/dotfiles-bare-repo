@@ -10,6 +10,7 @@ filetype plugin on
 syntax enable                                       " turn on all the magic, including Explorer and syntax highlighting
 
 set autoindent                                      " autoindent
+set background=dark
 set clipboard+=unnamedplus                          " yank to clipboard
 set cursorline                                      " highlight current line
 set encoding=UTF-8
@@ -44,12 +45,16 @@ set wildmode=longest,list                           " get bash-like tab completi
 call plug#begin('~/.cache/nvim/plugged')
   
  " themes
+  Plug 'lifepillar/vim-solarized8'
   Plug 'arcticicestudio/nord-vim'
   Plug 'cocopon/iceberg.vim'
+  Plug 'habamax/vim-bronzage'
   Plug 'jacoborus/tender.vim'
   Plug 'joshdick/onedark.vim'
   Plug 'mhartington/oceanic-next'
-  Plug 'lifepillar/vim-solarized8'
+  Plug 'morhetz/gruvbox'
+  Plug 'sainnhe/everforest'
+  Plug 'tomasr/molokai'
 
   " system
   Plug '907th/vim-auto-save'                        " Auto Save
@@ -62,9 +67,9 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'romgrk/barbar.nvim'
 
   " files
-  Plug 'mcchrish/nnn.vim'                   
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'                   
+  Plug 'mcchrish/nnn.vim'                   
 
 call plug#end()
 
@@ -75,6 +80,7 @@ source $HOME/.config/nvim/vim/fzf.vim
 
 " ===== EYE CANDY =========================
 colorscheme tender
+" https://github.com/itchyny/lightline.vim/blob/master/colorscheme.md
 let g:lightline = { 'colorscheme': 'tender'}
 
 " ===== KEYS ==============================
