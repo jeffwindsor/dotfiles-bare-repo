@@ -55,6 +55,8 @@ call plug#begin('~/.cache/nvim/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'sainnhe/everforest'
   Plug 'tomasr/molokai'
+  Plug 'adlawson/vim-sorcerer'
+  Plug 'xero/sourcerer.vim'
 
   " system
   Plug '907th/vim-auto-save'                        " Auto Save
