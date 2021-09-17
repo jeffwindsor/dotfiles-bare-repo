@@ -1,8 +1,0 @@
-#!/bin/sh
-
-brlevel="$(xbacklight -get | awk '{print int($1)}')"
-icon=""
-
-printf "%s %s%%", "$icon" "$brlevel"
-
-dunstify --replace=1 "Brightness $brlevel%"

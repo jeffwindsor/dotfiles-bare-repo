@@ -1,9 +1,0 @@
-#!/bin/sh
-
-cpuinfo=$[100-$(vmstat 1 2|tail -1|awk '{print $15}')]%
-printf "%s" "$cpuinfo" 
-
-case $BUTTON in
-    1) dunstify --replace=1 "CPU usage: $cpuinfo" "Right click to open bashtop";;
-    3) st -e bashtop;;
-esac

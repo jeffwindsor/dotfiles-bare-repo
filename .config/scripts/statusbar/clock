@@ -1,7 +1,0 @@
-#!/bin/sh
-
-icon=""
-calendar="$(date '+%a %b %d')"
-clock="$(date '+%H:%M')"
-
-printf "%s %s %s" "$calendar" "$icon" "$clock"
