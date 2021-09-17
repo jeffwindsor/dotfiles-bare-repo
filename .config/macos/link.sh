@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 cd "$(dirname "${0}")"
 
-mkdir -p $HOME/.config/alacritty/
-mkdir -p $HOME/.config/alfred/
-mkdir -p $HOME/.config/karabiner/
-mkdir -p $HOME/.config/skhd/
-mkdir -p $HOME/.config/yabai/
-mkdir -p $HOME/.config/spacebar/
-
 read -r -p "CJ Profile? [y/n] " response
 if [[ "$response" =~ ^(yes|y)$ ]]
 then            
@@ -16,17 +9,23 @@ else
     MACHINE=$PWD
 fi
 
-ln -sfv "$MACHINE/zshenv" "$HOME/.zshenv"
-ln -sfv "$MACHINE/zshrc" "$HOME/.zshrc"
+mkdir -p $HOME/.config/alacritty/
 ln -sfv "$MACHINE/alacritty/os.yml" "$HOME/.config/alacritty/os.yml"
-ln -sfv "$MACHINE/gitconfig" "$HOME/.gitconfig"
 
 rm -f $HOME/.gitignore
 cp "$PWD/gitignore" "$HOME/.gitignore"
+ln -sfv "$MACHINE/gitconfig" "$HOME/.gitconfig"
 
+mkdir -p $HOME/.config/skhd/
 ln -sfv "$PWD/skhd/skhdrc" "$HOME/.config/skhd/skhdrc"
+
+mkdir -p $HOME/.config/yabai/
 ln -sfv "$PWD/yabai/yabairc" "$HOME/.config/yabai/yabairc"
+
+mkdir -p $HOME/.config/spacebar/
 ln -sfv "$PWD/spacebar/spacebarrc" "$HOME/.config/spacebar/spacebarrc"
+
 ln -sfv "$PWD/topgrade.toml" "$HOME/.config/topgrade.toml"
+
 ln -sfv "$PWD/ssh/config" "$HOME/.ssh/config"
-ln -sfv "$HOME/.config/nvim/ideavimrc" "$HOME/.ideavimrc"
+
