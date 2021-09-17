@@ -10,7 +10,7 @@ else
 fi
 
 mkdir -p $HOME/.config/alacritty/
-ln -sfv "$MACHINE/alacritty/os.yml" "$HOME/.config/alacritty/os.yml"
+ln -sfv "$PWD/alacritty/os.yml" "$HOME/.config/alacritty/os.yml"
 
 rm -f $HOME/.gitignore
 cp "$PWD/gitignore" "$HOME/.gitignore"
@@ -27,3 +27,5 @@ ln -sfv "$PWD/spacebar/spacebarrc" "$HOME/.config/spacebar/spacebarrc"
 
 ln -sfv "$PWD/ssh/config" "$HOME/.ssh/config"
 
+ln -sfv "$PWD/zshenv" "$HOME/.zshenv"
+ln -sfv "$PWD/zshrc" "$HOME/.zshrc"

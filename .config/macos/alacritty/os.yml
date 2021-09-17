@@ -1,5 +1,17 @@
-background_opacity: 0.96
+window:
+  decorations: none
+  padding:
+      x: 4
+      y: 4
+  opacity: 0.9
+
+cursor: 
+  style: Block
+
+draw_bold_text_with_bright_colors: true
+
 font:
   normal:
     family: 'JetBrainsMono Nerd Font Mono'
-  size: 14.0
+  size: 12.0
+

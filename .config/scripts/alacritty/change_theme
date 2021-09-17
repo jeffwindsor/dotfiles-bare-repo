@@ -7,5 +7,5 @@ themes=$XDG_CONFIG_HOME/themes/alacritty
 selected=$(fd . $themes | fzf)
 
 # merge base os and picked theme to over write alacrity config
-cat $config/base.yml $config/os.yml "${selected}" > $config/alacritty.yml
+cat $config/os.yml "${selected}" > $config/alacritty.yml
 
