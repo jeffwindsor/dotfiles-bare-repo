@@ -50,7 +50,10 @@ eval "$(starship init zsh)"
 dot () { git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"; }
 dot-add-all(){
     dot add -u
-    dot add $HOME/.config/os/*
+    dot add $XDG_CONFIG_HOME/macos/*
+    dot add $XDG_CONFIG_HOME/data/*
+    dot add $XDG_CONFIG_HOME/scripts/*
+    dot add $XDG_CONFIG_HOME/themes/*
 }
 dot-log-graph() { dot log --graph --pretty=format:${GIT_LOG_PRETTY_FORMAT} --abbrev-commit --max-count=${1:-10}; }
 exec-on-git-repos () {

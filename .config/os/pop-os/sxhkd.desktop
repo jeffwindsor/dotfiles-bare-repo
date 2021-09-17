@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=SXHKD
-GenericName=Simple X Hot Key Daemon
-Comment=Independent Hot key Manager
-Exec=/usr/bin/sxhkd
-Terminal=false
-Type=Application
-X-GNOME-Autostart-enabled=true
