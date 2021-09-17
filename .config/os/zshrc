@@ -3,7 +3,7 @@
 ####################################################################
 # ZSH Config
 ####################################################################
-# General Options
+# OPTIONS
 export CLICOLOR=1
 setopt LOCAL_OPTIONS EXTENDED_GLOB
 setopt AUTO_MENU ALWAYS_TO_END AUTO_LIST NO_MENU_COMPLETE COMPLETE_IN_WORD NOMATCH
@@ -30,14 +30,27 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)    #include hidden files
 
+####################################################################
+# MACOS SPECIFIC PLUGINS
+####################################################################
+source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 ###############################################################################
 # PROMPT
 ###############################################################################
 eval "$(starship init zsh)"
 
-alacritty_change_theme() {
-    cat $HOME/.config/alacritty/base.yml $HOME/.config/alacritty/os.yml "${1}" > $HOME/.config/alacritty/alacritty.yml
-}
+###############################################################################
+# ENVS
+###############################################################################
+
+
+#alacritty_change_theme() {
+#    cat $HOME/.config/alacritty/base.yml $HOME/.config/alacritty/os.yml "${1}" > $HOME/.config/alacritty/alacritty.yml
+#}
 dot () { git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"; }
 dot-add-all(){
     dot add -u
