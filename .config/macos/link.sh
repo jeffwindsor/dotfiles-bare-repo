@@ -25,7 +25,5 @@ ln -sfv "$PWD/yabai/yabairc" "$HOME/.config/yabai/yabairc"
 mkdir -p $HOME/.config/spacebar/
 ln -sfv "$PWD/spacebar/spacebarrc" "$HOME/.config/spacebar/spacebarrc"
 
-ln -sfv "$PWD/topgrade.toml" "$HOME/.config/topgrade.toml"
-
 ln -sfv "$PWD/ssh/config" "$HOME/.ssh/config"
 
