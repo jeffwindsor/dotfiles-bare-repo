@@ -75,9 +75,9 @@ call plug#begin('~/.cache/nvim/plugged')
 
 call plug#end()
 
-source $HOME/.config/nvim/vim/vim-sneak.vim
-source $HOME/.config/nvim/vim/autosave.vim
-source $HOME/.config/nvim/vim/fzf.vim
+source $HOME/.config/nvim/vim-sneak.vim
+source $HOME/.config/nvim/autosave.vim
+source $HOME/.config/nvim/fzf.vim
 
 
 " ===== EYE CANDY =========================
